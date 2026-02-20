@@ -1,0 +1,13 @@
+# Large media files — stay organized locally, not pushed to GitHub
+personal/photos/
+personal/videos/
+personal/audio/
+personal/documents/
+
+# Keep these tracked in git
+!personal/.gitkeep
+
+# OS files
+desktop.ini
+Thumbs.db
+.DS_Store

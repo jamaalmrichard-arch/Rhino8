@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pipeline Mastery™ — The 13-Touch System That Changes Everything</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --black: #0a0a0a;
+  --white: #f8f7f4;
+  --gold: #c8a445;
+  --gold-light: #dfc76e;
+  --gold-dark: #9a7a2e;
+  --gray: #888;
+  --gray-dark: #333;
+  --gray-light: #bbb;
+  --red: #c0392b;
+  --green: #27ae60;
+  --bg-card: #141414;
+  --bg-card2: #1a1a1a;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: var(--black);
+  color: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* === UTILITY === */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.gold { color: var(--gold); }
+.red { color: var(--red); }
+.green { color: var(--green); }
+.strike { text-decoration: line-through; opacity: 0.5; }
+.text-center { text-align: center; }
+.mb-1 { margin-bottom: 8px; }
+.mb-2 { margin-bottom: 16px; }
+.mb-3 { margin-bottom: 24px; }
+.mb-4 { margin-bottom: 32px; }
+.mb-6 { margin-bottom: 48px; }
+.mt-2 { margin-top: 16px; }
+.mt-4 { margin-top: 32px; }
+
+/* === NAV === */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(200,164,69,0.15);
+  padding: 14px 0;
+}
+.nav .container { display: flex; justify-content: space-between; align-items: center; }
+.nav-logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.3rem; color: var(--gold);
+  letter-spacing: 1px;
+}
+.nav-cta {
+  background: var(--gold); color: var(--black);
+  padding: 10px 24px; border-radius: 6px; text-decoration: none;
+  font-weight: 700; font-size: 0.85rem; letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+.nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+/* === HERO === */
+.hero {
+  padding: 160px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(200,164,69,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(200,164,69,0.12);
+  border: 1px solid rgba(200,164,69,0.25);
+  color: var(--gold);
+  padding: 8px 20px; border-radius: 50px;
+  font-size: 0.8rem; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  margin-bottom: 28px;
+  animation: fadeInDown 0.8s ease;
+}
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+  line-height: 1.12;
+  margin-bottom: 24px;
+  animation: fadeInUp 0.8s ease;
+}
+.hero-sub {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  color: var(--gray-light);
+  max-width: 680px;
+  margin-bottom: 40px;
+  font-weight: 300;
+  animation: fadeInUp 1s ease;
+}
+.hero-cta-row { display: flex; gap: 16px; flex-wrap: wrap; animation: fadeInUp 1.2s ease; }
+.btn-primary {
+  background: var(--gold); color: var(--black);
+  padding: 16px 36px; border-radius: 8px; text-decoration: none;
+  font-weight: 700; font-size: 1rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s; border: 2px solid var(--gold);
+  display: inline-block;
+}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(200,164,69,0.25); }
+.btn-secondary {
+  background: transparent; color: var(--white);
+  padding: 16px 36px; border-radius: 8px; text-decoration: none;
+  font-weight: 600; font-size: 1rem;
+  border: 2px solid rgba(255,255,255,0.2);
+  transition: all 0.3s;
+  display: inline-block;
+}
+.btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+.hero-stats {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 32px; margin-top: 60px; padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  animation: fadeInUp 1.4s ease;
+}
+.hero-stat-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.4rem; color: var(--gold);
+}
+.hero-stat-label { font-size: 0.85rem; color: var(--gray); margin-top: 4px; }
+
+/* === SECTION === */
+section { padding: 80px 0; }
+.section-label {
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+}
+.section-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  line-height: 1.2; margin-bottom: 16px;
+}
+.section-sub {
+  font-size: 1.05rem; color: var(--gray-light);
+  max-width: 620px; font-weight: 300;
+}
+
+/* === PROBLEM === */
+.problem-section { background: var(--bg-card); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); }
+.problem-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px; margin-top: 40px;
+}
+.problem-card {
+  background: var(--black); border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px; padding: 28px;
+}
+.problem-card .icon { font-size: 1.8rem; margin-bottom: 12px; }
+.problem-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+.problem-card p { font-size: 0.92rem; color: var(--gray); line-height: 1.6; }
+
+/* === 13 TOUCH VISUAL === */
+.touch-section { position: relative; }
+.touch-timeline {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px; margin-top: 40px;
+}
+.touch-item {
+  background: var(--bg-card);
+  border: 1px solid rgba(200,164,69,0.12);
+  border-radius: 10px; padding: 18px 14px;
+  text-align: center;
+  transition: all 0.3s;
+}
+.touch-item:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: 0 8px 24px rgba(200,164,69,0.1); }
+.touch-day { font-size: 0.7rem; color: var(--gold); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.touch-channel {
+  font-size: 0.85rem; font-weight: 600; margin-top: 8px;
+}
+.touch-icon { font-size: 1.4rem; margin-top: 6px; }
+
+/* === COMPARISON === */
+.compare-table {
+  width: 100%; border-collapse: collapse; margin-top: 40px;
+}
+.compare-table th, .compare-table td {
+  padding: 16px 20px; text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-size: 0.92rem;
+}
+.compare-table th {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--gray);
+}
+.compare-table td:first-child { color: var(--gray-light); }
+.compare-table td:last-child { color: var(--white); font-weight: 600; }
+.compare-highlight { background: rgba(200,164,69,0.06); }
+
+/* === PSYCHOLOGY PREVIEW === */
+.psych-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px; margin-top: 40px;
+}
+.psych-card {
+  background: var(--bg-card);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 10px 10px 0;
+  padding: 24px;
+}
+.psych-bad {
+  font-size: 0.9rem; color: var(--red);
+  font-weight: 600; margin-bottom: 6px;
+}
+.psych-good {
+  font-size: 0.9rem; color: var(--green);
+  font-weight: 600;
+}
+.psych-why {
+  font-size: 0.82rem; color: var(--gray); margin-top: 8px;
+  font-style: italic;
+}
+
+/* === PRICING === */
+.pricing-section { background: var(--bg-card); border-top: 1px solid rgba(255,255,255,0.05); }
+.pricing-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px; margin-top: 40px;
+}
+.pricing-card {
+  background: var(--black);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px; padding: 32px 24px;
+  position: relative;
+  transition: all 0.3s;
+}
+.pricing-card:hover { border-color: rgba(200,164,69,0.3); transform: translateY(-4px); }
+.pricing-card.featured {
+  border-color: var(--gold);
+  box-shadow: 0 0 40px rgba(200,164,69,0.12);
+}
+.pricing-card.featured::before {
+  content: 'MOST POPULAR';
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: var(--gold); color: var(--black);
+  padding: 4px 16px; border-radius: 50px;
+  font-size: 0.65rem; font-weight: 800; letter-spacing: 1.5px;
+}
+.pricing-tier {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 8px;
+}
+.pricing-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.4rem; margin-bottom: 4px;
+}
+.pricing-price {
+  font-size: 2.2rem; font-weight: 800; margin: 12px 0 4px;
+}
+.pricing-desc {
+  font-size: 0.82rem; color: var(--gray); margin-bottom: 20px;
+}
+.pricing-features { list-style: none; }
+.pricing-features li {
+  font-size: 0.85rem; padding: 6px 0;
+  padding-left: 22px; position: relative;
+  color: var(--gray-light);
+}
+.pricing-features li::before {
+  content: '✓'; position: absolute; left: 0;
+  color: var(--gold); font-weight: 700;
+}
+.pricing-cta {
+  display: block; text-align: center; margin-top: 24px;
+  padding: 14px; border-radius: 8px; text-decoration: none;
+  font-weight: 700; font-size: 0.85rem;
+  letter-spacing: 0.5px; text-transform: uppercase;
+  transition: all 0.3s;
+}
+.pricing-cta-primary { background: var(--gold); color: var(--black); }
+.pricing-cta-primary:hover { background: var(--gold-light); }
+.pricing-cta-secondary { border: 1px solid rgba(255,255,255,0.2); color: var(--white); }
+.pricing-cta-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+/* === MODULES === */
+.module-list { margin-top: 40px; }
+.module-item {
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px; margin-bottom: 10px;
+  overflow: hidden;
+}
+.module-header {
+  display: flex; align-items: center; gap: 16px;
+  padding: 20px 24px; cursor: pointer;
+  background: var(--bg-card);
+  transition: background 0.3s;
+}
+.module-header:hover { background: var(--bg-card2); }
+.module-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.3rem; color: var(--gold);
+  min-width: 36px;
+}
+.module-title { font-weight: 600; font-size: 1rem; }
+.module-body {
+  padding: 0 24px 20px 76px;
+  color: var(--gray); font-size: 0.9rem;
+  line-height: 1.7; display: none;
+}
+.module-item.open .module-body { display: block; }
+.module-toggle {
+  margin-left: auto; font-size: 1.2rem; color: var(--gray);
+  transition: transform 0.3s;
+}
+.module-item.open .module-toggle { transform: rotate(45deg); }
+
+/* === TESTIMONIAL PLACEHOLDER === */
+.testimonial-bar {
+  background: linear-gradient(90deg, rgba(200,164,69,0.08), rgba(200,164,69,0.02));
+  border-top: 1px solid rgba(200,164,69,0.1);
+  border-bottom: 1px solid rgba(200,164,69,0.1);
+  padding: 48px 0;
+}
+.testimonial-text {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-style: italic;
+  max-width: 750px; margin: 0 auto;
+  text-align: center; line-height: 1.5;
+}
+.testimonial-author {
+  text-align: center; margin-top: 16px;
+  font-size: 0.85rem; color: var(--gold);
+  font-weight: 600;
+}
+
+/* === AUDIENCE SPLIT === */
+.audience-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 24px; margin-top: 40px;
+}
+.audience-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px; padding: 36px;
+}
+.audience-card h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.4rem; margin-bottom: 6px;
+}
+.audience-card .tag {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+  display: block;
+}
+.audience-card ul { list-style: none; }
+.audience-card ul li {
+  font-size: 0.9rem; color: var(--gray-light);
+  padding: 5px 0; padding-left: 18px; position: relative;
+}
+.audience-card ul li::before {
+  content: '→'; position: absolute; left: 0; color: var(--gold);
+}
+
+/* === FAQ === */
+.faq-item {
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 20px 0;
+}
+.faq-q {
+  font-weight: 600; font-size: 1rem;
+  cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+}
+.faq-a {
+  color: var(--gray); font-size: 0.92rem;
+  margin-top: 12px; line-height: 1.7; display: none;
+}
+.faq-item.open .faq-a { display: block; }
+
+/* === FINAL CTA === */
+.final-cta {
+  padding: 100px 0;
+  text-align: center;
+  position: relative;
+}
+.final-cta::before {
+  content: '';
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(200,164,69,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.final-cta h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 16px;
+  position: relative;
+}
+.final-cta p {
+  color: var(--gray-light); font-size: 1.1rem;
+  max-width: 580px; margin: 0 auto 32px;
+  font-weight: 300; position: relative;
+}
+
+/* === FOOTER === */
+footer {
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding: 40px 0; text-align: center;
+  font-size: 0.8rem; color: var(--gray);
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .hero-stats { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .hero-stat-num { font-size: 1.6rem; }
+  .audience-grid { grid-template-columns: 1fr; }
+  .touch-timeline { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+  .compare-table { font-size: 0.8rem; }
+  .compare-table th, .compare-table td { padding: 10px 12px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container">
+    <div class="nav-logo">Pipeline Mastery™</div>
+    <a href="#pricing" class="nav-cta">Get Started</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">For Wholesalers & Agents Ready to Scale</div>
+    <h1>Stop Guessing.<br>Start <span class="gold">Closing.</span></h1>
+    <p class="hero-sub">The 13-touch multi-channel follow-up system that turns cold leads into signed contracts — on autopilot. Plug it in and watch your business change overnight.</p>
+    <div class="hero-cta-row">
+      <a href="#pricing" class="btn-primary">See the System →</a>
+      <a href="#how-it-works" class="btn-secondary">How It Works</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">13</div>
+        <div class="hero-stat-label">Touches per lead across 5 channels</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">55</div>
+        <div class="hero-stat-label">Day automated follow-up sequence</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">4–6</div>
+        <div class="hero-stat-label">Deals/month target at $10K+ each</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem-section">
+  <div class="container">
+    <div class="section-label">The Problem</div>
+    <h2 class="section-title">80% of wholesalers quit after<br>touch number <span class="gold">two.</span></h2>
+    <p class="section-sub">Most deals close between touch 5 and 12. If your system stops at 3, you're leaving $40K–$60K/month on the table.</p>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="icon">📞</div>
+        <h3>One call and done</h3>
+        <p>You call once, leave a voicemail, and never follow up. That lead goes to the wholesaler who called 7 times across 4 channels.</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">🗂️</div>
+        <h3>Sticky note CRM</h3>
+        <p>Your "pipeline" is a spreadsheet, a notebook, and 47 browser tabs. Leads fall through the cracks daily. Nothing is automated.</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">🎯</div>
+        <h3>Wrong words, lost deals</h3>
+        <p>You say "buy," "sell," "contract," and "home" — four words that trigger seller fear and kill trust before you even make an offer.</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">📉</div>
+        <h3>Feast or famine months</h3>
+        <p>Good month, bad month, good month, bad month. No predictability because there's no system — just hustle and hope.</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">🤷</div>
+        <h3>No idea what's working</h3>
+        <p>You're spending money on marketing but can't tell which channel, which list, or which script is actually producing deals.</p>
+      </div>
+      <div class="problem-card">
+        <div class="icon">😰</div>
+        <h3>Sound like every other caller</h3>
+        <p>"Hi, I'm an investor looking to buy your property..." — the seller hangs up. You sound like the 6 other wholesalers who called this week.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section>
+  <div class="container">
+    <div class="section-label">Built for Two Audiences</div>
+    <h2 class="section-title">Whether you're wholesaling or<br>have a <span class="gold">license</span> — this works.</h2>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <span class="tag">Wholesalers</span>
+        <h3>Scale from 0–3 deals to 4–6+ per month</h3>
+        <ul>
+          <li>Plug-and-play 13-touch sequence already built for you</li>
+          <li>Exact tech stack with setup walkthroughs (Zoho, CallTools, JDI)</li>
+          <li>Seller psychology scripts that sound like a neighbor, not a salesperson</li>
+          <li>Deal analysis framework: wholesale, sub-to, seller finance, BRRRR</li>
+          <li>Disposition playbook to build 50+ active buyers</li>
+          <li>KPI dashboard so you know exactly what's working</li>
+        </ul>
+      </div>
+      <div class="audience-card">
+        <span class="tag">Real Estate Agents</span>
+        <h3>Add motivated seller leads without paying Zillow</h3>
+        <ul>
+          <li>Pull your own off-market leads and stop waiting for the phone to ring</li>
+          <li>Learn to talk to distressed sellers (not your typical listing appointment)</li>
+          <li>List the property, wholesale it, or refer it for a fee — your choice</li>
+          <li>Same leads every investor is chasing, but you have the license advantage</li>
+          <li>Build a predictable pipeline alongside your MLS business</li>
+          <li>Stand out as the agent who brings deals TO investors</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 13 TOUCH VISUAL -->
+<section id="how-it-works" class="touch-section">
+  <div class="container">
+    <div class="section-label">The System</div>
+    <h2 class="section-title">13 touches. 5 channels. 55 days.<br><span class="gold">Impossible to ignore.</span></h2>
+    <p class="section-sub">Every lead gets the same systematic treatment. Calls, texts, voicemail drops, emails, and direct mail — timed and scripted so nothing falls through the cracks.</p>
+    <div class="touch-timeline">
+      <div class="touch-item">
+        <div class="touch-day">Day 1</div>
+        <div class="touch-icon">📞</div>
+        <div class="touch-channel">Call #1</div>
+      </div>
+      <div class="touch-item">
+        <div class="touch-day">Day 1</div>
+        <div class="touch-icon">💬</div>
+        <div class="touch-channel">Text #1</div>
+      </div>
+      <div class="touch-item">
+        <div class="touch-day">Day 3</div>
+        <div class="touch-icon">🔔</div>
+        <div class="touch-channel">RVM #1</div>
+      </div>
+      <div class="touch-item">
+        <div class="touch-day">Day 5</div>
+        <div class="touch-icon">📧</div>
+        <div class="touch-channel">Email #1</div>
+      </div>
+      <div class="touch-item">
+        <div class="touch-day">Day 7</div>
+        <div class="touch-icon">📞</div>
+        <div class="touch-channel">Call #2</div>
+      </div>
+      <div class="touch-item">
+        <div class="touch-day">Day 10</div>
+        <div class="touch-icon">💬</div>
+        <div class="touch-channel">Text #2</div>
+      </div>
+      <div class="touch-item">
+        <div class="touch-day">Day 14</div>
+        <div class="touch-icon">✉️</div>
+        <div class="touch-channel">Mail #1</div>
+      </div>
+      <div class="touch-item">
+        <div class="touch-day">Day 17</div>
+        <div class="touch-icon">🔔</div>
+        <div class="touch-channel">RVM #2</div>
+      </div>
+      <div class="touch-item">
+        <div class="touch-day">Day 21</div>
+        <div class="touch-icon">📧</div>
+        <div class="touch-channel">Email #2</div>
+      </div>
+      <div class="touch-item">
+        <div class="touch-day">Day 25</div>
+        <div class="touch-icon">📞</div>
+        <div class="touch-channel">Call #3</div>
+      </div>
+      <div class="touch-item">
+        <div class="touch-day">Day 30</div>
+        <div class="touch-icon">💬</div>
+        <div class="touch-channel">Text #3</div>
+      </div>
+      <div class="touch-item">
+        <div class="touch-day">Day 40</div>
+        <div class="touch-icon">✉️</div>
+        <div class="touch-channel">Mail #2</div>
+      </div>
+      <div class="touch-item">
+        <div class="touch-day">Day 55</div>
+        <div class="touch-icon">📧</div>
+        <div class="touch-channel">Email #3</div>
+      </div>
+    </div>
+    <p class="text-center mt-4" style="color: var(--gray); font-size: 0.9rem;">
+      Then → <span class="gold" style="font-weight:600;">Monthly nurture forever</span> until they sell, die, or ask you to stop.
+    </p>
+  </div>
+</section>
+
+<!-- PSYCHOLOGY PREVIEW -->
+<section class="problem-section">
+  <div class="container">
+    <div class="section-label">Seller Psychology</div>
+    <h2 class="section-title">The words you use decide<br>whether you <span class="gold">close</span> or get hung up on.</h2>
+    <p class="section-sub">Inside Pipeline Mastery, you get the complete soft language framework — every word mapped to its conversion-safe replacement.</p>
+    <div class="psych-grid">
+      <div class="psych-card">
+        <div class="psych-bad">❌ "I want to buy your home"</div>
+        <div class="psych-good">✅ "Would you or the family be interested in entertaining an offer on the property?"</div>
+        <div class="psych-why">Vague, non-threatening, opens dialogue without triggering defenses.</div>
+      </div>
+      <div class="psych-card">
+        <div class="psych-bad">❌ "What's your bottom dollar?"</div>
+        <div class="psych-good">✅ "If we could work something out, what would you need to walk away feeling good?"</div>
+        <div class="psych-why">Focuses on their emotional satisfaction, not your price extraction.</div>
+      </div>
+      <div class="psych-card">
+        <div class="psych-bad">❌ "Sign this contract"</div>
+        <div class="psych-good">✅ "Just put your OK on the paperwork and we'll get this taken care of"</div>
+        <div class="psych-why">"Sign" + "contract" = fear. "OK" + "paperwork" = easy.</div>
+      </div>
+      <div class="psych-card">
+        <div class="psych-bad">❌ "I'm a wholesaler / investor"</div>
+        <div class="psych-good">✅ "I work in real estate and help families with properties"</div>
+        <div class="psych-why">Labels create walls. Be a person, not a category.</div>
+      </div>
+      <div class="psych-card">
+        <div class="psych-bad">❌ "Are you behind on payments?"</div>
+        <div class="psych-good">✅ "Is everything current on the property, or has it been tough keeping up?"</div>
+        <div class="psych-why">Softens the shame of financial difficulty. Opens them up instead of shutting them down.</div>
+      </div>
+      <div class="psych-card">
+        <div class="psych-bad">❌ "What's wrong with it?"</div>
+        <div class="psych-good">✅ "What would you update if you had unlimited money?"</div>
+        <div class="psych-why">Makes them comfortable disclosing issues without feeling judged.</div>
+      </div>
+    </div>
+    <p class="text-center mt-4" style="color: var(--gray); font-size: 0.9rem;">
+      There are <span class="gold" style="font-weight:600;">30+ word swaps, 10 psychological principles, 9 objection handlers, and 6 closing techniques</span> inside the full framework.
+    </p>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section>
+  <div class="container">
+    <div class="section-label">Pipeline Mastery vs. Everything Else</div>
+    <h2 class="section-title">This isn't another <span class="gold">course.</span><br>It's a machine.</h2>
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Other Programs</th>
+          <th style="color: var(--gold);">Pipeline Mastery™</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Follow-up system</td>
+          <td>"Just follow up more" (no system)</td>
+          <td>13-touch, 5-channel, 55-day automated sequence</td>
+        </tr>
+        <tr class="compare-highlight">
+          <td>Seller psychology</td>
+          <td>Basic scripts that sound robotic</td>
+          <td>Full soft language framework + FBI negotiation techniques</td>
+        </tr>
+        <tr>
+          <td>CRM</td>
+          <td>"Use a CRM" (no setup help)</td>
+          <td>Zoho CRM template with stages, scoring, and automations built</td>
+        </tr>
+        <tr class="compare-highlight">
+          <td>Tech stack</td>
+          <td>Tool recommendations (figure it out)</td>
+          <td>Exact tools + step-by-step setup for every integration</td>
+        </tr>
+        <tr>
+          <td>Objection handling</td>
+          <td>2-3 generic rebuttals</td>
+          <td>9 scripts based on real psychology + the 4-Pillar qualifying system</td>
+        </tr>
+        <tr class="compare-highlight">
+          <td>For agents?</td>
+          <td>Wholesalers only</td>
+          <td>Dual-track: works for wholesalers AND licensed agents</td>
+        </tr>
+        <tr>
+          <td>Price</td>
+          <td>$5,000–$10,000 (coaching only)</td>
+          <td>Starts at $497 (full system included)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="testimonial-bar">
+  <div class="container">
+    <p class="testimonial-text">"I was doing 1 deal a month and couldn't figure out why my leads weren't converting. After plugging in the 13-touch system, I closed 5 deals in my second month. The seller psychology alone is worth 10x the price."</p>
+    <p class="testimonial-author">— [Your First Beta Student's Name Here], [City, State]</p>
+  </div>
+</section>
+
+<!-- MODULES -->
+<section>
+  <div class="container">
+    <div class="section-label">Inside the Course</div>
+    <h2 class="section-title">8 modules. Zero fluff.<br>Every lesson <span class="gold">leads to a deal.</span></h2>
+    <div class="module-list">
+      <div class="module-item open">
+        <div class="module-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="module-num">01</span>
+          <span class="module-title">The Mindset & The Machine</span>
+          <span class="module-toggle">+</span>
+        </div>
+        <div class="module-body">Why 95% of wholesalers fail. The Pipeline Mastery philosophy: systems beat hustle every time. Set your income goal and reverse-engineer the math. Overview of the complete tech stack and how it all connects.</div>
+      </div>
+      <div class="module-item">
+        <div class="module-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="module-num">02</span>
+          <span class="module-title">Data & List Building Mastery</span>
+          <span class="module-toggle">+</span>
+        </div>
+        <div class="module-body">PropStream deep dive — every filter, every list type. The motivated seller hierarchy. List stacking to find the golden leads. Skip tracing with DataZapp. Data hygiene, DNC scrubbing, and refresh cadence.</div>
+      </div>
+      <div class="module-item">
+        <div class="module-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="module-num">03</span>
+          <span class="module-title">Your CRM Is Your Business</span>
+          <span class="module-toggle">+</span>
+        </div>
+        <div class="module-body">Zoho CRM setup walkthrough. Pipeline stages from New Lead to Closed. Lead scoring that auto-prioritizes hot leads. Automation workflows for tasks, emails, and alerts. Dashboards that tell you exactly where your money is.</div>
+      </div>
+      <div class="module-item">
+        <div class="module-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="module-num">04</span>
+          <span class="module-title">The 13-Touch Follow-Up System</span>
+          <span class="module-toggle">+</span>
+        </div>
+        <div class="module-body">The complete 13-touch sequence: channel, timing, script, and purpose for every single touch. Setup walkthroughs for CallTools, Just Deliver It, text platforms, email campaigns, and direct mail. Full automation so it runs while you sleep.</div>
+      </div>
+      <div class="module-item">
+        <div class="module-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="module-num">05</span>
+          <span class="module-title">Seller Psychology & The Conversation</span>
+          <span class="module-toggle">+</span>
+        </div>
+        <div class="module-body">The complete soft language guide — every word that kills deals and its replacement. The 4 Pillars of Pre-Qualifying. 10 psychological principles. Rapport building on the phone and at the property. 9 objection handlers. Tonality, silence, and the power of listening.</div>
+      </div>
+      <div class="module-item">
+        <div class="module-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="module-num">06</span>
+          <span class="module-title">Making Offers & Getting Contracts</span>
+          <span class="module-toggle">+</span>
+        </div>
+        <div class="module-body">Running the numbers: ARV, MAO, 70% rule. Structuring wholesale, sub-to, and seller finance offers. Presenting offers without sounding like a predator. Contract walkthroughs. Closing techniques that work at the kitchen table.</div>
+      </div>
+      <div class="module-item">
+        <div class="module-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="module-num">07</span>
+          <span class="module-title">Disposition — Getting Deals Sold</span>
+          <span class="module-toggle">+</span>
+        </div>
+        <div class="module-body">Building your cash buyer list (50+ before you market). How to market deals to buyers. Pricing your assignment fee. Managing closings. Double close walkthroughs. Agent track: how to refer deals or co-wholesale with a license.</div>
+      </div>
+      <div class="module-item">
+        <div class="module-header" onclick="this.parentElement.classList.toggle('open')">
+          <span class="module-num">08</span>
+          <span class="module-title">Scaling & Building a Team</span>
+          <span class="module-toggle">+</span>
+        </div>
+        <div class="module-body">Hiring VAs, acquisition managers, and disposition managers. KPI tracking and benchmarks. When to increase spend and when to pull back. Systemizing so it runs without you. Building a brand and generating inbound leads.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="pricing-section">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-label">Pricing</div>
+      <h2 class="section-title">Pick your speed.</h2>
+      <p class="section-sub" style="margin: 0 auto;">Every tier includes the full system. Higher tiers just get you there faster with more hands-on support.</p>
+    </div>
+    <div class="pricing-grid">
+      <!-- TIER 1 -->
+      <div class="pricing-card">
+        <div class="pricing-tier">Tier 1</div>
+        <div class="pricing-name">The Blueprint</div>
+        <div class="pricing-price">$497</div>
+        <div class="pricing-desc">Self-paced. Everything you need to build the machine yourself.</div>
+        <ul class="pricing-features">
+          <li>8-module video course</li>
+          <li>Complete 13-touch sequence</li>
+          <li>Seller psychology framework</li>
+          <li>All scripts & templates</li>
+          <li>Zoho CRM pipeline template</li>
+          <li>Deal analyzer spreadsheet</li>
+          <li>Private community access</li>
+          <li>Lifetime updates</li>
+        </ul>
+        <a href="#" class="pricing-cta pricing-cta-secondary">Get The Blueprint</a>
+      </div>
+      <!-- TIER 2 -->
+      <div class="pricing-card featured">
+        <div class="pricing-tier">Tier 2</div>
+        <div class="pricing-name">The Accelerator</div>
+        <div class="pricing-price">$1,997</div>
+        <div class="pricing-desc">Everything in Tier 1 + 8 weeks of live coaching and deal reviews.</div>
+        <ul class="pricing-features">
+          <li>Everything in The Blueprint</li>
+          <li>8 weeks live group coaching</li>
+          <li>Live deal reviews & hot seats</li>
+          <li>Role-play & objection practice</li>
+          <li>Tech setup walkthroughs (live)</li>
+          <li>Recorded Q&A vault</li>
+          <li>Accountability partners</li>
+          <li>Direct community access</li>
+        </ul>
+        <a href="#" class="pricing-cta pricing-cta-primary">Join The Accelerator</a>
+      </div>
+      <!-- TIER 3 -->
+      <div class="pricing-card">
+        <div class="pricing-tier">Tier 3</div>
+        <div class="pricing-name">The Machine</div>
+        <div class="pricing-price">$4,997</div>
+        <div class="pricing-desc">Done-with-you. We build the system together in 30 days.</div>
+        <ul class="pricing-features">
+          <li>Everything in Accelerator</li>
+          <li>4x one-on-one strategy calls</li>
+          <li>Zoho CRM built for you</li>
+          <li>CallTools & JDI configured</li>
+          <li>First list pull & skip trace</li>
+          <li>13-touch loaded into your CRM</li>
+          <li>Personalized KPI targets</li>
+          <li>VA hiring guide + training</li>
+        </ul>
+        <a href="#" class="pricing-cta pricing-cta-secondary">Build The Machine</a>
+      </div>
+      <!-- TIER 4 -->
+      <div class="pricing-card">
+        <div class="pricing-tier">Tier 4</div>
+        <div class="pricing-name">The Empire</div>
+        <div class="pricing-price">$9,997</div>
+        <div class="pricing-desc">Full done-for-you buildout + 12-month mastermind.</div>
+        <ul class="pricing-features">
+          <li>Everything in The Machine</li>
+          <li>Full tech stack built for you</li>
+          <li>Custom scripts for your market</li>
+          <li>3 months list pull & skip trace</li>
+          <li>VA recruited & trained</li>
+          <li>12-month mastermind access</li>
+          <li>Co-wholesale opportunity</li>
+          <li>Priority future access</li>
+        </ul>
+        <a href="#" class="pricing-cta pricing-cta-secondary">Apply for Empire</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="container">
+    <div class="text-center mb-6">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Got questions?</h2>
+    </div>
+    <div class="faq-item open">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do I need experience in wholesaling? <span style="color:var(--gold)">+</span></div>
+      <div class="faq-a">No. The Blueprint (Tier 1) is designed for complete beginners. We walk you through every step — from pulling your first list to closing your first deal. If you already have experience, the Accelerator or Machine tiers will help you scale faster.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">I'm a licensed agent. Is this for me? <span style="color:var(--gold)">+</span></div>
+      <div class="faq-a">Absolutely. Module 7 has a dedicated track for agents. You can list the property, wholesale it, co-wholesale, or refer deals for a fee. Same leads, but your license gives you MORE options — not fewer. This system adds an entirely new pipeline to your business.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What tools do I need? <span style="color:var(--gold)">+</span></div>
+      <div class="faq-a">The core stack is PropStream ($99/mo), DataZapp (pay-per-skip), Zoho CRM (free–$52/mo), and CallTools ($99/mo). Total starting cost: under $300/month. We walk through every tool setup inside the course. All optional tools (text platform, RVM, direct mail) are covered too.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How is this different from TTP or other coaching programs? <span style="color:var(--gold)">+</span></div>
+      <div class="faq-a">Most programs teach you to "cold call more." Pipeline Mastery gives you the complete SYSTEM — 13 touches across 5 channels, seller psychology with word-for-word scripts, CRM automations, and the exact tech stack with setup guides. It's the implementation, not just the education.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What kind of results can I expect? <span style="color:var(--gold)">+</span></div>
+      <div class="faq-a">Results depend on your market, effort, and marketing budget. The system is built to produce 4–6 wholesale deals/month at $10K–$25K each ($40K–$60K/month) with consistent lead flow and follow-up. Most students see their first deal within 30–60 days of implementing.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is there a money-back guarantee? <span style="color:var(--gold)">+</span></div>
+      <div class="faq-a">Yes. If you go through the material, implement the system, and don't see results within 60 days, reach out and we'll make it right. We're confident because this system is the same one we use in our own business every day.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Your pipeline is either<br><span class="gold">a system or a hope.</span></h2>
+    <p>One closes 4–6 deals a month. The other closes when you get lucky. Pipeline Mastery gives you the system.</p>
+    <a href="#pricing" class="btn-primary">Get Started Now →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p style="margin-bottom: 8px;">Pipeline Mastery™ — The 13-Touch Motivated Seller System</p>
+    <p>© 2026 Pipeline Mastery. All rights reserved. | <a href="#" style="color: var(--gray);">Privacy</a> · <a href="#" style="color: var(--gray);">Terms</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
