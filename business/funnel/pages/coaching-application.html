@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply — Group Coaching with J. Marque</title>
+<style>
+  /* ============================================================
+     COACHING APPLICATION PAGE — $5,997 Group Coaching
+     Brand: Gold #c8a84e / Black #0a0a0a-#1a1a1a
+     Font: Segoe UI, system-ui, sans-serif
+     Mobile-first responsive — 600-900px content width
+     ============================================================ */
+
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: #0a0a0a;
+    color: #e8e8e8;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---------- Utility ---------- */
+  .container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .gold { color: #c8a84e; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    text-align: center;
+    padding: 72px 0 56px;
+    border-bottom: 1px solid rgba(200, 168, 78, 0.1);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    border: 1px solid rgba(200, 168, 78, 0.3);
+    padding: 8px 20px;
+    border-radius: 2px;
+    margin-bottom: 32px;
+  }
+
+  .hero h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #fff;
+    margin-bottom: 20px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero p {
+    font-size: 1.05rem;
+    color: #999;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* ---------- Results Cards ---------- */
+  .results {
+    padding: 56px 0;
+    border-bottom: 1px solid rgba(200, 168, 78, 0.1);
+  }
+
+  .results h2 {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 32px;
+    letter-spacing: 0.5px;
+  }
+
+  .results-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .result-card {
+    background: linear-gradient(135deg, #141414 0%, #111 100%);
+    border: 1px solid rgba(200, 168, 78, 0.15);
+    border-radius: 4px;
+    padding: 28px 24px;
+    text-align: center;
+  }
+
+  .result-card .name {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    margin-bottom: 10px;
+  }
+
+  .result-card .quote {
+    font-size: 1rem;
+    color: #d0d0d0;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  .result-card.cohort-card {
+    border-color: rgba(200, 168, 78, 0.3);
+    background: linear-gradient(135deg, #1a1608 0%, #111 100%);
+  }
+
+  .result-card.cohort-card .name {
+    color: #c8a84e;
+  }
+
+  .result-card.cohort-card .quote {
+    font-style: normal;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .result-card.cohort-card .spots {
+    font-size: 0.85rem;
+    color: #999;
+    margin-top: 4px;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  /* ---------- What's Included ---------- */
+  .included {
+    padding: 56px 0;
+    border-bottom: 1px solid rgba(200, 168, 78, 0.1);
+  }
+
+  .included h2 {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 32px;
+    letter-spacing: 0.5px;
+  }
+
+  .value-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .value-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #141414 0%, #111 100%);
+    border: 1px solid rgba(200, 168, 78, 0.1);
+    border-radius: 4px;
+  }
+
+  .value-check {
+    color: #c8a84e;
+    font-size: 1.1rem;
+    line-height: 1.4;
+    flex-shrink: 0;
+  }
+
+  .value-text {
+    font-size: 0.95rem;
+    color: #d0d0d0;
+    line-height: 1.5;
+  }
+
+  .value-text strong {
+    color: #fff;
+  }
+
+  /* ---------- For / Not For ---------- */
+  .fit {
+    padding: 56px 0;
+    border-bottom: 1px solid rgba(200, 168, 78, 0.1);
+  }
+
+  .fit h2 {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 32px;
+    letter-spacing: 0.5px;
+  }
+
+  .fit-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .fit-col {
+    padding: 28px 24px;
+    border-radius: 4px;
+  }
+
+  .fit-col.yes {
+    background: linear-gradient(135deg, #0f1a0a 0%, #111 100%);
+    border: 1px solid rgba(100, 180, 60, 0.2);
+  }
+
+  .fit-col.no {
+    background: linear-gradient(135deg, #1a0f0a 0%, #111 100%);
+    border: 1px solid rgba(180, 60, 60, 0.15);
+  }
+
+  .fit-col h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+  }
+
+  .fit-col.yes h3 {
+    color: #7cc84e;
+  }
+
+  .fit-col.no h3 {
+    color: #c85050;
+  }
+
+  .fit-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .fit-list li {
+    font-size: 0.9rem;
+    color: #b0b0b0;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .fit-col.yes .fit-list li::before {
+    content: '+';
+    position: absolute;
+    left: 0;
+    color: #7cc84e;
+    font-weight: 700;
+  }
+
+  .fit-col.no .fit-list li::before {
+    content: '\2013';
+    position: absolute;
+    left: 0;
+    color: #c85050;
+    font-weight: 700;
+  }
+
+  /* ---------- Application Form ---------- */
+  .application {
+    padding: 56px 0;
+    border-bottom: 1px solid rgba(200, 168, 78, 0.1);
+  }
+
+  .form-card {
+    background: linear-gradient(135deg, #141414 0%, #111 100%);
+    border: 1px solid rgba(200, 168, 78, 0.2);
+    border-radius: 6px;
+    padding: 36px 28px;
+  }
+
+  .form-card h2 {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    margin-bottom: 32px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 8px;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="tel"],
+  .form-group textarea {
+    width: 100%;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: #e8e8e8;
+    background: #0a0a0a;
+    border: 1px solid rgba(200, 168, 78, 0.15);
+    border-radius: 4px;
+    padding: 12px 16px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #c8a84e;
+    box-shadow: 0 0 0 2px rgba(200, 168, 78, 0.1);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: #555;
+  }
+
+  /* Radio groups */
+  .question-block {
+    margin-bottom: 28px;
+  }
+
+  .question-block .q-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #d0d0d0;
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+
+  .radio-option {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 14px;
+    margin-bottom: 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+
+  .radio-option:hover {
+    background: rgba(200, 168, 78, 0.04);
+  }
+
+  .radio-option input[type="radio"] {
+    margin-top: 3px;
+    accent-color: #c8a84e;
+    flex-shrink: 0;
+  }
+
+  .radio-option span {
+    font-size: 0.9rem;
+    color: #b0b0b0;
+    line-height: 1.4;
+  }
+
+  /* Submit button */
+  .cta-btn {
+    display: block;
+    width: 100%;
+    background: #c8a84e;
+    color: #0a0a0a;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 18px 32px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    box-shadow: 0 4px 20px rgba(200, 168, 78, 0.25);
+    margin-top: 8px;
+  }
+
+  .cta-btn:hover {
+    background: #d4b65c;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 28px rgba(200, 168, 78, 0.35);
+  }
+
+  .cta-btn:active {
+    transform: translateY(0);
+  }
+
+  .form-footer {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 0.8rem;
+    color: #666;
+    line-height: 1.6;
+  }
+
+  /* ---------- About J. Marque ---------- */
+  .about {
+    padding: 56px 0;
+    border-bottom: 1px solid rgba(200, 168, 78, 0.1);
+  }
+
+  .about-card {
+    border-left: 3px solid #c8a84e;
+    padding: 28px 24px;
+    background: linear-gradient(135deg, #141414 0%, #111 100%);
+    border-radius: 0 4px 4px 0;
+  }
+
+  .about-card h3 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    margin-bottom: 14px;
+  }
+
+  .about-card p {
+    font-size: 0.95rem;
+    color: #b0b0b0;
+    line-height: 1.7;
+  }
+
+  .about-card p strong {
+    color: #d0d0d0;
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq {
+    padding: 56px 0;
+    border-bottom: 1px solid rgba(200, 168, 78, 0.1);
+  }
+
+  .faq h2 {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 32px;
+    letter-spacing: 0.5px;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .faq-item {
+    border: 1px solid rgba(200, 168, 78, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .faq-question {
+    width: 100%;
+    background: #141414;
+    border: none;
+    color: #e8e8e8;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: left;
+    padding: 18px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    transition: background 0.15s;
+  }
+
+  .faq-question:hover {
+    background: #1a1a1a;
+  }
+
+  .faq-question .arrow {
+    color: #c8a84e;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+
+  .faq-item.open .faq-question .arrow {
+    transform: rotate(90deg);
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+
+  .faq-item.open .faq-answer {
+    max-height: 300px;
+    padding: 0 20px 20px;
+  }
+
+  .faq-answer p {
+    font-size: 0.9rem;
+    color: #999;
+    line-height: 1.7;
+    padding-top: 4px;
+  }
+
+  /* ---------- Final CTA ---------- */
+  .final-cta {
+    text-align: center;
+    padding: 56px 0;
+    border-bottom: 1px solid rgba(200, 168, 78, 0.1);
+  }
+
+  .final-cta p {
+    font-size: 1rem;
+    color: #999;
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  .final-cta p strong {
+    color: #c8a84e;
+  }
+
+  .final-cta .cta-btn {
+    display: inline-block;
+    width: auto;
+    padding: 18px 56px;
+  }
+
+  /* ---------- Footer ---------- */
+  .footer {
+    text-align: center;
+    padding: 32px 24px;
+  }
+
+  .footer p {
+    font-size: 0.75rem;
+    color: #444;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (min-width: 640px) {
+    .hero h1 {
+      font-size: 2.25rem;
+    }
+
+    .results-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .result-card.cohort-card {
+      grid-column: 1 / -1;
+    }
+
+    .fit-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-row .form-group {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .results-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .result-card.cohort-card {
+      grid-column: auto;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .hero h1 {
+      font-size: 1.4rem;
+    }
+
+    .hero-badge {
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+    }
+
+    .form-card {
+      padding: 28px 20px;
+    }
+
+    .cta-btn {
+      font-size: 0.9rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-badge">Application &mdash; Limited to 15 Per Cohort</div>
+    <h1>Build Real Estate Wealth With a Proven System and Personal Guidance</h1>
+    <p>6-month coaching program with J. Marque. 2 live calls per week. Deal review. Community. Accountability. Results.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     RESULTS SECTION
+     ============================================================ -->
+<section class="results">
+  <div class="container">
+    <h2>Real People. Real Results.</h2>
+    <div class="results-grid">
+
+      <div class="result-card">
+        <div class="name">David</div>
+        <div class="quote">"From $95K salary to $6,800/mo passive income in 11 months."</div>
+      </div>
+
+      <div class="result-card">
+        <div class="name">Keisha</div>
+        <div class="quote">"Teacher. Single mom. 3 rental properties in 11 months."</div>
+      </div>
+
+      <div class="result-card cohort-card">
+        <div class="name">Next Cohort</div>
+        <div class="quote">Applications open now.</div>
+        <div class="spots">15 spots available.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHAT'S INCLUDED
+     ============================================================ -->
+<section class="included">
+  <div class="container">
+    <h2>What's Included</h2>
+    <ul class="value-list">
+      <li class="value-item">
+        <span class="value-check">&#10003;</span>
+        <span class="value-text"><strong>2 live group calls per week</strong> &mdash; Tuesday strategy session + Thursday hot seat</span>
+      </li>
+      <li class="value-item">
+        <span class="value-check">&#10003;</span>
+        <span class="value-text"><strong>Complete FIRE execution system</strong> &mdash; Full walkthrough of the workbook + implementation support</span>
+      </li>
+      <li class="value-item">
+        <span class="value-check">&#10003;</span>
+        <span class="value-text"><strong>Private community access</strong> &mdash; 24/7 group chat with your cohort and J. Marque</span>
+      </li>
+      <li class="value-item">
+        <span class="value-check">&#10003;</span>
+        <span class="value-text"><strong>Personal deal review</strong> &mdash; Every opportunity you find gets eyes on it before you commit</span>
+      </li>
+      <li class="value-item">
+        <span class="value-check">&#10003;</span>
+        <span class="value-text"><strong>The system behind $250M in transactions</strong> &mdash; Not theory. The exact methods, scripts, and processes</span>
+      </li>
+      <li class="value-item">
+        <span class="value-check">&#10003;</span>
+        <span class="value-text"><strong>Financing available</strong> &mdash; Through our lending partners. Most qualify for $100-$250/month</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHO THIS IS FOR / NOT FOR
+     ============================================================ -->
+<section class="fit">
+  <div class="container">
+    <h2>Is This Right For You?</h2>
+    <div class="fit-grid">
+
+      <div class="fit-col yes">
+        <h3>This IS for you if:</h3>
+        <ul class="fit-list">
+          <li>You've completed (or started) the FIRE Workbook</li>
+          <li>You're ready to take action, not just learn</li>
+          <li>You can commit to 2 calls per week for 6 months</li>
+          <li>You want to build real estate wealth through a proven system</li>
+        </ul>
+      </div>
+
+      <div class="fit-col no">
+        <h3>This is NOT for you if:</h3>
+        <ul class="fit-list">
+          <li>You're looking for get-rich-quick schemes</li>
+          <li>You're not willing to do the work</li>
+          <li>You can't commit 4-6 hours per week</li>
+          <li>You want someone to do it all for you</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     APPLICATION FORM
+     ============================================================ -->
+<section class="application" id="apply">
+  <div class="container">
+
+    <!--
+      ============================================================
+      GHL INTEGRATION:
+      Replace action="#" with your GHL form submission endpoint
+      or webhook URL. Fields map to GHL contact fields.
+      Recommended: Use GHL's native form embed or post to
+      GHL webhook → create contact + trigger automation.
+      ============================================================
+    -->
+    <form action="#" method="POST" class="form-card" id="coaching-application-form">
+
+      <h2>Apply for the Next Cohort</h2>
+
+      <!-- Row 1: Name + Email -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="full-name">Full Name</label>
+          <input type="text" id="full-name" name="full_name" placeholder="Your full name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@email.com" required>
+        </div>
+      </div>
+
+      <!-- Row 2: Phone + City/State -->
+      <div class="form-row" style="margin-top: 20px;">
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" required>
+        </div>
+        <div class="form-group">
+          <label for="location">City, State</label>
+          <input type="text" id="location" name="location" placeholder="Atlanta, GA">
+        </div>
+      </div>
+
+      <!-- Question 1 -->
+      <div class="question-block">
+        <span class="q-label">Now that you know how money really works &mdash; what do you want to do about it?</span>
+
+        <label class="radio-option">
+          <input type="radio" name="q1_intent" value="keep_learning" required>
+          <span>Keep learning &mdash; I want the full picture</span>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="q1_intent" value="start_re">
+          <span>Start making money through real estate</span>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="q1_intent" value="level_up">
+          <span>I'm already in real estate &mdash; I need to level up</span>
+        </label>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="question-block">
+        <span class="q-label">What best describes where you are right now?</span>
+
+        <label class="radio-option">
+          <input type="radio" name="q2_experience" value="beginner" required>
+          <span>Complete beginner &mdash; haven't invested in anything yet</span>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="q2_experience" value="studying">
+          <span>I've been studying but haven't taken action</span>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="q2_experience" value="active_messy">
+          <span>I'm active but my systems are a mess</span>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="q2_experience" value="experienced">
+          <span>I'm experienced and ready for the next level</span>
+        </label>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="form-group">
+        <label for="goal">What's your #1 goal for the next 12 months?</label>
+        <textarea id="goal" name="q3_goal" placeholder="Be specific — what does success look like for you in 12 months?" rows="3" required></textarea>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" class="cta-btn">Submit Application</button>
+
+      <p class="form-footer">Applications reviewed within 48 hours. If accepted, you'll receive a link to book your free strategy call.</p>
+
+    </form>
+  </div>
+</section>
+
+<!-- ============================================================
+     ABOUT J. MARQUE
+     ============================================================ -->
+<section class="about">
+  <div class="container">
+    <div class="about-card">
+      <h3>About J. Marque</h3>
+      <p><strong>$250M+ in real estate transactions.</strong> Wholesaler, flipper, landlord, title company owner, consultant. United States Marine Corps veteran. Not theory &mdash; lived experience.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ
+     ============================================================ -->
+<section class="faq">
+  <div class="container">
+    <h2>Common Questions</h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" onclick="toggleFaq(this)">
+          How much does the program cost?
+          <span class="arrow">&#9654;</span>
+        </button>
+        <div class="faq-answer">
+          <p>$5,997. Financing is available through our lending partners &mdash; most applicants qualify for $100-$250/month.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" onclick="toggleFaq(this)">
+          What if I have no experience?
+          <span class="arrow">&#9654;</span>
+        </button>
+        <div class="faq-answer">
+          <p>The program is designed for serious beginners. Keisha was a teacher and single mom with zero real estate experience. She closed 3 rental properties in 11 months.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" onclick="toggleFaq(this)">
+          What's the time commitment?
+          <span class="arrow">&#9654;</span>
+        </button>
+        <div class="faq-answer">
+          <p>2 calls per week (1 hour each) plus your own work outside of calls. Most students keep their day jobs throughout the program. Plan for 4-6 hours per week total.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" onclick="toggleFaq(this)">
+          What happens on the strategy call?
+          <span class="arrow">&#9654;</span>
+        </button>
+        <div class="faq-answer">
+          <p>A free 30-minute session where we map out your personalized 6-month plan. It's yours to keep whether you join the program or not.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button" onclick="toggleFaq(this)">
+          Is there a guarantee?
+          <span class="arrow">&#9654;</span>
+        </button>
+        <div class="faq-answer">
+          <p>If you complete the program and don't close at least one deal, we'll work with you for free until you do.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FINAL CTA
+     ============================================================ -->
+<section class="final-cta">
+  <div class="container">
+    <p><strong>15 spots.</strong> When they're filled, the next cohort opens in 3 months.</p>
+    <a href="#apply" class="cta-btn">Apply Now</a>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <p>&copy; 2026 J. Marque. All rights reserved.</p>
+</footer>
+
+<!-- ============================================================
+     FAQ TOGGLE SCRIPT
+     ============================================================ -->
+<script>
+  function toggleFaq(btn) {
+    var item = btn.parentElement;
+    var isOpen = item.classList.contains('open');
+
+    // Close all
+    var items = document.querySelectorAll('.faq-item');
+    for (var i = 0; i < items.length; i++) {
+      items[i].classList.remove('open');
+    }
+
+    // Open clicked (if it wasn't already open)
+    if (!isOpen) {
+      item.classList.add('open');
+    }
+  }
+</script>
+
+</body>
+</html>

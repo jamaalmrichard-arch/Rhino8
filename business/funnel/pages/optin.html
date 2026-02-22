@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Money Decoded: Free Book by J. Marque</title>
+<meta name="description" content="Download The History of Money — the first book in the Money Decoded trilogy. Free. Everything your school, your bank, and your government never taught you about money.">
+<style>
+  /* ====== RESET & BASE ====== */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: #0a0a0a;
+    color: #ffffff;
+    line-height: 1.6;
+  }
+
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+
+  /* ====== LAYOUT ====== */
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .container--wide {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ====== TYPOGRAPHY ====== */
+  .gold { color: #c8a84e; }
+  .white { color: #ffffff; }
+  .muted { color: rgba(255,255,255,0.55); }
+
+  .label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    margin-bottom: 16px;
+  }
+
+  .headline {
+    font-size: clamp(1.75rem, 5vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+
+  .subheadline {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-weight: 400;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 32px;
+  }
+
+  .section-title {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  /* ====== DIVIDER ====== */
+  .divider {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #c8a84e, transparent);
+    margin: 0 auto;
+  }
+
+  /* ====== HERO SECTION ====== */
+  .hero {
+    padding: 80px 0 60px;
+    background: linear-gradient(180deg, #0a0a0a 0%, #111111 50%, #0a0a0a 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(200,168,78,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero .container { position: relative; z-index: 2; }
+
+  /* ====== BOOK COVER MOCKUP ====== */
+  .book-mockup {
+    width: 200px;
+    height: 300px;
+    margin: 0 auto 40px;
+    background: #0a0a0a;
+    border: 1px solid rgba(200,168,78,0.3);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 20px 20px;
+    position: relative;
+    box-shadow:
+      8px 8px 24px rgba(0,0,0,0.6),
+      -2px -2px 8px rgba(200,168,78,0.04),
+      inset 0 0 40px rgba(200,168,78,0.03);
+  }
+
+  .book-mockup::before {
+    content: '';
+    position: absolute;
+    top: 12px; left: 12px; right: 12px; bottom: 12px;
+    border: 1px solid rgba(200,168,78,0.1);
+    border-radius: 2px;
+    pointer-events: none;
+  }
+
+  .book-series {
+    font-size: 0.55rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    font-weight: 600;
+  }
+
+  .book-center {
+    text-align: center;
+  }
+
+  .book-title-the {
+    font-size: 0.65rem;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: rgba(200,168,78,0.6);
+    margin-bottom: 4px;
+  }
+
+  .book-title-main {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 2px;
+  }
+
+  .book-title-of {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: rgba(200,168,78,0.5);
+    margin-bottom: 2px;
+  }
+
+  .book-title-money {
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: #c8a84e;
+    line-height: 1.1;
+  }
+
+  .book-subtitle {
+    font-size: 0.5rem;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.4);
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  .book-author {
+    font-size: 0.6rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    font-weight: 500;
+  }
+
+  /* Coin element inside book */
+  .book-coin {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,168,78,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8px auto;
+    position: relative;
+  }
+
+  .book-coin::before {
+    content: '';
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,168,78,0.12);
+    position: absolute;
+  }
+
+  .book-coin::after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 35%, rgba(200,168,78,0.1) 0%, transparent 70%);
+    position: absolute;
+  }
+
+  /* ====== FORM ====== */
+  .form-group {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(200,168,78,0.2);
+    border-radius: 6px;
+    color: #ffffff;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+
+  .form-input::placeholder {
+    color: rgba(255,255,255,0.35);
+  }
+
+  .form-input:focus {
+    border-color: #c8a84e;
+    background: rgba(255,255,255,0.08);
+  }
+
+  .btn-cta {
+    width: 100%;
+    padding: 18px 32px;
+    background: linear-gradient(135deg, #c8a84e 0%, #a68a3a 100%);
+    border: none;
+    border-radius: 6px;
+    color: #0a0a0a;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 12px;
+  }
+
+  .btn-cta:hover {
+    background: linear-gradient(135deg, #d4b45a 0%, #b89842 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(200,168,78,0.3);
+  }
+
+  .btn-cta:active {
+    transform: translateY(0);
+  }
+
+  .form-disclaimer {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.35);
+    text-align: center;
+  }
+
+  /* ====== DISCOVER SECTION ====== */
+  .discover {
+    padding: 80px 0;
+    background: #111111;
+  }
+
+  .bullet-list {
+    list-style: none;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .bullet-list li {
+    padding: 14px 0 14px 36px;
+    position: relative;
+    font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+    color: rgba(255,255,255,0.8);
+    line-height: 1.55;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .bullet-list li:last-child { border-bottom: none; }
+
+  .bullet-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 18px;
+    width: 20px;
+    height: 20px;
+    background: none;
+  }
+
+  /* Gold checkmark via CSS */
+  .bullet-list li::after {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 20px;
+    width: 12px;
+    height: 7px;
+    border-left: 2px solid #c8a84e;
+    border-bottom: 2px solid #c8a84e;
+    transform: rotate(-45deg);
+  }
+
+  /* ====== AUTHOR SECTION ====== */
+  .author-section {
+    padding: 80px 0;
+    background: #0a0a0a;
+  }
+
+  .author-card {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 32px;
+    border: 1px solid rgba(200,168,78,0.15);
+    border-left: 3px solid #c8a84e;
+    border-radius: 4px;
+    background: rgba(200,168,78,0.02);
+  }
+
+  .author-card .section-title {
+    text-align: left;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+
+  .author-card p {
+    font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+  }
+
+  /* ====== TESTIMONIALS ====== */
+  .testimonials {
+    padding: 80px 0;
+    background: #111111;
+  }
+
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 600px) {
+    .testimonial-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .testimonial-grid .testimonial-card:last-child {
+      grid-column: 1 / -1;
+      max-width: 340px;
+      margin: 0 auto;
+    }
+  }
+
+  .testimonial-card {
+    padding: 28px 24px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+  }
+
+  .testimonial-card .stars {
+    color: #c8a84e;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+
+  .testimonial-card blockquote {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .testimonial-card cite {
+    font-size: 0.85rem;
+    font-style: normal;
+    font-weight: 600;
+    color: #c8a84e;
+  }
+
+  /* ====== FINAL CTA ====== */
+  .final-cta {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #0a0a0a 0%, #111111 50%, #0a0a0a 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 300px;
+    background: radial-gradient(ellipse, rgba(200,168,78,0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .final-cta .container { position: relative; z-index: 2; }
+
+  .tagline {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 32px;
+  }
+
+  .tagline em {
+    color: #c8a84e;
+    font-style: normal;
+  }
+
+  /* ====== FOOTER ====== */
+  .footer {
+    padding: 40px 0;
+    background: #0a0a0a;
+    border-top: 1px solid rgba(255,255,255,0.04);
+    text-align: center;
+  }
+
+  .footer p {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 1px;
+  }
+
+  /* ====== RESPONSIVE ====== */
+  @media (max-width: 480px) {
+    .hero { padding: 60px 0 48px; }
+    .discover, .author-section, .testimonials, .final-cta { padding: 60px 0; }
+    .author-card { padding: 28px 20px; }
+    .book-mockup { width: 170px; height: 255px; padding: 20px 16px 16px; }
+    .book-title-main { font-size: 1.35rem; }
+    .book-title-money { font-size: 1.6rem; }
+    .book-coin { width: 48px; height: 48px; }
+    .book-coin::before { width: 40px; height: 40px; }
+    .book-coin::after { width: 32px; height: 32px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ====== HERO ====== -->
+  <section class="hero" id="top">
+    <div class="container">
+
+      <p class="label">Free Ebook by J. Marque</p>
+
+      <h1 class="headline">Everything Your School, Your Bank, and Your Government Never Taught You About Money</h1>
+
+      <p class="subheadline">Download <em>The History of Money</em> -- the first book in the Money Decoded trilogy. 8,400 words that will change how you see every dollar in your pocket.</p>
+
+      <!-- Book Cover Mockup (CSS) -->
+      <div class="book-mockup">
+        <div class="book-series">Money Decoded</div>
+        <div class="book-center">
+          <div class="book-coin"></div>
+          <div class="book-title-the">The</div>
+          <div class="book-title-main">HISTORY</div>
+          <div class="book-title-of">of</div>
+          <div class="book-title-money">MONEY</div>
+        </div>
+        <div class="book-subtitle">From Gold Coins to Paper Promises</div>
+        <div class="book-author">J. Marque</div>
+      </div>
+
+      <!-- Email Capture Form -->
+      <!--
+        =============================================================
+        GHL INTEGRATION:
+        Replace the form below with your GoHighLevel form embed code,
+        OR update the action="" to your GHL webhook endpoint.
+        Example: action="https://app.gohighlevel.com/v2/preview/YOUR_FORM_ID"
+        =============================================================
+      -->
+      <form class="form-group" action="#" method="POST" id="optin-form">
+        <input type="text" class="form-input" name="first_name" placeholder="First Name" required autocomplete="given-name">
+        <input type="email" class="form-input" name="email" placeholder="Email Address" required autocomplete="email">
+        <button type="submit" class="btn-cta">Get Your Free Copy</button>
+        <p class="form-disclaimer">Free. No spam. Unsubscribe anytime.</p>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- ====== WHAT YOU'LL DISCOVER ====== -->
+  <section class="discover">
+    <div class="container--wide">
+
+      <h2 class="section-title">What You'll Discover</h2>
+
+      <ul class="bullet-list">
+        <li>Why gold was "God's money" for thousands of years -- and what replaced it</li>
+        <li>How China invented paper money -- and the disaster that followed</li>
+        <li>Why the Federal Reserve was designed in secret on a private island</li>
+        <li>How FDR confiscated Americans' gold and raised the price 69%</li>
+        <li>The 1944 backroom deal that made the dollar the world's reserve currency</li>
+        <li>What really happened on August 15, 1971 -- the day money died</li>
+      </ul>
+
+    </div>
+  </section>
+
+  <!-- ====== ABOUT THE AUTHOR ====== -->
+  <section class="author-section">
+    <div class="container--wide">
+
+      <div class="author-card">
+        <h2 class="section-title">About the Author</h2>
+        <p>J. Marque has closed over $250 million in real estate as a wholesaler, flipper, landlord, title company owner, and consultant. A United States Marine Corps veteran, he writes to give people the financial education the system was designed to keep from them.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== TESTIMONIALS ====== -->
+  <section class="testimonials">
+    <div class="container--wide">
+
+      <h2 class="section-title">Readers Are Saying</h2>
+
+      <div class="testimonial-grid">
+
+        <div class="testimonial-card">
+          <div class="stars">* * * * *</div>
+          <blockquote>"I read this in one sitting. I can't believe nobody taught me this."</blockquote>
+          <cite>-- Marcus, Atlanta</cite>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">* * * * *</div>
+          <blockquote>"This should be required reading in every high school."</blockquote>
+          <cite>-- Keisha, Houston</cite>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">* * * * *</div>
+          <blockquote>"Book 1 opened my eyes. Then I had to get Books 2 and 3."</blockquote>
+          <cite>-- David, Chicago</cite>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== FINAL CTA ====== -->
+  <section class="final-cta">
+    <div class="container">
+
+      <div class="divider" style="margin-bottom: 40px;"></div>
+
+      <p class="tagline">The rules changed. <em>Now you know.</em></p>
+
+      <a href="#top" class="btn-cta" style="display: inline-block; max-width: 420px; text-align: center;">Get Your Free Copy</a>
+
+      <p class="form-disclaimer" style="margin-top: 12px;">Scroll up to enter your email and download instantly.</p>
+
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <p>J. Marque &nbsp;|&nbsp; Money Decoded &nbsp;|&nbsp; The rules changed. Now you know.</p>
+  </footer>
+
+</body>
+</html>

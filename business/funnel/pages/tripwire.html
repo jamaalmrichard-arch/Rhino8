@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Money Decoded Trilogy - All 3 Books for $7 | J. Marque</title>
+<meta name="description" content="The full truth about money -- past, present, and future. Three books. 28,000 words. $250 million in real-world experience. Get the complete Money Decoded trilogy for $7.">
+<style>
+  /* ====== RESET & BASE ====== */
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: #0a0a0a;
+    color: #ffffff;
+    line-height: 1.6;
+  }
+
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+
+  /* ====== LAYOUT ====== */
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .container--wide {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ====== COLORS ====== */
+  .gold { color: #c8a84e; }
+  .green { color: #10B981; }
+  .cyan { color: #06B6D4; }
+
+  /* ====== TYPOGRAPHY ====== */
+  .label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    margin-bottom: 16px;
+  }
+
+  .headline {
+    font-size: clamp(1.75rem, 5vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+
+  .subheadline {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-weight: 400;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 32px;
+  }
+
+  .section-title {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  /* ====== DIVIDER ====== */
+  .divider {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #c8a84e, transparent);
+    margin: 0 auto;
+  }
+
+  /* ====== CTA BUTTON ====== */
+  .btn-cta {
+    display: inline-block;
+    padding: 18px 48px;
+    background: linear-gradient(135deg, #c8a84e 0%, #a68a3a 100%);
+    border: none;
+    border-radius: 6px;
+    color: #0a0a0a;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .btn-cta:hover {
+    background: linear-gradient(135deg, #d4b45a 0%, #b89842 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(200,168,78,0.3);
+  }
+
+  .btn-cta:active { transform: translateY(0); }
+
+  /* ====== HERO SECTION ====== */
+  .hero {
+    padding: 80px 0 60px;
+    background: linear-gradient(180deg, #0a0a0a 0%, #111111 50%, #0a0a0a 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(200,168,78,0.05) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero .container { position: relative; z-index: 2; }
+
+  /* ====== 3 BOOK COVERS ====== */
+  .trilogy-covers {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 12px;
+    margin: 0 auto 40px;
+    perspective: 800px;
+  }
+
+  .mini-cover {
+    width: 140px;
+    height: 210px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 12px 14px;
+    position: relative;
+    box-shadow: 6px 6px 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .mini-cover:hover {
+    transform: translateY(-4px);
+  }
+
+  .mini-cover::before {
+    content: '';
+    position: absolute;
+    top: 8px; left: 8px; right: 8px; bottom: 8px;
+    border-radius: 2px;
+    pointer-events: none;
+  }
+
+  /* Book 1 - Gold */
+  .mini-cover--gold {
+    background: #0a0a0a;
+    border: 1px solid rgba(200,168,78,0.3);
+  }
+  .mini-cover--gold::before { border: 1px solid rgba(200,168,78,0.1); }
+  .mini-cover--gold .mc-series { color: #c8a84e; }
+  .mini-cover--gold .mc-accent { color: rgba(200,168,78,0.5); }
+  .mini-cover--gold .mc-title-color { color: #c8a84e; }
+  .mini-cover--gold .mc-author { color: #c8a84e; }
+  .mini-cover--gold .mc-icon {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,168,78,0.25);
+    margin: 4px 0;
+  }
+
+  /* Book 2 - Green */
+  .mini-cover--green {
+    background: #0a0a0a;
+    border: 1px solid rgba(16,185,129,0.3);
+  }
+  .mini-cover--green::before { border: 1px solid rgba(16,185,129,0.1); }
+  .mini-cover--green .mc-series { color: #10B981; }
+  .mini-cover--green .mc-accent { color: rgba(16,185,129,0.5); }
+  .mini-cover--green .mc-title-color { color: #10B981; }
+  .mini-cover--green .mc-author { color: #10B981; }
+  .mini-cover--green .mc-icon {
+    width: 36px; height: 20px;
+    border: 1px solid rgba(16,185,129,0.2);
+    border-radius: 2px;
+    margin: 8px 0;
+    position: relative;
+  }
+  .mini-cover--green .mc-icon::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 20%; right: 20%;
+    height: 60%;
+    border-top: 1px solid rgba(16,185,129,0.15);
+    background: linear-gradient(180deg, rgba(16,185,129,0.08) 0%, transparent 100%);
+  }
+
+  /* Book 3 - Cyan */
+  .mini-cover--cyan {
+    background: #0a0a0a;
+    border: 1px solid rgba(6,182,212,0.3);
+  }
+  .mini-cover--cyan::before { border: 1px solid rgba(6,182,212,0.1); }
+  .mini-cover--cyan .mc-series { color: #06B6D4; }
+  .mini-cover--cyan .mc-accent { color: rgba(6,182,212,0.5); }
+  .mini-cover--cyan .mc-title-color { color: #06B6D4; }
+  .mini-cover--cyan .mc-author { color: #06B6D4; }
+  .mini-cover--cyan .mc-icon {
+    width: 36px; height: 36px;
+    margin: 4px 0;
+    position: relative;
+  }
+  .mini-cover--cyan .mc-icon::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px; height: 30px;
+    border: 1px solid rgba(6,182,212,0.2);
+    border-radius: 2px;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  .mini-cover--cyan .mc-icon::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 18px; height: 18px;
+    border: 1px solid rgba(6,182,212,0.15);
+    border-radius: 2px;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .mc-series {
+    font-size: 0.4rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .mc-center { text-align: center; }
+
+  .mc-title-sm {
+    font-size: 0.5rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+
+  .mc-title-main {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+  }
+
+  .mc-title-sub {
+    font-size: 0.65rem;
+    font-style: italic;
+    margin-top: 1px;
+  }
+
+  .mc-subtitle {
+    font-size: 0.38rem;
+    color: rgba(255,255,255,0.35);
+    text-align: center;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+  }
+
+  .mc-author {
+    font-size: 0.42rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* ====== PRICE DISPLAY ====== */
+  .price-display {
+    margin: 32px 0;
+  }
+
+  .price-old {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.35);
+    text-decoration: line-through;
+    margin-right: 12px;
+  }
+
+  .price-new {
+    font-size: clamp(3rem, 8vw, 4.5rem);
+    font-weight: 800;
+    color: #c8a84e;
+  }
+
+  .price-note {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.45);
+    margin-top: 4px;
+  }
+
+  /* ====== BOOK DETAIL SECTIONS ====== */
+  .book-section {
+    padding: 72px 0;
+  }
+
+  .book-section--dark { background: #0d0d0d; }
+  .book-section--light { background: #111111; }
+
+  .book-section-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .book-section-title {
+    font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+  }
+
+  .book-section-subtitle {
+    font-size: clamp(0.95rem, 2.3vw, 1.1rem);
+    font-style: italic;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 28px;
+  }
+
+  .stat-callout {
+    padding: 20px 24px;
+    background: rgba(255,255,255,0.03);
+    border-left: 3px solid;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 28px;
+    font-size: clamp(0.95rem, 2.3vw, 1.05rem);
+    line-height: 1.6;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .stat-callout--gold { border-color: #c8a84e; }
+  .stat-callout--green { border-color: #10B981; }
+  .stat-callout--cyan { border-color: #06B6D4; }
+
+  .stat-callout strong { color: #ffffff; font-weight: 700; }
+
+  .book-bullets {
+    list-style: none;
+  }
+
+  .book-bullets li {
+    padding: 10px 0 10px 28px;
+    position: relative;
+    font-size: clamp(0.9rem, 2.1vw, 1rem);
+    color: rgba(255,255,255,0.7);
+    line-height: 1.55;
+  }
+
+  .book-bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 15px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    opacity: 0.6;
+  }
+
+  .book-bullets--gold li::before { background: #c8a84e; }
+  .book-bullets--green li::before { background: #10B981; }
+  .book-bullets--cyan li::before { background: #06B6D4; }
+
+  .playbook-tag {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 8px 16px;
+    border: 1px solid rgba(6,182,212,0.3);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #06B6D4;
+    letter-spacing: 1px;
+  }
+
+  /* ====== VALUE STACK ====== */
+  .value-stack {
+    padding: 80px 0;
+    background: #0a0a0a;
+  }
+
+  .stack-box {
+    max-width: 560px;
+    margin: 0 auto;
+    border: 1px solid rgba(200,168,78,0.2);
+    border-radius: 8px;
+    padding: 40px 32px;
+    background: rgba(200,168,78,0.02);
+  }
+
+  .stack-box h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  .stack-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .stack-item:last-of-type { border-bottom: none; }
+
+  .stack-item-name {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.8);
+    flex: 1;
+    padding-right: 16px;
+  }
+
+  .stack-item-name small {
+    display: block;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.4);
+    margin-top: 2px;
+  }
+
+  .stack-item-value {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.4);
+    text-decoration: line-through;
+    white-space: nowrap;
+  }
+
+  .stack-total-line {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(200,168,78,0.2);
+    text-align: center;
+  }
+
+  .stack-total-old {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.35);
+    text-decoration: line-through;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .stack-total-label {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 4px;
+  }
+
+  .stack-total-price {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #c8a84e;
+    line-height: 1.1;
+  }
+
+  /* ====== TESTIMONIALS ====== */
+  .testimonials {
+    padding: 80px 0;
+    background: #111111;
+  }
+
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 600px) {
+    .testimonial-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .testimonial-grid .testimonial-card:last-child {
+      grid-column: 1 / -1;
+      max-width: 340px;
+      margin: 0 auto;
+    }
+  }
+
+  .testimonial-card {
+    padding: 28px 24px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+  }
+
+  .testimonial-card .stars {
+    color: #c8a84e;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+
+  .testimonial-card blockquote {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .testimonial-card cite {
+    font-size: 0.85rem;
+    font-style: normal;
+    font-weight: 600;
+    color: #c8a84e;
+  }
+
+  /* ====== AUTHOR SECTION ====== */
+  .author-section {
+    padding: 80px 0;
+    background: #0a0a0a;
+  }
+
+  .author-card {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 32px;
+    border: 1px solid rgba(200,168,78,0.15);
+    border-left: 3px solid #c8a84e;
+    border-radius: 4px;
+    background: rgba(200,168,78,0.02);
+  }
+
+  .author-card .section-title {
+    text-align: left;
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+
+  .author-card p {
+    font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+  }
+
+  /* ====== FAQ ====== */
+  .faq {
+    padding: 80px 0;
+    background: #111111;
+  }
+
+  .faq-list {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 24px 0;
+  }
+
+  .faq-item:first-child { padding-top: 0; }
+  .faq-item:last-child { border-bottom: none; }
+
+  .faq-q {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+    cursor: default;
+  }
+
+  .faq-a {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+  }
+
+  /* ====== FINAL CTA ====== */
+  .final-cta {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #0a0a0a 0%, #111111 50%, #0a0a0a 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 300px;
+    background: radial-gradient(ellipse, rgba(200,168,78,0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .final-cta .container { position: relative; z-index: 2; }
+
+  .tagline {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 24px;
+  }
+
+  .tagline em {
+    color: #c8a84e;
+    font-style: normal;
+  }
+
+  .final-price {
+    margin-bottom: 24px;
+  }
+
+  .final-note {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.4);
+    margin-top: 16px;
+  }
+
+  /* ====== FOOTER ====== */
+  .footer {
+    padding: 40px 0;
+    background: #0a0a0a;
+    border-top: 1px solid rgba(255,255,255,0.04);
+    text-align: center;
+  }
+
+  .footer p {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 1px;
+  }
+
+  /* ====== RESPONSIVE ====== */
+  @media (max-width: 520px) {
+    .hero { padding: 60px 0 48px; }
+    .mini-cover { width: 105px; height: 158px; padding: 10px 8px; }
+    .mc-series { font-size: 0.32rem; letter-spacing: 2px; }
+    .mc-title-main { font-size: 0.8rem; }
+    .mc-title-sm { font-size: 0.38rem; }
+    .mc-title-sub { font-size: 0.5rem; }
+    .mc-subtitle { font-size: 0.3rem; }
+    .mc-author { font-size: 0.32rem; }
+    .mc-icon, .mini-cover--gold .mc-icon, .mini-cover--cyan .mc-icon { width: 28px; height: 28px; }
+    .mini-cover--green .mc-icon { width: 28px; height: 16px; }
+    .trilogy-covers { gap: 8px; }
+    .book-section { padding: 56px 0; }
+    .stack-box { padding: 28px 20px; }
+    .value-stack, .testimonials, .author-section, .faq, .final-cta { padding: 60px 0; }
+    .author-card { padding: 28px 20px; }
+  }
+
+  @media (max-width: 380px) {
+    .mini-cover { width: 95px; height: 142px; padding: 8px 6px; }
+    .mc-title-main { font-size: 0.7rem; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ====== HERO ====== -->
+  <section class="hero">
+    <div class="container">
+
+      <p class="label">The Complete Trilogy</p>
+
+      <h1 class="headline">The Full Truth About Money -- Past, Present, and Future</h1>
+
+      <p class="subheadline">Three books. 28,000 words. $250 million in real-world experience. For less than your morning coffee.</p>
+
+      <!-- 3 Book Covers -->
+      <div class="trilogy-covers">
+
+        <!-- Book 1: Gold -->
+        <div class="mini-cover mini-cover--gold">
+          <div class="mc-series">Money Decoded</div>
+          <div class="mc-center">
+            <div class="mc-icon"></div>
+            <div class="mc-title-sm mc-accent">The</div>
+            <div class="mc-title-main">HISTORY</div>
+            <div class="mc-title-sub mc-accent">of</div>
+            <div class="mc-title-main mc-title-color">MONEY</div>
+          </div>
+          <div class="mc-author">J. Marque</div>
+        </div>
+
+        <!-- Book 2: Green -->
+        <div class="mini-cover mini-cover--green">
+          <div class="mc-series">Money Decoded</div>
+          <div class="mc-center">
+            <div class="mc-icon"></div>
+            <div class="mc-title-main">MODERN</div>
+            <div class="mc-title-main mc-title-color">MONEY</div>
+          </div>
+          <div class="mc-subtitle">How the System Really Works</div>
+          <div class="mc-author">J. Marque</div>
+        </div>
+
+        <!-- Book 3: Cyan -->
+        <div class="mini-cover mini-cover--cyan">
+          <div class="mc-series">Money Decoded</div>
+          <div class="mc-center">
+            <div class="mc-icon"></div>
+            <div class="mc-title-sm mc-accent">The</div>
+            <div class="mc-title-main">FUTURE</div>
+            <div class="mc-title-sub mc-accent">of</div>
+            <div class="mc-title-main mc-title-color">MONEY</div>
+          </div>
+          <div class="mc-author">J. Marque</div>
+        </div>
+
+      </div>
+
+      <!-- Price -->
+      <div class="price-display">
+        <span class="price-old">$19.99</span>
+        <span class="price-new">$7</span>
+        <p class="price-note">Limited time. Price goes up to $19.99.</p>
+      </div>
+
+      <!--
+        =============================================================
+        CHECKOUT INTEGRATION:
+        Replace the href="#checkout" below with your Gumroad product
+        link or GHL checkout page URL.
+        Example: href="https://jamaalrichard.gumroad.com/l/money-decoded-trilogy"
+        Or embed Gumroad overlay: class="gumroad-button"
+        =============================================================
+      -->
+      <a href="#checkout" class="btn-cta">Get All 3 Books for $7</a>
+
+    </div>
+  </section>
+
+  <!-- ====== BOOK 1: THE HISTORY OF MONEY ====== -->
+  <section class="book-section book-section--dark">
+    <div class="container">
+
+      <p class="book-section-label gold">Book 1</p>
+      <h2 class="book-section-title">The History of Money</h2>
+      <p class="book-section-subtitle">How We Went from Gold to Government Promises</p>
+
+      <ul class="book-bullets book-bullets--gold">
+        <li>Why gold was "God's money" for thousands of years -- and what replaced it</li>
+        <li>How China invented paper money in the 10th century -- and the disaster that followed</li>
+        <li>Why the Federal Reserve was designed in secret on a private island</li>
+        <li>How FDR confiscated Americans' gold and then raised the price 69%</li>
+        <li>What really happened on August 15, 1971 -- the day money died</li>
+      </ul>
+
+    </div>
+  </section>
+
+  <!-- ====== BOOK 2: MODERN MONEY ====== -->
+  <section class="book-section book-section--light">
+    <div class="container">
+
+      <p class="book-section-label green">Book 2</p>
+      <h2 class="book-section-title">Modern Money</h2>
+      <p class="book-section-subtitle">How the System Really Works (And Why Savers Are Losers)</p>
+
+      <div class="stat-callout stat-callout--green">
+        Your bank pays <strong>0.45%</strong>. Inflation runs <strong>3-8%</strong>. You're losing money by saving it.
+      </div>
+
+      <ul class="book-bullets book-bullets--green">
+        <li>How banks legally create money "out of thin air" every time they make a loan</li>
+        <li>Why the Federal Reserve is neither "federal" nor has "reserves"</li>
+        <li>How the U.S. exports its inflation to the rest of the world through the petrodollar</li>
+        <li>Why $1 in 1971 buys only $0.13 worth of goods today</li>
+        <li>What the wealthy do instead of saving -- and why it works</li>
+      </ul>
+
+    </div>
+  </section>
+
+  <!-- ====== BOOK 3: THE FUTURE OF MONEY ====== -->
+  <section class="book-section book-section--dark">
+    <div class="container">
+
+      <p class="book-section-label cyan">Book 3</p>
+      <h2 class="book-section-title">The Future of Money</h2>
+      <p class="book-section-subtitle">What's Coming Next and How to Stay Ahead</p>
+
+      <div class="stat-callout stat-callout--cyan">
+        BlackRock just put <strong>$4.7B</strong> into Bitcoin. Central banks are hoarding gold at record levels.
+      </div>
+
+      <ul class="book-bullets book-bullets--cyan">
+        <li>Why the dollar's reign as the world's reserve currency is ending -- and what happens next</li>
+        <li>How Bitcoin went from internet joke to an asset class BlackRock is betting billions on</li>
+        <li>Why stablecoins now process more volume than Visa and Mastercard combined</li>
+        <li>How CBDCs could let governments control what you buy and when your money expires</li>
+        <li>The tokenization revolution that lets you own $100 of a building instead of needing $100K</li>
+      </ul>
+
+      <div class="playbook-tag">Includes a 10-Step Wealth Positioning Playbook</div>
+
+    </div>
+  </section>
+
+  <!-- ====== VALUE STACK ====== -->
+  <section class="value-stack">
+    <div class="container">
+
+      <div class="stack-box">
+        <h2>Here's What You Get</h2>
+
+        <div class="stack-item">
+          <span class="stack-item-name">
+            Book 1: The History of Money
+            <small>8,400 words</small>
+          </span>
+          <span class="stack-item-value">$9.99</span>
+        </div>
+
+        <div class="stack-item">
+          <span class="stack-item-name">
+            Book 2: Modern Money
+            <small>8,000 words</small>
+          </span>
+          <span class="stack-item-value">$9.99</span>
+        </div>
+
+        <div class="stack-item">
+          <span class="stack-item-name">
+            Book 3: The Future of Money
+            <small>12,000 words</small>
+          </span>
+          <span class="stack-item-value">$9.99</span>
+        </div>
+
+        <div class="stack-item">
+          <span class="stack-item-name">
+            BONUS: 10-Step Wealth Positioning Playbook
+            <small>Actionable framework from the final chapter</small>
+          </span>
+          <span class="stack-item-value">$27.00</span>
+        </div>
+
+        <div class="stack-total-line">
+          <span class="stack-total-old">Total value: $56.97</span>
+          <p class="stack-total-label">Today Only</p>
+          <p class="stack-total-price">$7</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== TESTIMONIALS ====== -->
+  <section class="testimonials">
+    <div class="container--wide">
+
+      <h2 class="section-title">Readers Are Saying</h2>
+
+      <div class="testimonial-grid">
+
+        <div class="testimonial-card">
+          <div class="stars">* * * * *</div>
+          <blockquote>"I read this in one sitting. I can't believe nobody taught me this."</blockquote>
+          <cite>-- Marcus, Atlanta</cite>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">* * * * *</div>
+          <blockquote>"This should be required reading in every high school."</blockquote>
+          <cite>-- Keisha, Houston</cite>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">* * * * *</div>
+          <blockquote>"Book 1 opened my eyes. Then I had to get Books 2 and 3."</blockquote>
+          <cite>-- David, Chicago</cite>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== ABOUT THE AUTHOR ====== -->
+  <section class="author-section">
+    <div class="container--wide">
+
+      <div class="author-card">
+        <h2 class="section-title">About the Author</h2>
+        <p>J. Marque has closed over $250 million in real estate as a wholesaler, flipper, landlord, title company owner, and consultant. A United States Marine Corps veteran, he writes to give people the financial education the system was designed to keep from them.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== FAQ ====== -->
+  <section class="faq">
+    <div class="container">
+
+      <h2 class="section-title">Frequently Asked Questions</h2>
+
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <p class="faq-q">What format are the books?</p>
+          <p class="faq-a">PDF and EPUB. Instant download -- you'll get access immediately after purchase.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q">Is this really $7?</p>
+          <p class="faq-a">Yes, temporarily. The regular price is $19.99 for the trilogy. This $7 offer won't last forever.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q">Do I need to read all 3?</p>
+          <p class="faq-a">Book 1 stands alone as a complete story. But the trilogy connects the full picture -- past, present, and future. Most readers say Book 3 is where everything clicks.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q">Who is J. Marque?</p>
+          <p class="faq-a">J. Marque has closed over $250 million in real estate transactions and is a United States Marine Corps veteran. He writes to give people the financial education the system was designed to keep from them.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== FINAL CTA ====== -->
+  <section class="final-cta">
+    <div class="container">
+
+      <div class="divider" style="margin-bottom: 40px;"></div>
+
+      <p class="tagline">The rules changed. Now you know. <em>Make your move.</em></p>
+
+      <div class="final-price">
+        <span class="price-old">$19.99</span>
+        <span class="price-new">$7</span>
+      </div>
+
+      <!--
+        =============================================================
+        CHECKOUT INTEGRATION:
+        Replace href="#checkout" with your Gumroad or GHL checkout URL.
+        =============================================================
+      -->
+      <a href="#checkout" class="btn-cta">Get the Trilogy for $7</a>
+
+      <p class="final-note">Instant download. All 3 books. No risk.</p>
+
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <p>J. Marque &nbsp;|&nbsp; Money Decoded &nbsp;|&nbsp; The rules changed. Now you know.</p>
+  </footer>
+
+</body>
+</html>
