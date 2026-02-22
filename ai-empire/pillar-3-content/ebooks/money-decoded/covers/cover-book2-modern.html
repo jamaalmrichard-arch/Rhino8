@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Money Decoded: Modern Money</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1600px;
+    height: 2560px;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .cover {
+    width: 1600px;
+    height: 2560px;
+    background: #0a0a0a;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 120px 120px 100px;
+  }
+
+  /* Subtle radial glow */
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    width: 900px;
+    height: 900px;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.07) 0%, rgba(16, 185, 129, 0.02) 40%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* Fine grain texture overlay */
+  .cover::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(16, 185, 129, 0.006) 2px,
+      rgba(16, 185, 129, 0.006) 4px
+    );
+    pointer-events: none;
+  }
+
+  /* Geometric chart element — rising bars */
+  .chart-element {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    width: 500px;
+    height: 360px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 18px;
+    z-index: 1;
+  }
+
+  .chart-bar {
+    width: 28px;
+    background: linear-gradient(180deg, rgba(16, 185, 129, 0.18) 0%, rgba(16, 185, 129, 0.03) 100%);
+    border-top: 2px solid rgba(16, 185, 129, 0.25);
+    border-radius: 2px 2px 0 0;
+  }
+
+  .chart-bar:nth-child(1) { height: 60px; }
+  .chart-bar:nth-child(2) { height: 90px; }
+  .chart-bar:nth-child(3) { height: 75px; }
+  .chart-bar:nth-child(4) { height: 130px; }
+  .chart-bar:nth-child(5) { height: 110px; }
+  .chart-bar:nth-child(6) { height: 170px; }
+  .chart-bar:nth-child(7) { height: 155px; }
+  .chart-bar:nth-child(8) { height: 220px; }
+  .chart-bar:nth-child(9) { height: 200px; }
+  .chart-bar:nth-child(10) { height: 280px; }
+  .chart-bar:nth-child(11) { height: 310px; }
+  .chart-bar:nth-child(12) { height: 340px; }
+
+  /* Horizontal grid lines */
+  .grid-lines {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    width: 500px;
+    height: 360px;
+    z-index: 0;
+  }
+
+  .grid-line {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: rgba(16, 185, 129, 0.04);
+    left: 0;
+  }
+
+  .grid-line:nth-child(1) { bottom: 0; }
+  .grid-line:nth-child(2) { bottom: 72px; }
+  .grid-line:nth-child(3) { bottom: 144px; }
+  .grid-line:nth-child(4) { bottom: 216px; }
+  .grid-line:nth-child(5) { bottom: 288px; }
+
+  /* Trend line overlay */
+  .trend-line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    width: 500px;
+    height: 360px;
+    z-index: 2;
+  }
+
+  .trend-line svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Dollar sign watermark */
+  .dollar-watermark {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    font-size: 500px;
+    color: rgba(16, 185, 129, 0.025);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* Top section */
+  .top-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5;
+  }
+
+  .series-label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 28px;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    color: #10B981;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .series-part {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: rgba(16, 185, 129, 0.6);
+    text-align: center;
+  }
+
+  .top-line {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #10B981, transparent);
+    margin-top: 40px;
+  }
+
+  /* Middle section */
+  .middle-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5;
+    margin-top: 160px;
+  }
+
+  .title-main {
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    font-size: 168px;
+    line-height: 0.95;
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 10px;
+    text-shadow: 0 0 80px rgba(16, 185, 129, 0.08);
+  }
+
+  .title-money {
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    font-size: 168px;
+    line-height: 0.95;
+    color: #10B981;
+    text-align: center;
+    text-shadow: 0 0 60px rgba(16, 185, 129, 0.12);
+  }
+
+  .divider {
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #10B981, transparent);
+    margin: 55px 0 45px;
+  }
+
+  .subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.55);
+    text-align: center;
+    line-height: 1.65;
+    max-width: 1000px;
+  }
+
+  .subtitle em {
+    font-style: italic;
+    color: rgba(16, 185, 129, 0.7);
+    font-weight: 400;
+  }
+
+  /* Bottom section */
+  .bottom-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5;
+  }
+
+  .bottom-line {
+    width: 120px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.4), transparent);
+    margin-bottom: 45px;
+  }
+
+  .author {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 34px;
+    letter-spacing: 14px;
+    text-transform: uppercase;
+    color: #10B981;
+    text-align: center;
+  }
+
+  /* Corner accents */
+  .corner {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    z-index: 6;
+  }
+
+  .corner-tl {
+    top: 50px; left: 50px;
+    border-top: 1px solid rgba(16, 185, 129, 0.2);
+    border-left: 1px solid rgba(16, 185, 129, 0.2);
+  }
+
+  .corner-tr {
+    top: 50px; right: 50px;
+    border-top: 1px solid rgba(16, 185, 129, 0.2);
+    border-right: 1px solid rgba(16, 185, 129, 0.2);
+  }
+
+  .corner-bl {
+    bottom: 50px; left: 50px;
+    border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+    border-left: 1px solid rgba(16, 185, 129, 0.2);
+  }
+
+  .corner-br {
+    bottom: 50px; right: 50px;
+    border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+    border-right: 1px solid rgba(16, 185, 129, 0.2);
+  }
+
+  /* Vertical side text */
+  .side-text {
+    position: absolute;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: rgba(16, 185, 129, 0.15);
+    writing-mode: vertical-rl;
+    z-index: 6;
+  }
+
+  .side-text-left {
+    left: 55px;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  .side-text-right {
+    right: 55px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+</style>
+</head>
+<body>
+  <div class="cover">
+    <!-- Corner accents -->
+    <div class="corner corner-tl"></div>
+    <div class="corner corner-tr"></div>
+    <div class="corner corner-bl"></div>
+    <div class="corner corner-br"></div>
+
+    <!-- Side text -->
+    <div class="side-text side-text-left">MONEY DECODED</div>
+    <div class="side-text side-text-right">PART TWO</div>
+
+    <!-- Dollar watermark -->
+    <div class="dollar-watermark">$</div>
+
+    <!-- Chart grid lines -->
+    <div class="grid-lines">
+      <div class="grid-line"></div>
+      <div class="grid-line"></div>
+      <div class="grid-line"></div>
+      <div class="grid-line"></div>
+      <div class="grid-line"></div>
+    </div>
+
+    <!-- Chart bars -->
+    <div class="chart-element">
+      <div class="chart-bar"></div>
+      <div class="chart-bar"></div>
+      <div class="chart-bar"></div>
+      <div class="chart-bar"></div>
+      <div class="chart-bar"></div>
+      <div class="chart-bar"></div>
+      <div class="chart-bar"></div>
+      <div class="chart-bar"></div>
+      <div class="chart-bar"></div>
+      <div class="chart-bar"></div>
+      <div class="chart-bar"></div>
+      <div class="chart-bar"></div>
+    </div>
+
+    <!-- Trend line -->
+    <div class="trend-line">
+      <svg viewBox="0 0 500 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 20 320 Q 80 310 120 290 Q 160 270 200 260 Q 240 250 260 220 Q 300 180 340 140 Q 380 100 420 60 Q 460 30 480 15"
+              stroke="rgba(16, 185, 129, 0.2)" stroke-width="2" fill="none"/>
+        <path d="M 20 320 Q 80 310 120 290 Q 160 270 200 260 Q 240 250 260 220 Q 300 180 340 140 Q 380 100 420 60 Q 460 30 480 15 L 480 360 L 20 360 Z"
+              fill="url(#trendFill)"/>
+        <defs>
+          <linearGradient id="trendFill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="rgba(16, 185, 129, 0.06)"/>
+            <stop offset="100%" stop-color="rgba(16, 185, 129, 0)"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <!-- Top -->
+    <div class="top-section">
+      <div class="series-label">Money Decoded</div>
+      <div class="series-part">Part Two</div>
+      <div class="top-line"></div>
+    </div>
+
+    <!-- Middle -->
+    <div class="middle-section">
+      <div class="title-main">MODERN</div>
+      <div class="title-money">MONEY</div>
+
+      <div class="divider"></div>
+
+      <div class="subtitle">How the System Really Works<br><em>(And Why Savers Are Losers)</em></div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="bottom-section">
+      <div class="bottom-line"></div>
+      <div class="author">J. Marque</div>
+    </div>
+  </div>
+</body>
+</html>

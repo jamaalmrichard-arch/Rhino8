@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Money Decoded: The History of Money</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1600px;
+    height: 2560px;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .cover {
+    width: 1600px;
+    height: 2560px;
+    background: #0a0a0a;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 120px 120px 100px;
+  }
+
+  /* Subtle radial glow behind the coin */
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+    width: 900px;
+    height: 900px;
+    background: radial-gradient(circle, rgba(191, 155, 48, 0.08) 0%, rgba(191, 155, 48, 0.03) 40%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* Fine grain texture overlay */
+  .cover::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(191, 155, 48, 0.008) 2px,
+      rgba(191, 155, 48, 0.008) 4px
+    );
+    pointer-events: none;
+  }
+
+  /* Top section */
+  .top-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+  }
+
+  .series-label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 28px;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    color: #BF9B30;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .series-part {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: rgba(191, 155, 48, 0.6);
+    text-align: center;
+  }
+
+  .top-line {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #BF9B30, transparent);
+    margin-top: 40px;
+  }
+
+  /* Middle section — title area */
+  .middle-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    margin-top: -80px;
+  }
+
+  /* Geometric coin element */
+  .coin-element {
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    border: 2px solid rgba(191, 155, 48, 0.25);
+    position: relative;
+    margin-bottom: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .coin-element::before {
+    content: '';
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    border: 1px solid rgba(191, 155, 48, 0.15);
+    position: absolute;
+  }
+
+  .coin-element::after {
+    content: '';
+    width: 340px;
+    height: 340px;
+    border-radius: 50%;
+    border: 1px solid rgba(191, 155, 48, 0.10);
+    position: absolute;
+  }
+
+  .coin-inner {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40% 35%, rgba(212, 175, 55, 0.12) 0%, rgba(191, 155, 48, 0.04) 50%, transparent 70%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  /* Cross pattern inside coin */
+  .coin-inner::before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(191, 155, 48, 0.2), transparent);
+  }
+
+  .coin-inner::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 200px;
+    background: linear-gradient(180deg, transparent, rgba(191, 155, 48, 0.2), transparent);
+  }
+
+  /* Diagonal lines in coin */
+  .coin-diag {
+    position: absolute;
+    width: 160px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(191, 155, 48, 0.12), transparent);
+  }
+
+  .coin-diag:nth-child(1) { transform: rotate(45deg); }
+  .coin-diag:nth-child(2) { transform: rotate(-45deg); }
+  .coin-diag:nth-child(3) { transform: rotate(22.5deg); width: 120px; }
+  .coin-diag:nth-child(4) { transform: rotate(-22.5deg); width: 120px; }
+  .coin-diag:nth-child(5) { transform: rotate(67.5deg); width: 120px; }
+  .coin-diag:nth-child(6) { transform: rotate(-67.5deg); width: 120px; }
+
+  .title-the {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 42px;
+    letter-spacing: 18px;
+    text-transform: uppercase;
+    color: rgba(191, 155, 48, 0.7);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .title-main {
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    font-size: 128px;
+    line-height: 1.0;
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 10px;
+    text-shadow: 0 0 80px rgba(191, 155, 48, 0.1);
+  }
+
+  .title-of {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 64px;
+    color: rgba(191, 155, 48, 0.5);
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .title-money {
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    font-size: 158px;
+    line-height: 1.0;
+    color: #BF9B30;
+    text-align: center;
+    text-shadow: 0 0 60px rgba(191, 155, 48, 0.15);
+  }
+
+  .divider {
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #BF9B30, transparent);
+    margin: 50px 0 45px;
+  }
+
+  .subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 32px;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.55);
+    text-align: center;
+    line-height: 1.6;
+    max-width: 900px;
+  }
+
+  /* Bottom section */
+  .bottom-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+  }
+
+  .bottom-line {
+    width: 120px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(191, 155, 48, 0.4), transparent);
+    margin-bottom: 45px;
+  }
+
+  .author {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 34px;
+    letter-spacing: 14px;
+    text-transform: uppercase;
+    color: #BF9B30;
+    text-align: center;
+  }
+
+  /* Corner accents */
+  .corner {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    z-index: 3;
+  }
+
+  .corner-tl {
+    top: 50px; left: 50px;
+    border-top: 1px solid rgba(191, 155, 48, 0.2);
+    border-left: 1px solid rgba(191, 155, 48, 0.2);
+  }
+
+  .corner-tr {
+    top: 50px; right: 50px;
+    border-top: 1px solid rgba(191, 155, 48, 0.2);
+    border-right: 1px solid rgba(191, 155, 48, 0.2);
+  }
+
+  .corner-bl {
+    bottom: 50px; left: 50px;
+    border-bottom: 1px solid rgba(191, 155, 48, 0.2);
+    border-left: 1px solid rgba(191, 155, 48, 0.2);
+  }
+
+  .corner-br {
+    bottom: 50px; right: 50px;
+    border-bottom: 1px solid rgba(191, 155, 48, 0.2);
+    border-right: 1px solid rgba(191, 155, 48, 0.2);
+  }
+
+  /* Vertical side text */
+  .side-text {
+    position: absolute;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: rgba(191, 155, 48, 0.15);
+    writing-mode: vertical-rl;
+    z-index: 3;
+  }
+
+  .side-text-left {
+    left: 55px;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  .side-text-right {
+    right: 55px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+</style>
+</head>
+<body>
+  <div class="cover">
+    <!-- Corner accents -->
+    <div class="corner corner-tl"></div>
+    <div class="corner corner-tr"></div>
+    <div class="corner corner-bl"></div>
+    <div class="corner corner-br"></div>
+
+    <!-- Side text -->
+    <div class="side-text side-text-left">MONEY DECODED</div>
+    <div class="side-text side-text-right">PART ONE</div>
+
+    <!-- Top -->
+    <div class="top-section">
+      <div class="series-label">Money Decoded</div>
+      <div class="series-part">Part One</div>
+      <div class="top-line"></div>
+    </div>
+
+    <!-- Middle -->
+    <div class="middle-section">
+      <div class="coin-element">
+        <div class="coin-inner">
+          <div class="coin-diag"></div>
+          <div class="coin-diag"></div>
+          <div class="coin-diag"></div>
+          <div class="coin-diag"></div>
+          <div class="coin-diag"></div>
+          <div class="coin-diag"></div>
+        </div>
+      </div>
+
+      <div class="title-the">The</div>
+      <div class="title-main">HISTORY</div>
+      <div class="title-of">of</div>
+      <div class="title-money">MONEY</div>
+
+      <div class="divider"></div>
+
+      <div class="subtitle">From Gold Coins to Paper Promises</div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="bottom-section">
+      <div class="bottom-line"></div>
+      <div class="author">J. Marque</div>
+    </div>
+  </div>
+</body>
+</html>

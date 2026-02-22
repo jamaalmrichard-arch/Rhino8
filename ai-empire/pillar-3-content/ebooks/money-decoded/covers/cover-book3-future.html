@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Money Decoded: The Future of Money</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1600px;
+    height: 2560px;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .cover {
+    width: 1600px;
+    height: 2560px;
+    background: #0a0a0a;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 120px 120px 100px;
+  }
+
+  /* Subtle radial glow */
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1000px;
+    height: 1000px;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.06) 0%, rgba(6, 182, 212, 0.02) 40%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* Scan line texture */
+  .cover::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(6, 182, 212, 0.005) 2px,
+      rgba(6, 182, 212, 0.005) 4px
+    );
+    pointer-events: none;
+  }
+
+  /* Circuit board / blockchain grid pattern */
+  .circuit-grid {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -58%);
+    width: 600px;
+    height: 600px;
+    z-index: 1;
+  }
+
+  /* Horizontal circuit lines */
+  .h-line {
+    position: absolute;
+    height: 1px;
+    background: rgba(6, 182, 212, 0.08);
+    left: 0;
+  }
+
+  .h-line:nth-child(1) { top: 0; width: 100%; }
+  .h-line:nth-child(2) { top: 100px; width: 70%; left: 15%; }
+  .h-line:nth-child(3) { top: 200px; width: 85%; left: 8%; }
+  .h-line:nth-child(4) { top: 300px; width: 100%; }
+  .h-line:nth-child(5) { top: 400px; width: 75%; left: 12%; }
+  .h-line:nth-child(6) { top: 500px; width: 90%; left: 5%; }
+  .h-line:nth-child(7) { top: 600px; width: 100%; }
+
+  /* Vertical circuit lines */
+  .v-line {
+    position: absolute;
+    width: 1px;
+    background: rgba(6, 182, 212, 0.08);
+    top: 0;
+  }
+
+  .v-line:nth-child(8) { left: 0; height: 100%; }
+  .v-line:nth-child(9) { left: 100px; height: 75%; top: 12%; }
+  .v-line:nth-child(10) { left: 200px; height: 85%; top: 8%; }
+  .v-line:nth-child(11) { left: 300px; height: 100%; }
+  .v-line:nth-child(12) { left: 400px; height: 70%; top: 15%; }
+  .v-line:nth-child(13) { left: 500px; height: 90%; top: 5%; }
+  .v-line:nth-child(14) { left: 600px; height: 100%; }
+
+  /* Circuit nodes (intersection dots) */
+  .node {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(6, 182, 212, 0.2);
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 12px rgba(6, 182, 212, 0.15);
+  }
+
+  .node::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: rgba(6, 182, 212, 0.5);
+  }
+
+  .node-bright {
+    width: 10px;
+    height: 10px;
+    background: rgba(6, 182, 212, 0.35);
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.25), 0 0 40px rgba(6, 182, 212, 0.1);
+  }
+
+  .node-bright::after {
+    width: 4px;
+    height: 4px;
+    background: rgba(6, 182, 212, 0.8);
+  }
+
+  /* Central hexagon */
+  .hex-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -58%);
+    z-index: 2;
+  }
+
+  .hexagon {
+    width: 160px;
+    height: 160px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hexagon svg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hex-inner {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hex-inner svg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Radiating lines from center */
+  .radial-line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 1px;
+    transform-origin: left center;
+    background: linear-gradient(90deg, rgba(6, 182, 212, 0.15), transparent);
+    z-index: 1;
+  }
+
+  .radial-line:nth-child(1) { width: 250px; transform: rotate(0deg); }
+  .radial-line:nth-child(2) { width: 200px; transform: rotate(30deg); }
+  .radial-line:nth-child(3) { width: 280px; transform: rotate(60deg); }
+  .radial-line:nth-child(4) { width: 220px; transform: rotate(90deg); }
+  .radial-line:nth-child(5) { width: 260px; transform: rotate(120deg); }
+  .radial-line:nth-child(6) { width: 190px; transform: rotate(150deg); }
+  .radial-line:nth-child(7) { width: 250px; transform: rotate(180deg); }
+  .radial-line:nth-child(8) { width: 230px; transform: rotate(210deg); }
+  .radial-line:nth-child(9) { width: 270px; transform: rotate(240deg); }
+  .radial-line:nth-child(10) { width: 200px; transform: rotate(270deg); }
+  .radial-line:nth-child(11) { width: 240px; transform: rotate(300deg); }
+  .radial-line:nth-child(12) { width: 210px; transform: rotate(330deg); }
+
+  .radial-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -58%);
+    width: 0;
+    height: 0;
+    z-index: 1;
+  }
+
+  /* Block chain representation */
+  .block {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    border: 1px solid rgba(6, 182, 212, 0.12);
+    border-radius: 3px;
+    background: rgba(6, 182, 212, 0.03);
+  }
+
+  .block::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 2px;
+    background: rgba(6, 182, 212, 0.08);
+  }
+
+  /* Top section */
+  .top-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+  }
+
+  .series-label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 28px;
+    letter-spacing: 12px;
+    text-transform: uppercase;
+    color: #06B6D4;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .series-part {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: rgba(6, 182, 212, 0.6);
+    text-align: center;
+  }
+
+  .top-line {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #06B6D4, transparent);
+    margin-top: 40px;
+  }
+
+  /* Middle section */
+  .middle-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    margin-top: 80px;
+  }
+
+  .title-the {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 42px;
+    letter-spacing: 18px;
+    text-transform: uppercase;
+    color: rgba(6, 182, 212, 0.7);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .title-main {
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    font-size: 128px;
+    line-height: 1.0;
+    color: #FFFFFF;
+    text-align: center;
+    margin-bottom: 10px;
+    text-shadow: 0 0 80px rgba(6, 182, 212, 0.08);
+  }
+
+  .title-of {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 64px;
+    color: rgba(6, 182, 212, 0.5);
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .title-money {
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    font-size: 158px;
+    line-height: 1.0;
+    color: #06B6D4;
+    text-align: center;
+    text-shadow: 0 0 60px rgba(6, 182, 212, 0.12), 0 0 120px rgba(6, 182, 212, 0.05);
+  }
+
+  .divider {
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #06B6D4, transparent);
+    margin: 50px 0 45px;
+  }
+
+  .subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 32px;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.55);
+    text-align: center;
+    line-height: 1.6;
+    max-width: 950px;
+  }
+
+  /* Bottom section */
+  .bottom-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+  }
+
+  .bottom-line {
+    width: 120px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.4), transparent);
+    margin-bottom: 45px;
+  }
+
+  .author {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 34px;
+    letter-spacing: 14px;
+    text-transform: uppercase;
+    color: #06B6D4;
+    text-align: center;
+  }
+
+  /* Corner accents */
+  .corner {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    z-index: 11;
+  }
+
+  .corner-tl {
+    top: 50px; left: 50px;
+    border-top: 1px solid rgba(6, 182, 212, 0.2);
+    border-left: 1px solid rgba(6, 182, 212, 0.2);
+  }
+
+  .corner-tr {
+    top: 50px; right: 50px;
+    border-top: 1px solid rgba(6, 182, 212, 0.2);
+    border-right: 1px solid rgba(6, 182, 212, 0.2);
+  }
+
+  .corner-bl {
+    bottom: 50px; left: 50px;
+    border-bottom: 1px solid rgba(6, 182, 212, 0.2);
+    border-left: 1px solid rgba(6, 182, 212, 0.2);
+  }
+
+  .corner-br {
+    bottom: 50px; right: 50px;
+    border-bottom: 1px solid rgba(6, 182, 212, 0.2);
+    border-right: 1px solid rgba(6, 182, 212, 0.2);
+  }
+
+  /* Vertical side text */
+  .side-text {
+    position: absolute;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: rgba(6, 182, 212, 0.15);
+    writing-mode: vertical-rl;
+    z-index: 11;
+  }
+
+  .side-text-left {
+    left: 55px;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  .side-text-right {
+    right: 55px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+</style>
+</head>
+<body>
+  <div class="cover">
+    <!-- Corner accents -->
+    <div class="corner corner-tl"></div>
+    <div class="corner corner-tr"></div>
+    <div class="corner corner-bl"></div>
+    <div class="corner corner-br"></div>
+
+    <!-- Side text -->
+    <div class="side-text side-text-left">MONEY DECODED</div>
+    <div class="side-text side-text-right">PART THREE</div>
+
+    <!-- Circuit grid -->
+    <div class="circuit-grid">
+      <!-- Horizontal lines -->
+      <div class="h-line"></div>
+      <div class="h-line"></div>
+      <div class="h-line"></div>
+      <div class="h-line"></div>
+      <div class="h-line"></div>
+      <div class="h-line"></div>
+      <div class="h-line"></div>
+      <!-- Vertical lines -->
+      <div class="v-line"></div>
+      <div class="v-line"></div>
+      <div class="v-line"></div>
+      <div class="v-line"></div>
+      <div class="v-line"></div>
+      <div class="v-line"></div>
+      <div class="v-line"></div>
+
+      <!-- Nodes at intersections -->
+      <div class="node" style="top: 0; left: 0;"></div>
+      <div class="node" style="top: 0; left: 300px;"></div>
+      <div class="node" style="top: 0; left: 600px;"></div>
+      <div class="node node-bright" style="top: 100px; left: 200px;"></div>
+      <div class="node" style="top: 100px; left: 400px;"></div>
+      <div class="node" style="top: 200px; left: 100px;"></div>
+      <div class="node node-bright" style="top: 200px; left: 300px;"></div>
+      <div class="node" style="top: 200px; left: 500px;"></div>
+      <div class="node" style="top: 300px; left: 0;"></div>
+      <div class="node node-bright" style="top: 300px; left: 300px;"></div>
+      <div class="node" style="top: 300px; left: 600px;"></div>
+      <div class="node" style="top: 400px; left: 200px;"></div>
+      <div class="node node-bright" style="top: 400px; left: 400px;"></div>
+      <div class="node" style="top: 500px; left: 100px;"></div>
+      <div class="node" style="top: 500px; left: 300px;"></div>
+      <div class="node" style="top: 500px; left: 500px;"></div>
+      <div class="node" style="top: 600px; left: 0;"></div>
+      <div class="node" style="top: 600px; left: 300px;"></div>
+      <div class="node" style="top: 600px; left: 600px;"></div>
+
+      <!-- Blockchain blocks scattered -->
+      <div class="block" style="top: 45px; left: 420px;"></div>
+      <div class="block" style="top: 145px; left: 50px;"></div>
+      <div class="block" style="top: 245px; left: 530px;"></div>
+      <div class="block" style="top: 450px; left: 60px;"></div>
+      <div class="block" style="top: 540px; left: 420px;"></div>
+    </div>
+
+    <!-- Radial lines from center -->
+    <div class="radial-container">
+      <div class="radial-line"></div>
+      <div class="radial-line"></div>
+      <div class="radial-line"></div>
+      <div class="radial-line"></div>
+      <div class="radial-line"></div>
+      <div class="radial-line"></div>
+      <div class="radial-line"></div>
+      <div class="radial-line"></div>
+      <div class="radial-line"></div>
+      <div class="radial-line"></div>
+      <div class="radial-line"></div>
+      <div class="radial-line"></div>
+    </div>
+
+    <!-- Central hexagon -->
+    <div class="hex-container">
+      <div class="hexagon">
+        <svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="80,5 150,42 150,118 80,155 10,118 10,42"
+                   stroke="rgba(6, 182, 212, 0.2)" stroke-width="1" fill="rgba(6, 182, 212, 0.02)"/>
+        </svg>
+        <div class="hex-inner">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="50,5 93,27 93,73 50,95 7,73 7,27"
+                     stroke="rgba(6, 182, 212, 0.15)" stroke-width="1" fill="rgba(6, 182, 212, 0.03)"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Top -->
+    <div class="top-section">
+      <div class="series-label">Money Decoded</div>
+      <div class="series-part">Part Three</div>
+      <div class="top-line"></div>
+    </div>
+
+    <!-- Middle -->
+    <div class="middle-section">
+      <div class="title-the">The</div>
+      <div class="title-main">FUTURE</div>
+      <div class="title-of">of</div>
+      <div class="title-money">MONEY</div>
+
+      <div class="divider"></div>
+
+      <div class="subtitle">What's Coming Next and<br>How to Stay Ahead</div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="bottom-section">
+      <div class="bottom-line"></div>
+      <div class="author">J. Marque</div>
+    </div>
+  </div>
+</body>
+</html>
