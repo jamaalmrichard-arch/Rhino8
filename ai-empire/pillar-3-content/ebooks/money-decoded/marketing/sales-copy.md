@@ -144,22 +144,25 @@ This is Part 3 of the MONEY DECODED trilogy. The shift is happening whether you'
 
 ---
 
-## Pricing Strategy
+## Pricing Strategy (UPDATED 2026-02-22)
 
 | Product | Price | Notes |
 |---------|-------|-------|
-| Individual ebook | $9.99 | Standard ebook pricing, 70% royalty on KDP |
-| Trilogy bundle | $24.99 | 17% discount vs. buying individually |
-| KDP price (each) | $4.99-$9.99 | Sweet spot for 70% royalty tier |
-| Gumroad price (each) | $9.99 | Keep 95% after fees |
-| Gumroad bundle | $19.99 | Aggressive bundle price, builds email list |
-| Lead magnet | Book 1 FREE | Give away Part 1 to hook into Parts 2 & 3 |
+| Lead magnet | Book 1 FREE | Email capture via GHL opt-in page |
+| Tripwire bundle (all 3) | $7 | Impulse buy — 10% conversion target. Data: $7 tripwire generates 89% more total funnel revenue than $19.99 |
+| FIRE Workbook OTO | $97 | One-time offer on thank-you page after $7 purchase. 7 modules, 25 pages. |
+| Group Coaching | $5,997 | 6-month FIRE + RE execution. Application required. Coach Financing available. |
+| 1-on-1 Coaching | $14,997 | Premium upgrade from group. Capped at 5-8 clients. |
+| KDP price (each) | $4.99-$9.99 | Secondary channel — Amazon KDP for discoverability |
 
-**Recommended launch strategy:**
-1. Book 1 free on Gumroad (email capture) → upsell Parts 2 & 3
-2. All 3 on Amazon KDP at $9.99 each
-3. Bundle on Gumroad at $19.99 (better margin than Amazon)
-4. Use Book 1 as lead magnet for Pipeline Mastery audience overlap
+**Funnel flow:**
+1. Book 1 FREE (GHL opt-in) → email capture
+2. $7 trilogy tripwire (Gumroad/GHL checkout) → creates a buyer
+3. $97 FIRE Workbook OTO (one-click upsell) → mid-tier
+4. $5,997 Group Coaching (application → strategy call) → core revenue
+5. $14,997 1-on-1 upgrade (upsell from group) → premium
+
+**Full funnel spec:** `business/funnel/MASTER_FUNNEL_SPEC.md`
 
 ---
 
