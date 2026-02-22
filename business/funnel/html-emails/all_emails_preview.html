@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Money Decoded — All 23 Emails Preview</title>
+<style>
+  /* ===== PAGE RESET & GLOBALS ===== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #111;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #d0d0d0;
+    line-height: 1.6;
+    padding-bottom: 120px;
+  }
+
+  /* ===== TOP NAVIGATION ===== */
+  .page-header {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    border-bottom: 3px solid #c8a84e;
+    padding: 40px 20px 30px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  .page-header h1 {
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    margin-bottom: 6px;
+  }
+  .page-header .subtitle {
+    font-size: 13px;
+    color: #888;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .nav-bar {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .nav-bar a {
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .nav-bar a.nav-a { background: #1e1a10; color: #c8a84e; border: 1px solid #c8a84e33; }
+  .nav-bar a.nav-b { background: #101a10; color: #6ab56a; border: 1px solid #6ab56a33; }
+  .nav-bar a.nav-c { background: #10101a; color: #6a8ab5; border: 1px solid #6a8ab533; }
+  .nav-bar a.nav-d { background: #1a1010; color: #b56a6a; border: 1px solid #b56a6a33; }
+  .nav-bar a:hover { opacity: 0.8; transform: translateY(-1px); }
+
+  /* ===== SEQUENCE SECTIONS ===== */
+  .sequence-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px 0;
+  }
+  .sequence-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 6px;
+  }
+  .sequence-header.seq-a { border-left: 4px solid #c8a84e; background: #1e1a1011; }
+  .sequence-header.seq-b { border-left: 4px solid #6ab56a; background: #101a1011; }
+  .sequence-header.seq-c { border-left: 4px solid #6a8ab5; background: #10101a11; }
+  .sequence-header.seq-d { border-left: 4px solid #b56a6a; background: #1a101011; }
+  .sequence-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .seq-a h2 { color: #c8a84e; }
+  .seq-b h2 { color: #6ab56a; }
+  .seq-c h2 { color: #6a8ab5; }
+  .seq-d h2 { color: #b56a6a; }
+  .sequence-header p {
+    font-size: 13px;
+    color: #777;
+  }
+
+  /* ===== EMAIL WRAPPER (LABEL + EMAIL) ===== */
+  .email-block {
+    margin-bottom: 60px;
+  }
+  .email-label {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+    padding: 0 4px;
+    flex-wrap: wrap;
+  }
+  .email-id {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 4px 12px;
+    border-radius: 3px;
+    font-family: 'SF Mono', 'Consolas', monospace;
+  }
+  .email-id.seq-a { background: #c8a84e22; color: #c8a84e; }
+  .email-id.seq-b { background: #6ab56a22; color: #6ab56a; }
+  .email-id.seq-c { background: #6a8ab522; color: #6a8ab5; }
+  .email-id.seq-d { background: #b56a6a22; color: #b56a6a; }
+  .email-subject {
+    font-size: 15px;
+    font-weight: 600;
+    color: #eee;
+    flex: 1;
+  }
+  .email-meta {
+    font-size: 11px;
+    color: #666;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ===== EMAIL CONTAINER (600px MAX) ===== */
+  .email-container {
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  }
+
+  /* ===== TEMPLATE 1 — PREMIUM BRANDED ===== */
+  .t1-header {
+    background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+    padding: 28px 32px 22px;
+    border-bottom: 3px solid #c8a84e;
+    text-align: center;
+  }
+  .t1-header .brand {
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    font-weight: 300;
+  }
+  .t1-header .brand-name {
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 8px;
+    color: #c8a84e;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .t1-body {
+    background: #fafafa;
+    padding: 36px 32px;
+    color: #2a2a2a;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+  .t1-body p { margin-bottom: 16px; }
+  .t1-body strong { color: #1a1a1a; }
+  .t1-body .cta-btn {
+    display: inline-block;
+    background: #c8a84e;
+    color: #0a0a0a;
+    padding: 14px 32px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 16px 0;
+  }
+  .t1-body .ps {
+    font-size: 13px;
+    color: #666;
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 16px;
+  }
+  .t1-footer {
+    background: #0a0a0a;
+    padding: 20px 32px;
+    text-align: center;
+    font-size: 11px;
+    color: #555;
+    line-height: 1.6;
+  }
+  .t1-footer .sig {
+    color: #c8a84e;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+
+  /* ===== TEMPLATE 2 — CLEAN MINIMAL ===== */
+  .t2-header {
+    background: #fafafa;
+    padding: 20px 32px 0;
+  }
+  .t2-brand {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    font-weight: 600;
+  }
+  .t2-body {
+    background: #fafafa;
+    padding: 24px 32px 32px;
+    color: #2a2a2a;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+  .t2-body p { margin-bottom: 16px; }
+  .t2-body strong { color: #1a1a1a; }
+  .t2-body .stat-block {
+    background: #f0f0f0;
+    border-left: 3px solid #c8a84e;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 14px;
+    color: #333;
+  }
+  .t2-body .gold-link {
+    color: #c8a84e;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 600;
+  }
+  .t2-body ul {
+    margin: 12px 0 16px 20px;
+  }
+  .t2-body ul li {
+    margin-bottom: 6px;
+    color: #333;
+  }
+  .t2-divider {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 24px 0 16px;
+  }
+  .t2-sig {
+    color: #555;
+    font-size: 14px;
+  }
+  .t2-footer {
+    background: #fafafa;
+    padding: 0 32px 24px;
+    font-size: 11px;
+    color: #999;
+  }
+  .t2-body .ps {
+    font-size: 13px;
+    color: #777;
+    margin-top: 16px;
+  }
+  .t2-body .cta-btn {
+    display: inline-block;
+    background: #c8a84e;
+    color: #0a0a0a;
+    padding: 14px 32px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 16px 0;
+  }
+
+  /* ===== TEMPLATE 3 — DARK PREMIUM ===== */
+  .t3-wrapper {
+    background: #0a0a0a;
+  }
+  .t3-header {
+    padding: 28px 32px 22px;
+    border-bottom: 2px solid #c8a84e;
+    text-align: center;
+  }
+  .t3-header .brand {
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    font-weight: 300;
+  }
+  .t3-header .brand-name {
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 6px;
+    color: #c8a84e;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .t3-body {
+    padding: 36px 32px;
+    color: #d0d0d0;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+  .t3-body p { margin-bottom: 16px; }
+  .t3-body .headline {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.35;
+    margin-bottom: 20px;
+  }
+  .t3-body .headline .gold { color: #c8a84e; }
+  .t3-body strong { color: #fff; }
+  .t3-body .value-box {
+    border: 1px solid #c8a84e44;
+    border-radius: 4px;
+    padding: 24px;
+    margin: 24px 0;
+    background: #111;
+  }
+  .t3-body .value-box .vb-title {
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    margin-bottom: 16px;
+    font-weight: 600;
+  }
+  .t3-body .value-box .vb-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #ccc;
+  }
+  .t3-body .value-box .vb-check {
+    color: #c8a84e;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .t3-body .price-anchor {
+    text-align: center;
+    margin: 28px 0;
+  }
+  .t3-body .price-old {
+    font-size: 16px;
+    color: #666;
+    text-decoration: line-through;
+  }
+  .t3-body .price-new {
+    font-size: 42px;
+    font-weight: 700;
+    color: #c8a84e;
+    display: block;
+    margin-top: 4px;
+  }
+  .t3-body .price-note {
+    font-size: 12px;
+    color: #888;
+    margin-top: 4px;
+  }
+  .t3-body .cta-btn-gradient {
+    display: inline-block;
+    background: linear-gradient(135deg, #c8a84e, #dabe6a);
+    color: #0a0a0a;
+    padding: 16px 40px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 8px 0;
+    text-align: center;
+  }
+  .t3-body .cta-wrap { text-align: center; margin: 20px 0; }
+  .t3-body ul {
+    margin: 12px 0 16px 20px;
+    color: #ccc;
+  }
+  .t3-body ul li { margin-bottom: 8px; }
+  .t3-body .ps {
+    font-size: 13px;
+    color: #777;
+    margin-top: 20px;
+    border-top: 1px solid #222;
+    padding-top: 16px;
+  }
+  .t3-footer {
+    padding: 20px 32px;
+    text-align: center;
+    border-top: 1px solid #1a1a1a;
+    font-size: 11px;
+    color: #444;
+  }
+  .t3-footer .sig {
+    color: #c8a84e;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+
+  /* ===== TEMPLATE 4 — PURE TEXT ===== */
+  .t4-body {
+    background: #fff;
+    padding: 36px 32px;
+    color: #2a2a2a;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+  .t4-body p { margin-bottom: 16px; }
+  .t4-body strong { color: #1a1a1a; }
+  .t4-body a {
+    color: #c8a84e;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .t4-body em { font-style: italic; color: #444; }
+  .t4-body ul {
+    margin: 12px 0 16px 20px;
+    list-style-type: disc;
+  }
+  .t4-body ul li {
+    margin-bottom: 6px;
+    color: #333;
+  }
+  .t4-body .ps {
+    font-size: 13px;
+    color: #777;
+    margin-top: 16px;
+  }
+  .t4-footer {
+    background: #fff;
+    padding: 0 32px 24px;
+    border-top: 1px solid #ddd;
+    margin: 0 32px;
+    padding: 16px 0 24px;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 11px;
+    color: #999;
+  }
+  .t4-body .cta-btn {
+    display: inline-block;
+    background: #c8a84e;
+    color: #0a0a0a;
+    padding: 14px 32px;
+    border-radius: 3px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin: 16px 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  /* ===== DIVIDER BETWEEN EMAILS ===== */
+  .email-divider {
+    width: 60px;
+    height: 1px;
+    background: #333;
+    margin: 0 auto 60px;
+  }
+
+  /* ===== SCROLL TO TOP ===== */
+  .scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 44px;
+    height: 44px;
+    background: #c8a84e;
+    color: #0a0a0a;
+    border: none;
+    border-radius: 3px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .scroll-top.visible { opacity: 1; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 660px) {
+    .email-container { margin: 0 10px; }
+    .t1-body, .t2-body, .t3-body, .t4-body { padding: 24px 20px; }
+    .t1-header, .t3-header { padding: 20px; }
+    .page-header h1 { font-size: 20px; letter-spacing: 3px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== PAGE HEADER + NAV ===== -->
+<div class="page-header">
+  <h1>Money Decoded</h1>
+  <div class="subtitle">Complete Email Funnel Preview &mdash; 23 Emails</div>
+  <nav class="nav-bar">
+    <a href="#seq-a" class="nav-a">Sequence A &mdash; Book 1 to $7</a>
+    <a href="#seq-b" class="nav-b">Sequence B &mdash; $7 to $97</a>
+    <a href="#seq-c" class="nav-c">Sequence C &mdash; $97 to $5,997</a>
+    <a href="#seq-d" class="nav-d">Sequence D &mdash; Application</a>
+  </nav>
+</div>
+
+
+<!-- ============================================================ -->
+<!-- SEQUENCE A — Book 1 Download → $7 Trilogy (6 emails)         -->
+<!-- ============================================================ -->
+<div class="sequence-section" id="seq-a">
+  <div class="sequence-header seq-a">
+    <h2>Sequence A</h2>
+    <p>Post Book 1 Download &rarr; $7 Trilogy &nbsp;|&nbsp; 6 Emails &nbsp;|&nbsp; 7 Days</p>
+  </div>
+
+  <!-- ===== A1 — Template 1 (Premium Branded) ===== -->
+  <div class="email-block">
+    <div class="email-label">
+      <span class="email-id seq-a">A1</span>
+      <span class="email-subject">You just took the red pill on money</span>
+      <span class="email-meta">Day 0 &bull; Template 1 &mdash; Premium Branded</span>
+    </div>
+    <div class="email-container">
+      <div class="t1-header">
+        <div class="brand">J. Marque</div>
+        <div class="brand-name">Money Decoded</div>
+      </div>
+      <div class="t1-body">
+        <p>{first_name},</p>
+        <p>You just did something 95% of people never will &mdash; you went looking for the truth about money.</p>
+        <p>Most people go their entire lives without understanding why everything costs more, why they work harder than their parents but have less, or why the rules seem rigged.</p>
+        <p>You're about to find out why.</p>
+        <p>I'm J. Marque. I've closed over $250 million in real estate &mdash; as a wholesaler, flipper, landlord, title company owner, and consultant. I'm also a Marine Corps veteran. And the biggest lesson I ever learned wasn't in a boardroom or on a battlefield.</p>
+        <p>It was this: <strong>the money system wasn't built for you.</strong> But once you see how it works, you can use it.</p>
+        <p>That's what Book 1 is about.</p>
+        <p>Start reading now &mdash; especially Chapter 3. That's where it clicks.</p>
+        <a href="#" class="cta-btn">Read Book 1 Now &rarr;</a>
+        <p>Over the next few days, I'm going to share some things about money that changed the way I see everything. Things I wish someone had told me 20 years ago.</p>
+        <p>Talk soon,<br>&mdash; J. Marque</p>
+        <div class="ps">P.S. If you only read one chapter tonight, make it the one about 1971. You'll never look at the dollar the same way again.</div>
+      </div>
+      <div class="t1-footer">
+        <div class="sig">&mdash; J. MARQUE</div>
+        $250M+ in Real Estate | USMC Veteran<br>
+        &copy; J. Marque &mdash; Money Decoded
+      </div>
+    </div>
+  </div>
+  <div class="email-divider"></div>
+
+  <!-- ===== A2 — Template 2 (Clean Minimal) ===== -->
+  <div class="email-block">
+    <div class="email-label">
+      <span class="email-id seq-a">A2</span>
+      <span class="email-subject">What happened on August 15, 1971</span>
+      <span class="email-meta">Day 1 &bull; Template 2 &mdash; Clean Minimal</span>
+    </div>
+    <div class="email-container">
+      <div class="t2-header">
+        <div class="t2-brand">J. Marque</div>
+      </div>
+      <div class="t2-body">
+        <p>{first_name},</p>
+        <p>On a Sunday night in August 1971, President Nixon went on live television and made an announcement that changed money forever.</p>
+        <p>He said it was "temporary."</p>
+        <p>It's been 55 years.</p>
+        <p>Before that night, every dollar was backed by real gold sitting in a vault. After that night, the dollar was backed by... nothing. Just a promise from the government.</p>
+        <p>And here's what happened next:</p>
+        <div class="stat-block">
+          <strong>A house:</strong> $25,000 in 1971 &rarr; $420,000 today<br>
+          <strong>Gas:</strong> $0.36 &rarr; $3.50<br>
+          <strong>College tuition:</strong> $500/year &rarr; $25,000/year<br>
+          <strong>$1 in 1971</strong> buys $0.13 worth of stuff today
+        </div>
+        <p>That's not inflation. That's a heist in slow motion.</p>
+        <p>The people who understood this &mdash; the ones who saw what was coming &mdash; they didn't save harder. They did something completely different.</p>
+        <p>I'll tell you what they did tomorrow.</p>
+        <hr class="t2-divider">
+        <p class="t2-sig">&mdash; J. Marque</p>
+        <div class="ps">P.S. This is all in Book 1, Chapter 5. If you haven't gotten there yet, tonight's the night.</div>
+      </div>
+    </div>
+  </div>
+  <div class="email-divider"></div>
+
+  <!-- ===== A3 — Template 2 (Clean Minimal) ===== -->
+  <div class="email-block">
+    <div class="email-label">
+      <span class="email-id seq-a">A3</span>
+      <span class="email-subject">The $847/year lie your bank is telling you</span>
+      <span class="email-meta">Day 2 &bull; Template 2 &mdash; Clean Minimal</span>
+    </div>
+    <div class="email-container">
+      <div class="t2-header">
+        <div class="t2-brand">J. Marque</div>
+      </div>
+      <div class="t2-body">
+        <p>{first_name},</p>
+        <p>Yesterday I told you I'd explain what the wealthy do differently.</p>
+        <p>Here it is &mdash; and it's going to bother you.</p>
+        <p>Your bank pays you 0.45% interest on your savings. Sounds like free money, right?</p>
+        <p>Inflation runs at 3-8% per year.</p>
+        <div class="stat-block">
+          $10,000 in savings &rarr; <strong>$45</strong> in interest<br>
+          Inflation steals &rarr; <strong>$300&ndash;$800</strong> in purchasing power<br><br>
+          <strong>You're paying your bank $255&ndash;$755 a year to hold your money.</strong> And they're lending it out at 7&ndash;24% to other people.
+        </div>
+        <p>The wealthy figured this out a long time ago. They don't save. They acquire. Real estate. Businesses. Assets that go UP when the dollar goes DOWN.</p>
+        <p>That's the entire game. And nobody teaches it because the system needs you to keep saving.</p>
+        <p>This is exactly what Book 2 &mdash; <em>Modern Money</em> &mdash; breaks down. How the Federal Reserve actually works. How banks create money from nothing. How inflation is a feature, not a bug.</p>
+        <p>And Book 3 shows you what's coming next &mdash; the biggest wealth transfer in history &mdash; and how to be on the right side of it.</p>
+        <p>All three books. 28,000 words. The full picture.</p>
+        <p>I'll tell you how to get them tomorrow.</p>
+        <hr class="t2-divider">
+        <p class="t2-sig">&mdash; J. Marque</p>
+      </div>
+    </div>
+  </div>
+  <div class="email-divider"></div>
+
+  <!-- ===== A4 — Template 3 (Dark Premium) ===== -->
+  <div class="email-block">
+    <div class="email-label">
+      <span class="email-id seq-a">A4</span>
+      <span class="email-subject">BlackRock just bet $4.7 billion on this</span>
+      <span class="email-meta">Day 4 &bull; Template 3 &mdash; Dark Premium &bull; THE $7 PITCH</span>
+    </div>
+    <div class="email-container t3-wrapper">
+      <div class="t3-header">
+        <div class="brand">J. Marque</div>
+        <div class="brand-name">Money Decoded</div>
+      </div>
+      <div class="t3-body">
+        <div class="headline">BlackRock just bet <span class="gold">$4.7 billion</span> on a single asset class.</div>
+        <p>{first_name},</p>
+        <p>Central banks are hoarding gold at record levels. Saudi Arabia is selling oil in yuan for the first time in 50 years. The U.S. national debt just passed $36 trillion.</p>
+        <p>Something is shifting. And the people at the top are repositioning.</p>
+        <div class="value-box">
+          <div class="vb-title">The Money Decoded Trilogy</div>
+          <div class="vb-item"><span class="vb-check">Included</span> Book 1: The History of Money &mdash; how gold became paper became promises</div>
+          <div class="vb-item"><span class="vb-check">Included</span> Book 2: Modern Money &mdash; how the Fed, banks, and inflation drain your wealth</div>
+          <div class="vb-item"><span class="vb-check">Included</span> Book 3: The Future of Money &mdash; Bitcoin, CBDCs, gold, and your 10-step playbook</div>
+          <div class="vb-item"><span class="vb-check">Included</span> 28,000+ words of financial education</div>
+          <div class="vb-item"><span class="vb-check">Included</span> $250M in real-world experience distilled</div>
+        </div>
+        <div class="price-anchor">
+          <span class="price-old">$19.99</span>
+          <span class="price-new">$7</span>
+          <span class="price-note">Less than your morning coffee</span>
+        </div>
+        <div class="cta-wrap">
+          <a href="#" class="cta-btn-gradient">Get the Full Trilogy for $7 &rarr;</a>
+        </div>
+        <p>The people who read all three tell me the same thing: "I can't believe I didn't know this."</p>
+        <p>You already started. Finish the story.</p>
+        <p>&mdash; J. Marque</p>
+        <div class="ps">P.S. Book 3, Chapter 7 &mdash; the one about CBDCs and programmable money &mdash; that's the chapter that keeps people up at night. In a good way.</div>
+      </div>
+      <div class="t3-footer">
+        <div class="sig">&mdash; J. MARQUE</div>
+        $250M+ in Real Estate | USMC Veteran
+      </div>
+    </div>
+  </div>
+  <div class="email-divider"></div>
+
+  <!-- ===== A5 — Template 4 (Pure Text) ===== -->
+  <div class="email-block">
+    <div class="email-label">
+      <span class="email-id seq-a">A5</span>
+      <span class="email-subject">"I read all 3 in one weekend" &mdash; Marcus, Atlanta</span>
+      <span class="email-meta">Day 5 &bull; Template 4 &mdash; Pure Text</span>
+    </div>
+    <div class="email-container">
+      <div class="t4-body">
+        <p>{first_name},</p>
+        <p>I got this message last week from Marcus in Atlanta:</p>
+        <p><em>"I downloaded Book 1 on Saturday morning. By Sunday night I'd read all three. I immediately moved money out of my savings account and started researching rental properties. I can't believe nobody taught me this stuff."</em></p>
+        <p>Marcus isn't a finance guy. He's an electrician. Father of two. He just wanted to understand why he was working harder every year but falling further behind.</p>
+        <p>Three books later, he's not confused anymore. He's angry &mdash; but in a productive way. The kind of angry that makes you take action.</p>
+        <p>That's what the trilogy does. It takes you from "I don't know what I don't know" to "I see it now. And I know what to do."</p>
+        <p>28,000 words. Three books. $7.</p>
+        <p><a href="#">Get the Money Decoded Trilogy &rarr;</a></p>
+        <p>Your grandparents could buy a house on one income. You can barely pay rent on two. The trilogy explains exactly why &mdash; and what to do about it.</p>
+        <p>&mdash; J. Marque</p>
+        <div class="ps">P.S. Marcus's next step? He's working through the FIRE workbook now. I'll tell you about that soon.</div>
+      </div>
+      <div class="t4-footer">
+        J. Marque &mdash; Money Decoded
+      </div>
+    </div>
+  </div>
+  <div class="email-divider"></div>
+
+  <!-- ===== A6 — Template 3 (Dark Premium) ===== -->
+  <div class="email-block">
+    <div class="email-label">
+      <span class="email-id seq-a">A6</span>
+      <span class="email-subject">Last chance at $7 &mdash; price going up</span>
+      <span class="email-meta">Day 7 &bull; Template 3 &mdash; Dark Premium &bull; URGENCY CLOSE</span>
+    </div>
+    <div class="email-container t3-wrapper">
+      <div class="t3-header">
+        <div class="brand">J. Marque</div>
+        <div class="brand-name">Money Decoded</div>
+      </div>
+      <div class="t3-body">
+        <div class="headline">Last chance at <span class="gold">$7</span> &mdash; price going up</div>
+        <p>{first_name},</p>
+        <p>I've sent you a few emails this week about the Money Decoded trilogy.</p>
+        <p>This is the last one.</p>
+        <p>The $7 price was always meant to be temporary. I wanted to make it easy for people who downloaded Book 1 to get the complete picture without thinking twice.</p>
+        <p><strong>After this week, the bundle goes to $19.99.</strong></p>
+        <div class="value-box">
+          <div class="vb-title">What You're Getting for $7</div>
+          <div class="vb-item"><span class="vb-check">Included</span> Book 1: The History of Money &mdash; how gold became paper became promises</div>
+          <div class="vb-item"><span class="vb-check">Included</span> Book 2: Modern Money &mdash; how the Fed, banks, and inflation drain your wealth</div>
+          <div class="vb-item"><span class="vb-check">Included</span> Book 3: The Future of Money &mdash; Bitcoin, CBDCs, gold, and your 10-step playbook</div>
+          <div class="vb-item"><span class="vb-check">Included</span> 28,000 words &bull; $250M in real-world experience</div>
+        </div>
+        <div class="price-anchor">
+          <span class="price-old">$19.99</span>
+          <span class="price-new">$7</span>
+          <span class="price-note">Price increases after this week</span>
+        </div>
+        <div class="cta-wrap">
+          <a href="#" class="cta-btn-gradient">Get the Trilogy for $7 Before Price Goes Up &rarr;</a>
+        </div>
+        <p>If $7 isn't the right move for you right now, no hard feelings. I'll keep sending you insights every week &mdash; no pitch, just value.</p>
+        <p>But if you want the complete picture, this is the time.</p>
+        <p>&mdash; J. Marque</p>
+        <div class="ps">P.S. Everyone who reads all three says the same thing: "Book 1 opened my eyes. Book 2 made me angry. Book 3 made me dangerous." Your call.</div>
+      </div>
+      <div class="t3-footer">
+        <div class="sig">&mdash; J. MARQUE</div>
+        $250M+ in Real Estate | USMC Veteran
+      </div>
+    </div>
+  </div>
+</div><!-- end seq-a -->
+
+
+<!-- ============================================================ -->
+<!-- SEQUENCE B — $7 Trilogy → $97 FIRE Workbook (4 emails)       -->
+<!-- ============================================================ -->
+<div class="sequence-section" id="seq-b">
+  <div class="sequence-header seq-b">
+    <h2>Sequence B</h2>
+    <p>Post $7 Trilogy Purchase &rarr; $97 FIRE Workbook &nbsp;|&nbsp; 4 Emails &nbsp;|&nbsp; 7 Days</p>
+  </div>
+
+  <!-- ===== B1 — Template 1 (Premium Branded) ===== -->
+  <div class="email-block">
+    <div class="email-label">
+      <span class="email-id seq-b">B1</span>
+      <span class="email-subject">Smart move &mdash; your trilogy is ready</span>
+      <span class="email-meta">Day 0 &bull; Template 1 &mdash; Premium Branded</span>
+    </div>
+    <div class="email-container">
+      <div class="t1-header">
+        <div class="brand">J. Marque</div>
+        <div class="brand-name">Money Decoded</div>
+      </div>
+      <div class="t1-body">
+        <p>{first_name},</p>
+        <p>Done.</p>
+        <p>You now have access to all three Money Decoded books. Here's your download link:</p>
+        <a href="#" class="cta-btn">Access Your Trilogy &rarr;</a>
+        <p>Quick reading guide:</p>
+        <ul style="margin: 12px 0 16px 20px; color: #333;">
+          <li><strong>Book 1</strong> &mdash; the foundation. How money was designed to control you.</li>
+          <li><strong>Book 2</strong> &mdash; the machine. How the modern system drains your wealth daily.</li>
+          <li><strong>Book 3</strong> &mdash; the playbook. What to actually do about it.</li>
+        </ul>
+        <p>Read them in order. It builds.</p>
+        <p>Most people who buy the trilogy tell me the same thing: the books opened their eyes. But then they ask the same question:</p>
+        <p><strong>"OK, I get it. Now what do I actually DO?"</strong></p>
+        <p>That's the right question. And I have the answer. I'll share it with you in a couple days &mdash; after you've had time to dig into the books.</p>
+        <p>For now, start reading.</p>
+        <p>&mdash; J. Marque</p>
+        <div class="ps">P.S. Book 2, the section on fractional reserve banking &mdash; that's the one that made me rethink everything when I first learned it. Let me know if it hits you the same way.</div>
+      </div>
+      <div class="t1-footer">
+        <div class="sig">&mdash; J. MARQUE</div>
+        $250M+ in Real Estate | USMC Veteran<br>
+        &copy; J. Marque &mdash; Money Decoded
+      </div>
+    </div>
+  </div>
+  <div class="email-divider"></div>
+
+  <!-- ===== B2 — Template 2 (Clean Minimal) ===== -->
+  <div class="email-block">
+    <div class="email-label">
+      <span class="email-id seq-b">B2</span>
+      <span class="email-subject">Knowledge without action is entertainment</span>
+      <span class="email-meta">Day 2 &bull; Template 2 &mdash; Clean Minimal</span>
+    </div>
+    <div class="email-container">
+      <div class="t2-header">
+        <div class="t2-brand">J. Marque</div>
+      </div>
+      <div class="t2-body">
+        <p>{first_name},</p>
+        <p>By now you've probably gotten through at least Book 1, maybe started Book 2.</p>
+        <p>You know things most people will never know:</p>
+        <div class="stat-block">
+          &bull; How money went from gold to government promises<br>
+          &bull; How banks create money from thin air<br>
+          &bull; How inflation is designed to transfer wealth upward<br>
+          &bull; What's coming next and who's already positioning
+        </div>
+        <p>That puts you ahead of 99% of the population.</p>
+        <p>But here's the truth I learned after $250 million in real estate transactions:</p>
+        <p><strong>Knowing how money works and building wealth are two completely different skills.</strong></p>
+        <p>One is education. The other is execution.</p>
+        <p>The trilogy gave you the education. But education without a plan is just trivia at dinner parties.</p>
+        <p>What separates the people who actually build wealth from the people who just understand it?</p>
+        <p><strong>A system.</strong> A step-by-step process that takes you from "I get it" to "I'm doing it."</p>
+        <p>That's exactly what I built. I call it the FIRE Workbook &mdash; Financially Independent, Retire Early.</p>
+        <p>It's 7 modules that take you from where you are right now to being completely ready to invest in real estate and build passive income. Budget. Net worth. Insurance. Lender readiness. Your investment team. Your first deal checklist.</p>
+        <p>I'll break it down for you in my next email.</p>
+        <hr class="t2-divider">
+        <p class="t2-sig">&mdash; J. Marque</p>
+      </div>
+    </div>
+  </div>
+  <div class="email-divider"></div>
+
+  <!-- ===== B3 — Template 3 (Dark Premium) ===== -->
+  <div class="email-block">
+    <div class="email-label">
+      <span class="email-id seq-b">B3</span>
+      <span class="email-subject">Your 90-day wealth plan &mdash; 7 modules</span>
+      <span class="email-meta">Day 4 &bull; Template 3 &mdash; Dark Premium &bull; THE $97 PITCH</span>
+    </div>
+    <div class="email-container t3-wrapper">
+      <div class="t3-header">
+        <div class="brand">J. Marque</div>
+        <div class="brand-name">Money Decoded</div>
+      </div>
+      <div class="t3-body">
+        <div class="headline">Your <span class="gold">90-day wealth plan</span> &mdash; 7 modules</div>
+        <p>{first_name},</p>
+        <p>Here's what's inside the FIRE Workbook:</p>
+        <div class="value-box">
+          <div class="vb-title">The FIRE Workbook &mdash; 7 Modules</div>
+          <div class="vb-item"><span class="vb-check">Included</span> <strong>Module 1:</strong> It All Starts with a Budget &mdash; Your household P&L, income vs. expenses</div>
+          <div class="vb-item"><span class="vb-check">Included</span> <strong>Module 2:</strong> Understanding Risk Management &mdash; Insurance gaps, Pyramid of Needs</div>
+          <div class="vb-item"><span class="vb-check">Included</span> <strong>Module 3:</strong> Keys to the Safe &mdash; The lender-ready checklist</div>
+          <div class="vb-item"><span class="vb-check">Included</span> <strong>Module 4-5:</strong> Your Balance Sheet &amp; Net Worth &mdash; Four asset classes, real numbers</div>
+          <div class="vb-item"><span class="vb-check">Included</span> <strong>Module 6:</strong> Retirement Accounts &mdash; Reposition for 15-30% returns</div>
+          <div class="vb-item"><span class="vb-check">Included</span> <strong>Module 7:</strong> Your FIRE Team &mdash; 4 key people + first deal checklist</div>
+        </div>
+        <p><strong>The trilogy is the MAP. The workbook is the GPS.</strong></p>
+        <p>One weekend. 7 modules. You come out the other side knowing exactly where you stand and exactly what to do next.</p>
+        <div class="price-anchor">
+          <span class="price-old">$200+ if a financial advisor put it together</span>
+          <span class="price-new">$97</span>
+          <span class="price-note">This isn't more reading. This is doing.</span>
+        </div>
+        <div class="cta-wrap">
+          <a href="#" class="cta-btn-gradient">Get the FIRE Workbook &mdash; $97 &rarr;</a>
+        </div>
+        <p>&mdash; J. Marque</p>
+        <div class="ps">P.S. Module 3 alone &mdash; the lender-ready checklist &mdash; would cost you $200+ if a financial advisor put it together. Having your documents organized before you need them is the difference between closing a deal and watching someone else close it.</div>
+      </div>
+      <div class="t3-footer">
+        <div class="sig">&mdash; J. MARQUE</div>
+        $250M+ in Real Estate | USMC Veteran
+      </div>
+    </div>
+  </div>
+  <div class="email-divider"></div>
+
+  <!-- ===== B4 — Template 4 (Pure Text) ===== -->
+  <div class="email-block">
+    <div class="email-label">
+      <span class="email-id seq-b">B4</span>
+      <span class="email-subject">{first_name}, still thinking about it?</span>
+      <span class="email-meta">Day 7 &bull; Template 4 &mdash; Pure Text</span>
+    </div>
+    <div class="email-container">
+      <div class="t4-body">
+        <p>{first_name},</p>
+        <p>I know $97 isn't $7. So let me be straight with you.</p>
+        <p>Here's what $97 actually costs you:</p>
+        <p>Your savings account is losing $300&ndash;$800/year to inflation. You already know this &mdash; you read Book 2.</p>
+        <p>One decision from the FIRE Workbook &mdash; just ONE &mdash; whether it's finding an insurance gap, repositioning a retirement account, or building your lender file so you're ready when a deal shows up &mdash; pays for the workbook 10x over.</p>
+        <p>But honestly? The workbook isn't about $97.</p>
+        <p>It's about the difference between <strong>understanding</strong> how money works and actually <strong>doing something about it.</strong></p>
+        <p>The trilogy showed you the game. The workbook puts you in it.</p>
+        <p>7 modules. Budget. Net worth. Insurance. Lender docs. Your team. Your first deal checklist.</p>
+        <p><a href="#">Get the FIRE Workbook &rarr;</a></p>
+        <p>If the timing isn't right, I respect that. I'll keep sending you value every week &mdash; no pitch, just insights on money, wealth, and real estate.</p>
+        <p>But if you're serious about going from knowledge to action, this is the bridge.</p>
+        <p>&mdash; J. Marque</p>
+        <div class="ps">P.S. Everyone who's gone through the workbook says the same thing: "I wish I'd done this 5 years ago." The second best time is now.</div>
+      </div>
+      <div class="t4-footer">
+        J. Marque &mdash; Money Decoded
+      </div>
+    </div>
+  </div>
+</div><!-- end seq-b -->
+
+
+<!-- ============================================================ -->
+<!-- SEQUENCE C — $97 FIRE → $5,997 Coaching (9 emails)           -->
+<!-- ============================================================ -->
+<div class="sequence-section" id="seq-c">
+  <div class="sequence-header seq-c">
+    <h2>Sequence C</h2>
+    <p>Post $97 FIRE Workbook &rarr; $5,997 Group Coaching Application &nbsp;|&nbsp; 9 Emails &nbsp;|&nbsp; 18 Days</p>
+  </div>
+
+  <!-- ===== C1 — Template 1 (Premium Branded) ===== -->
+  <div class="email-block">
+    <div class="email-label">
+      <span class="email-id seq-c">C1</span>
+      <span class="email-subject">Welcome to the inner circle</span>
+      <span class="email-meta">Day 0 &bull; Template 1 &mdash; Premium Branded</span>
+    </div>
+    <div class="email-container">
+      <div class="t1-header">
+        <div class="brand">J. Marque</div>
+        <div class="brand-name">Money Decoded</div>
+      </div>
+      <div class="t1-body">
+        <p>{first_name},</p>
+        <p>Most people read about money. Some people buy a book about it. A few buy the workbook.</p>
+        <p>You just separated yourself from the crowd.</p>
+        <p>The FIRE Workbook isn't information &mdash; it's implementation. Seven modules that take you from understanding the system to working the system.</p>
+        <p>Here's how to get the most out of it:</p>
+        <p><strong>Start with Module 1 this week.</strong> Pull up your bank statements from the last 90 days. Fill in the budget P&L. Don't judge the numbers &mdash; just see them. That's the first step.</p>
+        <p>Then move through Modules 2-7 over the next 2-3 weeks. By the time you finish Module 7, you'll have:</p>
+        <ul style="margin: 12px 0 16px 20px; color: #333;">
+          <li>A complete picture of your finances</li>
+          <li>Your insurance gaps identified</li>
+          <li>Your lender file ready</li>
+          <li>Your investment team mapped out</li>
+          <li>A checklist for your first property</li>
+        </ul>
+        <a href="#" class="cta-btn">Access Your FIRE Workbook &rarr;</a>
+        <p>Over the next few weeks, I'm going to share some things that'll help you along the way &mdash; my story, the mistakes I made, and what I've seen work for people in your exact position.</p>
+        <p>Let's build.</p>
+        <p>&mdash; J. Marque<br><span style="font-size:13px;color:#888;">$250M+ in Real Estate | USMC Veteran</span></p>
+      </div>
+      <div class="t1-footer">
+        <div class="sig">&mdash; J. MARQUE</div>
+        $250M+ in Real Estate | USMC Veteran<br>
+        &copy; J. Marque &mdash; Money Decoded
+      </div>
+    </div>
+  </div>
+  <div class="email-divider"></div>
+
+  <!-- ===== C2 — Template 2 (Clean Minimal) ===== -->
+  <div class="email-block">
+    <div class="email-label">
+      <span class="email-id seq-c">C2</span>
+      <span class="email-subject">I almost quit in year 2</span>
+      <span class="email-meta">Day 2 &bull; Template 2 &mdash; Clean Minimal</span>
+    </div>
+    <div class="email-container">
+      <div class="t2-header">
+        <div class="t2-brand">J. Marque</div>
+      </div>
+      <div class="t2-body">
+        <p>{first_name},</p>
+        <p>I need to tell you something.</p>
+        <p>I've closed over $250 million in real estate. But in year 2, I almost walked away from all of it.</p>
+        <p>I was a Marine. Came out disciplined, focused, ready to conquer the world. Got into real estate because I saw what it could do &mdash; passive income, equity, generational wealth.</p>
+        <p>But the first two years were brutal.</p>
+        <p>I lost money on my first deal. My second deal fell apart at closing. I was working 14-hour days, burning through savings, and watching people around me collect paychecks while I collected stress.</p>
+        <p>My wife at the time thought I was crazy. My friends didn't get it. I had every reason to quit and go get a "real job."</p>
+        <p>But I'm a Marine. And Marines don't quit. We adjust, adapt, and push forward.</p>
+        <p>So I stopped doing what everyone told me to do. And I built a system.</p>
+        <p>Not a get-rich-quick scheme. Not a hack. A system &mdash; repeatable, predictable, boring. The kind of system that makes money while you sleep because every step is mapped out.</p>
+        <p>That system has now produced $250 million in transactions. Not because I'm special. Because the system is.</p>
+        <p>Tomorrow, I'll break down the 3 wealth levers that system is built on. They're the same levers you're going to pull with your FIRE Workbook.</p>
+        <hr class="t2-divider">
+        <p class="t2-sig">&mdash; J. Marque</p>
+      </div>
+    </div>
+  </div>
+  <div class="email-divider"></div>
+
+  <!-- ===== C3 — Template 2 (Clean Minimal) ===== -->
+  <div class="email-block">
+    <div class="email-label">
+      <span class="email-id seq-c">C3</span>
+      <span class="email-subject">The 3 wealth levers nobody teaches you</span>
+      <span class="email-meta">Day 4 &bull; Template 2 &mdash; Clean Minimal</span>
+    </div>
+    <div class="email-container">
+      <div class="t2-header">
+        <div class="t2-brand">J. Marque</div>
+      </div>
+      <div class="t2-body">
+        <p>{first_name},</p>
+        <p>There are only 3 ways to build real wealth. School teaches you zero of them.</p>
+        <p><strong>Lever 1: Cash Flow</strong></p>
+        <div class="stat-block">
+          Money coming in every month whether you work or not. Rental income. Royalties. Dividends. Most people only know W-2 income &mdash; trading hours for dollars. The wealthy build systems that produce cash flow on autopilot.
+        </div>
+        <p>Your FIRE Workbook Module 1 &mdash; the budget P&L &mdash; is step one. You need to know your current cash flow before you can build new streams.</p>
+        <p><strong>Lever 2: Equity</strong></p>
+        <div class="stat-block">
+          Buying assets below market value and forcing appreciation through renovation, management improvement, or rezoning. This is how you create $50K&ndash;$100K in wealth on a single deal without waiting 20 years.
+        </div>
+        <p>Your FIRE Workbook Modules 4-5 &mdash; the balance sheet &mdash; shows you what equity you already have and where to create more.</p>
+        <p><strong>Lever 3: Tax Advantage</strong></p>
+        <div class="stat-block">
+          Real estate gives you depreciation, 1031 exchanges, cost segregation, and a dozen other tools to legally keep more of what you earn. The wealthy pay less in taxes than their employees. Not because of loopholes &mdash; because of strategy.
+        </div>
+        <p>Module 6 of your workbook &mdash; retirement accounts &mdash; is where this starts.</p>
+        <p><strong>Most people only pull Lever 1 &mdash; and even then, they're pulling the wrong one (W-2 income).</strong> The people in my coaching program pull all 3 simultaneously.</p>
+        <p>How are you doing on the workbook? Reply and let me know which module you're on.</p>
+        <hr class="t2-divider">
+        <p class="t2-sig">&mdash; J. Marque</p>
+      </div>
+    </div>
+  </div>
+  <div class="email-divider"></div>
+
+  <!-- ===== C4 — Template 4 (Pure Text) ===== -->
+  <div class="email-block">
+    <div class="email-label">
+      <span class="email-id seq-c">C4</span>
+      <span class="email-subject">{first_name}, meet David</span>
+      <span class="email-meta">Day 6 &bull; Template 4 &mdash; Pure Text</span>
+    </div>
+    <div class="email-container">
+      <div class="t4-body">
+        <p>{first_name},</p>
+        <p>I want you to meet David.</p>
+        <p>12 months ago, David was a 9-to-5 engineer making $95K a year. Good income by most standards. But he had zero wealth. No assets. No investments. A 401(k) that grew 6% in a good year and got crushed in a bad one.</p>
+        <p>He downloaded Money Decoded. Read all three books. Got angry &mdash; the productive kind. Bought the FIRE Workbook and spent a weekend filling it out.</p>
+        <p>What he found surprised him: he had $340K sitting in retirement accounts earning 6-8% annually. Meanwhile, rental properties in his market were returning 15-25%.</p>
+        <p>He joined my coaching program. Within 60 days:</p>
+        <ul>
+          <li>Repositioned $80K from his 401(k) into a self-directed IRA</li>
+          <li>Used that to fund his first BRRRR rental</li>
+          <li>Closed on a distressed property at $140K, put $35K into rehab</li>
+          <li>Appraised at $225K, refinanced, pulled most of his capital back out</li>
+          <li>Monthly rent: $1,850. Monthly expenses: $1,120. Cash flow: $730/month.</li>
+        </ul>
+        <p>He repeated the process. 11 months in, David has 4 doors producing $6,800/month in gross rent and $2,400/month in cash flow.</p>
+        <p>He still has his engineering job. But he doesn't need it anymore.</p>
+        <p>David isn't special. He's not a real estate genius. He followed a system, had accountability, and executed.</p>
+        <p>That's what the program does.</p>
+        <p>More on that soon.</p>
+        <p>&mdash; J. Marque</p>
+        <div class="ps">P.S. David's biggest regret? "I wish I'd started 5 years ago." The second best time is now.</div>
+      </div>
+      <div class="t4-footer">
+        J. Marque &mdash; Money Decoded
+      </div>
+    </div>
+  </div>
+  <div class="email-divider"></div>
+
+  <!-- ===== C5 — Template 2 (Clean Minimal) ===== -->
+  <div class="email-block">
+    <div class="email-label">
+      <span class="email-id seq-c">C5</span>
+      <span class="email-subject">3 mistakes smart people make with money</span>
+      <span class="email-meta">Day 8 &bull; Template 2 &mdash; Clean Minimal</span>
+    </div>
+    <div class="email-container">
+      <div class="t2-header">
+        <div class="t2-brand">J. Marque</div>
+      </div>
+      <div class="t2-body">
+        <p>{first_name},</p>
+        <p>After $250 million in real estate and coaching dozens of students, I've noticed something:</p>
+        <p>Smart people make the WORST financial mistakes. Here's why.</p>
+        <p><strong>Mistake 1: Saving instead of acquiring.</strong></p>
+        <div class="stat-block">
+          Smart people are disciplined. So they save. But saving in a system that devalues your currency 3-8% per year is like running on a treadmill and wondering why you're not getting anywhere. The fix: redirect cash flow from savings into cash-producing assets.
+        </div>
+        <p><strong>Mistake 2: Diversifying too early.</strong></p>
+        <div class="stat-block">
+          Wall Street taught you to "diversify." Sounds safe. But diversification before concentration is just spreading your weakness thin. The wealthy get rich by concentrating &mdash; going deep in ONE asset class until they master it. Then they diversify. Real estate is the asset class that has created more millionaires than any other.
+        </div>
+        <p><strong>Mistake 3: Going it alone.</strong></p>
+        <div class="stat-block">
+          This is the biggest one. Smart people think they can figure it out themselves. They watch YouTube. They read books. They analyze deals for months but never pull the trigger. They don't have accountability. They don't have a system.
+        </div>
+        <p>The FIRE Workbook handles Mistakes 1 and 2. But Mistake 3 &mdash; going it alone &mdash; that's the one that keeps people stuck for years.</p>
+        <p>If any of these hit home, reply and tell me. I read every email.</p>
+        <hr class="t2-divider">
+        <p class="t2-sig">&mdash; J. Marque</p>
+      </div>
+    </div>
+  </div>
+  <div class="email-divider"></div>
+
+  <!-- ===== C6 — Template 4 (Pure Text) ===== -->
+  <div class="email-block">
+    <div class="email-label">
+      <span class="email-id seq-c">C6</span>
+      <span class="email-subject">From $0 to 3 rental properties in 11 months</span>
+      <span class="email-meta">Day 10 &bull; Template 4 &mdash; Pure Text</span>
+    </div>
+    <div class="email-container">
+      <div class="t4-body">
+        <p>{first_name},</p>
+        <p>Last year, Keisha had no real estate. No experience. No connections in the industry.</p>
+        <p>She was a teacher making $52K. Single mom. Thought real estate was for people with trust funds and rich parents.</p>
+        <p>She was wrong.</p>
+        <p>Keisha joined the coaching program in March. Here's her timeline:</p>
+        <p><strong>Month 1-2:</strong> Completed the FIRE Workbook. Built her budget. Found $680/month she was wasting on subscriptions and lifestyle creep. Found $127K in a retirement account she'd forgotten about from an old employer.</p>
+        <p><strong>Month 3:</strong> Closed her first wholesale deal. Assignment fee: $8,500. She cried. That was 2 months of take-home pay from teaching.</p>
+        <p><strong>Month 4-5:</strong> Used the wholesale money plus a hard money loan to buy a distressed duplex for $165K. Put $28K into rehab.</p>
+        <p><strong>Month 6:</strong> Rented both units. Gross rent: $2,900/month. Refinanced and pulled her capital back out.</p>
+        <p><strong>Month 8-11:</strong> Repeated the process. Two more properties. Now she collects $4,200/month in rental income.</p>
+        <p>Keisha still teaches. She loves it. But now she does it because she wants to, not because she has to.</p>
+        <p>Different person. Different background. Same system. Same result.</p>
+        <p>The system works regardless of your starting point.</p>
+        <p>I'm opening applications for the next coaching cohort this week. I'll send you the details.</p>
+        <p>&mdash; J. Marque</p>
+      </div>
+      <div class="t4-footer">
+        J. Marque &mdash; Money Decoded
+      </div>
+    </div>
+  </div>
+  <div class="email-divider"></div>
+
+  <!-- ===== C7 — Template 3 (Dark Premium) ===== -->
+  <div class="email-block">
+    <div class="email-label">
+      <span class="email-id seq-c">C7</span>
+      <span class="email-subject">Applications are open &mdash; 15 spots</span>
+      <span class="email-meta">Day 12 &bull; Template 3 &mdash; Dark Premium &bull; THE COACHING PITCH</span>
+    </div>
+    <div class="email-container t3-wrapper">
+      <div class="t3-header">
+        <div class="brand">J. Marque</div>
+        <div class="brand-name">Money Decoded</div>
+      </div>
+      <div class="t3-body">
+        <div class="headline">Applications are open &mdash; <span class="gold">15 spots</span></div>
+        <p>{first_name},</p>
+        <p>I've been sharing my story, the system, and real results from real people.</p>
+        <p>Now it's your turn.</p>
+        <p><strong>I'm opening applications for the next FIRE + Real Estate Coaching Cohort.</strong></p>
+        <div class="value-box">
+          <div class="vb-title">What You Get for 6 Months</div>
+          <div class="vb-item"><span class="vb-check">Included</span> <strong>2 live group calls per week</strong> &mdash; Tuesday strategy + Thursday hot seat</div>
+          <div class="vb-item"><span class="vb-check">Included</span> <strong>The complete FIRE execution system</strong> &mdash; every module walked through step by step</div>
+          <div class="vb-item"><span class="vb-check">Included</span> <strong>Private community access</strong> &mdash; connect with other members 24/7</div>
+          <div class="vb-item"><span class="vb-check">Included</span> <strong>My personal deal review</strong> &mdash; every exit strategy run on your deals</div>
+          <div class="vb-item"><span class="vb-check">Included</span> <strong>The system behind $250M in transactions</strong> &mdash; the actual system, not theory</div>
+        </div>
+        <div class="price-anchor">
+          <span class="price-old">Priceless (David made $6,800/mo. Keisha bought 3 properties.)</span>
+          <span class="price-new">$5,997</span>
+          <span class="price-note">Financing available &mdash; monthly payments as low as $100&ndash;$250/mo</span>
+        </div>
+        <div class="cta-wrap">
+          <a href="#" class="cta-btn-gradient">Apply for the Coaching Program &rarr;</a>
+        </div>
+        <p>This isn't for everyone. I'm looking for people who:</p>
+        <ul>
+          <li>Have completed (or are completing) the FIRE Workbook</li>
+          <li>Are ready to execute, not just learn</li>
+          <li>Can commit to 2 calls per week for 6 months</li>
+          <li>Want to build real estate wealth, not get-rich-quick schemes</li>
+        </ul>
+        <p>If that's you, apply. If not, no hard feelings &mdash; I'll keep sending you value every week.</p>
+        <p>&mdash; J. Marque</p>
+        <div class="ps">P.S. The application takes 3 minutes. If you're accepted, you'll get a link to book a strategy call with me. On the call, we'll map out your personalized 6-month plan &mdash; whether you join the program or not. The call is free.</div>
+      </div>
+      <div class="t3-footer">
+        <div class="sig">&mdash; J. MARQUE</div>
+        $250M+ in Real Estate | USMC Veteran
+      </div>
+    </div>
+  </div>
+  <div class="email-divider"></div>
+
+  <!-- ===== C8 — Template 2 (Clean Minimal) ===== -->
+  <div class="email-block">
+    <div class="email-label">
+      <span class="email-id seq-c">C8</span>
+      <span class="email-subject">8 spots left &mdash; your questions answered</span>
+      <span class="email-meta">Day 15 &bull; Template 2 &mdash; Clean Minimal</span>
+    </div>
+    <div class="email-container">
+      <div class="t2-header">
+        <div class="t2-brand">J. Marque</div>
+      </div>
+      <div class="t2-body">
+        <p>{first_name},</p>
+        <p>We filled 7 spots in 3 days. 8 remain for this cohort.</p>
+        <p>Before you decide, let me answer the questions I get every single time:</p>
+        <p><strong>"Can I afford $5,997?"</strong></p>
+        <div class="stat-block">
+          Financing is available through our lending partners. Most students qualify for monthly payments between $100&ndash;$250/month. David's first deal made $8,500 &mdash; more than the entire program cost. The ROI isn't theoretical. It's measurable.
+        </div>
+        <p><strong>"What if I have no real estate experience?"</strong></p>
+        <div class="stat-block">
+          Good. You have no bad habits to unlearn. Keisha was a teacher with zero experience. She owned 3 properties within 11 months. The program is designed for beginners who are serious about executing.
+        </div>
+        <p><strong>"What if I don't have time? I work full-time."</strong></p>
+        <div class="stat-block">
+          2 calls per week. 1 hour each. Tuesday evening and Thursday evening. David kept his engineering job the entire time. Keisha kept teaching. This isn't a full-time commitment. It's a strategic one.
+        </div>
+        <p><strong>"What makes this different from YouTube or other courses?"</strong></p>
+        <div class="stat-block">
+          YouTube is information. Courses are education. This is execution with accountability. I personally review your deals. I personally run the calls. That's the difference between watching cooking shows and having a chef in your kitchen.
+        </div>
+        <p style="text-align:center;margin:20px 0;">
+          <a href="#" class="cta-btn">Apply Now &mdash; 8 Spots Remaining &rarr;</a>
+        </p>
+        <p>Applications close when the cohort fills.</p>
+        <hr class="t2-divider">
+        <p class="t2-sig">&mdash; J. Marque</p>
+        <div class="ps">P.S. The strategy call is free whether you join or not. I'll map out your 6-month plan on the call &mdash; it's yours to keep regardless.</div>
+      </div>
+    </div>
+  </div>
+  <div class="email-divider"></div>
+
+  <!-- ===== C9 — Template 4 (Pure Text) ===== -->
+  <div class="email-block">
+    <div class="email-label">
+      <span class="email-id seq-c">C9</span>
+      <span class="email-subject">closing applications friday</span>
+      <span class="email-meta">Day 18 &bull; Template 4 &mdash; Pure Text</span>
+    </div>
+    <div class="email-container">
+      <div class="t4-body">
+        <p>{first_name},</p>
+        <p>This is my last email about the coaching program until the next cohort.</p>
+        <p>Here's where things stand:</p>
+        <ul>
+          <li>We started with 15 spots</li>
+          <li>11 are filled</li>
+          <li>4 remain</li>
+          <li>Applications close Friday</li>
+        </ul>
+        <p>If you've been thinking about it, now's the time to decide.</p>
+        <p>If the timing isn't right &mdash; I genuinely respect that. Building wealth is a long game. There's no penalty for waiting. The next cohort opens in 3 months and I'll let you know when applications reopen.</p>
+        <p>If you're ready:</p>
+        <p><a href="#">Apply Before Friday &rarr;</a></p>
+        <p>Either way, I'm not going anywhere. I'll keep sending you insights on money, wealth, and real estate every week. No pitch. Just value. Because the more you know, the better positioned you'll be &mdash; whether that's this cohort, the next one, or on your own.</p>
+        <p>I'm rooting for you.</p>
+        <p>&mdash; J. Marque</p>
+        <div class="ps">P.S. If the timing isn't right but you want to stay on the radar, reply "later" and I'll personally notify you when the next cohort opens. No strings.</div>
+      </div>
+      <div class="t4-footer">
+        J. Marque &mdash; Money Decoded
+      </div>
+    </div>
+  </div>
+</div><!-- end seq-c -->
+
+
+<!-- ============================================================ -->
+<!-- SEQUENCE D — Application → Strategy Call (4 emails)          -->
+<!-- ============================================================ -->
+<div class="sequence-section" id="seq-d">
+  <div class="sequence-header seq-d">
+    <h2>Sequence D</h2>
+    <p>Post-Application &rarr; Strategy Call &nbsp;|&nbsp; 4 Emails &nbsp;|&nbsp; 4 Days</p>
+  </div>
+
+  <!-- ===== D1 — Template 1 (Premium Branded) ===== -->
+  <div class="email-block">
+    <div class="email-label">
+      <span class="email-id seq-d">D1</span>
+      <span class="email-subject">Application received &mdash; here's what happens next</span>
+      <span class="email-meta">Day 0 &bull; Template 1 &mdash; Premium Branded</span>
+    </div>
+    <div class="email-container">
+      <div class="t1-header">
+        <div class="brand">J. Marque</div>
+        <div class="brand-name">Money Decoded</div>
+      </div>
+      <div class="t1-body">
+        <p>{first_name},</p>
+        <p>Got your application. Thank you for taking this step.</p>
+        <p>Here's exactly what happens next:</p>
+        <p><strong>Step 1:</strong> I personally review every application within 48 hours. I'm looking for people who are serious about executing &mdash; not just collecting information.</p>
+        <p><strong>Step 2:</strong> If you're a fit, you'll receive a link to book your strategy call with me. The call is 30 minutes.</p>
+        <p><strong>Step 3:</strong> On the call, we'll map out your personalized 6-month wealth plan together. We'll look at where you are now (your workbook numbers), where you want to be, and the fastest path to get there.</p>
+        <p><strong>The call is free &mdash; and the plan is yours to keep whether you join the program or not.</strong> No bait and switch. No pressure. Just strategy.</p>
+        <p>Keep an eye on your inbox over the next 48 hours.</p>
+        <p>In the meantime, if you haven't finished your FIRE Workbook, now's the time. The more complete your numbers are before the call, the more specific and actionable your plan will be.</p>
+        <p>&mdash; J. Marque</p>
+      </div>
+      <div class="t1-footer">
+        <div class="sig">&mdash; J. MARQUE</div>
+        $250M+ in Real Estate | USMC Veteran<br>
+        &copy; J. Marque &mdash; Money Decoded
+      </div>
+    </div>
+  </div>
+  <div class="email-divider"></div>
+
+  <!-- ===== D2 — Template 2 (Clean Minimal) ===== -->
+  <div class="email-block">
+    <div class="email-label">
+      <span class="email-id seq-d">D2</span>
+      <span class="email-subject">What to expect on your strategy call</span>
+      <span class="email-meta">Day 1 &bull; Template 2 &mdash; Clean Minimal</span>
+    </div>
+    <div class="email-container">
+      <div class="t2-header">
+        <div class="t2-brand">J. Marque</div>
+      </div>
+      <div class="t2-body">
+        <p>{first_name},</p>
+        <p>I want to set expectations for your strategy call so you get the most out of it.</p>
+        <p><strong>This is not a sales pitch.</strong> It's a strategy session. Here's what we'll cover:</p>
+        <div class="stat-block">
+          <strong>First 5 minutes:</strong> I'll ask about your current situation &mdash; income, savings, debt, real estate experience. Be honest. I've heard everything. There's no judgment.
+        </div>
+        <div class="stat-block">
+          <strong>Next 15 minutes:</strong> We'll build your 6-month roadmap together. Based on where you are, I'll lay out the exact steps &mdash; which strategy to start with, how much capital you need, where to find it, and what your first 90 days look like.
+        </div>
+        <div class="stat-block">
+          <strong>Last 10 minutes:</strong> I'll tell you honestly whether the coaching program is the right fit for you. For some people it is. For others, the workbook and books are enough. I'll tell you straight.
+        </div>
+        <p><strong>How to prepare:</strong></p>
+        <ul>
+          <li>Have your FIRE Workbook Module 1 (budget P&L) filled out</li>
+          <li>Know your approximate credit score</li>
+          <li>Know what's in your retirement accounts (even a rough number)</li>
+          <li>Think about your 12-month goal &mdash; what does success look like for you?</li>
+        </ul>
+        <p>That's it. 30 minutes. A real plan. No games.</p>
+        <hr class="t2-divider">
+        <p class="t2-sig">&mdash; J. Marque</p>
+      </div>
+    </div>
+  </div>
+  <div class="email-divider"></div>
+
+  <!-- ===== D3 — Template 4 (Pure Text) ===== -->
+  <div class="email-block">
+    <div class="email-label">
+      <span class="email-id seq-d">D3</span>
+      <span class="email-subject">Why I only take 15 people per cohort</span>
+      <span class="email-meta">Day 2 &bull; Template 4 &mdash; Pure Text</span>
+    </div>
+    <div class="email-container">
+      <div class="t4-body">
+        <p>{first_name},</p>
+        <p>A lot of coaching programs pack in as many people as they can. 50, 100, 200 students. Maximize revenue. Minimize attention.</p>
+        <p>I do the opposite.</p>
+        <p>15 people per cohort. That's it. Here's why:</p>
+        <p>I personally review every deal my students bring. I can't do that for 100 people. I can do it for 15.</p>
+        <p>I run every call myself. No assistants. No junior coaches. When you're on a Tuesday strategy call, you're talking to the person who closed $250 million in real estate. Not someone who read a book about it.</p>
+        <p>And I know every student's situation &mdash; their budget, their goals, their blockers. When David brought me his first BRRRR deal, I knew his exact financial picture. I could tell him "this deal works for YOU" &mdash; not generic advice that works for nobody.</p>
+        <p>That's the difference between a program and a partnership.</p>
+        <p>15 spots. That's all I can serve at this level.</p>
+        <p>Talk soon.</p>
+        <p>&mdash; J. Marque</p>
+      </div>
+      <div class="t4-footer">
+        J. Marque &mdash; Money Decoded
+      </div>
+    </div>
+  </div>
+  <div class="email-divider"></div>
+
+  <!-- ===== D4 — Template 4 (Pure Text) ===== -->
+  <div class="email-block">
+    <div class="email-label">
+      <span class="email-id seq-d">D4</span>
+      <span class="email-subject">Quick question about your application</span>
+      <span class="email-meta">Day 3-4 &bull; Template 4 &mdash; Pure Text</span>
+    </div>
+    <div class="email-container">
+      <div class="t4-body">
+        <p>{first_name},</p>
+        <p>Your application was approved &mdash; but I noticed you haven't booked your strategy call yet.</p>
+        <p>Sometimes life gets busy. I get it.</p>
+        <p>Just wanted to make sure the booking link didn't get lost in your inbox. Here it is:</p>
+        <p><a href="#" class="cta-btn">Book Your Strategy Call &rarr;</a></p>
+        <p>We're reviewing applications for the current cohort through Friday. After that, the next opening is in 3 months.</p>
+        <p>The call is 30 minutes. We'll map out your 6-month plan together. It's free whether you join the program or not.</p>
+        <p>If the timing changed and this isn't right for you anymore, no worries at all. Just reply "not now" and I'll remove the hold on your spot.</p>
+        <p>&mdash; J. Marque</p>
+      </div>
+      <div class="t4-footer">
+        J. Marque &mdash; Money Decoded
+      </div>
+    </div>
+  </div>
+</div><!-- end seq-d -->
+
+
+<!-- ===== SCROLL TO TOP BUTTON ===== -->
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
+
+<script>
+  // Show/hide scroll-to-top button
+  const btn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 600);
+  });
+
+  // Smooth scroll for nav links
+  document.querySelectorAll('.nav-bar a').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        const offset = document.querySelector('.page-header').offsetHeight + 20;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
