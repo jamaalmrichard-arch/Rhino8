@@ -158,7 +158,7 @@
 | $97 OTO page | TODO | Build in GHL |
 | Coaching application page | TODO | Build in GHL |
 | Coaching sales page | TODO | Build in GHL |
-| Group coaching curriculum | TODO | Define 6-month program |
+| Group coaching curriculum | DONE | `GROUP_COACHING_CURRICULUM.md` — 26-week, 52-call curriculum |
 | Financing integration | TODO | Set up Coach Financing/FlexxBuy |
 
 ---
