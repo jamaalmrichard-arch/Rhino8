@@ -1,6 +1,6 @@
-# GHL AUTOMATION BLUEPRINT — Money Decoded Funnel
+# GHL AUTOMATION BLUEPRINT — Money Decoded 3-Track Funnel
 ## J. Marque Brand | Complete Build Guide
-### Created: 2026-02-22
+### Created: 2026-02-22 | Updated: 2026-02-24
 
 ---
 
@@ -9,7 +9,7 @@
 1. [Product Setup](#1-product-setup)
 2. [Funnel Pages](#2-funnel-pages-in-ghl)
 3. [Tag Architecture](#3-complete-tag-architecture)
-4. [Email Workflows](#4-four-email-workflows)
+4. [Email Workflows](#4-email-workflows)
 5. [Pipeline Setup](#5-pipeline-setup)
 6. [Calendar Setup](#6-calendar-setup)
 7. [Membership / Course Area](#7-membership--course-area)
@@ -70,42 +70,76 @@ Navigate to **Payments > Products** in your GHL sub-account. Create each product
 
 ---
 
-### Product 3: FIRE Workbook — $97
+### Product 3: The Deal Machine — $147 (Track 1: Active Investor)
 
 | Field | Value |
 |-------|-------|
-| **Product Name** | FIRE Workbook — 7-Module Wealth Execution System |
+| **Product Name** | The Deal Machine — Active Investor's Playbook |
 | **Product Type** | Digital Product |
-| **Price** | $97.00 |
+| **Price** | $147.00 |
 | **Payment Type** | One-time |
-| **Description** | The FIRE (Financially Independent, Retire Early) Workbook. 7 modules: Budget P&L, Risk Management, Lender-Ready Checklist, Balance Sheet, Net Worth, Retirement Accounts, Your FIRE Team. |
-| **Digital Files** | Upload FIRE Workbook PDF (25 pages, 7 modules) |
-| **Delivery Method** | Membership portal access only (premium feel) |
-| **Membership Access** | Grant "FIRE Workbook" level in Money Decoded membership |
-| **Upsell Type** | One-click upsell (uses stored payment token from $7 purchase) |
+| **Description** | The Deal Machine: 85-page guide + 6 audio modules + 12 templates. How to find deals, close deals, and build cash flow in real estate. |
+| **Digital Files** | Upload Deal Machine PDF + 6 audio files + 12 template files |
+| **Delivery Method** | Membership portal access + workflow email with download links |
+| **Membership Access** | Grant "Track 1: Deal Machine" level in Money Decoded membership |
 
 **How to create:**
 1. Go to **Payments > Products > + Add Product**
-2. Name: `FIRE Workbook — 7-Module Wealth Execution System`
-3. Price: `97.00`
+2. Name: `The Deal Machine — Active Investor's Playbook`
+3. Price: `147.00`
 4. Type: One-time
-5. Upload FIRE Workbook PDF
+5. Upload all digital files
 6. Click **Save**
-
-**Also create the Order Bump version:**
-1. Go to **Payments > Products > + Add Product**
-2. Name: `FIRE Workbook — Order Bump`
-3. Price: `67.00`
-4. Type: One-time
-5. Same digital files as $97 product
-6. Description: `Add the FIRE Workbook to your order and save $30! 7 modules that take you from understanding money to building wealth.`
-7. Click **Save**
-
-This bump version appears as a checkbox on the $7 order form at a discounted $67 price.
 
 ---
 
-### Product 4: Group Coaching — $5,997
+### Product 4: The Wealth Shift — $197 (Track 2: Passive Investor)
+
+| Field | Value |
+|-------|-------|
+| **Product Name** | The Wealth Shift — Reposition Your Money |
+| **Product Type** | Digital Product |
+| **Price** | $197.00 |
+| **Payment Type** | One-time |
+| **Description** | The Wealth Shift: 72-page guide + 5 audio modules + 8 worksheets. How to reposition retirement, savings, and investments into real estate without quitting your job. |
+| **Digital Files** | Upload Wealth Shift PDF + 5 audio files + 8 worksheet files |
+| **Delivery Method** | Membership portal access + workflow email with download links |
+| **Membership Access** | Grant "Track 2: Wealth Shift" level in Money Decoded membership |
+
+**How to create:**
+1. Go to **Payments > Products > + Add Product**
+2. Name: `The Wealth Shift — Reposition Your Money`
+3. Price: `197.00`
+4. Type: One-time
+5. Upload all digital files
+6. Click **Save**
+
+---
+
+### Product 5: The Foundation — $97 (Track 3: Foundation)
+
+| Field | Value |
+|-------|-------|
+| **Product Name** | The Foundation — Financial Blueprint |
+| **Product Type** | Digital Product |
+| **Price** | $97.00 |
+| **Payment Type** | One-time |
+| **Description** | The Foundation: 60-page guide + 7 audio modules + 9 worksheets. From financial blank slate to investor-ready in 90 days. |
+| **Digital Files** | Upload Foundation PDF + 7 audio files + 9 worksheet files |
+| **Delivery Method** | Membership portal access + workflow email with download links |
+| **Membership Access** | Grant "Track 3: Foundation" level in Money Decoded membership |
+
+**How to create:**
+1. Go to **Payments > Products > + Add Product**
+2. Name: `The Foundation — Financial Blueprint`
+3. Price: `97.00`
+4. Type: One-time
+5. Upload all digital files
+6. Click **Save**
+
+---
+
+### Product 6: Group Coaching — $5,997
 
 | Field | Value |
 |-------|-------|
@@ -113,7 +147,7 @@ This bump version appears as a checkbox on the $7 order form at a discounted $67
 | **Product Type** | Service |
 | **Price** | $5,997.00 |
 | **Payment Type** | One-time (also create recurring version below) |
-| **Description** | 6-month group coaching program. 2 live calls/week, deal review, private community, FIRE execution system, the framework behind $250M in RE transactions. |
+| **Description** | 6-month group coaching program. 2 live calls/week, deal review, private community, the framework behind $250M in RE transactions. |
 | **Delivery Method** | Application required — no direct checkout |
 | **Membership Access** | Grant "Coaching" level in Money Decoded membership + Community access |
 
@@ -141,11 +175,11 @@ To create recurring products:
 7. Click **Save**
 8. Repeat for the 6-Pay version
 
-**Note:** Coaching is NOT sold through a funnel checkout. The payment link is sent manually after the strategy call closes the sale. Use **Payments > Payment Links** to generate a link for the client's chosen plan (pay-in-full, 3-pay, or 6-pay).
+**Note:** Coaching is NOT sold through a funnel checkout. The payment link is sent manually after the strategy call closes the sale. Use **Payments > Payment Links** to generate a link for the client's chosen plan (pay-in-full, 3-pay, or 6-pay). Also support Coach Financing / FlexxBuy for third-party financing.
 
 ---
 
-### Product 5 (Optional): 1-on-1 Coaching — $14,997
+### Product 7 (Optional): 1-on-1 Coaching — $14,997
 
 | Field | Value |
 |-------|-------|
@@ -163,8 +197,8 @@ Create the same way. This is an upsell offered on strategy calls or to existing 
 
 Navigate to **Sites > Funnels > + New Funnel**.
 
-**Funnel Name:** `Money Decoded`
-**Funnel Steps:** 5
+**Funnel Name:** `Money Decoded — 3-Track Funnel`
+**Funnel Steps:** 9
 
 ---
 
@@ -228,86 +262,138 @@ Navigate to **Sites > Funnels > + New Funnel**.
    - Step 1: Email (pre-filled from opt-in), First Name
    - Step 2: Card Number, Expiration, CVC
 3. **Attach Product:** Select `Money Decoded Trilogy — All 3 Books` ($7.00)
-4. **Add Order Bump:**
-   - Click **+ Add Bump**
-   - Select product: `FIRE Workbook — Order Bump` ($67.00)
-   - Bump Headline: "ONE-TIME OFFER: Add the FIRE Workbook for $67 (Save $30)"
-   - Bump Description: "The trilogy shows you how money works. The FIRE Workbook shows you what to DO about it. 7 modules: budget, insurance, lender prep, net worth, retirement accounts, and your first deal checklist. This $30 discount is only available right now."
-   - Bump Position: Below payment fields, above submit button
-   - Bump Style: Checkbox with yellow highlight border
+4. **No order bump** — the old FIRE Workbook bump is replaced by the post-purchase questionnaire routing
 5. **Submit Button:** Text: "GET THE TRILOGY — $7" / Color: Gold on Black
-6. **On Submit:** Redirect to Step 3 (OTO page)
+6. **On Submit:** Redirect to Step 3 (Questionnaire page)
 
 ---
 
-### Step 3: OTO Upsell Page
+### Step 3: Post-Purchase Questionnaire Page
 
-**Step Name:** `OTO-Upsell`
-**Step URL:** `/special-offer`
-**Purpose:** One-click upsell to $97 FIRE Workbook
-
-**Important:** This page only appears if the buyer did NOT purchase the FIRE Workbook via the order bump. If they bought the $67 bump, skip this step and go directly to Thank You.
-
-**Implementing the skip logic:**
-- In the workflow triggered by the $7 purchase, add an **If/Else** condition:
-  - IF Contact has tag `fire-buyer` → redirect to Step 4 (Thank You)
-  - ELSE → redirect to Step 3 (OTO page)
-
-Alternatively, use GHL's built-in funnel conditional redirect:
-1. In funnel Step 2 settings, under **After Form Submission**:
-   - Default redirect: Step 3 (OTO)
-2. In the purchase workflow, if the bump was purchased, update the contact's `funnel_redirect` custom field to skip to Step 4
+**Step Name:** `Track-Selection`
+**Step URL:** `/your-path`
+**Purpose:** Route $7 buyers into 1 of 3 tracks based on self-selection. Replaces the old OTO page.
 
 **Page Elements (top to bottom):**
 
 | Section | Content |
 |---------|---------|
-| **Confirmation Header** | "Your trilogy is confirmed! Check your email for download links." |
-| **Transition** | "Before you go — I have something that makes the trilogy 10x more powerful." |
-| **Video (optional)** | 60-90 second AI avatar video explaining the FIRE Workbook value |
-| **Headline** | "The Books Show You How Money Works. This Workbook Shows You What to DO About It." |
-| **Workbook Cover + Module List** | Display all 7 modules with descriptions |
-| **Price Anchor** | "Normally $197 — yours today for just $97" |
-| **One-Click Button** | Text: "YES — Add the FIRE Workbook to My Order ($97)" |
-| **Decline Link** | Text: "No thanks, I'll figure it out on my own" → redirects to Step 4 |
+| **Confirmation Header** | "Smart move — your trilogy is confirmed! Check your email for download links." |
+| **Transition** | "One quick question before we send your books..." |
+| **Subheadline** | "This helps me personalize what I send you next." |
+| **Card 1 — Active Investor** | "I want to make money in real estate" / "Teach me how to find deals, close deals, and build cash flow — even in a down market." |
+| **Card 2 — Passive Investor** | "I have money that should be working harder" / "Show me how to move my retirement, savings, or investments into real estate — without quitting my job." |
+| **Card 3 — The Foundation** | "I'm starting from scratch" / "I need to understand my finances and get investor-ready before my first deal." |
+| **Default nudge** | "Not sure? Start with The Foundation — it's where every great investor begins." |
 
-**One-Click Upsell Setup:**
+**Implementation — GHL Form with Conditional Redirect:**
 
-1. In **Funnel Settings** for this step:
-   - Enable **One-Click Upsell**
-   - Attach product: `FIRE Workbook — 7-Module Wealth Execution System` ($97.00)
-   - Processor: Stripe (uses stored payment token from Step 2)
-2. **Accept Button:** Charges $97 immediately, redirects to Step 4
-3. **Decline Link:** Redirects to Step 3B (Downsell) or Step 4 (Thank You)
+1. Create a **Form** element on the page (NOT a survey — we want a fast single-click experience)
+2. Add a **Radio Button** or **Custom HTML** field named `investor_track` with 3 options:
+   - `active` → "I want to make money in real estate"
+   - `passive` → "I have money that should be working harder"
+   - `foundation` → "I'm starting from scratch"
+3. Style as large clickable cards (use GHL custom CSS or custom HTML element)
+4. **On Submit:** Trigger workflow `MD — Questionnaire Router` (Section 4)
+5. Redirect logic is handled BY THE WORKFLOW, which updates a custom field and uses conditional redirects:
+   - If `investor_track` = `active` → redirect to Step 4A (Deal Machine offer page)
+   - If `investor_track` = `passive` → redirect to Step 4B (Wealth Shift offer page)
+   - If `investor_track` = `foundation` → redirect to Step 4C (Foundation offer page)
 
-**One-click upsell mechanics:**
-- The buyer's card info was captured and tokenized during the $7 purchase on Step 2
-- When they click "YES — Add the FIRE Workbook," Stripe charges the stored token instantly
-- No re-entry of card information required
-- This is what makes 20%+ OTO conversion rates possible
+**Alternative implementation:** Use 3 separate buttons, each linked to a different GHL form that applies the correct tag and redirects to the correct page. This avoids conditional redirect complexity.
+
+**Three-Button Approach (simpler):**
+- Button 1: Links to `/deal-machine-offer` — form auto-applies `track-active` tag
+- Button 2: Links to `/wealth-shift-offer` — form auto-applies `track-passive` tag
+- Button 3: Links to `/foundation-offer` — form auto-applies `track-foundation` tag
+- Each button URL appends the contact's email as a query parameter: `?email={{contact.email}}`
 
 ---
 
-### Step 3B: OTO Downsell Page (Optional)
+### Step 4A: Track 1 — Deal Machine Offer Page
 
-**Step Name:** `OTO-Downsell`
-**Step URL:** `/last-chance`
-**Purpose:** Catch people who decline $97 with a lower offer
+**Step Name:** `Deal-Machine-Offer`
+**Step URL:** `/deal-machine-offer`
+**Purpose:** Sell The Deal Machine ($147) to Active Investor track
 
-**Only create this step if you want to test a downsell. Otherwise skip to Step 4.**
+**Page Elements (top to bottom):**
 
 | Section | Content |
 |---------|---------|
-| **Headline** | "Wait — how about a lighter version?" |
-| **Offer** | FIRE Workbook Lite: Modules 1, 3, and 7 only — $47 |
-| **One-Click Button** | "YES — Give Me the Starter Pack ($47)" |
-| **Decline Link** | "No thanks" → Step 4 |
+| **Hero** | Headline: "The Deal Machine — Your Playbook for Real Estate Income" |
+| **Subheadline** | "85 pages. 6 audio modules. 12 done-for-you templates. Everything you need to close your first deal in 90 days." |
+| **Product Image** | Deal Machine cover + preview pages |
+| **What's Inside** | List all 6 audio modules + 12 templates |
+| **Case Study** | David: $6,800/mo in passive income. Keisha: $8,500 first wholesale deal. |
+| **Price Anchor** | "Real estate courses charge $997-$2,997. Yours for $147." |
+| **Order Form** | One-click checkout attached to Deal Machine product |
+| **Guarantee** | "30-day money-back guarantee. Do the work. If it doesn't change your trajectory, I'll refund every penny." |
+| **Decline Link** | "No thanks, just send me my trilogy" → redirects to Step 5 (Thank You) |
 
-Create a separate product for this: `FIRE Workbook Lite — $47` with the same upsell configuration.
+**Order Form Configuration:**
+1. Drag an **Order Form** element
+2. **Attach Product:** `The Deal Machine — Active Investor's Playbook` ($147.00)
+3. **Payment:** Uses stored card token from $7 purchase (one-click upsell) OR new card entry
+4. **On Submit:** Redirect to Step 5 (Thank You)
+5. **Decline Link:** Redirect to Step 5 (Thank You)
 
 ---
 
-### Step 4: Thank You / Confirmation Page
+### Step 4B: Track 2 — Wealth Shift Offer Page
+
+**Step Name:** `Wealth-Shift-Offer`
+**Step URL:** `/wealth-shift-offer`
+**Purpose:** Sell The Wealth Shift ($197) to Passive Investor track
+
+**Page Elements (top to bottom):**
+
+| Section | Content |
+|---------|---------|
+| **Hero** | Headline: "The Wealth Shift — Make Your Money Work While You Don't" |
+| **Subheadline** | "72 pages. 5 audio modules. 8 worksheets. How to reposition retirement, savings, and idle capital into cash-flowing real estate." |
+| **Product Image** | Wealth Shift cover + preview pages |
+| **What's Inside** | List all 5 audio modules + 8 worksheets |
+| **Case Study** | David: SDIRA reposition, $80K → $730/mo passive cash flow. |
+| **Price Anchor** | "Financial advisors charge $5,000+ for this strategy. Yours for $197." |
+| **Order Form** | One-click checkout attached to Wealth Shift product |
+| **Guarantee** | "30-day money-back guarantee." |
+| **Decline Link** | "No thanks, just send me my trilogy" → redirects to Step 5 (Thank You) |
+
+**Order Form Configuration:**
+1. **Attach Product:** `The Wealth Shift — Reposition Your Money` ($197.00)
+2. Same one-click upsell mechanics as Step 4A
+3. **On Submit / Decline:** → Step 5 (Thank You)
+
+---
+
+### Step 4C: Track 3 — Foundation Offer Page
+
+**Step Name:** `Foundation-Offer`
+**Step URL:** `/foundation-offer`
+**Purpose:** Sell The Foundation ($97) to Foundation track
+
+**Page Elements (top to bottom):**
+
+| Section | Content |
+|---------|---------|
+| **Hero** | Headline: "The Foundation — Your Financial Blueprint" |
+| **Subheadline** | "60 pages. 7 audio modules. 9 worksheets. From financial blank slate to investor-ready in 90 days." |
+| **Product Image** | Foundation cover + preview pages |
+| **What's Inside** | List all 7 audio modules + 9 worksheets |
+| **Case Study** | Keisha: teacher making $52K, went from 0 to 3 rental properties in 11 months. |
+| **Price Anchor** | "Budget apps charge $10/mo forever. This one-time purchase changes your financial trajectory." |
+| **Order Form** | One-click checkout attached to Foundation product |
+| **Guarantee** | "30-day money-back guarantee." |
+| **Decline Link** | "No thanks, just send me my trilogy" → redirects to Step 5 (Thank You) |
+
+**Order Form Configuration:**
+1. **Attach Product:** `The Foundation — Financial Blueprint` ($97.00)
+2. Same one-click upsell mechanics as Step 4A
+3. **On Submit / Decline:** → Step 5 (Thank You)
+
+---
+
+### Step 5: Thank You / Confirmation Page
 
 **Step Name:** `Thank-You`
 **Step URL:** `/thank-you`
@@ -321,18 +407,18 @@ Create a separate product for this: `FIRE Workbook Lite — $47` with the same u
 | **What's Next** | "Check your email for download links and login details for your member portal." |
 | **Member Portal Button** | "Access Your Member Portal" → link to membership login |
 | **Social Share** | "Share with someone who needs to see this" + social buttons |
-| **Coaching Teaser** | "Ready to go from knowledge to action? I work with a small group of people every quarter who want to build real estate wealth using the FIRE system. When you're ready, I'll tell you about it." |
+| **Coaching Teaser** | "Ready to go from knowledge to action? I work with a small group of people every quarter who want to build real estate wealth. When you're ready, I'll tell you about it." |
 | **Social Proof** | Testimonial quotes from David, Keisha |
 
 ---
 
-### Step 5: Coaching Application Page
+### Step 6: Coaching Application Page
 
 **Step Name:** `Apply`
 **Step URL:** `/apply`
 **Purpose:** Qualify and capture coaching applicants
 
-**This page is NOT part of the linear funnel flow.** It is linked from Sequence C emails (Emails 7, 8, 9). It can also be accessed directly via URL.
+**This page is NOT part of the linear funnel flow.** It is linked from Sequence C1/C2/C3 emails (Emails 7, 8, 9). It can also be accessed directly via URL.
 
 **Page Elements (top to bottom):**
 
@@ -341,7 +427,7 @@ Create a separate product for this: `FIRE Workbook Lite — $47` with the same u
 | **Headline** | "Apply for the FIRE + Real Estate Coaching Program" |
 | **Sub-headline** | "15 spots per cohort. 6 months. The system behind $250M in transactions." |
 | **Program Details** | What's included (2 calls/week, deal review, community, system) |
-| **Investment** | "$5,997 — financing available" |
+| **Investment** | "$5,997 — financing available via Coach Financing / FlexxBuy" |
 | **Application Form** | GHL Survey form (configured below) |
 
 **Application Form (GHL Survey):**
@@ -357,14 +443,14 @@ Create a separate product for this: `FIRE Workbook Lite — $47` with the same u
 | Email | Email | YES |
 | Phone | Phone | YES |
 | City, State | Text | YES |
-| Q1: "Now that you know how money really works — what do you want to do about it?" | Multiple Choice: A) Keep learning, B) Start making money through RE, C) Already in RE — need to level up | YES |
-| Q2: "What best describes where you are right now?" | Multiple Choice: A) Complete beginner, B) Studying but no action, C) Active but messy systems, D) Experienced and ready for next level | YES |
-| Q3: "Do you have access to capital (savings, retirement accounts, credit, etc.) to invest in your first property within 90 days?" | Multiple Choice: A) Yes, B) Working on it, C) Not yet | YES |
-| Q4: "What's your biggest financial goal in the next 12 months?" | Long Text | YES |
+| Q1: "What best describes your real estate experience?" | Multiple Choice: A) I haven't done my first deal yet, B) I've done 1-3 deals but I'm not consistent, C) I'm active and want to scale, D) I'm repositioning wealth from other asset classes | YES |
+| Q2: "What's your primary goal for the next 6 months?" | Multiple Choice: A) Close my first deal, B) Build consistent monthly cash flow, C) Reposition retirement/savings into real estate, D) Scale from a few properties to a portfolio | YES |
 
 4. **On Submit:**
    - Action: Redirect to a confirmation page (or show inline "Application received" message)
-   - Trigger workflow: `MD — Sequence D: Application to Strategy Call`
+   - Trigger workflow: `MD — Application Handler`
+
+**Routing note:** All applications go to Sequence D and strategy call. The questionnaire data informs the call — it does not filter people out.
 
 ---
 
@@ -376,14 +462,19 @@ Create a separate product for this: `FIRE Workbook Lite — $47` with the same u
 |-----|---------|-----------|--------------|
 | `lead` | Form submission on opt-in page | Workflow: Sequence A | Identifies free subscriber. Enrolls in Sequence A. Adds to pipeline Stage 1. |
 | `book1-downloaded` | Delivery email sent/opened | Workflow: Sequence A | Confirms Book 1 was delivered. Used for engagement tracking. |
-| `buyer` | $7 Trilogy purchased (Stripe payment received) | Workflow: Purchase trigger | Identifies paying customer. Moves pipeline to Stage 2. |
-| `trilogy-purchased` | $7 Trilogy purchased | Workflow: Purchase trigger | Specific product tag. Used for content segmentation and delivery. |
-| `fire-buyer` | $97 FIRE Workbook purchased (OTO or bump or email) | Workflow: Purchase trigger | Mid-tier customer. Moves pipeline to Stage 3. Starts Sequence C. |
-| `applicant` | Coaching application form submitted | Workflow: Sequence D | High-intent lead. Moves pipeline to Stage 4. Starts Sequence D. |
-| `booked-call` | Strategy call booked via GHL Calendar | Workflow: Calendar trigger | Moves pipeline to Stage 5. Triggers confirmation + reminder automation. |
-| `call-completed` | Strategy call marked complete (manual or calendar event ended) | Workflow: Calendar trigger | Moves pipeline to Stage 6. |
-| `enrolled-group` | $5,997 group coaching payment received | Workflow: Manual trigger after close | Active coaching student. Moves pipeline to Stage 7. Grants coaching membership. |
-| `enrolled-1on1` | $14,997 1-on-1 payment received | Workflow: Manual trigger after close | Premium student. Moves pipeline to Stage 8. |
+| `buyer` | $7 Trilogy purchased (Stripe payment received) | Workflow: Trilogy Purchase Handler | Identifies paying customer. Moves pipeline to Stage 2. |
+| `trilogy-purchased` | $7 Trilogy purchased | Workflow: Trilogy Purchase Handler | Specific product tag. Used for content segmentation and delivery. |
+| `track-active` | Selects "Active Investor" on questionnaire | Workflow: Questionnaire Router | Routes to Track 1 (Deal Machine). Enrolls in B1 if no purchase. |
+| `track-passive` | Selects "Passive Investor" on questionnaire | Workflow: Questionnaire Router | Routes to Track 2 (Wealth Shift). Enrolls in B2 if no purchase. |
+| `track-foundation` | Selects "Foundation" on questionnaire | Workflow: Questionnaire Router | Routes to Track 3 (Foundation). Enrolls in B3 if no purchase. |
+| `deal-machine-buyer` | $147 Deal Machine purchased | Workflow: Deal Machine Purchase Handler | Track 1 mid-tier customer. Moves pipeline to Stage 4. Starts Sequence C1. |
+| `wealth-shift-buyer` | $197 Wealth Shift purchased | Workflow: Wealth Shift Purchase Handler | Track 2 mid-tier customer. Moves pipeline to Stage 4. Starts Sequence C2. |
+| `foundation-buyer` | $97 Foundation purchased | Workflow: Foundation Purchase Handler | Track 3 mid-tier customer. Moves pipeline to Stage 4. Starts Sequence C3. |
+| `applicant` | Coaching application form submitted | Workflow: Application Handler | High-intent lead. Moves pipeline to Stage 5. Starts Sequence D. |
+| `booked-call` | Strategy call booked via GHL Calendar | Workflow: Calendar trigger | Moves pipeline to Stage 6. Triggers confirmation + reminder automation. |
+| `call-completed` | Strategy call marked complete | Workflow: Calendar trigger | Moves pipeline to Stage 7. |
+| `enrolled-group` | $5,997 group coaching payment received | Workflow: Coaching Enrollment | Active coaching student. Moves pipeline to Stage 8. Grants coaching membership. |
+| `enrolled-1on1` | $14,997 1-on-1 payment received | Workflow: Manual trigger | Premium student. Moves pipeline to Stage 9. |
 | `active-student` | Currently in coaching program (within 6-month window) | Workflow: Auto-applied on enrollment | Used for community access and broadcast segmentation. |
 | `graduated` | 6-month coaching program completed | Workflow: Date-based (enrollment date + 180 days) | Alumni status. Eligible for testimonial request and 1-on-1 upgrade pitch. |
 
@@ -397,34 +488,33 @@ Create a separate product for this: `FIRE Workbook Lite — $47` with the same u
 | `cold-90` | No email open or click for 90 days | Workflow: Inactivity automation | Trigger re-engagement sequence (5 emails over 14 days). If no response, suppress from sends. |
 | `unsubscribed` | Clicked unsubscribe link | GHL automatic | Suppressed from all sends. Do NOT delete — keep in CRM for reporting. |
 
-### Segmentation Tags
-
-| Tag | Trigger | Applied By | What It Does |
-|-----|---------|-----------|--------------|
-| `educate` | Application Q1 = "Keep learning" AND Q2 = "Beginner" or "Studying" | Workflow: Application routing | Slower nurture path. More value emails before coaching pitch. |
-| `activate` | Application Q1 = "Start making money through RE" | Workflow: Application routing | Standard group coaching track. $5,997 pitch. |
-| `scale` | Application Q1 = "Already in RE — need to level up" AND Q2 = "Active" or "Experienced" | Workflow: Application routing | Fast-track to strategy call. Potentially pitch 1-on-1 directly. |
-| `oto-declined` | Declined $97 OTO page (clicked "No thanks") | Workflow: Funnel redirect tracking | Used in Sequence B to tailor email copy (they already saw the offer once). |
-| `bump-purchased` | Bought $67 FIRE Workbook via order bump | Workflow: Purchase trigger | Skip OTO page. Same product delivery as fire-buyer. Also apply `fire-buyer` tag. |
-| `source-tiktok` | UTM source = tiktok | Workflow: UTM capture on opt-in | Traffic source tracking for ROI analysis. |
-| `source-instagram` | UTM source = instagram | Workflow: UTM capture on opt-in | Traffic source tracking for ROI analysis. |
-| `source-organic` | UTM source = organic or no UTM | Workflow: UTM capture on opt-in | Traffic source tracking for ROI analysis. |
-| `source-gumroad` | UTM source = gumroad | Workflow: UTM capture on opt-in | Tracks redirects from Gumroad profile. |
-
 ### Sequence Status Tags
 
 | Tag | Trigger | Applied By | What It Does |
 |-----|---------|-----------|--------------|
 | `in-sequence-a` | Enrolled in Sequence A | Workflow: Sequence A start | Prevents duplicate enrollment. Removed when sequence completes or goal hits. |
-| `in-sequence-b` | Enrolled in Sequence B | Workflow: Sequence B start | Same. |
-| `in-sequence-c` | Enrolled in Sequence C | Workflow: Sequence C start | Same. |
-| `in-sequence-d` | Enrolled in Sequence D | Workflow: Sequence D start | Same. |
+| `in-sequence-b1` | Enrolled in Sequence B1 | Workflow: Sequence B1 start | Active Investor non-buyer nurture. |
+| `in-sequence-b2` | Enrolled in Sequence B2 | Workflow: Sequence B2 start | Passive Investor non-buyer nurture. |
+| `in-sequence-b3` | Enrolled in Sequence B3 | Workflow: Sequence B3 start | Foundation non-buyer nurture. |
+| `in-sequence-c1` | Enrolled in Sequence C1 | Workflow: Sequence C1 start | Active Investor buyer-to-coaching. |
+| `in-sequence-c2` | Enrolled in Sequence C2 | Workflow: Sequence C2 start | Passive Investor buyer-to-coaching. |
+| `in-sequence-c3` | Enrolled in Sequence C3 | Workflow: Sequence C3 start | Foundation buyer-to-coaching. |
+| `in-sequence-d` | Enrolled in Sequence D | Workflow: Sequence D start | Application-to-call nurture. |
 | `completed-sequence-a` | Finished all 6 Sequence A emails without buying | Workflow: Sequence A completion | Moves to broadcast list. |
 | `no-show` | Booked strategy call but did not attend | Workflow: Calendar no-show trigger | Triggers no-show follow-up automation. |
 
+### Traffic Source Tags
+
+| Tag | Trigger | Applied By | What It Does |
+|-----|---------|-----------|--------------|
+| `source-tiktok` | UTM source = tiktok | Workflow: UTM capture on opt-in | Traffic source tracking for ROI analysis. |
+| `source-instagram` | UTM source = instagram | Workflow: UTM capture on opt-in | Traffic source tracking for ROI analysis. |
+| `source-organic` | UTM source = organic or no UTM | Workflow: UTM capture on opt-in | Traffic source tracking for ROI analysis. |
+| `source-gumroad` | UTM source = gumroad | Workflow: UTM capture on opt-in | Tracks redirects from Gumroad profile. |
+
 ---
 
-## 4. FOUR EMAIL WORKFLOWS
+## 4. EMAIL WORKFLOWS
 
 Navigate to **Automation > Workflows > + Create Workflow > Start from Scratch** for each workflow.
 
@@ -441,7 +531,7 @@ Navigate to **Automation > Workflows > + Create Workflow > Start from Scratch** 
 1. Remove contact from this workflow
 2. Remove tag `in-sequence-a`
 3. Add tags: `buyer`, `trilogy-purchased`
-4. Enroll in Workflow B (if OTO was declined) OR Workflow C (if OTO/bump was purchased)
+4. Trilogy Purchase Handler takes over
 
 ---
 
@@ -458,7 +548,7 @@ TRIGGER: Form Submitted → "Money Decoded Opt-In"
   │
   ├─ Step 4: ADD TO PIPELINE
   │    Pipeline: "Money Decoded Funnel"
-  │    Stage: "Lead"
+  │    Stage: "Book1 Lead"
   │
   ├─ Step 5: GRANT MEMBERSHIP ACCESS
   │    Membership: "Money Decoded"
@@ -578,7 +668,7 @@ TRIGGER: Order Submitted → Product = "Money Decoded Trilogy"
   │
   ├─ Step 5: UPDATE PIPELINE STAGE
   │    Pipeline: "Money Decoded Funnel"
-  │    Stage: "Buyer ($7)"
+  │    Stage: "Trilogy Buyer"
   │
   ├─ Step 6: GRANT MEMBERSHIP ACCESS
   │    Membership: "Money Decoded"
@@ -587,120 +677,234 @@ TRIGGER: Order Submitted → Product = "Money Decoded Trilogy"
   ├─ Step 7: SEND EMAIL → "Trilogy Purchase Confirmation"
   │    Subject: Smart move — your trilogy is ready
   │    Body: Download links for all 3 books + membership portal login
+  │    NOTE: Do NOT include track product pitch here. The questionnaire page handles routing.
   │
-  ├─ Step 8: WAIT → 5 minutes
-  │    (Allow time for OTO page decision)
+  └─ END
+```
+
+**Note:** After the $7 purchase, the buyer is redirected to the Questionnaire page (Step 3 of the funnel). The Questionnaire Router workflow handles track selection and downstream routing. This handler only deals with purchase confirmation and delivery.
+
+---
+
+### WORKFLOW: Questionnaire Router
+
+**Workflow Name:** `MD — Questionnaire Router`
+**Trigger Type:** Form Submitted
+**Trigger Filter:** Form = `Track Selection Questionnaire`
+
+This workflow fires when the buyer selects their track on the post-purchase questionnaire page. It applies the track tag, updates the pipeline, and sets the redirect.
+
+```
+TRIGGER: Form Submitted → "Track Selection Questionnaire"
   │
-  ├─ Step 9: IF/ELSE → Contact has tag "fire-buyer"?
-  │    ├─ YES → GO TO: End (they already bought FIRE — Workflow C will trigger from FIRE purchase handler)
+  ├─ Step 1: UPDATE PIPELINE STAGE
+  │    Pipeline: "Money Decoded Funnel"
+  │    Stage: "Track Selected"
+  │
+  ├─ Step 2: IF/ELSE → Custom field "investor_track" = "active"?
+  │    ├─ YES →
+  │    │    ├─ ADD TAG → "track-active"
+  │    │    ├─ REDIRECT → /deal-machine-offer
+  │    │    └─ WAIT → 1 hour
+  │    │         └─ IF/ELSE → Contact has tag "deal-machine-buyer"?
+  │    │              ├─ YES → END (C1 triggered by purchase handler)
+  │    │              └─ NO → ENROLL IN WORKFLOW → "MD — Sequence B1: Push Deal Machine"
+  │    │
   │    └─ NO → Continue
   │
-  ├─ Step 10: ADD TAG → "oto-declined"
+  ├─ Step 3: IF/ELSE → Custom field "investor_track" = "passive"?
+  │    ├─ YES →
+  │    │    ├─ ADD TAG → "track-passive"
+  │    │    ├─ REDIRECT → /wealth-shift-offer
+  │    │    └─ WAIT → 1 hour
+  │    │         └─ IF/ELSE → Contact has tag "wealth-shift-buyer"?
+  │    │              ├─ YES → END (C2 triggered by purchase handler)
+  │    │              └─ NO → ENROLL IN WORKFLOW → "MD — Sequence B2: Push Wealth Shift"
+  │    │
+  │    └─ NO → Continue
   │
-  ├─ Step 11: ENROLL IN WORKFLOW → "MD — Sequence B: Trilogy to FIRE Workbook"
+  ├─ Step 4: IF/ELSE → Custom field "investor_track" = "foundation"?
+  │    ├─ YES →
+  │    │    ├─ ADD TAG → "track-foundation"
+  │    │    ├─ REDIRECT → /foundation-offer
+  │    │    └─ WAIT → 1 hour
+  │    │         └─ IF/ELSE → Contact has tag "foundation-buyer"?
+  │    │              ├─ YES → END (C3 triggered by purchase handler)
+  │    │              └─ NO → ENROLL IN WORKFLOW → "MD — Sequence B3: Push Foundation"
+  │    │
+  │    └─ NO → (fallback: treat as foundation)
+  │         ├─ ADD TAG → "track-foundation"
+  │         ├─ REDIRECT → /foundation-offer
+  │         └─ WAIT → 1 hour
+  │              └─ IF/ELSE → Contact has tag "foundation-buyer"?
+  │                   ├─ YES → END
+  │                   └─ NO → ENROLL IN WORKFLOW → "MD — Sequence B3: Push Foundation"
   │
   └─ END
 ```
 
-**Note on the 5-minute wait (Step 8):** After the $7 purchase, the buyer lands on the OTO page. They may take 1-3 minutes to decide. The 5-minute wait gives them time to purchase the OTO before routing them into Sequence B. If they buy the $97 FIRE Workbook during those 5 minutes, the `fire-buyer` tag gets applied by the FIRE Purchase Handler workflow, and the If/Else catches it.
+**Key logic — the 1-hour wait:** After the buyer is redirected to their track offer page, we wait 1 hour to give them time to purchase. If they buy, the respective Purchase Handler workflow fires, applies the buyer tag, and enrolls them in the correct C sequence. If they do NOT buy within 1 hour, the Router enrolls them in the correct B sequence to nurture the sale via email.
 
 ---
 
-### WORKFLOW: FIRE Workbook Purchase Handler
+### WORKFLOW: Deal Machine Purchase Handler (Track 1)
 
-**Workflow Name:** `MD — FIRE Workbook Purchase Handler`
+**Workflow Name:** `MD — Deal Machine Purchase Handler`
 **Trigger Type:** Payment Received (Stripe) / Order Submitted
-**Trigger Filter:** Product = `FIRE Workbook` (any version — $97 OTO, $67 bump, or $47 downsell)
+**Trigger Filter:** Product = `The Deal Machine — Active Investor's Playbook`
 
 ```
-TRIGGER: Order Submitted → Product contains "FIRE Workbook"
+TRIGGER: Order Submitted → Product = "The Deal Machine"
   │
-  ├─ Step 1: ADD TAG → "fire-buyer"
+  ├─ Step 1: ADD TAG → "deal-machine-buyer"
   │
-  ├─ Step 2: IF/ELSE → Contact has tag "bump-purchased"?
-  │    ├─ YES → Continue (came from order bump, already has "buyer" tag)
-  │    └─ NO → ADD TAG → "oto-purchased" (came from OTO page)
+  ├─ Step 2: REMOVE TAG → "in-sequence-b1"
   │
-  ├─ Step 3: REMOVE TAG → "in-sequence-b"
+  ├─ Step 3: REMOVE FROM WORKFLOW → "MD — Sequence B1: Push Deal Machine"
+  │    (Stops B1 emails if they were in it)
   │
-  ├─ Step 4: REMOVE FROM WORKFLOW → "MD — Sequence B: Trilogy to FIRE Workbook"
-  │    (Stops Sequence B if they were in it)
-  │
-  ├─ Step 5: UPDATE PIPELINE STAGE
+  ├─ Step 4: UPDATE PIPELINE STAGE
   │    Pipeline: "Money Decoded Funnel"
-  │    Stage: "FIRE Buyer ($97)"
+  │    Stage: "Track Product Buyer"
   │
-  ├─ Step 6: GRANT MEMBERSHIP ACCESS
+  ├─ Step 5: GRANT MEMBERSHIP ACCESS
   │    Membership: "Money Decoded"
-  │    Level: "FIRE Workbook"
+  │    Level: "Track 1: Deal Machine"
   │
-  ├─ Step 7: SEND EMAIL → "FIRE Workbook Confirmation"
-  │    Subject: Your FIRE Workbook is ready — let's build
-  │    Body: Membership portal login link + Module 1 instructions
+  ├─ Step 6: SEND EMAIL → "Deal Machine Purchase Confirmation"
+  │    Subject: Your Deal Machine is ready — let's find your first deal
+  │    Body: Membership portal login link + what's inside overview + audio module 1 instructions
+  │    NOTE: First time buyer HEARS the real voice (audio modules). Progressive reveal Stage 2.
   │
-  ├─ Step 8: ENROLL IN WORKFLOW → "MD — Sequence C: FIRE to Coaching Application"
+  ├─ Step 7: ENROLL IN WORKFLOW → "MD — Sequence C1: Deal Machine to Coaching"
   │
   └─ END
 ```
 
 ---
 
-### WORKFLOW B: Trilogy to FIRE Workbook ($97)
+### WORKFLOW: Wealth Shift Purchase Handler (Track 2)
 
-**Workflow Name:** `MD — Sequence B: Trilogy to FIRE Workbook`
-**Trigger Type:** Workflow Enrollment (enrolled by Trilogy Purchase Handler)
-**Do NOT use a purchase trigger — this workflow is only for people who bought the trilogy but skipped the OTO.**
-
-**Goal:** Contact purchases $97 FIRE Workbook
-**Goal Action:** Remove from workflow, handled by FIRE Purchase Handler
+**Workflow Name:** `MD — Wealth Shift Purchase Handler`
+**Trigger Type:** Payment Received (Stripe) / Order Submitted
+**Trigger Filter:** Product = `The Wealth Shift — Reposition Your Money`
 
 ```
-TRIGGER: Enrolled by another workflow (Trilogy Purchase Handler)
+TRIGGER: Order Submitted → Product = "The Wealth Shift"
   │
-  ├─ Step 1: ADD TAG → "in-sequence-b"
+  ├─ Step 1: ADD TAG → "wealth-shift-buyer"
   │
-  ├─ Step 2: SEND EMAIL → "Seq B — Email 1: Smart move — your trilogy is ready"
-  │    Subject: Smart move — your trilogy is ready
-  │    Preview: You're ahead of 99% of people right now.
-  │    Body: [Full Email 1 from Sequence B file]
-  │    NOTE: This is the delivery + welcome email. Contains download links.
+  ├─ Step 2: REMOVE TAG → "in-sequence-b2"
+  │
+  ├─ Step 3: REMOVE FROM WORKFLOW → "MD — Sequence B2: Push Wealth Shift"
+  │    (Stops B2 emails if they were in it)
+  │
+  ├─ Step 4: UPDATE PIPELINE STAGE
+  │    Pipeline: "Money Decoded Funnel"
+  │    Stage: "Track Product Buyer"
+  │
+  ├─ Step 5: GRANT MEMBERSHIP ACCESS
+  │    Membership: "Money Decoded"
+  │    Level: "Track 2: Wealth Shift"
+  │
+  ├─ Step 6: SEND EMAIL → "Wealth Shift Purchase Confirmation"
+  │    Subject: Your Wealth Shift guide is ready — let's reposition your money
+  │    Body: Membership portal login link + what's inside overview + audio module 1 instructions
+  │
+  ├─ Step 7: ENROLL IN WORKFLOW → "MD — Sequence C2: Wealth Shift to Coaching"
+  │
+  └─ END
+```
+
+---
+
+### WORKFLOW: Foundation Purchase Handler (Track 3)
+
+**Workflow Name:** `MD — Foundation Purchase Handler`
+**Trigger Type:** Payment Received (Stripe) / Order Submitted
+**Trigger Filter:** Product = `The Foundation — Financial Blueprint`
+
+```
+TRIGGER: Order Submitted → Product = "The Foundation"
+  │
+  ├─ Step 1: ADD TAG → "foundation-buyer"
+  │
+  ├─ Step 2: REMOVE TAG → "in-sequence-b3"
+  │
+  ├─ Step 3: REMOVE FROM WORKFLOW → "MD — Sequence B3: Push Foundation"
+  │    (Stops B3 emails if they were in it)
+  │
+  ├─ Step 4: UPDATE PIPELINE STAGE
+  │    Pipeline: "Money Decoded Funnel"
+  │    Stage: "Track Product Buyer"
+  │
+  ├─ Step 5: GRANT MEMBERSHIP ACCESS
+  │    Membership: "Money Decoded"
+  │    Level: "Track 3: Foundation"
+  │
+  ├─ Step 6: SEND EMAIL → "Foundation Purchase Confirmation"
+  │    Subject: Your Foundation blueprint is ready — let's build
+  │    Body: Membership portal login link + what's inside overview + audio module 1 instructions
+  │
+  ├─ Step 7: ENROLL IN WORKFLOW → "MD — Sequence C3: Foundation to Coaching"
+  │
+  └─ END
+```
+
+---
+
+### WORKFLOW B1: Push Deal Machine ($147) — Active Investor Non-Buyers
+
+**Workflow Name:** `MD — Sequence B1: Push Deal Machine`
+**Trigger Type:** Workflow Enrollment (enrolled by Questionnaire Router, 1 hour after track selection if no purchase)
+
+**Goal:** Contact purchases $147 Deal Machine
+**Goal Action:** Remove from workflow, handled by Deal Machine Purchase Handler
+
+```
+TRIGGER: Enrolled by another workflow (Questionnaire Router)
+  │
+  ├─ Step 1: ADD TAG → "in-sequence-b1"
+  │
+  ├─ Step 2: SEND EMAIL → "Seq B1 — Email 1"
+  │    Subject: [From EMAIL_SEQUENCE_B1_ACTIVE_INVESTOR.md]
+  │    Body: [Full Email 1 from B1 file]
+  │    INCLUDE CTA LINK: /deal-machine-offer
   │
   ├─ Step 3: WAIT → 2 days
   │
-  ├─ Step 4: IF/ELSE → Contact has tag "fire-buyer"?
-  │    ├─ YES → REMOVE TAG "in-sequence-b" → END
+  ├─ Step 4: IF/ELSE → Contact has tag "deal-machine-buyer"?
+  │    ├─ YES → REMOVE TAG "in-sequence-b1" → END
   │    └─ NO → Continue
   │
-  ├─ Step 5: SEND EMAIL → "Seq B — Email 2: Knowledge without action is entertainment"
-  │    Subject: Knowledge without action is entertainment
-  │    Preview: The gap between knowing and doing.
-  │    Body: [Full Email 2 from Sequence B file]
+  ├─ Step 5: SEND EMAIL → "Seq B1 — Email 2"
+  │    Subject: [From B1 file]
+  │    Body: [Full Email 2 from B1 file]
+  │    INCLUDE CTA LINK: /deal-machine-offer
   │
   ├─ Step 6: WAIT → 2 days
   │
-  ├─ Step 7: IF/ELSE → Contact has tag "fire-buyer"?
-  │    ├─ YES → REMOVE TAG "in-sequence-b" → END
+  ├─ Step 7: IF/ELSE → Contact has tag "deal-machine-buyer"?
+  │    ├─ YES → REMOVE TAG "in-sequence-b1" → END
   │    └─ NO → Continue
   │
-  ├─ Step 8: SEND EMAIL → "Seq B — Email 3: Your 90-day wealth plan — 7 modules"
-  │    Subject: Your 90-day wealth plan — 7 modules
-  │    Preview: From "I understand money" to "I'm building wealth."
-  │    Body: [Full Email 3 from Sequence B file]
-  │    INCLUDE CTA LINK: Direct link to FIRE Workbook checkout (standalone page or direct payment link)
+  ├─ Step 8: SEND EMAIL → "Seq B1 — Email 3"
+  │    Subject: [From B1 file]
+  │    Body: [Full Email 3 from B1 file]
+  │    INCLUDE CTA LINK: /deal-machine-offer
   │
   ├─ Step 9: WAIT → 3 days
   │
-  ├─ Step 10: IF/ELSE → Contact has tag "fire-buyer"?
-  │    ├─ YES → REMOVE TAG "in-sequence-b" → END
+  ├─ Step 10: IF/ELSE → Contact has tag "deal-machine-buyer"?
+  │    ├─ YES → REMOVE TAG "in-sequence-b1" → END
   │    └─ NO → Continue
   │
-  ├─ Step 11: SEND EMAIL → "Seq B — Email 4: {first_name}, still thinking about it?"
-  │    Subject: {first_name}, still thinking about it?
-  │    Preview: Let me address the real question.
-  │    Body: [Full Email 4 from Sequence B file]
-  │    INCLUDE CTA LINK: FIRE Workbook checkout
+  ├─ Step 11: SEND EMAIL → "Seq B1 — Email 4"
+  │    Subject: [From B1 file]
+  │    Body: [Full Email 4 from B1 file]
+  │    INCLUDE CTA LINK: /deal-machine-offer
   │
-  ├─ Step 12: REMOVE TAG → "in-sequence-b"
+  ├─ Step 12: REMOVE TAG → "in-sequence-b1"
   │
   └─ END
 ```
@@ -709,132 +913,241 @@ TRIGGER: Enrolled by another workflow (Trilogy Purchase Handler)
 
 | Email | Day | Wait Before | Subject |
 |-------|-----|-------------|---------|
-| 1 | 0 | Immediate | Smart move — your trilogy is ready |
-| 2 | 2 | 2 days | Knowledge without action is entertainment |
-| 3 | 4 | 2 days | Your 90-day wealth plan — 7 modules |
-| 4 | 7 | 3 days | {first_name}, still thinking about it? |
+| 1 | 0 | Immediate (1 hr after track selection) | [From B1 file] |
+| 2 | 2 | 2 days | [From B1 file] |
+| 3 | 4 | 2 days | [From B1 file] |
+| 4 | 7 | 3 days | [From B1 file] |
 
 ---
 
-### WORKFLOW C: FIRE Workbook to Coaching Application
+### WORKFLOW B2: Push Wealth Shift ($197) — Passive Investor Non-Buyers
 
-**Workflow Name:** `MD — Sequence C: FIRE to Coaching Application`
-**Trigger Type:** Workflow Enrollment (enrolled by FIRE Purchase Handler)
+**Workflow Name:** `MD — Sequence B2: Push Wealth Shift`
+**Trigger Type:** Workflow Enrollment (enrolled by Questionnaire Router)
+
+**Goal:** Contact purchases $197 Wealth Shift
+**Goal Action:** Remove from workflow, handled by Wealth Shift Purchase Handler
+
+```
+TRIGGER: Enrolled by another workflow (Questionnaire Router)
+  │
+  ├─ Step 1: ADD TAG → "in-sequence-b2"
+  │
+  ├─ Step 2: SEND EMAIL → "Seq B2 — Email 1"
+  │    Subject: [From EMAIL_SEQUENCE_B2_PASSIVE_INVESTOR.md]
+  │    Body: [Full Email 1 from B2 file]
+  │    INCLUDE CTA LINK: /wealth-shift-offer
+  │
+  ├─ Step 3: WAIT → 2 days
+  │
+  ├─ Step 4: IF/ELSE → Contact has tag "wealth-shift-buyer"?
+  │    ├─ YES → REMOVE TAG "in-sequence-b2" → END
+  │    └─ NO → Continue
+  │
+  ├─ Step 5: SEND EMAIL → "Seq B2 — Email 2"
+  │    Subject: [From B2 file]
+  │    Body: [Full Email 2 from B2 file]
+  │    INCLUDE CTA LINK: /wealth-shift-offer
+  │
+  ├─ Step 6: WAIT → 2 days
+  │
+  ├─ Step 7: IF/ELSE → Contact has tag "wealth-shift-buyer"?
+  │    ├─ YES → REMOVE TAG "in-sequence-b2" → END
+  │    └─ NO → Continue
+  │
+  ├─ Step 8: SEND EMAIL → "Seq B2 — Email 3"
+  │    Subject: [From B2 file]
+  │    Body: [Full Email 3 from B2 file]
+  │    INCLUDE CTA LINK: /wealth-shift-offer
+  │
+  ├─ Step 9: WAIT → 3 days
+  │
+  ├─ Step 10: IF/ELSE → Contact has tag "wealth-shift-buyer"?
+  │    ├─ YES → REMOVE TAG "in-sequence-b2" → END
+  │    └─ NO → Continue
+  │
+  ├─ Step 11: SEND EMAIL → "Seq B2 — Email 4"
+  │    Subject: [From B2 file]
+  │    Body: [Full Email 4 from B2 file]
+  │    INCLUDE CTA LINK: /wealth-shift-offer
+  │
+  ├─ Step 12: REMOVE TAG → "in-sequence-b2"
+  │
+  └─ END
+```
+
+**Schedule / Timing Summary:**
+
+| Email | Day | Wait Before | Subject |
+|-------|-----|-------------|---------|
+| 1 | 0 | Immediate (1 hr after track selection) | [From B2 file] |
+| 2 | 2 | 2 days | [From B2 file] |
+| 3 | 4 | 2 days | [From B2 file] |
+| 4 | 7 | 3 days | [From B2 file] |
+
+---
+
+### WORKFLOW B3: Push Foundation ($97) — Foundation Non-Buyers
+
+**Workflow Name:** `MD — Sequence B3: Push Foundation`
+**Trigger Type:** Workflow Enrollment (enrolled by Questionnaire Router)
+
+**Goal:** Contact purchases $97 Foundation
+**Goal Action:** Remove from workflow, handled by Foundation Purchase Handler
+
+```
+TRIGGER: Enrolled by another workflow (Questionnaire Router)
+  │
+  ├─ Step 1: ADD TAG → "in-sequence-b3"
+  │
+  ├─ Step 2: SEND EMAIL → "Seq B3 — Email 1"
+  │    Subject: [From EMAIL_SEQUENCE_B3_FOUNDATION.md]
+  │    Body: [Full Email 1 from B3 file]
+  │    INCLUDE CTA LINK: /foundation-offer
+  │
+  ├─ Step 3: WAIT → 2 days
+  │
+  ├─ Step 4: IF/ELSE → Contact has tag "foundation-buyer"?
+  │    ├─ YES → REMOVE TAG "in-sequence-b3" → END
+  │    └─ NO → Continue
+  │
+  ├─ Step 5: SEND EMAIL → "Seq B3 — Email 2"
+  │    Subject: [From B3 file]
+  │    Body: [Full Email 2 from B3 file]
+  │    INCLUDE CTA LINK: /foundation-offer
+  │
+  ├─ Step 6: WAIT → 2 days
+  │
+  ├─ Step 7: IF/ELSE → Contact has tag "foundation-buyer"?
+  │    ├─ YES → REMOVE TAG "in-sequence-b3" → END
+  │    └─ NO → Continue
+  │
+  ├─ Step 8: SEND EMAIL → "Seq B3 — Email 3"
+  │    Subject: [From B3 file]
+  │    Body: [Full Email 3 from B3 file]
+  │    INCLUDE CTA LINK: /foundation-offer
+  │
+  ├─ Step 9: WAIT → 3 days
+  │
+  ├─ Step 10: IF/ELSE → Contact has tag "foundation-buyer"?
+  │    ├─ YES → REMOVE TAG "in-sequence-b3" → END
+  │    └─ NO → Continue
+  │
+  ├─ Step 11: SEND EMAIL → "Seq B3 — Email 4"
+  │    Subject: [From B3 file]
+  │    Body: [Full Email 4 from B3 file]
+  │    INCLUDE CTA LINK: /foundation-offer
+  │
+  ├─ Step 12: REMOVE TAG → "in-sequence-b3"
+  │
+  └─ END
+```
+
+**Schedule / Timing Summary:**
+
+| Email | Day | Wait Before | Subject |
+|-------|-----|-------------|---------|
+| 1 | 0 | Immediate (1 hr after track selection) | [From B3 file] |
+| 2 | 2 | 2 days | [From B3 file] |
+| 3 | 4 | 2 days | [From B3 file] |
+| 4 | 7 | 3 days | [From B3 file] |
+
+---
+
+### WORKFLOW C1: Deal Machine to Coaching Application (Track 1)
+
+**Workflow Name:** `MD — Sequence C1: Deal Machine to Coaching`
+**Trigger Type:** Workflow Enrollment (enrolled by Deal Machine Purchase Handler)
 
 **Goal:** Contact submits coaching application
 **Goal Action:** Remove from workflow, handled by Application Handler
 
 ```
-TRIGGER: Enrolled by another workflow (FIRE Purchase Handler)
+TRIGGER: Enrolled by another workflow (Deal Machine Purchase Handler)
   │
-  ├─ Step 1: ADD TAG → "in-sequence-c"
+  ├─ Step 1: ADD TAG → "in-sequence-c1"
   │
-  ├─ Step 2: SEND EMAIL → "Seq C — Email 1: Welcome to the inner circle"
-  │    Subject: Welcome to the inner circle
-  │    Preview: You just invested in yourself. Here's what's next.
-  │    Body: [Full Email 1 from Sequence C file]
+  ├─ Step 2: SEND EMAIL → "Seq C1 — Email 1"
+  │    Subject: [From EMAIL_SEQUENCE_C1_ACTIVE_INVESTOR.md]
+  │    Body: [Full Email 1 from C1 file]
   │    Template: Premium Branded
   │
   ├─ Step 3: WAIT → 2 days
   │
   ├─ Step 4: IF/ELSE → Contact has tag "applicant"?
-  │    ├─ YES → REMOVE TAG "in-sequence-c" → END
+  │    ├─ YES → REMOVE TAG "in-sequence-c1" → END
   │    └─ NO → Continue
   │
-  ├─ Step 5: SEND EMAIL → "Seq C — Email 2: I almost quit in year 2"
-  │    Subject: I almost quit in year 2
-  │    Preview: The thing nobody tells you about building wealth.
-  │    Body: [Full Email 2 from Sequence C file]
-  │    Template: Clean Minimal
+  ├─ Step 5: SEND EMAIL → "Seq C1 — Email 2"
+  │    [Email 2 from C1 file]
   │
   ├─ Step 6: WAIT → 2 days
   │
   ├─ Step 7: IF/ELSE → Contact has tag "applicant"?
-  │    ├─ YES → REMOVE TAG "in-sequence-c" → END
+  │    ├─ YES → REMOVE TAG "in-sequence-c1" → END
   │    └─ NO → Continue
   │
-  ├─ Step 8: SEND EMAIL → "Seq C — Email 3: The 3 wealth levers nobody teaches you"
-  │    Subject: The 3 wealth levers nobody teaches you
-  │    Preview: School teaches you zero of these.
-  │    Body: [Full Email 3 from Sequence C file]
-  │    Template: Clean Minimal
+  ├─ Step 8: SEND EMAIL → "Seq C1 — Email 3"
+  │    [Email 3 from C1 file]
   │
   ├─ Step 9: WAIT → 2 days
   │
   ├─ Step 10: IF/ELSE → Contact has tag "applicant"?
-  │    ├─ YES → REMOVE TAG "in-sequence-c" → END
+  │    ├─ YES → REMOVE TAG "in-sequence-c1" → END
   │    └─ NO → Continue
   │
-  ├─ Step 11: SEND EMAIL → "Seq C — Email 4: {first_name}, meet David"
-  │    Subject: {first_name}, meet David — he was exactly where you are
-  │    Preview: From $95K salary to $6,800/mo passive.
-  │    Body: [Full Email 4 from Sequence C file]
-  │    Template: Pure Text
+  ├─ Step 11: SEND EMAIL → "Seq C1 — Email 4"
+  │    [Email 4 from C1 file]
   │
   ├─ Step 12: WAIT → 2 days
   │
   ├─ Step 13: IF/ELSE → Contact has tag "applicant"?
-  │    ├─ YES → REMOVE TAG "in-sequence-c" → END
+  │    ├─ YES → REMOVE TAG "in-sequence-c1" → END
   │    └─ NO → Continue
   │
-  ├─ Step 14: SEND EMAIL → "Seq C — Email 5: 3 mistakes smart people make with money"
-  │    Subject: 3 mistakes smart people make with money
-  │    Preview: Smart people make the worst financial mistakes.
-  │    Body: [Full Email 5 from Sequence C file]
-  │    Template: Clean Minimal
+  ├─ Step 14: SEND EMAIL → "Seq C1 — Email 5"
+  │    [Email 5 from C1 file]
   │
   ├─ Step 15: WAIT → 2 days
   │
   ├─ Step 16: IF/ELSE → Contact has tag "applicant"?
-  │    ├─ YES → REMOVE TAG "in-sequence-c" → END
+  │    ├─ YES → REMOVE TAG "in-sequence-c1" → END
   │    └─ NO → Continue
   │
-  ├─ Step 17: SEND EMAIL → "Seq C — Email 6: From $0 to 3 rental properties in 11 months"
-  │    Subject: From $0 to 3 rental properties in 11 months
-  │    Preview: Different person. Same system. Same result.
-  │    Body: [Full Email 6 from Sequence C file]
-  │    Template: Pure Text
+  ├─ Step 17: SEND EMAIL → "Seq C1 — Email 6"
+  │    [Email 6 from C1 file]
   │
   ├─ Step 18: WAIT → 2 days
   │
   ├─ Step 19: IF/ELSE → Contact has tag "applicant"?
-  │    ├─ YES → REMOVE TAG "in-sequence-c" → END
+  │    ├─ YES → REMOVE TAG "in-sequence-c1" → END
   │    └─ NO → Continue
   │
-  ├─ Step 20: SEND EMAIL → "Seq C — Email 7: Applications are open — 15 spots"
-  │    Subject: Applications are open — 15 spots
-  │    Preview: 6 months. A system. Accountability. Results.
-  │    Body: [Full Email 7 from Sequence C file]
-  │    Template: Dark Premium
-  │    INCLUDE CTA LINK: Funnel Step 5 (Application page URL)
+  ├─ Step 20: SEND EMAIL → "Seq C1 — Email 7"
+  │    [Email 7 from C1 file — first coaching application pitch]
+  │    INCLUDE CTA LINK: /apply (Coaching Application page)
   │
   ├─ Step 21: WAIT → 3 days
   │
   ├─ Step 22: IF/ELSE → Contact has tag "applicant"?
-  │    ├─ YES → REMOVE TAG "in-sequence-c" → END
+  │    ├─ YES → REMOVE TAG "in-sequence-c1" → END
   │    └─ NO → Continue
   │
-  ├─ Step 23: SEND EMAIL → "Seq C — Email 8: 8 spots left — your questions answered"
-  │    Subject: 8 spots left — your questions answered
-  │    Preview: The 4 questions everyone asks before joining.
-  │    Body: [Full Email 8 from Sequence C file]
-  │    Template: Clean Minimal
-  │    INCLUDE CTA LINK: Application page
+  ├─ Step 23: SEND EMAIL → "Seq C1 — Email 8"
+  │    [Email 8 from C1 file]
+  │    INCLUDE CTA LINK: /apply
   │
   ├─ Step 24: WAIT → 3 days
   │
   ├─ Step 25: IF/ELSE → Contact has tag "applicant"?
-  │    ├─ YES → REMOVE TAG "in-sequence-c" → END
+  │    ├─ YES → REMOVE TAG "in-sequence-c1" → END
   │    └─ NO → Continue
   │
-  ├─ Step 26: SEND EMAIL → "Seq C — Email 9: closing applications friday"
-  │    Subject: closing applications friday
-  │    Preview: This is my last email about the program.
-  │    Body: [Full Email 9 from Sequence C file]
-  │    Template: Pure Text
-  │    INCLUDE CTA LINK: Application page
+  ├─ Step 26: SEND EMAIL → "Seq C1 — Email 9"
+  │    [Email 9 from C1 file — final push / closing applications]
+  │    INCLUDE CTA LINK: /apply
   │
-  ├─ Step 27: REMOVE TAG → "in-sequence-c"
+  ├─ Step 27: REMOVE TAG → "in-sequence-c1"
   │
   └─ END
 ```
@@ -843,15 +1156,79 @@ TRIGGER: Enrolled by another workflow (FIRE Purchase Handler)
 
 | Email | Day | Wait Before | Subject | Template |
 |-------|-----|-------------|---------|----------|
-| 1 | 0 | Immediate | Welcome to the inner circle | Premium Branded |
-| 2 | 2 | 2 days | I almost quit in year 2 | Clean Minimal |
-| 3 | 4 | 2 days | The 3 wealth levers nobody teaches you | Clean Minimal |
-| 4 | 6 | 2 days | {first_name}, meet David | Pure Text |
-| 5 | 8 | 2 days | 3 mistakes smart people make with money | Clean Minimal |
-| 6 | 10 | 2 days | From $0 to 3 rental properties in 11 months | Pure Text |
-| 7 | 12 | 2 days | Applications are open — 15 spots | Dark Premium |
-| 8 | 15 | 3 days | 8 spots left — your questions answered | Clean Minimal |
-| 9 | 18 | 3 days | closing applications friday | Pure Text |
+| 1 | 0 | Immediate | [From C1 file] | Premium Branded |
+| 2 | 2 | 2 days | [From C1 file] | Clean Minimal |
+| 3 | 4 | 2 days | [From C1 file] | Clean Minimal |
+| 4 | 6 | 2 days | [From C1 file] | Pure Text |
+| 5 | 8 | 2 days | [From C1 file] | Clean Minimal |
+| 6 | 10 | 2 days | [From C1 file] | Pure Text |
+| 7 | 12 | 2 days | [From C1 file] | Dark Premium |
+| 8 | 15 | 3 days | [From C1 file] | Clean Minimal |
+| 9 | 18 | 3 days | [From C1 file] | Pure Text |
+
+---
+
+### WORKFLOW C2: Wealth Shift to Coaching Application (Track 2)
+
+**Workflow Name:** `MD — Sequence C2: Wealth Shift to Coaching`
+**Trigger Type:** Workflow Enrollment (enrolled by Wealth Shift Purchase Handler)
+
+**Goal:** Contact submits coaching application
+
+Structure is IDENTICAL to C1 above, except:
+- Step 1: ADD TAG → `in-sequence-c2` (instead of c1)
+- All IF/ELSE checks: tag = `applicant` (same)
+- All emails: from `EMAIL_SEQUENCE_C2_PASSIVE_INVESTOR.md`
+- All CTA links: /apply (same)
+- Removal tag: `in-sequence-c2`
+
+```
+TRIGGER: Enrolled by another workflow (Wealth Shift Purchase Handler)
+  │
+  ├─ Step 1: ADD TAG → "in-sequence-c2"
+  │
+  ├─ Steps 2-26: Same 9-email structure as C1
+  │    Emails sourced from EMAIL_SEQUENCE_C2_PASSIVE_INVESTOR.md
+  │    All IF/ELSE checks: Contact has tag "applicant"?
+  │    Emails 7-9 include CTA LINK: /apply
+  │
+  ├─ Step 27: REMOVE TAG → "in-sequence-c2"
+  │
+  └─ END
+```
+
+**Timing:** Same as C1 (Day 0, 2, 4, 6, 8, 10, 12, 15, 18)
+
+---
+
+### WORKFLOW C3: Foundation to Coaching Application (Track 3)
+
+**Workflow Name:** `MD — Sequence C3: Foundation to Coaching`
+**Trigger Type:** Workflow Enrollment (enrolled by Foundation Purchase Handler)
+
+**Goal:** Contact submits coaching application
+
+Structure is IDENTICAL to C1, except:
+- Step 1: ADD TAG → `in-sequence-c3` (instead of c1)
+- All emails: from `EMAIL_SEQUENCE_C3_FOUNDATION.md`
+- Removal tag: `in-sequence-c3`
+
+```
+TRIGGER: Enrolled by another workflow (Foundation Purchase Handler)
+  │
+  ├─ Step 1: ADD TAG → "in-sequence-c3"
+  │
+  ├─ Steps 2-26: Same 9-email structure as C1
+  │    Emails sourced from EMAIL_SEQUENCE_C3_FOUNDATION.md
+  │    All IF/ELSE checks: Contact has tag "applicant"?
+  │    Emails 7-9 include CTA LINK: /apply
+  │
+  ├─ Step 27: REMOVE TAG → "in-sequence-c3"
+  │
+  └─ END
+```
+
+**Timing:** Same as C1 (Day 0, 2, 4, 6, 8, 10, 12, 15, 18)
 
 ---
 
@@ -866,31 +1243,29 @@ TRIGGER: Survey Submitted → "Coaching Application"
   │
   ├─ Step 1: ADD TAG → "applicant"
   │
-  ├─ Step 2: REMOVE TAG → "in-sequence-c"
+  ├─ Step 2: REMOVE TAGS → "in-sequence-c1", "in-sequence-c2", "in-sequence-c3"
   │
-  ├─ Step 3: REMOVE FROM WORKFLOW → "MD — Sequence C: FIRE to Coaching Application"
+  ├─ Step 3: REMOVE FROM WORKFLOWS →
+  │    "MD — Sequence C1: Deal Machine to Coaching"
+  │    "MD — Sequence C2: Wealth Shift to Coaching"
+  │    "MD — Sequence C3: Foundation to Coaching"
+  │    (Stops whichever C sequence they were in)
   │
   ├─ Step 4: UPDATE PIPELINE STAGE
   │    Pipeline: "Money Decoded Funnel"
-  │    Stage: "Applicant"
+  │    Stage: "Coaching Applicant"
   │
-  ├─ Step 5: IF/ELSE → Q1 = "Already in RE" AND Q2 = "Active" or "Experienced"?
-  │    ├─ YES → ADD TAG "scale" → (fast-track: auto-send calendar link)
-  │    └─ NO → Continue
-  │
-  ├─ Step 6: IF/ELSE → Q1 = "Keep learning" AND Q2 = "Beginner" or "Studying"?
-  │    ├─ YES → ADD TAG "educate"
-  │    └─ NO → ADD TAG "activate"
-  │
-  ├─ Step 7: SEND INTERNAL NOTIFICATION
+  ├─ Step 5: SEND INTERNAL NOTIFICATION
   │    To: jmarque@yourdomain.com
   │    Subject: NEW COACHING APPLICATION: {{contact.first_name}} {{contact.last_name}}
-  │    Body: Full application details + tags + pipeline stage
+  │    Body: Full application details + tags (include track tag for call prep) + pipeline stage
   │
-  ├─ Step 8: ENROLL IN WORKFLOW → "MD — Sequence D: Application to Strategy Call"
+  ├─ Step 6: ENROLL IN WORKFLOW → "MD — Sequence D: Application to Strategy Call"
   │
   └─ END
 ```
+
+**Note:** The old `educate` / `activate` / `scale` routing tags are removed. Track tags (`track-active`, `track-passive`, `track-foundation`) plus application answers provide all the segmentation data needed for the strategy call. The application does not filter people out — everyone gets routed to Sequence D.
 
 ---
 
@@ -985,7 +1360,7 @@ TRIGGER: Appointment Scheduled → Calendar = "Strategy Call"
   │
   ├─ Step 4: UPDATE PIPELINE STAGE
   │    Pipeline: "Money Decoded Funnel"
-  │    Stage: "Call Booked"
+  │    Stage: "Strategy Call"
   │
   ├─ Step 5: SEND EMAIL → "Strategy Call Confirmation"
   │    Subject: Your strategy call is confirmed — {{appointment.date}} at {{appointment.time}}
@@ -993,7 +1368,7 @@ TRIGGER: Appointment Scheduled → Calendar = "Strategy Call"
   │      "Your 30-minute strategy call is booked for {{appointment.date}} at {{appointment.time}}.
   │
   │       How to prepare:
-  │       1. Have your FIRE Workbook Module 1 (budget P&L) filled out
+  │       1. Review your track product materials (Deal Machine / Wealth Shift / Foundation)
   │       2. Know your approximate credit score
   │       3. Know what's in your retirement accounts (even a rough number)
   │       4. Think about your 12-month goal
@@ -1003,10 +1378,13 @@ TRIGGER: Appointment Scheduled → Calendar = "Strategy Call"
   │       Talk soon,
   │       — J. Marque"
   │
+  │    NOTE: This is the FIRST time the buyer will see J. Marque's FACE (video call).
+  │    Progressive reveal Stage 3.
+  │
   ├─ Step 6: SEND INTERNAL NOTIFICATION
   │    To: jmarque@yourdomain.com
   │    Subject: STRATEGY CALL BOOKED: {{contact.first_name}} {{contact.last_name}} — {{appointment.date}}
-  │    Body: Contact details, application answers, tags, pipeline stage
+  │    Body: Contact details, application answers, track tag (active/passive/foundation), track product purchased, pipeline stage
   │
   ├─ Step 7: WAIT → Until 24 hours before appointment
   │    (Use: Wait > Until date/time > {{appointment.start_time}} minus 24 hours)
@@ -1018,7 +1396,7 @@ TRIGGER: Appointment Scheduled → Calendar = "Strategy Call"
   │
   │       Quick reminder — our strategy call is tomorrow at {{appointment.time}}.
   │
-  │       Have your FIRE Workbook numbers ready. The more complete your picture, the more specific your plan will be.
+  │       Have your numbers ready. The more complete your picture, the more specific your plan will be.
   │
   │       Join here: {{appointment.meeting_link}}
   │
@@ -1082,7 +1460,7 @@ TRIGGER: Payment Received → Coaching product OR Tag Added → "enrolled-group"
   │
   ├─ Step 3: UPDATE PIPELINE STAGE
   │    Pipeline: "Money Decoded Funnel"
-  │    Stage: "Enrolled (Group)"
+  │    Stage: "Enrolled"
   │
   ├─ Step 4: GRANT MEMBERSHIP ACCESS
   │    Membership: "Money Decoded"
@@ -1109,8 +1487,8 @@ TRIGGER: Payment Received → Coaching product OR Tag Added → "enrolled-group"
   │          - Thursday 7 PM ET: Hot Seat (Zoom link in portal)
   │
   │       4. FIRST ASSIGNMENT:
-  │          - Complete FIRE Workbook Module 1 (Budget P&L) if you haven't already
-  │          - Share your Module 1 results in the community by this Friday
+  │          - Review your track product materials if you haven't already
+  │          - Share your financial snapshot in the community by this Friday
   │
   │       Your first live call is this [Tuesday/Thursday]. Come with questions.
   │
@@ -1122,6 +1500,7 @@ TRIGGER: Payment Received → Coaching product OR Tag Added → "enrolled-group"
   ├─ Step 6: SEND INTERNAL NOTIFICATION
   │    To: jmarque@yourdomain.com
   │    Subject: NEW ENROLLMENT: {{contact.first_name}} — Group Coaching ($5,997)
+  │    Body: Include track tag so you know their investor profile
   │
   ├─ Step 7: CREATE TASK
   │    Title: "Onboard {{contact.first_name}} — check portal access + community join"
@@ -1134,7 +1513,7 @@ TRIGGER: Payment Received → Coaching product OR Tag Added → "enrolled-group"
   │
   ├─ Step 10: ADD TAG → "graduated"
   │
-  ├─ Step 11: UPDATE PIPELINE STAGE → "Graduated"
+  ├─ Step 11: UPDATE PIPELINE STAGE → "Graduate"
   │
   ├─ Step 12: SEND EMAIL → "Graduation + Testimonial Request"
   │    Subject: 6 months — look how far you've come
@@ -1155,22 +1534,22 @@ Navigate to **CRM > Pipelines > + Create Pipeline**.
 
 | Stage # | Stage Name | Trigger (auto-move) | Tag Required |
 |---------|-----------|---------------------|--------------|
-| 1 | Lead | Opt-in form submitted | `lead` |
-| 2 | Buyer ($7) | $7 Trilogy purchased | `buyer` |
-| 3 | FIRE Buyer ($97) | $97 FIRE Workbook purchased | `fire-buyer` |
-| 4 | Applicant | Coaching application submitted | `applicant` |
-| 5 | Call Booked | Strategy call booked | `booked-call` |
-| 6 | Strategy Call Complete | Call completed (manual mark or calendar event) | `call-completed` |
-| 7 | Enrolled (Group) | $5,997 payment received | `enrolled-group` |
-| 8 | Enrolled (1-on-1) | $14,997 payment received | `enrolled-1on1` |
+| 1 | Book1 Lead | Opt-in form submitted | `lead` |
+| 2 | Trilogy Buyer | $7 Trilogy purchased | `buyer` |
+| 3 | Track Selected | Questionnaire completed | `track-active` OR `track-passive` OR `track-foundation` |
+| 4 | Track Product Buyer | Track product purchased ($97/$147/$197) | `deal-machine-buyer` OR `wealth-shift-buyer` OR `foundation-buyer` |
+| 5 | Coaching Applicant | Coaching application submitted | `applicant` |
+| 6 | Strategy Call | Strategy call booked | `booked-call` |
+| 7 | Strategy Call Complete | Call completed | `call-completed` |
+| 8 | Enrolled | $5,997 or $14,997 payment received | `enrolled-group` OR `enrolled-1on1` |
 | 9 | Active Student | Currently in 6-month program | `active-student` |
-| 10 | Graduated | 6-month program completed | `graduated` |
+| 10 | Graduate | 6-month program completed | `graduated` |
 
 ### How to Create Each Stage
 
 1. Click **+ Add Stage**
 2. Name: Enter stage name from table above
-3. Stage Color: Use a progression (gray > blue > green > gold > dark green)
+3. Stage Color: Use a progression (gray > blue > green > yellow > gold > dark green)
 4. Repeat for all 10 stages
 
 ### Pipeline Automation (Auto-Move Between Stages)
@@ -1179,25 +1558,28 @@ All stage movements are handled by the workflows defined in Section 4. Each work
 
 | Event | Workflow Responsible | Pipeline Action |
 |-------|---------------------|-----------------|
-| Opt-in form submitted | Sequence A workflow | Add to pipeline, Stage 1: Lead |
-| $7 purchased | Trilogy Purchase Handler | Move to Stage 2: Buyer ($7) |
-| $97 purchased | FIRE Purchase Handler | Move to Stage 3: FIRE Buyer ($97) |
-| Application submitted | Application Handler | Move to Stage 4: Applicant |
-| Call booked | Calendar Booking Handler | Move to Stage 5: Call Booked |
-| Call completed | Calendar Booking Handler | Move to Stage 6: Strategy Call Complete |
-| Enrolled group | Coaching Enrollment | Move to Stage 7: Enrolled (Group) |
-| Enrolled 1-on-1 | Manual tag | Move to Stage 8: Enrolled (1-on-1) |
-| 6 months elapsed | Coaching Enrollment (timer) | Move to Stage 10: Graduated |
+| Opt-in form submitted | Sequence A workflow | Add to pipeline, Stage 1: Book1 Lead |
+| $7 purchased | Trilogy Purchase Handler | Move to Stage 2: Trilogy Buyer |
+| Questionnaire completed | Questionnaire Router | Move to Stage 3: Track Selected |
+| Track product purchased | Deal Machine / Wealth Shift / Foundation Purchase Handler | Move to Stage 4: Track Product Buyer |
+| Application submitted | Application Handler | Move to Stage 5: Coaching Applicant |
+| Call booked | Calendar Booking Handler | Move to Stage 6: Strategy Call |
+| Call completed | Calendar Booking Handler | Move to Stage 7: Strategy Call Complete |
+| Enrolled | Coaching Enrollment | Move to Stage 8: Enrolled |
+| 6 months elapsed | Coaching Enrollment (timer) | Move to Stage 10: Graduate |
 
-### Pipeline Views
+### Pipeline Views / Smart Lists
 
 Set up the following **Smart Lists** (saved filters) under CRM > Smart Lists:
 
 | Smart List Name | Filter Criteria | Purpose |
 |----------------|-----------------|---------|
 | Hot Leads | Tag = `lead`, opted in within last 7 days | Fresh leads for manual outreach |
-| Buyers Not Upgraded | Tag = `buyer`, NOT tag = `fire-buyer`, purchased within last 30 days | Target for FIRE Workbook push |
-| FIRE Buyers Not Applied | Tag = `fire-buyer`, NOT tag = `applicant`, purchased within last 60 days | Target for application push |
+| Trilogy Buyers Not Tracked | Tag = `buyer`, NOT any track tag, purchased within last 7 days | People who bought $7 but didn't complete questionnaire |
+| Track Active — No Purchase | Tag = `track-active`, NOT tag = `deal-machine-buyer`, within last 30 days | Target for B1 sequence / manual push |
+| Track Passive — No Purchase | Tag = `track-passive`, NOT tag = `wealth-shift-buyer`, within last 30 days | Target for B2 sequence / manual push |
+| Track Foundation — No Purchase | Tag = `track-foundation`, NOT tag = `foundation-buyer`, within last 30 days | Target for B3 sequence / manual push |
+| Track Product Buyers Not Applied | Any buyer tag, NOT tag = `applicant`, within last 60 days | Target for application push |
 | Applicants Not Booked | Tag = `applicant`, NOT tag = `booked-call`, applied within last 14 days | Follow up manually |
 | Calls This Week | Tag = `booked-call`, appointment date = this week | Prep for strategy calls |
 | No-Shows | Tag = `no-show`, NOT tag = `call-completed` | Reschedule outreach |
@@ -1248,7 +1630,7 @@ The booking page should collect:
 | Email | Email | YES |
 | Phone | Phone | YES |
 | "What's your #1 financial goal for the next 12 months?" | Long Text | YES |
-| "Have you completed your FIRE Workbook?" | Dropdown: Yes / Working on it / Not yet | YES |
+| "Which track product did you purchase?" | Dropdown: The Deal Machine / The Wealth Shift / The Foundation / None yet | YES |
 
 ### Confirmation Email Template
 
@@ -1266,7 +1648,7 @@ TIME: {{appointment.time}} Eastern
 JOIN: {{appointment.meeting_link}}
 
 HOW TO PREPARE:
-1. Have your FIRE Workbook Module 1 (Budget P&L) completed
+1. Review your track product materials (Deal Machine / Wealth Shift / Foundation)
 2. Know your approximate credit score
 3. Know your retirement account balances (rough numbers OK)
 4. Have your 12-month financial goal written down
@@ -1338,7 +1720,9 @@ Create the following **Offers** under the membership. Each offer grants access t
 |------------|-------|-------------|----------------|
 | Free Tier | $0 | Opt-in form submitted | Book 1 only |
 | Trilogy | $7 | $7 purchase | Books 1, 2, 3 |
-| FIRE Workbook | $97 | $97 purchase | Books 1, 2, 3 + FIRE Workbook (7 modules) |
+| Track 1: Deal Machine | $147 | $147 purchase | Books 1-3 + Deal Machine (6 audio modules + 12 templates) |
+| Track 2: Wealth Shift | $197 | $197 purchase | Books 1-3 + Wealth Shift (5 audio modules + 8 worksheets) |
+| Track 3: Foundation | $97 | $97 purchase | Books 1-3 + Foundation (7 audio modules + 9 worksheets) |
 | Coaching | $5,997 | Enrollment | Everything + Coaching modules + Community |
 
 ### Content Organization
@@ -1353,20 +1737,48 @@ Create the following **Offers** under the membership. Each offer grants access t
 | Book 3: The Future of Money | PDF download | Trilogy+ |
 | Bonus: Social Media Hooks | Shareable quotes and graphics from the trilogy | Trilogy+ |
 
-**Category 2: FIRE Workbook**
+**Category 2: The Deal Machine (Track 1)**
 
 | Lesson | Content | Access Level | Drip Schedule |
 |--------|---------|-------------|---------------|
-| FIRE Workbook Overview | How to use the workbook, video walkthrough | FIRE Workbook+ | Immediate |
-| Module 1: It All Starts with a Budget | PDF section + instructional notes | FIRE Workbook+ | Immediate |
-| Module 2: Understanding Risk Management | PDF section + instructional notes | FIRE Workbook+ | Day 3 |
-| Module 3: Keys to the Safe | PDF section + lender-ready checklist template | FIRE Workbook+ | Day 5 |
-| Module 4-5: Balance Sheet & Net Worth | PDF section + net worth calculator template | FIRE Workbook+ | Day 7 |
-| Module 6: Retirement Accounts | PDF section + retirement repositioning worksheet | FIRE Workbook+ | Day 10 |
-| Module 7: Your FIRE Team | PDF section + team contact template + first deal checklist | FIRE Workbook+ | Day 14 |
-| Full FIRE Workbook PDF | Complete 25-page PDF download | FIRE Workbook+ | Immediate |
+| Deal Machine Overview | How to use the playbook, first steps | Track 1+ | Immediate |
+| Audio Module 1: Mindset of a Deal Finder | Audio + transcript | Track 1+ | Immediate |
+| Audio Module 2: Market Analysis | Audio + transcript | Track 1+ | Day 3 |
+| Audio Module 3: Deal Sourcing | Audio + transcript | Track 1+ | Day 5 |
+| Audio Module 4: Making Offers | Audio + transcript | Track 1+ | Day 7 |
+| Audio Module 5: Due Diligence | Audio + transcript | Track 1+ | Day 10 |
+| Audio Module 6: Closing the Deal | Audio + transcript | Track 1+ | Day 14 |
+| Templates Library | 12 templates (offer letters, LOI, comps sheet, etc.) | Track 1+ | Immediate |
+| Full Deal Machine PDF | Complete 85-page guide download | Track 1+ | Immediate |
 
-**Category 3: Coaching Program** (locked to coaching-level access)
+**Category 3: The Wealth Shift (Track 2)**
+
+| Lesson | Content | Access Level | Drip Schedule |
+|--------|---------|-------------|---------------|
+| Wealth Shift Overview | How to use the guide, first steps | Track 2+ | Immediate |
+| Audio Module 1: The Hidden Cost of Traditional Investing | Audio + transcript | Track 2+ | Immediate |
+| Audio Module 2: SDIRA & Solo 401(k) | Audio + transcript | Track 2+ | Day 3 |
+| Audio Module 3: Private Lending | Audio + transcript | Track 2+ | Day 5 |
+| Audio Module 4: Passive Deal Analysis | Audio + transcript | Track 2+ | Day 7 |
+| Audio Module 5: Building Your Passive Portfolio | Audio + transcript | Track 2+ | Day 10 |
+| Worksheets Library | 8 worksheets (retirement audit, capital allocation, etc.) | Track 2+ | Immediate |
+| Full Wealth Shift PDF | Complete 72-page guide download | Track 2+ | Immediate |
+
+**Category 4: The Foundation (Track 3)**
+
+| Lesson | Content | Access Level | Drip Schedule |
+|--------|---------|-------------|---------------|
+| Foundation Overview | How to use the blueprint, first steps | Track 3+ | Immediate |
+| Audio Module 1: It All Starts with a Budget | Audio + transcript | Track 3+ | Immediate |
+| Audio Module 2: Understanding Risk Management | Audio + transcript | Track 3+ | Day 3 |
+| Audio Module 3: Keys to the Safe (Lender-Ready) | Audio + transcript | Track 3+ | Day 5 |
+| Audio Module 4-5: Balance Sheet & Net Worth | Audio + transcript | Track 3+ | Day 7 |
+| Audio Module 6: Retirement Accounts | Audio + transcript | Track 3+ | Day 10 |
+| Audio Module 7: Your FIRE Team | Audio + transcript | Track 3+ | Day 14 |
+| Worksheets Library | 9 worksheets (budget P&L, net worth tracker, etc.) | Track 3+ | Immediate |
+| Full Foundation PDF | Complete 60-page guide download | Track 3+ | Immediate |
+
+**Category 5: Coaching Program** (locked to coaching-level access)
 
 | Lesson | Content | Access Level |
 |--------|---------|-------------|
@@ -1382,19 +1794,19 @@ Create the following **Offers** under the membership. Each offer grants access t
 
 1. Go to **Memberships > + New**
 2. Course Name: `Money Decoded — Member Portal`
-3. **Add Categories** (as listed above): Books, FIRE Workbook, Coaching
+3. **Add Categories** (as listed above): Books, Deal Machine, Wealth Shift, Foundation, Coaching
 4. **Add Lessons** within each category
 5. For each lesson:
-   - Upload PDF attachments
+   - Upload PDF/audio attachments
    - Add description text
    - Set access level by assigning to the appropriate **Offer**
-6. **Drip Schedule** (for FIRE Workbook modules):
+6. **Drip Schedule** (for track product modules):
    - Click the lesson > Settings > Drip > "Unlock X days after enrollment"
-   - Set day numbers as shown in the table above
+   - Set day numbers as shown in the tables above
 7. **Create Offers:**
    - Go to **Memberships > Offers > + New Offer**
    - Name: `Free Tier` / Price: $0 / Content: Book 1 lessons only
-   - Repeat for Trilogy ($7), FIRE Workbook ($97), Coaching ($5,997)
+   - Repeat for Trilogy ($7), Track 1 ($147), Track 2 ($197), Track 3 ($97), Coaching ($5,997)
 8. **Grant Access via Workflow:**
    - In each purchase/enrollment workflow (Section 4), use the **Grant Offer** action
    - Action: Grant Membership > Select Course > Select Offer
@@ -1428,24 +1840,58 @@ Build the following tracking views in GHL. Use **Reporting > Dashboard** and **C
 |--------|--------------------|---------|---------|
 | **Opt-in Rate** | Funnel analytics: Step 1 views vs. form submissions | 25-40% | Submissions / Page Views |
 | **$7 Conversion Rate** | Funnel analytics: Step 2 order form completions / total leads | 8-15% | Trilogy purchases / Total leads |
-| **OTO Take Rate** | Funnel analytics: Step 3 upsell accepted / Step 2 purchasers | 15-25% | FIRE purchases (OTO) / Trilogy purchasers |
-| **Bump Take Rate** | Order bump purchases / Step 2 order form submissions | 10-20% | Bump purchases / Trilogy purchasers |
-| **Combined FIRE Rate** | Total FIRE buyers (OTO + bump + email) / Total trilogy buyers | 20-30% | All FIRE purchases / All trilogy purchases |
-| **Application Rate** | Coaching applications / FIRE buyers | 5-10% | Applicants / FIRE buyers |
+| **Questionnaire Completion Rate** | Track tag counts (any track tag) / trilogy buyers | 85% | Tracked contacts / Trilogy buyers |
+| **Track Distribution** | Count of each track tag | 35% Active / 25% Passive / 40% Foundation | Per-tag count / Total tracked |
+| **Track 1 Purchase Rate (page)** | Deal Machine purchases within 1 hour of track selection / track-active contacts | 25% | Immediate purchases / Track-active total |
+| **Track 2 Purchase Rate (page)** | Wealth Shift purchases within 1 hour / track-passive contacts | 20% | Immediate purchases / Track-passive total |
+| **Track 3 Purchase Rate (page)** | Foundation purchases within 1 hour / track-foundation contacts | 30% | Immediate purchases / Track-foundation total |
+| **Track Product Purchase Rate (email B sequences)** | B1/B2/B3 email purchases / B1/B2/B3 enrollees | 8-12% | Email conversions / Non-buyer enrollees |
+| **Application Rate** | Coaching applications / total track product buyers | 8-12% | Applicants / All track buyers |
 | **Call Booking Rate** | Strategy calls booked / Applications | 70-80% | Booked / Applied |
 | **Show Rate** | Calls completed / Calls booked | 75-85% | Showed / Booked |
-| **Close Rate** | Enrollments / Calls completed | 25-35% | Enrolled / Calls completed |
+| **Close Rate** | Enrollments / Calls completed | 30-40% | Enrolled / Calls completed |
 
 #### Revenue Metrics
 
 | Metric | How to Track | Target |
 |--------|-------------|--------|
-| **Revenue per Lead** | Total revenue / Total opt-ins | $8.36 (per 10K model) |
-| **Average Order Value (AOV)** | Total checkout revenue / Total orders | $15-$25 (with bumps/OTOs) |
-| **Customer Lifetime Value (LTV)** | Total revenue per customer across all products | $50-$6,100 depending on journey |
+| **Revenue per Lead** | Total revenue / Total opt-ins | $7.65+ (per 10K model) |
+| **Average Order Value (AOV)** | Total checkout revenue / Total orders | $18-$30 (with track products) |
+| **Customer Lifetime Value (LTV)** | Total revenue per customer across all products | $50-$6,200 depending on journey |
 | **Cost per Acquisition (CPA)** | Ad spend / Buyers (when running paid traffic) | Target: < $3 per $7 buyer |
 | **Monthly Recurring Revenue** | Coaching payment plans + active subscriptions | Track in Payments > Subscriptions |
 | **Total Funnel Revenue** | Sum of all product sales | Track in Payments > Transactions |
+
+#### Revenue Model (per 10,000 leads)
+
+| Stage | Volume | Revenue |
+|-------|--------|---------|
+| Opt-ins | 10,000 | $0 |
+| $7 Trilogy (10% conversion) | 1,000 | $7,000 |
+| Questionnaire completion (85%) | 850 | $0 |
+| Track distribution | 298 Active / 213 Passive / 340 Foundation | $0 |
+| **Track 1: Deal Machine ($147)** | | |
+| - Immediate purchase (25% of 298) | 75 | $11,025 |
+| - B1 email purchase (8% of remaining 223) | 18 | $2,646 |
+| **Track 2: Wealth Shift ($197)** | | |
+| - Immediate purchase (20% of 213) | 43 | $8,471 |
+| - B2 email purchase (8% of remaining 170) | 14 | $2,758 |
+| **Track 3: Foundation ($97)** | | |
+| - Immediate purchase (30% of 340) | 102 | $9,894 |
+| - B3 email purchase (8% of remaining 238) | 19 | $1,843 |
+| **Total mid-tier buyers** | **271** | **$36,637** |
+| Coaching applications (10% of 271) | 27 | $0 |
+| Strategy calls booked (75% of 27) | 20 | $0 |
+| Group enrollments (40% close rate) | 8 | $47,976 |
+| 1-on-1 upgrades (15% of group) | ~1 | $14,997 |
+| **TOTAL REVENUE** | | **$106,610** |
+| **Revenue per Lead** | | **$10.66** |
+
+**Note on revenue improvement over old model:** The 3-track model projects $106,610 per 10K leads vs. the old single-OTO model's $83,587. The increase comes from:
+- Higher track product conversion rates due to personalized offers (18-30% vs. 20% flat OTO)
+- More total mid-tier buyers (271 vs. 264)
+- Higher coaching application rates from tailored C sequences (10% vs. 10%)
+- Higher coaching close rates from better-informed strategy calls (40% vs. 30%)
 
 #### Email Performance Metrics
 
@@ -1462,16 +1908,16 @@ Track in **Marketing > Emails > Statistics** for each workflow:
 | Email 5 (Day 5) | 30%+ | 8%+ |
 | Email 6 (Day 7) | 35%+ | 10%+ |
 
-**Sequence B:**
+**Sequences B1 / B2 / B3:**
 
 | Email | Target Open Rate | Target Click Rate |
 |-------|-----------------|-------------------|
 | Email 1 (Day 0) | 65%+ | 20%+ |
-| Email 2 (Day 2) | 40%+ | 3%+ |
+| Email 2 (Day 2) | 40%+ | 8%+ |
 | Email 3 (Day 4) | 35%+ | 10%+ |
 | Email 4 (Day 7) | 30%+ | 8%+ |
 
-**Sequence C:**
+**Sequences C1 / C2 / C3:**
 
 | Email | Target Open Rate | Target Click Rate |
 |-------|-----------------|-------------------|
@@ -1499,8 +1945,9 @@ Track in **Marketing > Emails > Statistics** for each workflow:
 | Metric | Definition | How to Track |
 |--------|-----------|-------------|
 | **Lead to Buyer Time** | Average days from opt-in to $7 purchase | Pipeline stage timestamps |
-| **Buyer to FIRE Time** | Average days from $7 to $97 purchase | Pipeline stage timestamps |
-| **FIRE to Application Time** | Average days from $97 to coaching application | Pipeline stage timestamps |
+| **Buyer to Track Selection Time** | Average days from $7 to questionnaire completion | Pipeline stage timestamps |
+| **Track Selection to Product Time** | Average days from track selection to track product purchase | Pipeline stage timestamps |
+| **Product to Application Time** | Average days from track product to coaching application | Pipeline stage timestamps |
 | **Application to Close Time** | Average days from application to enrollment | Pipeline stage timestamps |
 | **Full Funnel Velocity** | Average days from opt-in to coaching enrollment | Pipeline stage timestamps |
 | **Stage Drop-off Rate** | % of contacts stuck at each stage for 30+ days | Smart Lists + date filters |
@@ -1513,30 +1960,16 @@ Run this every Monday morning:
 |-------|-------------|----------------------|
 | New leads this week | CRM > filter by tag `lead` + date | Increase content output / traffic spend |
 | $7 conversions | Payments > Transactions > filter by product | Review Sequence A email performance, adjust copy |
-| $97 conversions | Payments > Transactions > filter by product | Review OTO page, test new headline, review Sequence B |
-| Applications received | CRM > filter by tag `applicant` + date | Review Sequence C emails 7-9, increase urgency |
+| Questionnaire completions | CRM > filter by any track tag + date | Check redirect from $7 checkout → questionnaire, fix if broken |
+| Track distribution balance | Count track-active vs track-passive vs track-foundation | If skewed, review card copy and positioning |
+| Track product conversions (by track) | Payments > Transactions > filter by product | Review track offer pages, B-sequence emails |
+| Applications received | CRM > filter by tag `applicant` + date | Review C1/C2/C3 emails 7-9, increase urgency |
 | Calls booked | Calendar > this week's bookings | Review Sequence D, check calendar availability |
 | Calls completed (show rate) | Calendar > completed vs. total | Improve reminder sequence, add SMS day-of |
 | Revenue this week | Payments > Dashboard | Identify weakest link in funnel, optimize |
 | Email open rates (all sequences) | Marketing > Emails > Statistics | Test new subject lines on underperformers |
 | Unsubscribe rate | Marketing > Emails > Statistics | If >2% on any email, review tone and frequency |
 | List growth (net new subscribers) | CRM > total contacts with `lead` tag | Baseline for growth trend |
-
-### Revenue Model (per 10,000 leads)
-
-| Stage | Volume | Revenue |
-|-------|--------|---------|
-| Opt-ins | 10,000 | $0 |
-| $7 Trilogy (10% conversion) | 1,000 | $7,000 |
-| $97 FIRE Workbook — OTO page (20% of buyers) | 200 | $19,400 |
-| $97 FIRE Workbook — email (8% of remaining 800) | 64 | $6,208 |
-| Total FIRE buyers | 264 | $25,608 |
-| Coaching applications (10% of FIRE buyers) | 26 | $0 |
-| Strategy calls booked (75% of applicants) | 20 | $0 |
-| Group enrollments (30% close rate) | 6 | $35,982 |
-| 1-on-1 upgrades (15% of group) | ~1 | $14,997 |
-| **TOTAL REVENUE** | | **$83,587** |
-| **Revenue per Lead** | | **$8.36** |
 
 ---
 
@@ -1546,16 +1979,22 @@ Run this every Monday morning:
 |---|--------------|---------|------------|
 | 1 | MD — Sequence A: Book 1 to Trilogy | Form Submitted (Opt-In) | Auto |
 | 2 | MD — Trilogy Purchase Handler | Order Submitted ($7 product) | Auto |
-| 3 | MD — FIRE Workbook Purchase Handler | Order Submitted ($97/$67/$47 product) | Auto |
-| 4 | MD — Sequence B: Trilogy to FIRE Workbook | Enrolled by workflow #2 | By handler |
-| 5 | MD — Sequence C: FIRE to Coaching Application | Enrolled by workflow #3 | By handler |
-| 6 | MD — Application Handler | Survey Submitted (Coaching App) | Auto |
-| 7 | MD — Sequence D: Application to Strategy Call | Enrolled by workflow #6 | By handler |
-| 8 | MD — Strategy Call Booked | Appointment Scheduled | Auto |
-| 9 | MD — Coaching Enrollment | Payment Received / Tag Added | Auto/Manual |
-| 10 | MD — Engagement Tracker | Cron (daily) | Auto |
-| 11 | MD — Re-Engagement (cold-90) | Tag Added (cold-90) | Auto |
-| 12 | MD — No-Show Follow-Up | Part of workflow #8 | Auto |
+| 3 | MD — Questionnaire Router | Form Submitted (Track Selection) | Auto |
+| 4 | MD — Deal Machine Purchase Handler | Order Submitted ($147 product) | Auto |
+| 5 | MD — Wealth Shift Purchase Handler | Order Submitted ($197 product) | Auto |
+| 6 | MD — Foundation Purchase Handler | Order Submitted ($97 product) | Auto |
+| 7 | MD — Sequence B1: Push Deal Machine | Enrolled by workflow #3 | By router |
+| 8 | MD — Sequence B2: Push Wealth Shift | Enrolled by workflow #3 | By router |
+| 9 | MD — Sequence B3: Push Foundation | Enrolled by workflow #3 | By router |
+| 10 | MD — Sequence C1: Deal Machine to Coaching | Enrolled by workflow #4 | By handler |
+| 11 | MD — Sequence C2: Wealth Shift to Coaching | Enrolled by workflow #5 | By handler |
+| 12 | MD — Sequence C3: Foundation to Coaching | Enrolled by workflow #6 | By handler |
+| 13 | MD — Application Handler | Survey Submitted (Coaching App) | Auto |
+| 14 | MD — Sequence D: Application to Strategy Call | Enrolled by workflow #13 | By handler |
+| 15 | MD — Strategy Call Booked | Appointment Scheduled | Auto |
+| 16 | MD — Coaching Enrollment | Payment Received / Tag Added | Auto/Manual |
+| 17 | MD — Engagement Tracker | Cron (daily) | Auto |
+| 18 | MD — Re-Engagement (cold-90) | Tag Added (cold-90) | Auto |
 
 ---
 
@@ -1567,35 +2006,40 @@ Run this every Monday morning:
 | `book1-downloaded` | Lifecycle | Workflow 1 |
 | `buyer` | Lifecycle | Workflow 2 |
 | `trilogy-purchased` | Lifecycle | Workflow 2 |
-| `fire-buyer` | Lifecycle | Workflow 3 |
-| `applicant` | Lifecycle | Workflow 6 |
-| `booked-call` | Lifecycle | Workflow 8 |
-| `call-completed` | Lifecycle | Workflow 8 |
-| `enrolled-group` | Lifecycle | Workflow 9 |
-| `enrolled-1on1` | Lifecycle | Workflow 9 (manual) |
-| `active-student` | Lifecycle | Workflow 9 |
-| `graduated` | Lifecycle | Workflow 9 (180-day timer) |
+| `track-active` | Track | Workflow 3 |
+| `track-passive` | Track | Workflow 3 |
+| `track-foundation` | Track | Workflow 3 |
+| `deal-machine-buyer` | Lifecycle | Workflow 4 |
+| `wealth-shift-buyer` | Lifecycle | Workflow 5 |
+| `foundation-buyer` | Lifecycle | Workflow 6 |
+| `applicant` | Lifecycle | Workflow 13 |
+| `booked-call` | Lifecycle | Workflow 15 |
+| `call-completed` | Lifecycle | Workflow 15 |
+| `enrolled-group` | Lifecycle | Workflow 16 |
+| `enrolled-1on1` | Lifecycle | Workflow 16 (manual) |
+| `active-student` | Lifecycle | Workflow 16 |
+| `graduated` | Lifecycle | Workflow 16 (180-day timer) |
 | `in-sequence-a` | Sequence | Workflow 1 |
-| `in-sequence-b` | Sequence | Workflow 4 |
-| `in-sequence-c` | Sequence | Workflow 5 |
-| `in-sequence-d` | Sequence | Workflow 7 |
+| `in-sequence-b1` | Sequence | Workflow 7 |
+| `in-sequence-b2` | Sequence | Workflow 8 |
+| `in-sequence-b3` | Sequence | Workflow 9 |
+| `in-sequence-c1` | Sequence | Workflow 10 |
+| `in-sequence-c2` | Sequence | Workflow 11 |
+| `in-sequence-c3` | Sequence | Workflow 12 |
+| `in-sequence-d` | Sequence | Workflow 14 |
 | `completed-sequence-a` | Sequence | Workflow 1 |
-| `oto-declined` | Segmentation | Workflow 2 |
-| `oto-purchased` | Segmentation | Workflow 3 |
-| `bump-purchased` | Segmentation | Workflow 3 |
-| `educate` | Segmentation | Workflow 6 |
-| `activate` | Segmentation | Workflow 6 |
-| `scale` | Segmentation | Workflow 6 |
-| `no-show` | Engagement | Workflow 8 |
-| `engaged-7d` | Engagement | Workflow 10 |
-| `engaged-30d` | Engagement | Workflow 10 |
-| `cold-30` | Engagement | Workflow 10 |
-| `cold-90` | Engagement | Workflow 10 |
+| `no-show` | Engagement | Workflow 15 |
+| `engaged-7d` | Engagement | Workflow 17 |
+| `engaged-30d` | Engagement | Workflow 17 |
+| `cold-30` | Engagement | Workflow 17 |
+| `cold-90` | Engagement | Workflow 17 |
 | `unsubscribed` | System | GHL auto |
 | `source-tiktok` | Traffic | Workflow 1 (UTM) |
 | `source-instagram` | Traffic | Workflow 1 (UTM) |
 | `source-organic` | Traffic | Workflow 1 (UTM) |
 | `source-gumroad` | Traffic | Workflow 1 (UTM) |
+
+**Removed from old blueprint:** `fire-buyer`, `oto-declined`, `oto-purchased`, `bump-purchased`, `educate`, `activate`, `scale`, `in-sequence-b`, `in-sequence-c`
 
 ---
 
@@ -1604,37 +2048,53 @@ Run this every Monday morning:
 | # | Task | Time Est. | Status |
 |---|------|-----------|--------|
 | 1 | Connect Stripe to GHL | 10 min | [ ] |
-| 2 | Create 4 products (Book 1 free, Trilogy $7, FIRE $97, Coaching $5,997) + payment plans | 30 min | [ ] |
-| 3 | Create FIRE Order Bump product ($67) | 5 min | [ ] |
-| 4 | Upload all PDFs to GHL Media Library | 10 min | [ ] |
-| 5 | Build 5-step funnel (Opt-In, Delivery/Tripwire, OTO, Thank You, Application) | 2-3 hrs | [ ] |
-| 6 | Configure opt-in form with workflow trigger | 15 min | [ ] |
-| 7 | Configure 2-step order form with $7 product + $67 bump | 30 min | [ ] |
-| 8 | Configure one-click upsell on OTO page | 20 min | [ ] |
-| 9 | Build coaching application survey (4 questions + contact fields) | 20 min | [ ] |
-| 10 | Create all 33 tags in CRM > Tags | 20 min | [ ] |
-| 11 | Build Workflow 1: Sequence A (6 emails) | 45 min | [ ] |
-| 12 | Build Workflow 2: Trilogy Purchase Handler | 15 min | [ ] |
-| 13 | Build Workflow 3: FIRE Purchase Handler | 15 min | [ ] |
-| 14 | Build Workflow 4: Sequence B (4 emails) | 30 min | [ ] |
-| 15 | Build Workflow 5: Sequence C (9 emails) | 45 min | [ ] |
-| 16 | Build Workflow 6: Application Handler | 15 min | [ ] |
-| 17 | Build Workflow 7: Sequence D (4 emails) | 30 min | [ ] |
-| 18 | Build Workflow 8: Strategy Call Booked + reminders + no-show | 30 min | [ ] |
-| 19 | Build Workflow 9: Coaching Enrollment | 20 min | [ ] |
-| 20 | Create pipeline: Money Decoded Funnel (10 stages) | 15 min | [ ] |
-| 21 | Create Strategy Call calendar with availability + form fields | 20 min | [ ] |
-| 22 | Set up calendar confirmation + reminder emails/SMS | 15 min | [ ] |
-| 23 | Create membership portal with 3 categories + offers | 1 hr | [ ] |
-| 24 | Set up FIRE Workbook drip schedule (7 modules over 14 days) | 15 min | [ ] |
-| 25 | Create coaching community with 6 channels | 15 min | [ ] |
-| 26 | Create Smart Lists for pipeline views (8 lists) | 20 min | [ ] |
-| 27 | Test full flow: opt-in → Book 1 delivery → $7 purchase → OTO → email sequences | 1 hr | [ ] |
-| 28 | Test: $7 purchase with bump → skip OTO → correct tags applied | 15 min | [ ] |
-| 29 | Test: Application → Sequence D → Calendar booking → reminders | 30 min | [ ] |
-| 30 | Test: No-show flow → follow-up emails/SMS | 15 min | [ ] |
-| 31 | Update Gumroad profile to redirect to GHL opt-in | 5 min | [ ] |
-| **TOTAL** | | **~10-12 hrs** | |
+| 2 | Create 7 products (Book 1 free, Trilogy $7, Deal Machine $147, Wealth Shift $197, Foundation $97, Coaching $5,997, 1-on-1 $14,997) + payment plans | 45 min | [ ] |
+| 3 | Upload all PDFs + audio files to GHL Media Library | 20 min | [ ] |
+| 4 | Build funnel Step 1: Opt-In page | 45 min | [ ] |
+| 5 | Build funnel Step 2: Delivery + Tripwire page ($7 checkout) | 45 min | [ ] |
+| 6 | Build funnel Step 3: Post-Purchase Questionnaire page (3 cards) | 30 min | [ ] |
+| 7 | Build funnel Step 4A: Deal Machine offer page ($147 checkout) | 30 min | [ ] |
+| 8 | Build funnel Step 4B: Wealth Shift offer page ($197 checkout) | 30 min | [ ] |
+| 9 | Build funnel Step 4C: Foundation offer page ($97 checkout) | 30 min | [ ] |
+| 10 | Build funnel Step 5: Thank You page | 20 min | [ ] |
+| 11 | Build funnel Step 6: Coaching Application page (survey) | 20 min | [ ] |
+| 12 | Configure opt-in form with workflow trigger | 15 min | [ ] |
+| 13 | Configure questionnaire form with routing logic | 30 min | [ ] |
+| 14 | Configure one-click upsell on all 3 track offer pages | 30 min | [ ] |
+| 15 | Create all 36 tags in CRM > Tags | 20 min | [ ] |
+| 16 | Build Workflow 1: Sequence A (6 emails) | 45 min | [ ] |
+| 17 | Build Workflow 2: Trilogy Purchase Handler | 15 min | [ ] |
+| 18 | Build Workflow 3: Questionnaire Router | 30 min | [ ] |
+| 19 | Build Workflow 4: Deal Machine Purchase Handler | 15 min | [ ] |
+| 20 | Build Workflow 5: Wealth Shift Purchase Handler | 15 min | [ ] |
+| 21 | Build Workflow 6: Foundation Purchase Handler | 15 min | [ ] |
+| 22 | Build Workflow 7: Sequence B1 (4 emails) | 30 min | [ ] |
+| 23 | Build Workflow 8: Sequence B2 (4 emails) | 30 min | [ ] |
+| 24 | Build Workflow 9: Sequence B3 (4 emails) | 30 min | [ ] |
+| 25 | Build Workflow 10: Sequence C1 (9 emails) | 45 min | [ ] |
+| 26 | Build Workflow 11: Sequence C2 (9 emails) | 45 min | [ ] |
+| 27 | Build Workflow 12: Sequence C3 (9 emails) | 45 min | [ ] |
+| 28 | Build Workflow 13: Application Handler | 15 min | [ ] |
+| 29 | Build Workflow 14: Sequence D (4 emails) | 30 min | [ ] |
+| 30 | Build Workflow 15: Strategy Call Booked + reminders + no-show | 30 min | [ ] |
+| 31 | Build Workflow 16: Coaching Enrollment | 20 min | [ ] |
+| 32 | Create pipeline: Money Decoded Funnel (10 stages) | 15 min | [ ] |
+| 33 | Create Strategy Call calendar with availability + form fields | 20 min | [ ] |
+| 34 | Set up calendar confirmation + reminder emails/SMS | 15 min | [ ] |
+| 35 | Create membership portal with 5 categories + 6 offers | 1.5 hr | [ ] |
+| 36 | Set up drip schedules for all 3 track products | 20 min | [ ] |
+| 37 | Create coaching community with 6 channels | 15 min | [ ] |
+| 38 | Create Smart Lists for pipeline views (11 lists) | 25 min | [ ] |
+| 39 | Test: opt-in → Book 1 delivery → $7 purchase → questionnaire → track selection | 30 min | [ ] |
+| 40 | Test: Track 1 flow (Active → Deal Machine offer → purchase → C1 emails) | 20 min | [ ] |
+| 41 | Test: Track 2 flow (Passive → Wealth Shift offer → purchase → C2 emails) | 20 min | [ ] |
+| 42 | Test: Track 3 flow (Foundation → Foundation offer → purchase → C3 emails) | 20 min | [ ] |
+| 43 | Test: Track skip flow (select track → decline offer → B sequence fires after 1 hr) | 20 min | [ ] |
+| 44 | Test: Application → Sequence D → Calendar booking → reminders | 30 min | [ ] |
+| 45 | Test: No-show flow → follow-up emails/SMS | 15 min | [ ] |
+| 46 | Update Gumroad profile to redirect to GHL opt-in | 5 min | [ ] |
+| 47 | Set up Coach Financing / FlexxBuy integration | 30 min | [ ] |
+| **TOTAL** | | **~16-18 hrs** | |
 
 ---
 
@@ -1646,10 +2106,12 @@ Run this every Monday morning:
 - **Webhook Backup:** If GHL's native Stripe integration misses an event, set up a Stripe webhook pointing to your GHL sub-account webhook URL as a failsafe.
 - **GDPR/CAN-SPAM:** Include unsubscribe link in all emails (GHL adds this automatically). Include physical mailing address in email footer (use virtual office address from Northwest Registered Agent).
 - **Mobile Testing:** Test every funnel page on mobile before going live. GHL funnels auto-generate mobile versions, but review and adjust spacing, font sizes, and button sizes.
-- **A/B Testing Priority:** Once live, test in this order: (1) opt-in page headline, (2) Email 4 subject line (first $7 pitch), (3) OTO page headline, (4) Email 7 of Sequence C (first coaching pitch).
+- **Progressive Reveal:** Remember the identity reveal strategy. Stage 1 (books) = text only. Stage 2 (track products) = real voice via audio modules. Stage 3 (strategy call) = face reveal on video. This is intentional — do not add video or face imagery to earlier funnel stages.
+- **Launch Strategy:** Can launch with Track 3 (Foundation) first since the FIRE Workbook already exists and just needs rebranding + audio. Route all questionnaire clicks to Foundation temporarily while building Track 1 and Track 2 products.
+- **A/B Testing Priority:** Once live, test in this order: (1) opt-in page headline, (2) Email 4 subject line in Sequence A (first $7 pitch), (3) questionnaire card copy and order, (4) track offer page headlines, (5) C-sequence coaching pitch emails (7-9).
 
 ---
 
-*Last updated: 2026-02-22*
+*Last updated: 2026-02-24*
 *Part of the J. Marque brand ecosystem*
-*Ref: MASTER_FUNNEL_SPEC.md | GHL_COMMERCE_RESEARCH.md | Email Sequences A-D*
+*Ref: MASTER_FUNNEL_SPEC.md | THREE_TRACK_PRODUCT_OUTLINES.md | Email Sequences A, B1-B3, C1-C3, D*

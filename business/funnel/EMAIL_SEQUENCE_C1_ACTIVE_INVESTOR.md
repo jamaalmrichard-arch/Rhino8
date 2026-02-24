@@ -21,19 +21,19 @@ You don't want to sit on the sidelines and watch. You want to make money. You wa
 
 Good. That's exactly what this track is built for.
 
-Your copy of The Deal Machine is ready -- PDF guide, 6 audio modules, and all 12 templates are waiting for you:
+Your copy of The Deal Machine is ready. PDF guide, 6 audio modules, and all 12 templates are waiting for you:
 
 [Access The Deal Machine →]
 
-Here's how to get the most out of it:
+How to get the most out of it:
 
 **This week:** Start with Module 1 (The Down Market Advantage) and Module 2 (Wholesaling). Listen to the audio while you drive, work out, or eat lunch. Then open the templates and start filling in the blanks.
 
 **Next week:** Modules 3-5 (BRRRR, Flip, Creative Finance). These are your exit strategies. By the time you finish, you'll be able to look at any deal and know exactly which strategy makes the most money.
 
-**Week 3:** Module 6 -- your 90-Day Execution Roadmap. This is where you stop studying and start doing.
+**Week 3:** Module 6, your 90-Day Execution Roadmap. This is where you stop studying and start doing.
 
-Over the next couple weeks, I'm going to share some things with you that I don't put in the guides. My story. The mistakes that cost me deals. And what I've seen work for people who are exactly where you are right now.
+Over the next couple weeks, I'm going to share some things with you that I don't put in the guides. My story. The mistakes that cost me deals. What I've seen work for people who are exactly where you are right now.
 
 Let's go make some money.
 
@@ -64,13 +64,13 @@ Here's why.
 
 In a hot market, you're competing with 30 other offers on every property. Sellers have all the power. Margins are thin. Speed is everything. It's a knife fight.
 
-In a down market? Sellers are motivated. Competition disappears. You can negotiate terms that were impossible 18 months ago -- seller financing, sub-to, price reductions, repair credits.
+In a down market? Sellers are motivated. Competition disappears. You can negotiate terms that were impossible 18 months ago: seller financing, sub-to, price reductions, repair credits.
 
 The market didn't get harder. The OPPORTUNITY got bigger.
 
 I became a Marine because I run toward problems, not away from them. Real estate is the same way. When everyone else is frozen, the person who moves wins.
 
-That's what Module 1 of your Deal Machine guide covers -- the exact conditions that create wealth-building opportunities. If you haven't listened to that audio module yet, do it today.
+That's what Module 1 of your Deal Machine guide covers. The exact conditions that create wealth-building opportunities. If you haven't listened to that audio module yet, do it today.
 
 Tomorrow, I'll tell you about the mistake that almost ended my career before it started.
 
@@ -88,13 +88,13 @@ Tomorrow, I'll tell you about the mistake that almost ended my career before it 
 
 {first_name},
 
-I need to tell you something most people in this industry won't admit.
+Most people in this industry won't admit this.
 
 My first real estate deal lost me money. My second one fell apart at the closing table. Two deals. Zero wins.
 
-I was a Marine. Came out disciplined, focused, ready to conquer. But real estate humbled me fast.
+I was a Marine. Came out disciplined, focused, ready to conquer. Real estate humbled me fast.
 
-I was doing everything the YouTube gurus said. Analyzing deals. Making offers. Talking to sellers. But I had no system. No accountability. No one to tell me "that deal is bad -- walk away" or "that deal is good -- move NOW."
+I was doing everything the YouTube gurus said. Analyzing deals. Making offers. Talking to sellers. But I had no system. No accountability. Nobody to tell me "that deal is bad, walk away" or "that deal is good, move NOW."
 
 So I built a system. Piece by piece. Every loss taught me something. Every near-miss sharpened the process.
 
@@ -102,7 +102,7 @@ That system has now produced $250 million in transactions. Not because I'm speci
 
 The Deal Machine guide you have right now? That's the system. Distilled. Simplified. Ready for you to use without making the same expensive mistakes I made.
 
-But here's the part that matters: having the system is step one. Having someone who's used it to close $250M worth of deals -- someone who can look at YOUR deal and tell you exactly what to do -- that's the game changer.
+But having the system is step one. Having someone who's used it to close $250M worth of deals, someone who can look at YOUR deal and tell you exactly what to do? That's the game changer.
 
 More on that later. For now, finish Module 2 on wholesaling. That's where your first check comes from.
 
@@ -128,17 +128,17 @@ I want you to meet David.
 
 He downloaded Money Decoded. Read all three books. Got angry -- the productive kind. Then he got The Deal Machine and followed the 90-Day Execution Roadmap.
 
-Here's what happened:
+What happened:
 
 **Month 1-2:** Studied the BRRRR module. Identified his target market. Set up his lead generation. Made his first 50 seller calls using the scripts from the template pack.
 
-**Month 3:** Closed his first deal -- a distressed property at $140K. Put $35K into rehab. Appraised at $225K. Refinanced, pulled his capital back out. Monthly rent: $1,850. Monthly expenses: $1,120. **Cash flow: $730/month.**
+**Month 3:** Closed his first deal. Distressed property at $140K. Put $35K into rehab. Appraised at $225K. Refinanced, pulled his capital back out. Monthly rent: $1,850. Monthly expenses: $1,120. **Cash flow: $730/month.**
 
 **Month 4-11:** Repeated the process. He also closed one wholesale deal for an $8,500 assignment fee when a property didn't fit his BRRRR criteria.
 
 **Today:** David has 4 doors producing $6,800/month in gross rent and $2,400/month in net cash flow. He still has his engineering job. But he doesn't need it anymore.
 
-David isn't a genius. He's not well-connected. He didn't have rich parents. He followed a system and he had someone in his ear the entire time telling him "this deal is good -- go" and "this deal is bad -- pass."
+David isn't a genius. He's not well-connected. He didn't have rich parents. He followed a system and he had someone in his ear the entire time telling him "this deal is good, go" and "this deal is bad, pass."
 
 The system is in your hands right now. The other part -- the person in your ear -- I'll tell you about that soon.
 
@@ -176,7 +176,7 @@ Keisha's timeline:
 
 Keisha still teaches. She loves it. But now she does it because she wants to, not because she has to.
 
-Here's what I want you to notice: Keisha didn't have money, connections, or experience. What she had was a system and someone holding her accountable every single week.
+Notice what Keisha didn't have: money, connections, experience. What she had was a system and someone holding her accountable every single week.
 
 The system is The Deal Machine. The accountability is what I'm going to tell you about next.
 
@@ -196,18 +196,18 @@ Are you working through the modules? Reply and tell me where you are. I read eve
 
 {first_name},
 
-After $250 million in real estate and coaching dozens of active investors, I've seen the same 3 mistakes kill more careers than bad markets ever have.
+$250 million in real estate. Dozens of active investors coached. And the same 3 mistakes keep showing up. These kill more careers than bad markets ever have.
 
 **Mistake 1: Analysis paralysis.**
-You analyze 100 deals. You make offers on zero. You know the ARV, the repair cost, the cap rate, the cash-on-cash return. But you never pull the trigger. Why? Because nobody told you "this one is good -- move." You're afraid of making a mistake with your money, so you make the biggest mistake of all: doing nothing. The Deal Machine gives you the system. But a system without execution is just a fancy notebook.
+You analyze 100 deals. You make offers on zero. You know the ARV, the repair cost, the cap rate, the cash-on-cash return. But you never pull the trigger. Why? Because nobody told you "this one is good, move." You're afraid of making a mistake with your money, so you make the biggest mistake of all: doing nothing. The Deal Machine gives you the system. A system without execution is just a fancy notebook.
 
 **Mistake 2: Going it alone.**
-YouTube is free. Podcasts are free. Templates are free. But the people who actually close deals? They all have someone in their corner. Someone who's done it before. Someone who looks at their deal and says "the numbers work" or "walk away, here's why." Going alone is the most expensive decision you'll make because every mistake costs you $5K-$50K and 3-6 months.
+YouTube is free. Podcasts are free. Templates are free. But the people who actually close deals? They all have someone in their corner. Someone who's done it before. Someone who looks at their deal and says "the numbers work" or "walk away, here's why." Going alone is the most expensive decision you'll make. Every mistake costs you $5K-$50K and 3-6 months.
 
 **Mistake 3: Waiting for the "right" market.**
 There is no right market. There is only the market you're in. Interest rates are high? Great -- seller financing is on the table. Inventory is low? Great -- less competition for off-market deals. The right market is the one where you have a system, you have a mentor, and you take action. Everything else is an excuse.
 
-The Deal Machine handles Mistake 1 -- it gives you the system to identify and analyze deals fast.
+The Deal Machine handles Mistake 1. It gives you the system to identify and analyze deals fast.
 
 But Mistakes 2 and 3? Those require something the guide can't give you: a person.
 
@@ -233,14 +233,14 @@ Now it's your turn to decide: are you going to study deals, or close them?
 
 **I'm opening applications for the next coaching cohort.**
 
-Here's what you get for 6 months:
+What you get for 6 months:
 
 **2 live group calls per week**
 Tuesday: Strategy + market analysis (what's working right now, deal review, Q&A)
 Thursday: Hot seat (YOU bring your deal, your situation, your question -- we solve it live)
 
 **The complete execution system**
-Every strategy from The Deal Machine -- wholesale, BRRRR, flip, sub-to, seller finance -- we walk through them together on live deals. Not theory. Real deals in your market.
+Every strategy from The Deal Machine -- wholesale, BRRRR, flip, sub-to, seller finance -- walked through together on live deals. Not theory. Real deals in your market.
 
 **My personal deal review**
 Bring me any deal and I'll run every exit strategy on it. I'll tell you which one makes the most money, what the risks are, and whether I'd do the deal myself. This is the "someone in your ear" that David and Keisha had.
@@ -249,13 +249,13 @@ Bring me any deal and I'll run every exit strategy on it. I'll tell you which on
 Connect with other active investors 24/7. Share deals, ask questions, partner on assignments. You're not doing this alone anymore.
 
 **Down market war room**
-This isn't a 2020 course recycled for 2026. Every strategy is built for TODAY's market -- high rates, motivated sellers, creative finance, off-market deals. This is when the REAL investors make money.
+This isn't a 2020 course recycled for 2026. Every strategy is built for TODAY's market: high rates, motivated sellers, creative finance, off-market deals. This is when the REAL investors make money.
 
 **The investment: $5,997**
 
 Let me put that in perspective. Keisha's first wholesale deal was $8,500. David's first BRRRR produced $730/month in cash flow -- $8,760/year. The program pays for itself on your first deal.
 
-Financing available -- most people qualify for 12-60 month plans. Your monthly payment could be less than a car note. Except this "car note" puts money IN your pocket.
+Financing available. Most people qualify for 12-60 month plans. Your monthly payment could be less than a car note. Except this "car note" puts money IN your pocket.
 
 15 spots per cohort. When they're gone, the next one opens in 3 months.
 
@@ -287,19 +287,19 @@ P.S. Everyone who applies gets a free strategy call -- whether you join the prog
 
 8 spots filled in 4 days. 7 left.
 
-Before you decide, let me answer what I hear every time:
+Here's what I hear every time:
 
 **"Is $5,997 a lot of money?"**
 Compared to what? A semester of college that doesn't teach you how to make money? A car that loses value the second you drive it off the lot? Keisha's first wholesale deal was $8,500. David made $730/month on his first rental -- that's $8,760 in year one alone. The program pays for itself on deal one. Financing is available: $100-$250/month for most people.
 
 **"What if I haven't finished The Deal Machine yet?"**
-Good news: you'll finish it inside the program. We walk through every strategy live. The guide gives you the foundation. The coaching gives you the execution.
+You'll finish it inside the program. We walk through every strategy live. The guide gives you the foundation. The coaching gives you the execution.
 
 **"Can I do this while working full-time?"**
-David is still an engineer. Keisha still teaches. Two calls per week, 1 hour each, Tuesday and Thursday evenings. The rest is on your schedule -- analyzing deals, making calls, building your pipeline. This is a side hustle until it replaces your income.
+David is still an engineer. Keisha still teaches. Two calls per week, 1 hour each, Tuesday and Thursday evenings. The rest is on your schedule: analyzing deals, making calls, building your pipeline. Side hustle until it replaces your income.
 
 **"What makes this different from every other RE coaching program?"**
-I've closed $250 million in real estate. Not in course sales -- in REAL ESTATE. I'm not teaching you theory I learned from a book. I'm giving you the exact system I use, and I'm personally reviewing your deals. That's the difference between watching cooking shows and having a chef in your kitchen.
+I've closed $250 million in real estate. Not in course sales. In REAL ESTATE. I'm not teaching you theory I learned from a book. I'm giving you the exact system I use, and I'm personally reviewing your deals. That's the difference between watching cooking shows and having a chef in your kitchen.
 
 [Apply Now -- 7 Spots Remaining →]
 
@@ -307,7 +307,7 @@ When the cohort fills, the next one opens in 3 months. The market isn't waiting.
 
 -- J. Marque
 
-P.S. The strategy call is free whether you join or not. 30 minutes. I map out your 90-day plan. No pitch on the call -- just a plan.
+P.S. The strategy call is free whether you join or not. 30 minutes. I map out your 90-day plan. No pitch on the call. Just a plan.
 
 ---
 
@@ -323,7 +323,7 @@ P.S. The strategy call is free whether you join or not. 30 minutes. I map out yo
 
 This is my last email about the coaching program until the next cohort.
 
-Here's where we stand:
+Where we stand:
 - Started with 15 spots
 - 12 are filled
 - 3 remain
@@ -331,9 +331,9 @@ Here's where we stand:
 
 If you've been thinking about it, now's the time.
 
-Here's what I know about you: you bought Money Decoded because you wanted the truth about money. You chose the active investor track because you want to DO something about it. You got The Deal Machine because you're serious about closing deals.
+You bought Money Decoded because you wanted the truth about money. You chose the active investor track because you want to DO something about it. You got The Deal Machine because you're serious about closing deals.
 
-That tells me you're not someone who sits on the sidelines.
+You're not someone who sits on the sidelines.
 
 The only question left is whether you want to do this alone or with someone who's done $250M worth of deals in your ear for the next 6 months.
 
@@ -341,11 +341,11 @@ If you're ready:
 
 [Apply Before Friday →]
 
-If the timing isn't right -- I genuinely respect that. Building wealth is a long game. The next cohort opens in 3 months and I'll be the first to let you know.
+If the timing isn't right, I genuinely respect that. Building wealth is a long game. The next cohort opens in 3 months and I'll be the first to let you know.
 
-Either way, I'm not going anywhere. I'll keep sending you deal insights, market analysis, and strategies every week. No pitch. Just value. Because every week you're learning, you're getting closer.
+Either way, I'm not going anywhere. Deal insights, market analysis, and strategies every week. No pitch. Just value.
 
-This is when the real investors make their move. Down markets don't last forever. And neither does this cohort.
+Down markets don't last forever. Neither does this cohort.
 
 I'm rooting for you.
 

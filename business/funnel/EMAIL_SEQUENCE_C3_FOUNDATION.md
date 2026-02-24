@@ -25,19 +25,19 @@ You just did the third thing. The rare thing. You said: "I'm going to figure thi
 
 That takes more guts than most people will ever have. I mean that.
 
-Your Foundation workbook is ready -- PDF guide, 7 audio modules, and all 9 worksheets:
+Your Foundation workbook is ready. PDF guide, 7 audio modules, and all 9 worksheets:
 
 [Access The Foundation →]
 
 Here's the plan:
 
-**This week:** Module 1 -- your Budget P&L. Pull up your bank statements from the last 90 days. Fill in the template. Don't judge the numbers. Just see them. That's the hardest part, and it's also the most important.
+**This week:** Module 1, your Budget P&L. Pull up your bank statements from the last 90 days. Fill in the template. Don't judge the numbers. Just see them. That's the hardest part, and it's also the most important.
 
 **Next week:** Modules 2-4. Risk management, lender readiness, and your balance sheet. By the end of this week, you'll know where you stand, what's exposed, and what you already have to work with.
 
 **Week 3:** Modules 5-7. Net worth planning, retirement accounts, and building your team. This is where everything comes together into a clear plan.
 
-Listen to the audio modules on your commute or while you cook dinner. They're 12 minutes each -- designed so you can keep moving while you learn.
+Listen to the audio modules on your commute or while you cook dinner. They're 12 minutes each. You can keep moving while you learn.
 
 I'm going to be in your inbox over the next few weeks. My story. My mistakes. Stories from people who started exactly where you are. And an opportunity that changed everything for them.
 
@@ -74,7 +74,7 @@ You have no bad habits to unlearn. No bad deals to recover from. No bad advice t
 
 That's what The Foundation is. It's the system I wish I'd had when I was where you are.
 
-Module 1 -- the Budget P&L -- is where I started my own financial transformation. I sat down, looked at my numbers honestly for the first time, and found almost $400/month I was lighting on fire.
+Module 1, the Budget P&L, is where I started my own financial transformation. I sat down, looked at my numbers honestly for the first time, and found almost $400/month I was lighting on fire.
 
 Have you started your Budget P&L yet? If not, do it this weekend. One hour. No judgment. Just clarity.
 
@@ -100,17 +100,17 @@ A year ago, Keisha was a teacher making $52K. Single mom. She thought investing 
 
 Then she went through The Foundation workbook.
 
-Module 1 -- the Budget P&L. Keisha sat down on a Saturday morning with her bank statements and started filling in the template.
+Module 1. The Budget P&L. Keisha sat down on a Saturday morning with her bank statements and started filling in the template.
 
 What she found: **$680/month** in money she was losing and didn't know it.
 
-$89/month in streaming services she forgot she had. $145/month in food delivery she could cook for $40. $210/month in "phantom expenses" -- small charges from subscriptions, apps, and services she'd signed up for and never cancelled. Another $236 in category creep -- spending that had slowly increased over the years without her noticing.
+$89/month in streaming services she forgot she had. $145/month in food delivery she could cook for $40. $210/month in "phantom expenses," small charges from subscriptions, apps, and services she'd signed up for and never cancelled. Another $236 in category creep. Spending that had slowly increased over the years without her noticing.
 
 $680/month. That's $8,160/year. She'd been bleeding that for at least 3 years.
 
 In one Saturday morning, Keisha found more money than most "savings strategies" produce in a year. And she didn't earn a single extra dollar. She just stopped losing the dollars she already had.
 
-That's Module 1. The first step. And for Keisha, it changed everything -- because that $680/month became her investment capital.
+That's Module 1. The first step. For Keisha, it changed everything. That $680/month became her investment capital.
 
 I'll tell you what she did with it in a few days. But first: have you done your Budget P&L? The template is in your Foundation workbook. One hour. That's all it takes.
 
@@ -136,11 +136,11 @@ Here's what happened next.
 
 After completing The Foundation workbook, Keisha had a complete picture of her finances for the first time in her life. Budget, net worth, insurance gaps, lender file, team contacts. Everything organized.
 
-She also discovered something in Module 6 -- a forgotten retirement account from an old employer worth $127,000. Money that had been sitting in a target-date fund earning 6%, losing 1.5% to fees, and she hadn't thought about it in years.
+She also discovered something in Module 6. A forgotten retirement account from an old employer worth $127,000. Money that had been sitting in a target-date fund earning 6%, losing 1.5% to fees, and she hadn't thought about it in years.
 
 Keisha's timeline after The Foundation:
 
-**Month 3:** She closed her first wholesale deal. No money needed -- she found a motivated seller, put the property under contract, and assigned it to another investor. Assignment fee: **$8,500.** She cried. That was 2 months of take-home pay from teaching.
+**Month 3:** She closed her first wholesale deal. No money needed. She found a motivated seller, put the property under contract, and assigned it to another investor. Assignment fee: **$8,500.** She cried. That was 2 months of take-home pay from teaching.
 
 **Month 4-5:** Used the wholesale money plus a hard money loan to buy a distressed duplex for $165K. Put $28K into rehab.
 
@@ -150,9 +150,9 @@ Keisha's timeline after The Foundation:
 
 Keisha still teaches. She loves it. But now she teaches because she wants to, not because she has to.
 
-Here's the important part: Keisha didn't skip steps. She didn't jump into deal-making before she was ready. She did The Foundation first. She got her financial house in order. She understood her numbers. She built her team.
+The important part: Keisha didn't skip steps. She didn't jump into deal-making before she was ready. She did The Foundation first. She got her financial house in order. She understood her numbers. She built her team.
 
-Then -- and only then -- she started making moves.
+Then, and only then, she started making moves.
 
 **The Foundation didn't make Keisha money. It made Keisha ready.** And readiness is the difference between people who invest and people who wish they had.
 
@@ -178,9 +178,9 @@ There's a myth in personal finance that does more damage than bad advice:
 
 You know what that belief does? It makes you feel like you're already behind. And feeling behind makes you either rush into bad decisions or give up entirely. Both are worse than starting now.
 
-Here's the truth from someone who's done $250 million in real estate:
+I've done $250 million in real estate. Here's what I can tell you:
 
-**Every person I've watched build wealth started from a moment -- not an age.** The moment they decided to look at their finances honestly. The moment they stopped making excuses. The moment they opened the workbook and filled in the numbers.
+**Every person I've watched build wealth started from a moment, not an age.** The moment they decided to look at their finances honestly. The moment they stopped making excuses. The moment they opened the workbook and filled in the numbers.
 
 That moment might have been today for you.
 
@@ -210,21 +210,21 @@ Reply and tell me where you are. No judgment. Just accountability.
 
 {first_name},
 
-I made every one of these mistakes when I was starting out. Here's what they cost me -- and how to avoid them.
+I made every one of these mistakes when I was starting out. Here's what they cost me, and how to avoid them.
 
 **Mistake 1: Skipping the financial foundation.**
 I jumped straight into real estate without knowing my own numbers. Budget? Didn't have one. Net worth? No idea. Lender file? What's that? When my first deal needed financing, I wasn't ready. I lost the deal to someone who was. Module 1-3 of your Foundation workbook exists specifically so this doesn't happen to you.
 
 **Mistake 2: Thinking you need a lot of money to start.**
-Keisha started with $0 in investment capital. Her first deal was a wholesale -- no money required. She used the assignment fee to fund her first rental. The idea that you need $50K in the bank to start in real estate is a lie told by people who've never done a wholesale deal.
+Keisha started with $0 in investment capital. Her first deal was a wholesale. No money required. She used the assignment fee to fund her first rental. The idea that you need $50K in the bank to start in real estate is a lie told by people who've never done a wholesale deal.
 
 **Mistake 3: Trying to learn everything before doing anything.**
-Perfection is the enemy of progress. You don't need to understand every strategy before you take action. You need to understand YOUR strategy -- the one that fits your situation right now. The Foundation gives you that clarity. Once you know where you stand (Modules 1-5), your next move becomes obvious (Modules 6-7).
+Perfection is the enemy of progress. You don't need to understand every strategy before you take action. You need to understand YOUR strategy. The one that fits your situation right now. The Foundation gives you that clarity. Once you know where you stand (Modules 1-5), your next move becomes obvious (Modules 6-7).
 
 **Mistake 4: Doing it alone.**
-This is the big one. The biggest. I spent my first 2 years figuring everything out by myself. It cost me time, money, and nearly my career. The people who build wealth fastest -- without exception -- have someone guiding them. Not a YouTube video. A person.
+This is the big one. The biggest. I spent my first 2 years figuring everything out by myself. It cost me time, money, and nearly my career. The people who build wealth fastest, without exception, have someone guiding them. Not a YouTube video. A person.
 
-The Foundation handles Mistakes 1-3. But Mistake 4 -- the "doing it alone" problem -- that's the one that separates the people who build wealth from the people who plan to build wealth someday.
+The Foundation handles Mistakes 1-3. But Mistake 4, the "doing it alone" problem? That's the one that separates the people who build wealth from the people who plan to build wealth someday.
 
 I have something that solves Mistake 4. I'll tell you about it tomorrow.
 
@@ -246,15 +246,15 @@ You picked The Foundation because you were honest with yourself. You said "I'm s
 
 That takes more courage than most people will ever show.
 
-Now here's the next question: do you want to keep building alone, or do you want someone who's done $250M in real estate walking beside you for the next 6 months?
+So here's the next question: do you want to keep building alone, or do you want someone who's done $250M in real estate walking beside you for the next 6 months?
 
 **I'm opening applications for the next coaching cohort.**
 
-Here's exactly what you get:
+What you get:
 
 **2 live group calls per week**
 Tuesday: Strategy session (lessons, market analysis, Q&A -- designed so beginners can follow every word)
-Thursday: Hot seat (YOU bring your situation, your questions, your fears -- we work through them live, together)
+Thursday: Hot seat (YOU bring your situation, your questions, your fears. We work through them live, together.)
 
 **Your personalized plan**
 We start where The Foundation left off. Your Budget P&L, your net worth, your goals. I build a 6-month action plan tailored to YOUR numbers, YOUR market, YOUR timeline.
@@ -263,7 +263,7 @@ We start where The Foundation left off. Your Budget P&L, your net worth, your go
 Module by module, deal by deal. First wholesale lead. First seller conversation. First offer. First closing. You're never guessing what to do next.
 
 **My personal deal review**
-When you find a property, I run every exit strategy. Wholesale, BRRRR, flip, creative finance. You'll know exactly what the deal is worth and exactly how to execute it -- before you risk a dollar.
+When you find a property, I run every exit strategy. Wholesale, BRRRR, flip, creative finance. You'll know exactly what the deal is worth and exactly how to execute it. Before you risk a dollar.
 
 **Private community of investors**
 Other people on the same journey. Share wins. Ask questions. Partner on deals. You are not alone anymore.
@@ -274,9 +274,9 @@ I know that's a real number. So let me put it in perspective.
 
 Keisha's first wholesale deal was $8,500. She made that in Month 3 of the program. The program paid for itself before she was halfway through.
 
-But more importantly -- how much is 6 months of trial and error worth? How much would it cost you to make the wrong move on a $150K property because nobody was there to say "don't do that deal"? One bad decision in real estate can cost $10K-$50K. The program costs less than one mistake.
+But think about it: how much is 6 months of trial and error worth? How much would it cost you to make the wrong move on a $150K property because nobody was there to say "don't do that deal"? One bad decision in real estate can cost $10K-$50K. The program costs less than one mistake.
 
-Financing available -- most people qualify for monthly payments between $100-$250. That's less than the subscriptions Keisha cancelled in Module 1.
+Financing available. Most people qualify for monthly payments between $100-$250. That's less than the subscriptions Keisha cancelled in Module 1.
 
 15 spots per cohort. When they fill, the next cohort opens in 3 months.
 
@@ -292,7 +292,7 @@ If that sounds like you, apply. It takes 3 minutes.
 
 -- J. Marque
 
-P.S. Everyone who applies gets a free strategy call. On the call, I'll review where you are, where you want to be, and map out your first 90 days -- step by step. That plan is yours whether you join the program or not. Zero pressure.
+P.S. Everyone who applies gets a free strategy call. I'll review where you are, where you want to be, and map out your first 90 days step by step. That plan is yours whether you join the program or not. Zero pressure.
 
 ---
 
@@ -311,7 +311,7 @@ P.S. Everyone who applies gets a free strategy call. On the call, I'll review wh
 Let me answer what's probably on your mind:
 
 **"Can I really afford $5,997?"**
-Let me reframe that: can you afford NOT to? Keisha was making $52K as a teacher. She found $680/month she was wasting in Module 1. That's $8,160/year. She also made $8,500 on her first wholesale deal in Month 3. The program didn't cost her -- it paid her. Financing is available: $100-$250/month for most people. Less than a car payment. Except this investment puts money IN your pocket.
+Let me reframe that: can you afford NOT to? Keisha was making $52K as a teacher. She found $680/month she was wasting in Module 1. That's $8,160/year. She also made $8,500 on her first wholesale deal in Month 3. The program didn't cost her. It paid her. Financing is available: $100-$250/month for most people. Less than a car payment. Except this investment puts money IN your pocket.
 
 **"I don't know anything about real estate."**
 Perfect. Seriously. Keisha didn't either. Neither did I when I started. Beginners with no bad habits learn faster than "experienced" investors with 5 years of YouTube education and zero deals closed. The program is built for you.
@@ -320,10 +320,10 @@ Perfect. Seriously. Keisha didn't either. Neither did I when I started. Beginner
 You'll finish it inside the program. We walk through every module together on the live calls. The workbook gives you the framework. The coaching gives you the execution and accountability.
 
 **"I'm afraid of making a mistake."**
-That fear is exactly why the program exists. The most expensive thing in real estate isn't a bad deal -- it's making a bad deal ALONE. In the program, every deal goes through me first. I've done $250M in transactions. I can spot a bad deal in 5 minutes. That one skill saves you more than the cost of the program on a single deal.
+That fear is exactly why the program exists. The most expensive thing in real estate isn't a bad deal. It's making a bad deal ALONE. In the program, every deal goes through me first. I've done $250M in transactions. I can spot a bad deal in 5 minutes. That one skill saves you more than the cost of the program on a single deal.
 
 **"What makes this different?"**
-I'm not a guru. I'm not selling motivation. I've closed $250 million in actual real estate transactions -- wholesaling, flipping, BRRRR, sub-to, seller finance, multifamily. I personally review your deals. I personally run the calls. This isn't a pre-recorded course. It's a relationship.
+I'm not a guru. I'm not selling motivation. I've closed $250 million in actual real estate transactions. Wholesaling, flipping, BRRRR, sub-to, seller finance, multifamily. I personally review your deals. I personally run the calls. This isn't a pre-recorded course. It's a relationship.
 
 [Apply Now -- 8 Spots Remaining →]
 
@@ -331,7 +331,7 @@ The next cohort is 3 months out. The best time to start was yesterday. The secon
 
 -- J. Marque
 
-P.S. The strategy call is free. 30 minutes. I'll build your 90-day plan on the call -- yours to keep no matter what you decide. No pitch. Just a plan.
+P.S. The strategy call is free. 30 minutes. I'll build your 90-day plan on the call. Yours to keep no matter what you decide. No pitch. Just a plan.
 
 ---
 
@@ -347,17 +347,17 @@ P.S. The strategy call is free. 30 minutes. I'll build your 90-day plan on the c
 
 This is my last email about the coaching program until the next cohort.
 
-Here's where things stand:
+Where things stand:
 - 15 spots. 12 filled. 3 remaining.
 - Applications close Friday.
 
-I want to say something directly to you.
+Let me say this directly.
 
 You downloaded Money Decoded because you wanted to understand money. You chose The Foundation because you were honest about where you are. You invested $97 in the workbook because you're serious about changing your financial future.
 
-That's 3 decisions most people never make. Not one of them. Not two. You made all three.
+Three decisions most people never make. Not one. Not two. All three.
 
-That tells me you're not someone who gives up. You're someone who's looking for the right path.
+You're not someone who gives up. You're someone who's looking for the right path.
 
 If you're ready to have someone walk that path with you for the next 6 months:
 
@@ -365,13 +365,13 @@ If you're ready to have someone walk that path with you for the next 6 months:
 
 If the timing isn't right, I respect that completely. Starting from scratch means you might need more time with The Foundation before you're ready for coaching. There is zero shame in that. The next cohort opens in 3 months and I'll let you know personally.
 
-Here's what I'll leave you with:
+I'll leave you with this:
 
 Keisha was in your exact position. Starting from zero. $52K salary. No experience. No connections. She made 3 decisions just like the ones you've made. And 11 months later, she owns 3 properties and collects $4,200/month in rental income.
 
 She didn't have anything you don't have right now. Except one thing: someone walking beside her.
 
-Either way -- coaching or not -- I'm not going anywhere. I'll keep sending you insights, strategies, and encouragement every week. No pitch. Just value. Because every step forward is a step forward, and I'm here for all of them.
+Either way, coaching or not, I'm not going anywhere. Insights, strategies, and encouragement every week. No pitch. Just value.
 
 You've already done the hardest part. You started.
 

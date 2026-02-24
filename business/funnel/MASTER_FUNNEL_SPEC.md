@@ -111,9 +111,9 @@ STAGE 3: Strategy Call ($5,997 coaching pitch)
 | Sequence | Trigger | Emails | Days | Goal | File | Status |
 |----------|---------|--------|------|------|------|--------|
 | A | Book 1 downloaded | 6 | 7 | Convert to $7 trilogy buyer | `EMAIL_SEQUENCE_A_BOOK1_TO_TRILOGY.md` | DONE |
-| B1 | Track 1 selected, Deal Machine skipped | 4 | 7 | Convert to $147 Deal Machine buyer | `EMAIL_SEQUENCE_B1_TRILOGY_TO_DEAL_MACHINE.md` | TODO |
-| B2 | Track 2 selected, Wealth Shift skipped | 4 | 7 | Convert to $197 Wealth Shift buyer | `EMAIL_SEQUENCE_B2_TRILOGY_TO_WEALTH_SHIFT.md` | TODO |
-| B3 | Track 3 selected, Foundation skipped | 4 | 7 | Convert to $97 Foundation buyer | `EMAIL_SEQUENCE_B3_TRILOGY_TO_FOUNDATION.md` | TODO |
+| B1 | Track 1 selected, Deal Machine skipped | 4 | 7 | Convert to $147 Deal Machine buyer | `EMAIL_SEQUENCE_B1_ACTIVE_INVESTOR.md` | DONE |
+| B2 | Track 2 selected, Wealth Shift skipped | 4 | 7 | Convert to $197 Wealth Shift buyer | `EMAIL_SEQUENCE_B2_PASSIVE_INVESTOR.md` | DONE |
+| B3 | Track 3 selected, Foundation skipped | 4 | 7 | Convert to $97 Foundation buyer | `EMAIL_SEQUENCE_B3_FOUNDATION.md` | DONE |
 | C1 | Deal Machine purchased ($147) | 9 | 18 | Get coaching application | `EMAIL_SEQUENCE_C1_ACTIVE_INVESTOR.md` | DONE |
 | C2 | Wealth Shift purchased ($197) | 9 | 18 | Get coaching application | `EMAIL_SEQUENCE_C2_PASSIVE_INVESTOR.md` | DONE |
 | C3 | Foundation purchased ($97) | 9 | 18 | Get coaching application | `EMAIL_SEQUENCE_C3_FOUNDATION.md` | DONE |
@@ -267,9 +267,9 @@ The LTV advantage is expected to exceed the slight RPL reduction within 6 months
 | Track 3 offer page | TODO | Build in GHL |
 | Email Sequence A (6 emails) | DONE | Load into GHL |
 | Email Sequence B (original, 4 emails) | ARCHIVED | Replaced by B1/B2/B3 |
-| Email Sequence B1 (Active, 4 emails) | TODO | Write (push to $147) |
-| Email Sequence B2 (Passive, 4 emails) | TODO | Write (push to $197) |
-| Email Sequence B3 (Foundation, 4 emails) | TODO | Write (push to $97) |
+| Email Sequence B1 (Active, 4 emails) | DONE | `EMAIL_SEQUENCE_B1_ACTIVE_INVESTOR.md` -- load into GHL |
+| Email Sequence B2 (Passive, 4 emails) | DONE | `EMAIL_SEQUENCE_B2_PASSIVE_INVESTOR.md` -- load into GHL |
+| Email Sequence B3 (Foundation, 4 emails) | DONE | `EMAIL_SEQUENCE_B3_FOUNDATION.md` -- load into GHL |
 | Email Sequence C (original, 9 emails) | ARCHIVED | Replaced by C1/C2/C3 |
 | Email Sequence C1 (Active, 9 emails) | DONE | `EMAIL_SEQUENCE_C1_ACTIVE_INVESTOR.md` -- load into GHL |
 | Email Sequence C2 (Passive, 9 emails) | DONE | `EMAIL_SEQUENCE_C2_PASSIVE_INVESTOR.md` -- load into GHL |
@@ -314,6 +314,9 @@ business/funnel/
   EMAIL_SEQUENCE_A_BOOK1_TO_TRILOGY.md          ← Sequence A (active)
   EMAIL_SEQUENCE_B_TRILOGY_TO_FIRE.md           ← Sequence B (ARCHIVED - replaced by B1/B2/B3)
   EMAIL_SEQUENCE_C_FIRE_TO_COACHING.md          ← Sequence C (ARCHIVED - replaced by C1/C2/C3)
+  EMAIL_SEQUENCE_B1_ACTIVE_INVESTOR.md          ← Sequence B1 - Active track (push to $147)
+  EMAIL_SEQUENCE_B2_PASSIVE_INVESTOR.md         ← Sequence B2 - Passive track (push to $197)
+  EMAIL_SEQUENCE_B3_FOUNDATION.md               ← Sequence B3 - Foundation track (push to $97)
   EMAIL_SEQUENCE_D_APPLICATION_NURTURE.md       ← Sequence D (TODO)
   EMAIL_SEQUENCE_C1_ACTIVE_INVESTOR.md          ← Sequence C1 - Active track
   EMAIL_SEQUENCE_C2_PASSIVE_INVESTOR.md         ← Sequence C2 - Passive track
