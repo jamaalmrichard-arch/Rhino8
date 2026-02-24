@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Deal Machine — Active Investor's Playbook | J. Marque</title>
+<meta name="description" content="The Active Investor's Playbook for Making Money in Any Market. 85-page guide, 6 audio modules, 12 templates. From the operator behind $250M+ in real estate transactions.">
+<style>
+  /* ============================================================
+     THE DEAL MACHINE — Sales Page
+     Brand: Gold #c8a84e / Black #0a0a0a
+     Font: Segoe UI, system-ui, sans-serif
+     Mobile-first responsive
+     ============================================================ */
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: #0a0a0a;
+    color: #ffffff;
+    line-height: 1.6;
+  }
+
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+
+  /* ====== LAYOUT ====== */
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .container--wide {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ====== COLORS ====== */
+  .gold { color: #c8a84e; }
+
+  /* ====== TYPOGRAPHY ====== */
+  .label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    margin-bottom: 16px;
+  }
+
+  .headline {
+    font-size: clamp(1.75rem, 5vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+
+  .subheadline {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-weight: 400;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 32px;
+  }
+
+  .section-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 1.25;
+  }
+
+  .section-sub {
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 48px;
+    line-height: 1.6;
+  }
+
+  /* ====== DIVIDER ====== */
+  .divider {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #c8a84e, transparent);
+    margin: 0 auto;
+  }
+
+  /* ====== CTA BUTTON ====== */
+  .btn-cta {
+    display: inline-block;
+    padding: 18px 48px;
+    background: linear-gradient(135deg, #c8a84e 0%, #a68a3a 100%);
+    border: none;
+    border-radius: 6px;
+    color: #0a0a0a;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(200,168,78,0.2);
+  }
+
+  .btn-cta:hover {
+    background: linear-gradient(135deg, #d4b45a 0%, #b89842 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 28px rgba(200,168,78,0.35);
+  }
+
+  .btn-cta:active { transform: translateY(0); }
+
+  .btn-sub {
+    display: block;
+    margin-top: 12px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.4);
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  /* ====== SECTION SPACING ====== */
+  section {
+    padding: 80px 0;
+  }
+
+  .section-border {
+    border-top: 1px solid rgba(200,168,78,0.1);
+  }
+
+  /* ====== HERO ====== */
+  .hero {
+    padding: 80px 0 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(200,168,78,0.06) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .hero .container { position: relative; z-index: 2; }
+
+  /* ====== PRODUCT MOCKUP ====== */
+  .mockup-area {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+    margin: 0 auto 48px;
+    flex-wrap: wrap;
+  }
+
+  .mockup-book {
+    width: 200px;
+    height: 270px;
+    background: linear-gradient(160deg, #1a1a1a 0%, #0e0e0e 100%);
+    border: 2px solid #c8a84e;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    position: relative;
+    box-shadow:
+      10px 10px 0 rgba(200,168,78,0.06),
+      0 20px 60px rgba(0,0,0,0.6);
+    flex-shrink: 0;
+  }
+
+  .mockup-book::before {
+    content: '';
+    position: absolute;
+    top: 10px; left: 10px; right: 10px; bottom: 10px;
+    border: 1px solid rgba(200,168,78,0.15);
+    border-radius: 3px;
+    pointer-events: none;
+  }
+
+  .mockup-brand {
+    font-size: 0.55rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    opacity: 0.5;
+    margin-bottom: 16px;
+  }
+
+  .mockup-icon {
+    width: 48px;
+    height: 48px;
+    border: 2px solid #c8a84e;
+    border-radius: 4px;
+    position: relative;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Gear/machine icon via CSS */
+  .mockup-icon::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 2px solid #c8a84e;
+    border-radius: 50%;
+  }
+
+  .mockup-icon::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #c8a84e;
+    border-radius: 50%;
+  }
+
+  .mockup-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #c8a84e;
+    text-align: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1.35;
+    margin-bottom: 4px;
+  }
+
+  .mockup-subtitle {
+    font-size: 0.5rem;
+    color: rgba(255,255,255,0.35);
+    text-align: center;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  .mockup-author {
+    font-size: 0.55rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    opacity: 0.5;
+    margin-top: auto;
+    padding-top: 12px;
+  }
+
+  /* Side items: audio + templates */
+  .mockup-side {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .mockup-side-item {
+    width: 130px;
+    height: 80px;
+    background: #111;
+    border: 1px solid rgba(200,168,78,0.2);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    gap: 6px;
+  }
+
+  .mockup-side-icon {
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  .mockup-side-label {
+    font-size: 0.55rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  .mockup-side-num {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #c8a84e;
+  }
+
+  /* Audio wave CSS icon */
+  .audio-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 18px;
+  }
+
+  .audio-bars span {
+    display: block;
+    width: 3px;
+    background: #c8a84e;
+    border-radius: 1px;
+  }
+
+  .audio-bars span:nth-child(1) { height: 6px; }
+  .audio-bars span:nth-child(2) { height: 14px; }
+  .audio-bars span:nth-child(3) { height: 10px; }
+  .audio-bars span:nth-child(4) { height: 18px; }
+  .audio-bars span:nth-child(5) { height: 8px; }
+  .audio-bars span:nth-child(6) { height: 12px; }
+  .audio-bars span:nth-child(7) { height: 5px; }
+
+  /* Template stack icon */
+  .template-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: center;
+  }
+
+  .template-stack span {
+    display: block;
+    height: 3px;
+    background: #c8a84e;
+    border-radius: 1px;
+  }
+
+  .template-stack span:nth-child(1) { width: 20px; opacity: 0.4; }
+  .template-stack span:nth-child(2) { width: 24px; opacity: 0.6; }
+  .template-stack span:nth-child(3) { width: 28px; opacity: 0.8; }
+  .template-stack span:nth-child(4) { width: 32px; opacity: 1; }
+
+  /* ====== WHO THIS IS FOR ====== */
+  .who-list {
+    list-style: none;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .who-list li {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.85);
+    padding: 14px 0 14px 36px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .who-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    border: 2px solid #c8a84e;
+    border-radius: 50%;
+  }
+
+  .who-list li::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 5px;
+    height: 9px;
+    border-right: 2px solid #c8a84e;
+    border-bottom: 2px solid #c8a84e;
+  }
+
+  .who-closer {
+    text-align: center;
+    margin-top: 36px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #c8a84e;
+  }
+
+  /* ====== PROBLEM SECTION ====== */
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 640px;
+    margin: 0 auto 48px;
+  }
+
+  .problem-card {
+    background: #111;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 6px;
+    padding: 28px 24px;
+  }
+
+  .problem-card h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .problem-card p {
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+  }
+
+  .problem-flip {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .problem-flip h3 {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-weight: 700;
+    color: #c8a84e;
+    margin-bottom: 16px;
+  }
+
+  .problem-flip p {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+  }
+
+  /* ====== MODULE CARDS ====== */
+  .module-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .mod-card {
+    background: linear-gradient(135deg, #141414 0%, #111 100%);
+    border: 1px solid rgba(200,168,78,0.12);
+    border-left: 3px solid #c8a84e;
+    border-radius: 6px;
+    padding: 24px;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    transition: border-color 0.2s;
+  }
+
+  .mod-card:hover {
+    border-color: rgba(200,168,78,0.3);
+    border-left-color: #c8a84e;
+  }
+
+  .mod-num {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #c8a84e;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    padding-top: 3px;
+    min-width: 70px;
+  }
+
+  .mod-body h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+
+  .mod-body p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+  }
+
+  .mod-body .mod-tag {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    background: rgba(200,168,78,0.08);
+    padding: 4px 10px;
+    border-radius: 3px;
+  }
+
+  /* ====== AUDIO SECTION ====== */
+  .audio-section {
+    background: linear-gradient(180deg, #0a0a0a 0%, #0f0f0f 50%, #0a0a0a 100%);
+    position: relative;
+  }
+
+  .audio-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(200,168,78,0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .audio-reveal {
+    text-align: center;
+    margin-bottom: 48px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .audio-reveal .reveal-text {
+    font-size: clamp(1.1rem, 3vw, 1.35rem);
+    font-weight: 400;
+    font-style: italic;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 8px;
+  }
+
+  .audio-reveal .reveal-headline {
+    font-size: clamp(1.3rem, 3.5vw, 1.75rem);
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .audio-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    max-width: 640px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .audio-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #111;
+    border: 1px solid rgba(200,168,78,0.1);
+    border-radius: 6px;
+    padding: 16px 20px;
+    transition: border-color 0.2s;
+  }
+
+  .audio-item:hover {
+    border-color: rgba(200,168,78,0.25);
+  }
+
+  .audio-item-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(200,168,78,0.08);
+    border: 1px solid rgba(200,168,78,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* Play triangle icon */
+  .play-icon {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 0 6px 10px;
+    border-color: transparent transparent transparent #c8a84e;
+    margin-left: 2px;
+  }
+
+  .audio-item-text h4 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 2px;
+  }
+
+  .audio-item-text span {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .audio-note {
+    text-align: center;
+    margin-top: 32px;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.45);
+    font-style: italic;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ====== TEMPLATES SECTION ====== */
+  .templates-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .tmpl-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    background: #111;
+    border: 1px solid rgba(255,255,255,0.04);
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+
+  .tmpl-item:hover {
+    background: #151515;
+  }
+
+  .tmpl-num {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #c8a84e;
+    min-width: 22px;
+  }
+
+  .tmpl-name {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.8);
+    flex: 1;
+  }
+
+  .tmpl-type {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(200,168,78,0.6);
+    white-space: nowrap;
+  }
+
+  .tmpl-note {
+    text-align: center;
+    margin-top: 28px;
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .tmpl-note strong {
+    color: #c8a84e;
+    font-weight: 600;
+  }
+
+  /* ====== CASE STUDIES ====== */
+  .case-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 640px) {
+    .case-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .case-card {
+    background: #111;
+    border: 1px solid rgba(200,168,78,0.12);
+    border-radius: 8px;
+    padding: 32px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .case-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #c8a84e, transparent);
+  }
+
+  .case-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+
+  .case-before {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  .case-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .case-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .case-stat-label {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .case-stat-value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #c8a84e;
+  }
+
+  .case-timeline {
+    margin-top: 16px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.35);
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ====== THE MATH ====== */
+  .math-block {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .math-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .math-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    background: #111;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 6px;
+  }
+
+  .math-row-label {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.7);
+    text-align: left;
+  }
+
+  .math-row-value {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #c8a84e;
+    white-space: nowrap;
+  }
+
+  .math-row--highlight {
+    border-color: #c8a84e;
+    background: rgba(200,168,78,0.04);
+  }
+
+  .math-row--highlight .math-row-label {
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  .math-verdict {
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+  }
+
+  .math-verdict strong {
+    color: #ffffff;
+  }
+
+  /* ====== ABOUT ====== */
+  .about-content {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .about-avatar {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #c8a84e;
+    border-radius: 50%;
+    margin: 0 auto 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111;
+  }
+
+  .about-avatar-initials {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #c8a84e;
+    letter-spacing: 2px;
+  }
+
+  .about-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+
+  .about-tagline {
+    font-size: 0.85rem;
+    color: #c8a84e;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .about-bio {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .about-creds {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 28px;
+  }
+
+  .about-cred {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(200,168,78,0.7);
+    background: rgba(200,168,78,0.06);
+    padding: 6px 14px;
+    border-radius: 3px;
+    border: 1px solid rgba(200,168,78,0.1);
+  }
+
+  /* ====== FAQ ====== */
+  .faq-list {
+    max-width: 680px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 24px 0;
+  }
+
+  .faq-item:first-child {
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .faq-q {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .faq-q::before {
+    content: 'Q';
+    position: absolute;
+    left: 0;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #c8a84e;
+  }
+
+  .faq-a {
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.7;
+    padding-left: 20px;
+  }
+
+  /* ====== FINAL CTA ====== */
+  .final-cta {
+    text-align: center;
+    background: linear-gradient(180deg, #0a0a0a 0%, #0e0d09 50%, #0a0a0a 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(200,168,78,0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .final-cta .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .final-includes {
+    list-style: none;
+    max-width: 480px;
+    margin: 32px auto;
+    text-align: left;
+  }
+
+  .final-includes li {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.7);
+    padding: 10px 0 10px 28px;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .final-includes li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 6px;
+    height: 10px;
+    border-right: 2px solid #c8a84e;
+    border-bottom: 2px solid #c8a84e;
+  }
+
+  .final-price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #c8a84e;
+    margin: 32px 0 8px;
+  }
+
+  .final-price-note {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 32px;
+  }
+
+  /* ====== FOOTER ====== */
+  .footer {
+    padding: 48px 24px;
+    text-align: center;
+    border-top: 1px solid rgba(200,168,78,0.08);
+  }
+
+  .footer-brand {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    opacity: 0.5;
+    margin-bottom: 16px;
+  }
+
+  .footer-disclaimer {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.25);
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* ====== RESPONSIVE ====== */
+  @media (min-width: 640px) {
+    .problem-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .templates-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .module-grid {
+      gap: 18px;
+    }
+
+    .mockup-area {
+      flex-wrap: nowrap;
+    }
+  }
+
+  @media (max-width: 640px) {
+    section {
+      padding: 56px 0;
+    }
+
+    .mockup-book {
+      width: 170px;
+      height: 230px;
+    }
+
+    .mockup-side {
+      flex-direction: row;
+    }
+
+    .mockup-side-item {
+      width: 100px;
+      height: 70px;
+    }
+
+    .btn-cta {
+      padding: 16px 32px;
+      font-size: 0.95rem;
+    }
+
+    .case-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .math-row {
+      flex-direction: column;
+      gap: 4px;
+      text-align: center;
+    }
+
+    .about-creds {
+      gap: 8px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     HERO SECTION
+     ============================================================ -->
+<section class="hero">
+  <div class="container">
+    <p class="label">THE ACTIVE INVESTOR TRACK</p>
+
+    <h1 class="headline">The Playbook for Making Money<br>in <span class="gold">Any Market</span></h1>
+
+    <p class="subheadline">Six modules. Twelve templates. Three calculators. One system that has produced over $250 million in real estate transactions. This is the field guide that turns readers into dealmakers.</p>
+
+    <!-- Product Mockup -->
+    <div class="mockup-area">
+      <div class="mockup-side">
+        <div class="mockup-side-item">
+          <div class="audio-bars">
+            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <div class="mockup-side-label">6 Audio<br>Modules</div>
+        </div>
+        <div class="mockup-side-item">
+          <div class="template-stack">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <div class="mockup-side-label">12 Templates<br>&amp; Worksheets</div>
+        </div>
+      </div>
+
+      <div class="mockup-book">
+        <div class="mockup-brand">Money Decoded</div>
+        <div class="mockup-icon"></div>
+        <div class="mockup-title">The Deal<br>Machine</div>
+        <div class="mockup-subtitle">Active Investor's<br>Playbook</div>
+        <div class="mockup-author">J. Marque</div>
+      </div>
+
+      <div class="mockup-side">
+        <div class="mockup-side-item">
+          <div class="mockup-side-num">85</div>
+          <div class="mockup-side-label">Page PDF<br>Guide</div>
+        </div>
+        <div class="mockup-side-item">
+          <div class="mockup-side-num">3</div>
+          <div class="mockup-side-label">Deal Analysis<br>Calculators</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GHL: Replace href with checkout link -->
+    <a href="#checkout" class="btn-cta">Get The Deal Machine &mdash; $147<span class="btn-sub">Instant digital delivery. Start today.</span></a>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     WHO THIS IS FOR
+     ============================================================ -->
+<section class="section-border">
+  <div class="container">
+    <p class="section-label">Who This Is For</p>
+    <h2 class="section-title">This Guide Was Built for People<br>Who Are Ready to <span class="gold">Do</span>, Not Watch</h2>
+
+    <ul class="who-list">
+      <li>You have a W-2 job that pays the bills, but you know it will never build the life you actually want. You need a system that works around your schedule, not instead of it.</li>
+      <li>You have been watching YouTube videos and listening to podcasts about real estate for months, maybe years. You know the terminology. You understand the concepts. But you have not done a single deal because nobody gave you the step-by-step.</li>
+      <li>You are tired of being told to "just get started" without being told exactly what to do on Day 1, Day 7, Day 30, and Day 90. You want a plan, not a pep talk.</li>
+      <li>You want to make your first $5,000 to $15,000 in real estate without needing savings, good credit, or a bank loan. You want proof that this works before you go all in.</li>
+      <li>You are the kind of person who would rather build wealth actively, deal by deal, than wait 40 years for a 401(k) to maybe be enough.</li>
+    </ul>
+
+    <p class="who-closer">If that is you, keep reading.</p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     THE PROBLEM
+     ============================================================ -->
+<section class="section-border">
+  <div class="container">
+    <p class="section-label">The Real Problem</p>
+    <h2 class="section-title">Why Smart People Fail at Real Estate</h2>
+    <p class="section-sub">It is not intelligence. It is not the market. It is three things that kill more real estate careers than bad deals ever will.</p>
+
+    <div class="problem-grid">
+      <div class="problem-card">
+        <h4>Analysis Paralysis</h4>
+        <p>You run numbers on 50 properties but never make an offer. Every deal has a flaw. Every market has a risk. So you do nothing. Months pass. Years pass. The paralysis is the risk you never calculated.</p>
+      </div>
+      <div class="problem-card">
+        <h4>No Repeatable System</h4>
+        <p>You learn a strategy from one video, a script from another, a tool from a third. Nothing connects. You have fragments of a plan but not a machine. Real estate is not about one deal. It is about a system that produces deals on repeat.</p>
+      </div>
+      <div class="problem-card">
+        <h4>Wrong-Market Advice</h4>
+        <p>Most of the content online was written for the 2020 market. Low rates, bidding wars, easy money. That market is dead. If your strategy was built for 3% rates, you are operating with an outdated map in a new terrain.</p>
+      </div>
+    </div>
+
+    <div class="divider" style="margin-bottom: 48px;"></div>
+
+    <div class="problem-flip">
+      <h3>What If the Current Market Is Actually Your Biggest Advantage?</h3>
+      <p>High interest rates eliminate your competition. Rising distress creates motivated sellers who need solutions fast. Inventory buildup gives you negotiating leverage that did not exist two years ago. The people who build wealth in real estate do not wait for perfect conditions. They exploit the conditions that scare everyone else away. That is exactly what The Deal Machine teaches you to do.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     WHAT'S INSIDE — 6 MODULES
+     ============================================================ -->
+<section class="section-border">
+  <div class="container">
+    <p class="section-label">What Is Inside</p>
+    <h2 class="section-title">6 Modules. Zero Theory.<br>All <span class="gold">Execution</span>.</h2>
+    <p class="section-sub">Each module is built to do one thing: move you closer to closing your first deal. No filler. No fluff. Every page earns its place.</p>
+
+    <div class="module-grid">
+      <div class="mod-card">
+        <div class="mod-num">MODULE 01</div>
+        <div class="mod-body">
+          <h4>The Down Market Advantage</h4>
+          <p>Why scared markets create the biggest opportunity. The 3 market conditions that favor active investors right now. The "Fear Index" framework for knowing when to move aggressively while everyone else is frozen.</p>
+          <span class="mod-tag">Mindset + Market Timing</span>
+        </div>
+      </div>
+
+      <div class="mod-card">
+        <div class="mod-num">MODULE 02</div>
+        <div class="mod-body">
+          <h4>Wholesaling &mdash; Your First $5K-$15K</h4>
+          <p>The fastest way to make money in real estate with zero dollars and zero credit. Step-by-step from finding motivated sellers to assigning contracts. Includes the 13-touch follow-up system, skip tracing, driving for dollars, and 3 deal walkthroughs with actual numbers.</p>
+          <span class="mod-tag">Fastest Path to Cash</span>
+        </div>
+      </div>
+
+      <div class="mod-card">
+        <div class="mod-num">MODULE 03</div>
+        <div class="mod-body">
+          <h4>The BRRRR Method &mdash; Building Wealth on Repeat</h4>
+          <p>Buy, Rehab, Rent, Refinance, Repeat. How to acquire rental properties with little to no money left in the deal after refinancing. Covers finding below-market properties, running rehab budgets, tenant placement, and the refinance that pulls your capital back out.</p>
+          <span class="mod-tag">Long-Term Wealth Engine</span>
+        </div>
+      </div>
+
+      <div class="mod-card">
+        <div class="mod-num">MODULE 04</div>
+        <div class="mod-body">
+          <h4>Fix &amp; Flip Fundamentals</h4>
+          <p>How to buy, renovate, and sell for profit. The 70% rule, ARV analysis, scope of work creation, contractor management, and the 5 renovation decisions that make or break your profit margin.</p>
+          <span class="mod-tag">Lump Sum Profits</span>
+        </div>
+      </div>
+
+      <div class="mod-card">
+        <div class="mod-num">MODULE 05</div>
+        <div class="mod-body">
+          <h4>Creative Finance &mdash; Deals With No Bank</h4>
+          <p>Subject-to, seller financing, lease options, and wraps. How to structure deals when the bank says no or when conventional financing kills your margins. Exact language to use with sellers and the legal framework for each strategy.</p>
+          <span class="mod-tag">Advanced Strategies</span>
+        </div>
+      </div>
+
+      <div class="mod-card">
+        <div class="mod-num">MODULE 06</div>
+        <div class="mod-body">
+          <h4>Your First 90 Days &mdash; The Execution Roadmap</h4>
+          <p>Day-by-day, week-by-week plan for your first 90 days. Week 1-2: market selection and lead gen setup. Week 3-6: first 50 seller contacts. Week 7-10: first offer submitted. Week 11-12: first deal under contract. No guesswork.</p>
+          <span class="mod-tag">Day-by-Day System</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MID-PAGE CTA
+     ============================================================ -->
+<section class="section-border" style="padding: 56px 0;">
+  <div class="container" style="text-align: center;">
+    <div class="divider" style="margin-bottom: 32px;"></div>
+    <p style="font-size: 1.05rem; color: rgba(255,255,255,0.5); margin-bottom: 24px;">Six modules that cover every active strategy. But that is only a third of what you get.</p>
+    <!-- GHL: Replace href with checkout link -->
+    <a href="#checkout" class="btn-cta">Get The Deal Machine &mdash; $147<span class="btn-sub">85-page guide + 6 audio modules + 12 templates + 3 calculators</span></a>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     AUDIO MODULES
+     ============================================================ -->
+<section class="audio-section section-border">
+  <div class="container">
+    <p class="section-label">Audio Modules</p>
+
+    <div class="audio-reveal">
+      <p class="reveal-text">"You have read the words. Now hear the voice."</p>
+      <h2 class="reveal-headline">The First Time You Hear <span class="gold">J. Marque</span></h2>
+    </div>
+
+    <p class="section-sub" style="margin-bottom: 36px;">Every module comes with a companion audio recording. This is the first time you will hear the real voice behind the Money Decoded books. No AI. No narrator. The actual operator walking you through each strategy, with examples and commentary that do not appear in the written guide. Listen on your commute, at the gym, or on a lunch break.</p>
+
+    <div class="audio-list">
+      <div class="audio-item">
+        <div class="audio-item-icon"><div class="play-icon"></div></div>
+        <div class="audio-item-text">
+          <h4>Module 1: The Down Market Advantage</h4>
+          <span>~15 minutes</span>
+        </div>
+      </div>
+      <div class="audio-item">
+        <div class="audio-item-icon"><div class="play-icon"></div></div>
+        <div class="audio-item-text">
+          <h4>Module 2: Wholesaling &mdash; Your First $5K-$15K</h4>
+          <span>~15 minutes</span>
+        </div>
+      </div>
+      <div class="audio-item">
+        <div class="audio-item-icon"><div class="play-icon"></div></div>
+        <div class="audio-item-text">
+          <h4>Module 3: The BRRRR Method</h4>
+          <span>~15 minutes</span>
+        </div>
+      </div>
+      <div class="audio-item">
+        <div class="audio-item-icon"><div class="play-icon"></div></div>
+        <div class="audio-item-text">
+          <h4>Module 4: Fix &amp; Flip Fundamentals</h4>
+          <span>~15 minutes</span>
+        </div>
+      </div>
+      <div class="audio-item">
+        <div class="audio-item-icon"><div class="play-icon"></div></div>
+        <div class="audio-item-text">
+          <h4>Module 5: Creative Finance &mdash; Deals With No Bank</h4>
+          <span>~15 minutes</span>
+        </div>
+      </div>
+      <div class="audio-item">
+        <div class="audio-item-icon"><div class="play-icon"></div></div>
+        <div class="audio-item-text">
+          <h4>Module 6: Your First 90 Days</h4>
+          <span>~15 minutes</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="audio-note">90 minutes of real-world instruction. Zero filler. Built to be consumed on the move.</p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TEMPLATES & WORKSHEETS
+     ============================================================ -->
+<section class="section-border">
+  <div class="container">
+    <p class="section-label">Templates &amp; Worksheets</p>
+    <h2 class="section-title">12 Fill-in-the-Blank Tools<br>That <span class="gold">Do the Work for You</span></h2>
+    <p class="section-sub">Every template is ready to use the day you download it. No customization required. No "adapt this framework to your situation." Open. Fill in. Execute.</p>
+
+    <div class="templates-grid">
+      <div class="tmpl-item">
+        <span class="tmpl-num">01</span>
+        <span class="tmpl-name">Wholesale Deal Analyzer</span>
+        <span class="tmpl-type">Spreadsheet</span>
+      </div>
+      <div class="tmpl-item">
+        <span class="tmpl-num">02</span>
+        <span class="tmpl-name">BRRRR Calculator</span>
+        <span class="tmpl-type">Spreadsheet</span>
+      </div>
+      <div class="tmpl-item">
+        <span class="tmpl-num">03</span>
+        <span class="tmpl-name">Fix &amp; Flip Profit Calculator</span>
+        <span class="tmpl-type">Spreadsheet</span>
+      </div>
+      <div class="tmpl-item">
+        <span class="tmpl-num">04</span>
+        <span class="tmpl-name">13-Touch Seller Follow-Up Script Pack</span>
+        <span class="tmpl-type">Scripts</span>
+      </div>
+      <div class="tmpl-item">
+        <span class="tmpl-num">05</span>
+        <span class="tmpl-name">Motivated Seller Questionnaire</span>
+        <span class="tmpl-type">Script</span>
+      </div>
+      <div class="tmpl-item">
+        <span class="tmpl-num">06</span>
+        <span class="tmpl-name">Purchase Agreement (Assignable)</span>
+        <span class="tmpl-type">Contract</span>
+      </div>
+      <div class="tmpl-item">
+        <span class="tmpl-num">07</span>
+        <span class="tmpl-name">Assignment of Contract</span>
+        <span class="tmpl-type">Contract</span>
+      </div>
+      <div class="tmpl-item">
+        <span class="tmpl-num">08</span>
+        <span class="tmpl-name">Scope of Work Template</span>
+        <span class="tmpl-type">Worksheet</span>
+      </div>
+      <div class="tmpl-item">
+        <span class="tmpl-num">09</span>
+        <span class="tmpl-name">Contractor Vetting Checklist</span>
+        <span class="tmpl-type">Checklist</span>
+      </div>
+      <div class="tmpl-item">
+        <span class="tmpl-num">10</span>
+        <span class="tmpl-name">90-Day Execution Tracker</span>
+        <span class="tmpl-type">Planner</span>
+      </div>
+      <div class="tmpl-item">
+        <span class="tmpl-num">11</span>
+        <span class="tmpl-name">Deal Pipeline Tracker</span>
+        <span class="tmpl-type">Spreadsheet</span>
+      </div>
+      <div class="tmpl-item">
+        <span class="tmpl-num">12</span>
+        <span class="tmpl-name">Seller Lead Scoring Sheet</span>
+        <span class="tmpl-type">Spreadsheet</span>
+      </div>
+    </div>
+
+    <p class="tmpl-note"><strong>The 13-Touch Script Pack alone</strong> has generated hundreds of thousands of dollars in assignment fees. It is included with this guide.</p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CASE STUDIES
+     ============================================================ -->
+<section class="section-border">
+  <div class="container">
+    <p class="section-label">Results</p>
+    <h2 class="section-title">Real People. Real Numbers.<br><span class="gold">Real Deals</span>.</h2>
+    <p class="section-sub">These are not hypothetical projections. These are actual outcomes from people who used this exact system.</p>
+
+    <div class="case-grid">
+      <div class="case-card">
+        <div class="case-name">David</div>
+        <div class="case-before">$95K/yr software engineer. Zero real estate experience. Started while working full-time.</div>
+        <div class="case-stats">
+          <div class="case-stat">
+            <span class="case-stat-label">Properties</span>
+            <span class="case-stat-value">4 Rentals</span>
+          </div>
+          <div class="case-stat">
+            <span class="case-stat-label">Gross Rent</span>
+            <span class="case-stat-value">$6,800/mo</span>
+          </div>
+          <div class="case-stat">
+            <span class="case-stat-label">Net Cash Flow</span>
+            <span class="case-stat-value">$2,400/mo</span>
+          </div>
+          <div class="case-stat">
+            <span class="case-stat-label">First BRRRR Return</span>
+            <span class="case-stat-value">$730/mo forever</span>
+          </div>
+        </div>
+        <div class="case-timeline">12 months from first module to 4th property</div>
+      </div>
+
+      <div class="case-card">
+        <div class="case-name">Keisha</div>
+        <div class="case-before">$52K/yr teacher. Single mom. Started with The Foundation workbook, moved to Deal Machine.</div>
+        <div class="case-stats">
+          <div class="case-stat">
+            <span class="case-stat-label">First Check</span>
+            <span class="case-stat-value">$8,500 Wholesale</span>
+          </div>
+          <div class="case-stat">
+            <span class="case-stat-label">Properties</span>
+            <span class="case-stat-value">3 Owned</span>
+          </div>
+          <div class="case-stat">
+            <span class="case-stat-label">Monthly Income</span>
+            <span class="case-stat-value">$4,200/mo</span>
+          </div>
+          <div class="case-stat">
+            <span class="case-stat-label">Time to First Deal</span>
+            <span class="case-stat-value">47 Days</span>
+          </div>
+        </div>
+        <div class="case-timeline">$52K salary to $50K+ annual side income</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     THE MATH
+     ============================================================ -->
+<section class="section-border">
+  <div class="container">
+    <p class="section-label">The Math</p>
+    <h2 class="section-title">This Is Not an Expense.<br>It Is an <span class="gold">Investment</span>.</h2>
+
+    <div class="math-block">
+      <div class="math-rows">
+        <div class="math-row">
+          <span class="math-row-label">Your first wholesale deal</span>
+          <span class="math-row-value">$5,000 - $15,000</span>
+        </div>
+        <div class="math-row">
+          <span class="math-row-label">Your first BRRRR producing monthly</span>
+          <span class="math-row-value">$730/mo forever</span>
+        </div>
+        <div class="math-row">
+          <span class="math-row-label">David's BRRRR return in Year 1</span>
+          <span class="math-row-value">$8,760</span>
+        </div>
+        <div class="math-row">
+          <span class="math-row-label">Keisha's first wholesale check</span>
+          <span class="math-row-value">$8,500</span>
+        </div>
+        <div class="math-row math-row--highlight">
+          <span class="math-row-label">The Deal Machine</span>
+          <span class="math-row-value">$147</span>
+        </div>
+      </div>
+
+      <p class="math-verdict">One wholesale deal pays for this guide <strong>34 to 100 times over</strong>. One BRRRR pays for it every single month for the rest of your life. The question is not whether you can afford $147. The question is what it costs you to wait another year without a system.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     ABOUT J. MARQUE
+     ============================================================ -->
+<section class="section-border">
+  <div class="container">
+    <p class="section-label">About The Author</p>
+
+    <div class="about-content">
+      <div class="about-avatar">
+        <span class="about-avatar-initials">JM</span>
+      </div>
+
+      <div class="about-name">J. Marque</div>
+      <div class="about-tagline">Not a realtor. Not a mortgage broker. An operator.</div>
+
+      <p class="about-bio">$250 million in closed real estate transactions. Two decades of wholesaling, flipping, managing rentals, running a title company, and advising investors at every level from their first deal to their hundredth. United States Marine Corps combat veteran.</p>
+
+      <p class="about-bio">Everything in The Deal Machine comes from the field, not from a classroom. Every script has been spoken to a real seller. Every template has been used on a real deal. Every number has been pulled from a real closing statement. This is not a guide that was researched. It was lived.</p>
+
+      <div class="about-creds">
+        <span class="about-cred">$250M+ in RE Transactions</span>
+        <span class="about-cred">USMC Combat Veteran</span>
+        <span class="about-cred">Wholesaler</span>
+        <span class="about-cred">Flipper</span>
+        <span class="about-cred">Landlord</span>
+        <span class="about-cred">Title Company Owner</span>
+        <span class="about-cred">Consultant</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FAQ
+     ============================================================ -->
+<section class="section-border">
+  <div class="container">
+    <p class="section-label">Common Questions</p>
+    <h2 class="section-title">Frequently Asked</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">What if I am a complete beginner with zero real estate experience?</div>
+        <div class="faq-a">This guide was built for you. Module 2 (Wholesaling) requires zero dollars, zero credit, and zero experience. Module 6 gives you a literal day-by-day plan for your first 90 days. You do not need a license, a degree, or a down payment. You need this system and the willingness to follow it.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What if the market crashes?</div>
+        <div class="faq-a">Module 1 is entirely about why market corrections create the best conditions for active investors. Wholesaling works in any market because you are solving a seller's problem, not speculating on prices. BRRRR works because you are buying below market value and forcing appreciation through renovation. The strategies in this guide do not depend on a hot market. They thrive in the exact market we are in right now.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Can I do this while working a full-time job?</div>
+        <div class="faq-a">David closed 4 deals in 12 months while working full-time as a software engineer. Keisha did her first deal while teaching full-time and raising a child. The 90-Day Execution Roadmap in Module 6 is specifically designed for people with jobs. The audio modules let you learn during your commute or at the gym. This is built around your life, not instead of it.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What makes this different from free YouTube content?</div>
+        <div class="faq-a">YouTube gives you fragments. A wholesaling video here, a BRRRR video there, a motivational clip somewhere else. None of it connects into a system. The Deal Machine is a complete, sequential, fill-in-the-blank operational playbook from someone who has closed $250 million in real estate, not from someone who makes money selling courses about real estate. The 13-Touch Script Pack alone has generated hundreds of thousands of dollars in assignment fees. You will not find that on YouTube.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Is there a guarantee?</div>
+        <div class="faq-a">This is a digital product with immediately accessible templates, scripts, and proprietary systems. Due to the nature of the content, all sales are final. That said, the wholesaling module alone teaches you how to make $5,000 to $15,000 on a single deal with no money down. The product is $147. The math speaks for itself.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What format does it come in?</div>
+        <div class="faq-a">The main guide is an 85-page PDF. The 6 audio modules are downloadable MP3 files, approximately 15 minutes each. The 12 templates and 3 calculators are spreadsheets and documents you can open in Google Sheets, Excel, or any standard office software. Everything is delivered instantly after purchase.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FINAL CTA
+     ============================================================ -->
+<section class="final-cta section-border">
+  <div class="container">
+    <p class="section-label">Get Started</p>
+    <h2 class="section-title">Your Deal Machine Is <span class="gold">One Click Away</span></h2>
+
+    <p style="font-size: 1rem; color: rgba(255,255,255,0.55); max-width: 560px; margin: 0 auto 32px; line-height: 1.7; text-align: center;">You have already read the trilogy. You already understand how money works. Now it is time to put that knowledge into action with the system that has produced over $250 million in real estate transactions.</p>
+
+    <ul class="final-includes">
+      <li>85-page PDF guide with 6 in-depth modules</li>
+      <li>6 audio modules (~15 min each) &mdash; first time you hear J. Marque's real voice</li>
+      <li>12 fill-in-the-blank templates and worksheets</li>
+      <li>3 deal analysis calculators (Wholesale, BRRRR, Flip)</li>
+      <li>13-Touch Seller Follow-Up Script Pack</li>
+      <li>90-Day Execution Roadmap &mdash; day by day, week by week</li>
+      <li>Assignable Purchase Agreement and Assignment of Contract templates</li>
+    </ul>
+
+    <div class="final-price">$147</div>
+    <p class="final-price-note">One-time payment. Instant delivery. Lifetime access.</p>
+
+    <!-- GHL: Replace href with checkout link -->
+    <a href="#checkout" class="btn-cta">Get The Deal Machine &mdash; $147<span class="btn-sub">Your first deal pays for this 34x over. Start now.</span></a>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="footer-brand">J. Marque &nbsp;|&nbsp; Money Decoded</div>
+  <p class="footer-disclaimer">
+    The information contained in The Deal Machine is for educational purposes only. It is not intended as legal, financial, tax, or investment advice. Real estate investing involves risk, including the potential loss of capital. Past results are not indicative of future performance. Individual results will vary based on effort, market conditions, and other factors. The case studies presented reflect specific individuals' experiences and are not guarantees of future results. Consult with qualified legal, financial, and tax professionals before making any investment decisions. By purchasing this product, you acknowledge that all sales are final and that J. Marque and Money Decoded are not responsible for your individual investment outcomes.
+  </p>
+</footer>
+
+</body>
+</html>

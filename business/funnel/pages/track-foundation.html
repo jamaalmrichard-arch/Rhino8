@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE FOUNDATION — The Complete Financial Blueprint for Future Investors | J. Marque</title>
+<meta name="description" content="7 step-by-step modules. 9 worksheets. Audio companions. Build your financial foundation before your first investment. By J. Marque.">
+<style>
+  /* ============================================================
+     THE FOUNDATION — Track Sales Page ($97)
+     Brand: Gold #c8a84e / Black #0a0a0a
+     Font: Segoe UI, system-ui, sans-serif
+     Tone: Warm, encouraging, patient, direct
+     Mobile-first responsive
+     ============================================================ */
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: #0a0a0a;
+    color: #ffffff;
+    line-height: 1.6;
+  }
+
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+
+  /* ====== LAYOUT ====== */
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .container--narrow {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ====== COLORS ====== */
+  .gold { color: #c8a84e; }
+
+  /* ====== TYPOGRAPHY ====== */
+  .label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    margin-bottom: 16px;
+  }
+
+  .headline {
+    font-size: clamp(1.75rem, 5vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+
+  .subheadline {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-weight: 400;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 32px;
+  }
+
+  .section-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .section-subtitle {
+    font-size: clamp(0.95rem, 2.3vw, 1.05rem);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    line-height: 1.65;
+    max-width: 560px;
+    margin: 0 auto 48px;
+  }
+
+  /* ====== DIVIDER ====== */
+  .divider {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #c8a84e, transparent);
+    margin: 0 auto;
+  }
+
+  /* ====== CTA BUTTON ====== */
+  .btn-cta {
+    display: inline-block;
+    padding: 18px 48px;
+    background: linear-gradient(135deg, #c8a84e 0%, #a68a3a 100%);
+    border: none;
+    border-radius: 6px;
+    color: #0a0a0a;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .btn-cta:hover {
+    background: linear-gradient(135deg, #d4b45a 0%, #b89842 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(200,168,78,0.3);
+  }
+
+  .btn-cta:active { transform: translateY(0); }
+
+  .btn-sub {
+    display: block;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.35);
+    margin-top: 12px;
+  }
+
+  /* ====== HERO ====== */
+  .hero {
+    padding: 80px 0 64px;
+    background: linear-gradient(180deg, #0a0a0a 0%, #111111 50%, #0a0a0a 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -40px; left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(200,168,78,0.06) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .hero .container { position: relative; z-index: 2; }
+
+  /* Foundation Icon — CSS-only building blocks */
+  .foundation-icon {
+    width: 120px;
+    height: 100px;
+    margin: 0 auto 32px;
+    position: relative;
+  }
+
+  .foundation-icon .block {
+    position: absolute;
+    border: 1px solid rgba(200,168,78,0.35);
+    background: rgba(200,168,78,0.04);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Base layer */
+  .foundation-icon .block-base {
+    bottom: 0; left: 10px; right: 10px;
+    height: 16px;
+    border-color: rgba(200,168,78,0.5);
+    background: rgba(200,168,78,0.08);
+  }
+
+  /* Second layer — two blocks */
+  .foundation-icon .block-2a {
+    bottom: 20px; left: 18px;
+    width: 38px; height: 16px;
+  }
+
+  .foundation-icon .block-2b {
+    bottom: 20px; right: 18px;
+    width: 38px; height: 16px;
+  }
+
+  /* Third layer */
+  .foundation-icon .block-3 {
+    bottom: 40px; left: 30px; right: 30px;
+    height: 16px;
+  }
+
+  /* Fourth layer */
+  .foundation-icon .block-4 {
+    bottom: 60px; left: 40px; right: 40px;
+    height: 16px;
+    border-color: rgba(200,168,78,0.25);
+    background: rgba(200,168,78,0.02);
+  }
+
+  /* Top — gold accent */
+  .foundation-icon .block-top {
+    bottom: 82px; left: 50px; right: 50px;
+    height: 4px;
+    background: rgba(200,168,78,0.4);
+    border: none;
+    border-radius: 1px;
+  }
+
+  .hero:hover .foundation-icon .block {
+    border-color: rgba(200,168,78,0.5);
+    background: rgba(200,168,78,0.06);
+  }
+
+  /* ====== SECTIONS — Alternating backgrounds ====== */
+  .section--dark {
+    padding: 80px 0;
+    background: #0a0a0a;
+  }
+
+  .section--light {
+    padding: 80px 0;
+    background: #0d0d0d;
+  }
+
+  .section--accent {
+    padding: 80px 0;
+    background: #111111;
+  }
+
+  /* ====== NO SHAME SECTION ====== */
+  .shame-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .shame-content .big-quote {
+    font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.4;
+    margin-bottom: 28px;
+  }
+
+  .shame-content .big-quote em {
+    color: #c8a84e;
+    font-style: normal;
+  }
+
+  .shame-content p {
+    font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .shame-stat {
+    display: inline-block;
+    padding: 16px 32px;
+    border: 1px solid rgba(200,168,78,0.2);
+    border-radius: 6px;
+    background: rgba(200,168,78,0.03);
+    margin-top: 12px;
+  }
+
+  .shame-stat span {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #c8a84e;
+  }
+
+  /* ====== WHO THIS IS FOR ====== */
+  .who-list {
+    list-style: none;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  .who-list li {
+    padding: 14px 0 14px 36px;
+    position: relative;
+    font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+    color: rgba(255,255,255,0.75);
+    line-height: 1.55;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .who-list li:last-child { border-bottom: none; }
+
+  .who-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 19px;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(200,168,78,0.4);
+    border-radius: 50%;
+  }
+
+  .who-list li::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 24px;
+    width: 6px;
+    height: 6px;
+    background: #c8a84e;
+    border-radius: 50%;
+    opacity: 0.6;
+  }
+
+  .who-closer {
+    text-align: center;
+    margin-top: 36px;
+    font-size: clamp(1.1rem, 2.8vw, 1.25rem);
+    font-weight: 600;
+    color: #c8a84e;
+    font-style: italic;
+  }
+
+  /* ====== FOUNDATION METAPHOR / JOURNEY ====== */
+  .journey-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .journey-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px 0;
+    position: relative;
+  }
+
+  .journey-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 19px;
+    top: 56px;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg, rgba(200,168,78,0.3), rgba(200,168,78,0.05));
+  }
+
+  .journey-num {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(200,168,78,0.35);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #c8a84e;
+    background: rgba(200,168,78,0.04);
+    position: relative;
+    z-index: 2;
+  }
+
+  .journey-text strong {
+    display: block;
+    font-size: 0.95rem;
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+
+  .journey-text span {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.55;
+  }
+
+  .journey-result {
+    text-align: center;
+    margin-top: 32px;
+    padding: 24px;
+    border: 1px solid rgba(200,168,78,0.2);
+    border-radius: 8px;
+    background: rgba(200,168,78,0.03);
+  }
+
+  .journey-result p {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #c8a84e;
+  }
+
+  /* ====== MODULE CARDS ====== */
+  .module-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .module-card {
+    background: linear-gradient(135deg, #141414 0%, #111 100%);
+    border: 1px solid rgba(200,168,78,0.12);
+    border-left: 3px solid rgba(200,168,78,0.3);
+    border-radius: 6px;
+    padding: 24px;
+    transition: all 0.25s ease;
+  }
+
+  .module-card:hover {
+    border-left-color: #c8a84e;
+    background: linear-gradient(135deg, #171714 0%, #121210 100%);
+  }
+
+  .module-card.crown {
+    border: 1px solid rgba(200,168,78,0.3);
+    border-left: 3px solid #c8a84e;
+    background: linear-gradient(135deg, #1a1708 0%, #131210 100%);
+    position: relative;
+  }
+
+  .crown-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    background: rgba(200,168,78,0.1);
+    border: 1px solid rgba(200,168,78,0.25);
+    border-radius: 3px;
+    padding: 3px 10px;
+    margin-bottom: 12px;
+  }
+
+  .module-card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 10px;
+  }
+
+  .module-card-num {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #c8a84e;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    min-width: 72px;
+  }
+
+  .module-card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .module-card-desc {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+    margin-bottom: 12px;
+    padding-left: 86px;
+  }
+
+  .module-card-worksheet {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: rgba(200,168,78,0.7);
+    letter-spacing: 0.5px;
+    padding-left: 86px;
+  }
+
+  .module-card-worksheet::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: rgba(200,168,78,0.3);
+    border-radius: 1px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  /* ====== CASE STUDY ====== */
+  .case-study-card {
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid rgba(200,168,78,0.15);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .case-study-header {
+    background: rgba(200,168,78,0.06);
+    border-bottom: 1px solid rgba(200,168,78,0.12);
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .case-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 2px solid rgba(200,168,78,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #c8a84e;
+    background: rgba(200,168,78,0.08);
+    flex-shrink: 0;
+  }
+
+  .case-intro strong {
+    display: block;
+    font-size: 1rem;
+    color: #ffffff;
+  }
+
+  .case-intro span {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .case-study-body {
+    padding: 28px;
+  }
+
+  .case-study-body p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .case-study-body p:last-child { margin-bottom: 0; }
+
+  .case-stat-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 24px 0;
+  }
+
+  .case-stat {
+    text-align: center;
+    padding: 16px;
+    background: rgba(200,168,78,0.03);
+    border: 1px solid rgba(200,168,78,0.1);
+    border-radius: 6px;
+  }
+
+  .case-stat .num {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #c8a84e;
+    line-height: 1.2;
+  }
+
+  .case-stat .desc {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  .case-closer {
+    font-style: italic;
+    color: rgba(255,255,255,0.8) !important;
+    font-weight: 500;
+    border-left: 2px solid rgba(200,168,78,0.3);
+    padding-left: 16px;
+  }
+
+  /* ====== AUDIO SECTION ====== */
+  .audio-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    max-width: 500px;
+    margin: 0 auto 40px;
+  }
+
+  .audio-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .audio-item:last-child { border-bottom: none; }
+
+  .audio-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,168,78,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  /* CSS play triangle */
+  .audio-icon::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 0 5px 9px;
+    border-color: transparent transparent transparent rgba(200,168,78,0.5);
+    margin-left: 2px;
+  }
+
+  .audio-label {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .audio-label strong {
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  .audio-duration {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.3);
+    margin-left: auto;
+    white-space: nowrap;
+  }
+
+  .audio-callout {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px 24px;
+    border: 1px solid rgba(200,168,78,0.15);
+    border-radius: 6px;
+    background: rgba(200,168,78,0.02);
+  }
+
+  .audio-callout p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+    font-style: italic;
+  }
+
+  /* ====== WORKSHEETS ====== */
+  .worksheet-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    max-width: 580px;
+    margin: 0 auto 40px;
+  }
+
+  .worksheet-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    background: rgba(255,255,255,0.02);
+    border-radius: 4px;
+    transition: background 0.2s ease;
+  }
+
+  .worksheet-item:hover {
+    background: rgba(200,168,78,0.04);
+  }
+
+  .ws-check {
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(200,168,78,0.3);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  /* CSS checkmark */
+  .ws-check::after {
+    content: '';
+    display: block;
+    width: 5px;
+    height: 9px;
+    border-right: 2px solid rgba(200,168,78,0.6);
+    border-bottom: 2px solid rgba(200,168,78,0.6);
+    transform: rotate(45deg);
+    margin-top: -2px;
+  }
+
+  .ws-name {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .ws-name strong {
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  .worksheet-highlight {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .worksheet-highlight p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+  }
+
+  .worksheet-highlight strong {
+    color: #c8a84e;
+  }
+
+  /* ====== THE MATH / VALUE ====== */
+  .math-box {
+    max-width: 520px;
+    margin: 0 auto;
+    border: 1px solid rgba(200,168,78,0.2);
+    border-radius: 8px;
+    padding: 40px 32px;
+    background: rgba(200,168,78,0.02);
+  }
+
+  .math-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .math-row:last-of-type { border-bottom: none; }
+
+  .math-label {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.7);
+    flex: 1;
+    padding-right: 16px;
+  }
+
+  .math-value {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.4);
+    text-decoration: line-through;
+    white-space: nowrap;
+  }
+
+  .math-total {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(200,168,78,0.2);
+    text-align: center;
+  }
+
+  .math-total-crossed {
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.3);
+    text-decoration: line-through;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .math-total-label {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 4px;
+  }
+
+  .math-total-price {
+    font-size: clamp(2.5rem, 7vw, 3.5rem);
+    font-weight: 800;
+    color: #c8a84e;
+    line-height: 1.1;
+  }
+
+  .math-payoff {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .math-payoff strong {
+    color: #c8a84e;
+    font-weight: 600;
+  }
+
+  /* ====== ABOUT AUTHOR ====== */
+  .author-card {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 32px;
+    border: 1px solid rgba(200,168,78,0.15);
+    border-left: 3px solid #c8a84e;
+    border-radius: 4px;
+    background: rgba(200,168,78,0.02);
+  }
+
+  .author-card h3 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    margin-bottom: 20px;
+  }
+
+  .author-card p {
+    font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .author-card p:last-child { margin-bottom: 0; }
+
+  /* ====== FAQ ====== */
+  .faq-list {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 24px 0;
+  }
+
+  .faq-item:first-child { padding-top: 0; }
+  .faq-item:last-child { border-bottom: none; }
+
+  .faq-q {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+  }
+
+  .faq-a {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.65;
+  }
+
+  /* ====== FINAL CTA ====== */
+  .final-cta {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #0a0a0a 0%, #111111 50%, #0a0a0a 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    bottom: -50px; left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(200,168,78,0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .final-cta .container { position: relative; z-index: 2; }
+
+  .final-headline {
+    font-size: clamp(1.2rem, 3.5vw, 1.65rem);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.35;
+    margin-bottom: 16px;
+  }
+
+  .final-sub {
+    font-size: clamp(0.95rem, 2.3vw, 1.05rem);
+    color: rgba(255,255,255,0.55);
+    max-width: 480px;
+    margin: 0 auto 36px;
+    line-height: 1.65;
+  }
+
+  .final-note {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.35);
+    margin-top: 16px;
+  }
+
+  /* ====== MID CTA ====== */
+  .mid-cta {
+    padding: 56px 0;
+    background: #0a0a0a;
+    text-align: center;
+    border-top: 1px solid rgba(200,168,78,0.06);
+    border-bottom: 1px solid rgba(200,168,78,0.06);
+  }
+
+  .mid-cta p {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  .mid-cta p strong {
+    color: #ffffff;
+  }
+
+  /* ====== FOOTER ====== */
+  .footer {
+    padding: 40px 0;
+    background: #0a0a0a;
+    border-top: 1px solid rgba(255,255,255,0.04);
+    text-align: center;
+  }
+
+  .footer p {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.5px;
+    line-height: 1.7;
+  }
+
+  .footer .brand-line {
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  /* ====== RESPONSIVE ====== */
+  @media (max-width: 520px) {
+    .hero { padding: 60px 0 48px; }
+
+    .section--dark,
+    .section--light,
+    .section--accent { padding: 56px 0; }
+
+    .module-card-desc,
+    .module-card-worksheet { padding-left: 0; }
+
+    .module-card-header { flex-direction: column; gap: 4px; }
+
+    .case-stat-row { grid-template-columns: 1fr; }
+
+    .math-box { padding: 28px 20px; }
+
+    .author-card { padding: 28px 20px; }
+
+    .foundation-icon { transform: scale(0.85); }
+
+    .case-study-header { flex-direction: column; text-align: center; }
+  }
+
+  @media (min-width: 600px) {
+    .worksheet-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .btn-cta {
+      padding: 16px 32px;
+      font-size: 0.95rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ====== HERO ====== -->
+  <section class="hero">
+    <div class="container">
+
+      <p class="label">The Foundation Track</p>
+
+      <!-- CSS-only foundation/building metaphor -->
+      <div class="foundation-icon" aria-hidden="true">
+        <div class="block block-base"></div>
+        <div class="block block-2a"></div>
+        <div class="block block-2b"></div>
+        <div class="block block-3"></div>
+        <div class="block block-4"></div>
+        <div class="block block-top"></div>
+      </div>
+
+      <h1 class="headline">Before You Build Wealth,<br>Pour the Foundation</h1>
+
+      <p class="subheadline">7 step-by-step modules. 9 fill-in-the-blank worksheets. Audio companions in your ear. Everything you need to go from "I don't know where to start" to investor-ready in 90 days.</p>
+
+      <!-- GHL: Replace href with checkout link -->
+      <a href="#checkout" class="btn-cta">Get The Foundation &mdash; $97</a>
+      <span class="btn-sub">Instant access. PDF + Audio. Start today.</span>
+
+    </div>
+  </section>
+
+  <!-- ====== NO SHAME SECTION ====== -->
+  <section class="section--light">
+    <div class="container">
+
+      <div class="shame-content">
+
+        <div class="divider" style="margin-bottom: 40px;"></div>
+
+        <p class="big-quote">Wherever you are financially right now &mdash; that's your <em>starting line</em>. Everyone has one.</p>
+
+        <p>Most people have never been taught how money actually works. Not in school. Not at home. Not by anyone who had your best interest in mind.</p>
+
+        <p>You sat through 12 years of school. Maybe 4 years of college. And nobody once handed you a budget template, explained what insurance you actually need, or showed you what a lender-ready file looks like.</p>
+
+        <p>That's not your fault. But from this point forward, it's your responsibility.</p>
+
+        <div class="shame-stat">
+          <span>12 years of school. Zero financial education.</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== WHO THIS IS FOR ====== -->
+  <section class="section--dark">
+    <div class="container">
+
+      <p class="section-label">Who This Is For</p>
+      <h2 class="section-title">This Is Your Starting Line</h2>
+      <p class="section-subtitle">The Foundation was built for people who know they need to do something &mdash; but don't know where to begin.</p>
+
+      <ul class="who-list">
+        <li>You're making $30K&ndash;$80K and want to build real wealth &mdash; not just survive</li>
+        <li>You have some debt and don't know what to tackle first</li>
+        <li>You know you should be investing but feel overwhelmed by where to start</li>
+        <li>You've tried budgeting apps that didn't stick because they tracked spending without changing it</li>
+        <li>You've never had someone sit down with you and walk you through a real financial plan</li>
+      </ul>
+
+      <p class="who-closer">"You're not broken. You were never taught."</p>
+
+    </div>
+  </section>
+
+  <!-- ====== THE FOUNDATION METAPHOR — MODULE JOURNEY ====== -->
+  <section class="section--light">
+    <div class="container">
+
+      <p class="section-label">The Blueprint</p>
+      <h2 class="section-title">Every Module Builds on the Last</h2>
+      <p class="section-subtitle">By Module 7, you have a complete financial picture &mdash; and a plan to change it. Here's the path.</p>
+
+      <div class="journey-wrapper">
+
+        <div class="journey-step">
+          <div class="journey-num">1</div>
+          <div class="journey-text">
+            <strong>Find the money you're losing</strong>
+            <span>Your Budget P&L reveals $200&ndash;$800/month in phantom expenses hiding in plain sight.</span>
+          </div>
+        </div>
+
+        <div class="journey-step">
+          <div class="journey-num">2</div>
+          <div class="journey-text">
+            <strong>Protect what you have</strong>
+            <span>Close insurance gaps and build your safety net. Most people skip this &mdash; and it costs them everything.</span>
+          </div>
+        </div>
+
+        <div class="journey-step">
+          <div class="journey-num">3</div>
+          <div class="journey-text">
+            <strong>Get lender-ready</strong>
+            <span>Organize every document a lender will ever ask for. Done once &mdash; used forever.</span>
+          </div>
+        </div>
+
+        <div class="journey-step">
+          <div class="journey-num">4</div>
+          <div class="journey-text">
+            <strong>Know your real numbers</strong>
+            <span>What you own vs. what you owe. Your personal balance sheet, clear as day.</span>
+          </div>
+        </div>
+
+        <div class="journey-step">
+          <div class="journey-num">5</div>
+          <div class="journey-text">
+            <strong>Set your targets</strong>
+            <span>Your net worth number, your debt plan, and 6/12/36-month milestones mapped out.</span>
+          </div>
+        </div>
+
+        <div class="journey-step">
+          <div class="journey-num">6</div>
+          <div class="journey-text">
+            <strong>Unlock money you already have</strong>
+            <span>What your retirement accounts are actually doing &mdash; and what they're costing you.</span>
+          </div>
+        </div>
+
+        <div class="journey-step">
+          <div class="journey-num">7</div>
+          <div class="journey-text">
+            <strong>Build your team and get your checklist</strong>
+            <span>The 4 people you need before your first deal &mdash; and the investor-ready checklist to prove you're prepared.</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="journey-result">
+        <p>Module 7 complete = investor-ready. Foundation poured. Now you build.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== MODULE BREAKDOWN ====== -->
+  <section class="section--dark">
+    <div class="container">
+
+      <p class="section-label">Inside The Foundation</p>
+      <h2 class="section-title">7 Modules. 60 Pages. Every Answer You Need.</h2>
+      <p class="section-subtitle">Each module comes with a fill-in-the-blank worksheet. No guesswork. Just follow the steps.</p>
+
+      <div class="module-grid">
+
+        <!-- Module 1 -->
+        <div class="module-card">
+          <div class="module-card-header">
+            <span class="module-card-num">Module 1</span>
+            <span class="module-card-title">Where You Actually Stand &mdash; The Budget P&L</span>
+          </div>
+          <p class="module-card-desc">Most people don't have a spending problem &mdash; they have an awareness problem. This module maps every dollar coming in and going out. Expect to find $200&ndash;$800/month you didn't know you were losing.</p>
+          <span class="module-card-worksheet">Includes: Budget P&L Template (monthly + annual)</span>
+        </div>
+
+        <!-- Module 2 — CROWN JEWEL -->
+        <div class="module-card crown">
+          <div class="crown-badge">The Crown Jewel</div>
+          <div class="module-card-header">
+            <span class="module-card-num">Module 2</span>
+            <span class="module-card-title">Protecting What You Have &mdash; Risk Management</span>
+          </div>
+          <p class="module-card-desc">This module alone is worth the entire purchase price. Insurance gaps most people don't know they have. Emergency fund math. Legal documents everyone needs but nobody talks about. The stuff that keeps your future safe while you build it.</p>
+          <span class="module-card-worksheet">Includes: Insurance Gap Audit Worksheet</span>
+        </div>
+
+        <!-- Module 3 -->
+        <div class="module-card">
+          <div class="module-card-header">
+            <span class="module-card-num">Module 3</span>
+            <span class="module-card-title">Getting Lender-Ready &mdash; Keys to the Safe</span>
+          </div>
+          <p class="module-card-desc">When opportunity knocks &mdash; a deal, a loan, a partnership &mdash; you need your documents organized and ready. This is the lender-ready checklist that financial advisors charge $200+ to build. You'll have it in an afternoon.</p>
+          <span class="module-card-worksheet">Includes: Lender-Ready Document Checklist</span>
+        </div>
+
+        <!-- Module 4 -->
+        <div class="module-card">
+          <div class="module-card-header">
+            <span class="module-card-num">Module 4</span>
+            <span class="module-card-title">What You Own vs. What You Owe &mdash; Balance Sheet</span>
+          </div>
+          <p class="module-card-desc">Your personal balance sheet tells you the truth &mdash; not what you feel like your finances are, but what they actually are. One page. Complete clarity.</p>
+          <span class="module-card-worksheet">Includes: Personal Balance Sheet Template</span>
+        </div>
+
+        <!-- Module 5 -->
+        <div class="module-card">
+          <div class="module-card-header">
+            <span class="module-card-num">Module 5</span>
+            <span class="module-card-title">Your Net Worth Number &mdash; And How to Change It</span>
+          </div>
+          <p class="module-card-desc">Debt reduction strategies, income optimization, and concrete targets for 6, 12, and 36 months. You'll know exactly what number to hit and when you'll hit it.</p>
+          <span class="module-card-worksheet">Includes: Net Worth Growth Planner (6/12/36 month)</span>
+        </div>
+
+        <!-- Module 6 -->
+        <div class="module-card">
+          <div class="module-card-header">
+            <span class="module-card-num">Module 6</span>
+            <span class="module-card-title">Money You Already Have &mdash; Retirement Accounts</span>
+          </div>
+          <p class="module-card-desc">You might already have money working against you &mdash; sitting in funds with high fees, low returns, or doing nothing at all. This module shows you what you actually have and what it's really costing you.</p>
+          <span class="module-card-worksheet">Includes: Retirement Account Audit Worksheet</span>
+        </div>
+
+        <!-- Module 7 -->
+        <div class="module-card">
+          <div class="module-card-header">
+            <span class="module-card-num">Module 7</span>
+            <span class="module-card-title">Building Your Team + First Deal Checklist</span>
+          </div>
+          <p class="module-card-desc">You don't invest alone. This module identifies the 4 people you need on your team &mdash; and gives you the investor-ready checklist so you walk into your first opportunity prepared, not hoping.</p>
+          <span class="module-card-worksheet">Includes: Team Builder Contact Sheet + First Deal Checklist</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== MID CTA ====== -->
+  <section class="mid-cta">
+    <div class="container">
+      <p><strong>7 modules. 9 worksheets. Audio in your ear.</strong> Everything to go from starting line to investor-ready.</p>
+      <!-- GHL: Replace href with checkout link -->
+      <a href="#checkout" class="btn-cta">Get The Foundation &mdash; $97</a>
+    </div>
+  </section>
+
+  <!-- ====== KEISHA'S STORY / CASE STUDY ====== -->
+  <section class="section--light">
+    <div class="container">
+
+      <p class="section-label">The $680 Discovery</p>
+      <h2 class="section-title">She Started Exactly Where You Are</h2>
+
+      <div class="case-study-card">
+
+        <div class="case-study-header">
+          <div class="case-avatar">K</div>
+          <div class="case-intro">
+            <strong>Keisha &mdash; Houston, TX</strong>
+            <span>Teacher, $52K/year, single mom, zero RE experience</span>
+          </div>
+        </div>
+
+        <div class="case-study-body">
+
+          <p>Keisha had no real estate experience. No connections. No family money. She was a teacher making $52K, raising her kids, and wondering if investing was something "people like her" could actually do.</p>
+
+          <p>She started with The Foundation workbook. Module 1 &mdash; the Budget P&L &mdash; revealed <strong style="color:#c8a84e;">$680 per month</strong> in phantom expenses. Subscriptions she forgot about. Insurance she was overpaying for. Money quietly leaking out every single month.</p>
+
+          <div class="case-stat-row">
+            <div class="case-stat">
+              <span class="num">$680</span>
+              <span class="desc">Found per month</span>
+            </div>
+            <div class="case-stat">
+              <span class="num">$8,160</span>
+              <span class="desc">Per year recovered</span>
+            </div>
+            <div class="case-stat">
+              <span class="num">$8,500</span>
+              <span class="desc">First wholesale check</span>
+            </div>
+            <div class="case-stat">
+              <span class="num">$4,200</span>
+              <span class="desc">Monthly rental income now</span>
+            </div>
+          </div>
+
+          <p>She fixed the leaks. Built her lender file. Closed the insurance gaps. Then she closed her first wholesale deal &mdash; an $8,500 assignment fee. Used that to BRRRR a duplex. Today: 3 properties, $4,200/month in rental income.</p>
+
+          <p class="case-closer">She still teaches &mdash; because she wants to, not because she has to. The Foundation gave her the starting line. She ran with it.</p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== AUDIO COMPANION ====== -->
+  <section class="section--dark">
+    <div class="container">
+
+      <p class="section-label">Audio Modules</p>
+      <h2 class="section-title">A Mentor in Your Ear</h2>
+      <p class="section-subtitle">7 audio modules. ~12 minutes each. Listen while you do the dishes, drive to work, or take a walk. This is the first time you'll hear J. Marque's voice &mdash; encouraging, patient, and direct.</p>
+
+      <div class="audio-grid">
+        <div class="audio-item">
+          <div class="audio-icon"></div>
+          <span class="audio-label"><strong>1.</strong> The Budget P&L</span>
+          <span class="audio-duration">~12 min</span>
+        </div>
+        <div class="audio-item">
+          <div class="audio-icon"></div>
+          <span class="audio-label"><strong>2.</strong> Risk Management</span>
+          <span class="audio-duration">~12 min</span>
+        </div>
+        <div class="audio-item">
+          <div class="audio-icon"></div>
+          <span class="audio-label"><strong>3.</strong> Keys to the Safe</span>
+          <span class="audio-duration">~12 min</span>
+        </div>
+        <div class="audio-item">
+          <div class="audio-icon"></div>
+          <span class="audio-label"><strong>4.</strong> Balance Sheet</span>
+          <span class="audio-duration">~12 min</span>
+        </div>
+        <div class="audio-item">
+          <div class="audio-icon"></div>
+          <span class="audio-label"><strong>5.</strong> Net Worth + Targets</span>
+          <span class="audio-duration">~12 min</span>
+        </div>
+        <div class="audio-item">
+          <div class="audio-icon"></div>
+          <span class="audio-label"><strong>6.</strong> Retirement Accounts</span>
+          <span class="audio-duration">~12 min</span>
+        </div>
+        <div class="audio-item">
+          <div class="audio-icon"></div>
+          <span class="audio-label"><strong>7.</strong> Team + First Deal</span>
+          <span class="audio-duration">~12 min</span>
+        </div>
+      </div>
+
+      <div class="audio-callout">
+        <p>"This is where you are. Here's where you're going. Let's move."</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== 9 WORKSHEETS ====== -->
+  <section class="section--accent">
+    <div class="container">
+
+      <p class="section-label">9 Worksheets &amp; Templates</p>
+      <h2 class="section-title">Fill in the Blanks. No Guesswork.</h2>
+      <p class="section-subtitle">Every worksheet is designed to be completed in one sitting. Print them, fill them in, see your entire financial life on paper.</p>
+
+      <div class="worksheet-grid">
+
+        <div class="worksheet-item">
+          <div class="ws-check"></div>
+          <span class="ws-name"><strong>1.</strong> Budget P&L Template</span>
+        </div>
+
+        <div class="worksheet-item">
+          <div class="ws-check"></div>
+          <span class="ws-name"><strong>2.</strong> Insurance Gap Audit</span>
+        </div>
+
+        <div class="worksheet-item">
+          <div class="ws-check"></div>
+          <span class="ws-name"><strong>3.</strong> Lender-Ready Checklist</span>
+        </div>
+
+        <div class="worksheet-item">
+          <div class="ws-check"></div>
+          <span class="ws-name"><strong>4.</strong> Personal Balance Sheet</span>
+        </div>
+
+        <div class="worksheet-item">
+          <div class="ws-check"></div>
+          <span class="ws-name"><strong>5.</strong> Net Worth Growth Planner</span>
+        </div>
+
+        <div class="worksheet-item">
+          <div class="ws-check"></div>
+          <span class="ws-name"><strong>6.</strong> Retirement Account Audit</span>
+        </div>
+
+        <div class="worksheet-item">
+          <div class="ws-check"></div>
+          <span class="ws-name"><strong>7.</strong> Team Builder Contact Sheet</span>
+        </div>
+
+        <div class="worksheet-item">
+          <div class="ws-check"></div>
+          <span class="ws-name"><strong>8.</strong> First Deal Checklist</span>
+        </div>
+
+        <div class="worksheet-item">
+          <div class="ws-check"></div>
+          <span class="ws-name"><strong>9.</strong> 90-Day Action Plan</span>
+        </div>
+
+      </div>
+
+      <div class="worksheet-highlight">
+        <p>The <strong>90-Day Action Plan</strong> is printable and wall-mount ready. Put it where you'll see it every morning. That's your roadmap for the next 3 months.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== THE MATH ====== -->
+  <section class="section--dark">
+    <div class="container">
+
+      <p class="section-label">The Math</p>
+      <h2 class="section-title">$97 That Pays for Itself in Month 1</h2>
+      <p class="section-subtitle">Here's what you're actually getting &mdash; and what it would cost anywhere else.</p>
+
+      <div class="math-box">
+
+        <div class="math-row">
+          <span class="math-label">60-page workbook (7 modules)</span>
+          <span class="math-value">$197</span>
+        </div>
+
+        <div class="math-row">
+          <span class="math-label">7 audio companion modules (~84 min total)</span>
+          <span class="math-value">$97</span>
+        </div>
+
+        <div class="math-row">
+          <span class="math-label">Lender-Ready Document Checklist (financial advisor: $200+)</span>
+          <span class="math-value">$200</span>
+        </div>
+
+        <div class="math-row">
+          <span class="math-label">Insurance Gap Audit (insurance review: $300+)</span>
+          <span class="math-value">$300</span>
+        </div>
+
+        <div class="math-row">
+          <span class="math-label">9 worksheets &amp; templates</span>
+          <span class="math-value">$97</span>
+        </div>
+
+        <div class="math-row">
+          <span class="math-label">Printable 90-Day Action Plan</span>
+          <span class="math-value">$47</span>
+        </div>
+
+        <div class="math-total">
+          <span class="math-total-crossed">Total value: $938</span>
+          <p class="math-total-label">Your Price Today</p>
+          <p class="math-total-price">$97</p>
+        </div>
+
+        <p class="math-payoff">The Budget P&L module alone reveals <strong>$200&ndash;$800/month</strong> in wasted spending. That's your investment back &mdash; and then some &mdash; in the first 30 days.</p>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== ABOUT J. MARQUE ====== -->
+  <section class="section--accent">
+    <div class="container">
+
+      <div class="author-card">
+        <h3>About J. Marque</h3>
+        <p>$250 million in real estate transactions. Wholesaler. Flipper. Landlord. Title company owner. Consultant. United States Marine Corps veteran.</p>
+        <p>I've been where you are. Broke. Uncertain. Nobody teaching me the rules. I didn't come from money. I didn't have a mentor. I had to figure it out the hard way &mdash; and it took years longer than it should have.</p>
+        <p>I built The Foundation so you don't have to. This is the workbook I wish someone had handed me before my first deal. It would have saved me years and thousands of dollars in mistakes.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== FAQ ====== -->
+  <section class="section--dark">
+    <div class="container">
+
+      <p class="section-label">Questions</p>
+      <h2 class="section-title" style="margin-bottom: 40px;">Frequently Asked</h2>
+
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <p class="faq-q">I have bad credit &mdash; is this for me?</p>
+          <p class="faq-a">Yes. Module 3 covers credit repair basics and how to organize your financial documents regardless of where your score is right now. The Foundation is specifically built for people who are starting from wherever they are.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q">I'm in debt &mdash; should I invest or pay off debt first?</p>
+          <p class="faq-a">Module 5 addresses this exact question. The answer depends on the type of debt, your interest rates, and your timeline. You'll have a clear, personalized plan by the end of that module.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q">How is this different from a budgeting app?</p>
+          <p class="faq-a">Budgeting apps track spending. The Foundation changes it. This is a complete wealth-building system &mdash; budget, risk management, lender readiness, net worth planning, retirement audit, and a team-building framework. No app does all of that.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q">Do I need money to start?</p>
+          <p class="faq-a">No. Module 1 is designed to FIND money you're already losing. Most people discover $200&ndash;$800/month in expenses they didn't know they had. That found money becomes your starting capital.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q">How long before I can buy my first property?</p>
+          <p class="faq-a">The 90-Day Action Plan gets you to investor-ready in 90 days. Your exact timeline depends on your starting point &mdash; but by Module 7, you'll know exactly where you stand and what your next move is.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== FINAL CTA ====== -->
+  <section class="final-cta">
+    <div class="container">
+
+      <div class="divider" style="margin-bottom: 40px;"></div>
+
+      <p class="final-headline">You Already Took the Hardest Step &mdash;<br>You Started.</p>
+
+      <p class="final-sub">You read the trilogy. You answered the questions. You chose to build your foundation first. That tells me everything I need to know about you.</p>
+
+      <p class="final-sub" style="margin-bottom: 36px; color: rgba(255,255,255,0.45);">Every day without a plan costs you money you don't know you're losing.</p>
+
+      <!-- GHL: Replace href with checkout link -->
+      <a href="#checkout" class="btn-cta">Get The Foundation &mdash; $97</a>
+
+      <p class="final-note">Instant access. 60-page workbook + 7 audio modules + 9 worksheets + 90-Day Action Plan.</p>
+
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <p class="brand-line">J. Marque &nbsp;|&nbsp; Money Decoded</p>
+    <p>THE FOUNDATION is an educational product. Results vary based on individual effort and starting circumstances. The information provided is for educational purposes only and does not constitute financial, legal, or investment advice. Past results of any individual are not a guarantee of future performance. Consult qualified professionals before making financial decisions.</p>
+  </footer>
+
+</body>
+</html>
