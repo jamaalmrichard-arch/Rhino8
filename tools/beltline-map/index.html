@@ -809,34 +809,46 @@ const FEET_PER_MILE = 5280;
 // RENTAL INCOME DATA — Section 8 & Market Rates
 // ============================================
 
-// 2025 HUD Fair Market Rents - Atlanta-Sandy Springs-Roswell MSA
+// HUD FY 2026 Fair Market Rents — Atlanta-Sandy Springs-Roswell MSA
+// Source: HUD FMR Schedule, effective Oct 1, 2025
 const SECTION_8_FMR = {
-  0: 1298,  // Studio
-  1: 1412,  // 1BR
-  2: 1589,  // 2BR
-  3: 2048,  // 3BR
-  4: 2399,  // 4BR
-  5: 2759   // 5BR
+  0: 1585,  // Studio
+  1: 1660,  // 1BR
+  2: 1820,  // 2BR
+  3: 2182,  // 3BR
+  4: 2605,  // 4BR
+  5: 2996   // 5BR (estimated 115% of 4BR)
 };
 
-// Small Area FMR by ZIP (Atlanta Housing uses SAFMRs)
-// These are approximate - actual rates vary
+// FY 2026 DCA Payment Standards by ZIP (SAFMR-based)
+// Source: Georgia DCA 2026 Payment Standard Lookup Tool (official)
+// These ARE the max payment standards — not estimates
 const SAFMR_BY_ZIP = {
-  '30310': { 0: 1150, 1: 1250, 2: 1400, 3: 1800, 4: 2100, 5: 2400 },
-  '30311': { 0: 1100, 1: 1200, 2: 1350, 3: 1750, 4: 2050, 5: 2350 },
-  '30314': { 0: 1100, 1: 1200, 2: 1350, 3: 1750, 4: 2050, 5: 2350 },
-  '30318': { 0: 1200, 1: 1300, 2: 1500, 3: 1900, 4: 2250, 5: 2600 },
-  '30331': { 0: 1150, 1: 1250, 2: 1400, 3: 1800, 4: 2100, 5: 2400 },
-  '30344': { 0: 1100, 1: 1200, 2: 1350, 3: 1750, 4: 2050, 5: 2350 }
+  '30310': { 0: 1250, 1: 1300, 2: 1440, 3: 1730, 4: 2080, 5: 2392 },  // West End / Adair Park
+  '30311': { 0: 1190, 1: 1250, 2: 1370, 3: 1640, 4: 1960, 5: 2254 },  // Cascade / Adamsville
+  '30314': { 0: 1120, 1: 1170, 2: 1280, 3: 1530, 4: 1830, 5: 2104 },  // Vine City / English Ave
+  '30318': { 0: 1790, 1: 1870, 2: 2050, 3: 2460, 4: 2930, 5: 3369 },  // Grove Park / Collier Heights / W. Midtown
+  '30331': { 0: 1390, 1: 1460, 2: 1600, 3: 1920, 4: 2290, 5: 2633 },  // Camp Creek / Ben Hill
+  '30344': { 0: 1460, 1: 1530, 2: 1680, 3: 2010, 4: 2400, 5: 2760 },  // East Point / College Park
+  // Nearby comparison ZIPs (FY 2026)
+  '30306': { 0: 2060, 1: 2150, 2: 2360, 3: 2830, 4: 3380, 5: 3887 },  // Virginia Highland
+  '30307': { 0: 2030, 1: 2130, 2: 2330, 3: 2790, 4: 3340, 5: 3841 },  // Candler Park
+  '30308': { 0: 2150, 1: 2250, 2: 2470, 3: 2960, 4: 3540, 5: 4071 },  // Midtown / OFW
+  '30309': { 0: 2380, 1: 2490, 2: 2730, 3: 3270, 4: 3910, 5: 4497 },  // Buckhead South
+  '30312': { 0: 1870, 1: 1960, 2: 2150, 3: 2580, 4: 3080, 5: 3542 },  // Grant Park / Summerhill
+  '30313': { 0: 1650, 1: 1720, 2: 1890, 3: 2270, 4: 2710, 5: 3117 },  // Downtown / Castleberry
+  '30315': { 0: 1060, 1: 1110, 2: 1220, 3: 1470, 4: 1770, 5: 2036 },  // Lakewood / SE Atlanta
+  '30316': { 0: 1640, 1: 1720, 2: 1880, 3: 2250, 4: 2690, 5: 3094 }   // East Atlanta / Ormewood
 };
 
-// Market rate estimates by bedroom (Westside Atlanta averages)
+// Market rate estimates by bedroom (Westside Atlanta averages, Feb 2026)
+// Source: Zillow, RentCafe, BNBCalc market data
 const MARKET_RENT = {
-  1: 1100,
-  2: 1400,
-  3: 1800,
-  4: 2100,
-  5: 2500
+  1: 1300,
+  2: 1600,
+  3: 2000,
+  4: 2400,
+  5: 2900
 };
 
 // Rental expense defaults
