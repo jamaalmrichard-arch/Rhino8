@@ -84,6 +84,71 @@
     gap: 10px;
     align-items: center;
   }
+  .search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  #addressSearch {
+    background: var(--dark-surface);
+    border: 1px solid var(--dark-border);
+    color: var(--text);
+    padding: 6px 36px 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    width: 280px;
+    transition: all 0.2s;
+  }
+  #addressSearch:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 2px rgba(200,168,78,0.15);
+  }
+  #addressSearch::placeholder { color: var(--text-dim); }
+  .search-btn {
+    position: absolute;
+    right: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--gold);
+    border: none;
+    color: var(--dark);
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .search-btn:hover { background: var(--gold-light); }
+  .search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    border-radius: 0 0 6px 6px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 2000;
+    display: none;
+  }
+  .search-results.active { display: block; }
+  .search-result-item {
+    padding: 8px 12px;
+    font-size: 12px;
+    color: var(--text);
+    cursor: pointer;
+    border-bottom: 1px solid var(--dark-border);
+    transition: background 0.15s;
+  }
+  .search-result-item:hover { background: var(--dark-surface); color: var(--gold); }
+  .search-result-item:last-child { border-bottom: none; }
+  .search-loading { padding: 10px 12px; font-size: 11px; color: var(--text-dim); text-align: center; }
   .header-btn {
     background: var(--dark-surface);
     border: 1px solid var(--dark-border);
@@ -543,6 +608,11 @@
     <h1>Rhino8 <span>Atlanta Westside Investment Map &mdash; Full Coverage</span></h1>
   </div>
   <div class="header-actions">
+    <div class="search-wrapper">
+      <input type="text" id="addressSearch" placeholder="Type address... (e.g. 1876 Madrona St NW Atlanta)" onkeydown="if(event.key==='Enter')searchAddress()" />
+      <button class="search-btn" onclick="searchAddress()" title="Search address">&#x1F50D;</button>
+      <div class="search-results" id="searchResults"></div>
+    </div>
     <button class="header-btn" id="btnFilter" onclick="toggleFilter()">Filter</button>
     <button class="header-btn" id="btnExport" onclick="exportProperties()">Export CSV</button>
     <button class="header-btn gold" id="btnAddProperty" onclick="toggleAddMode()">+ Add Property</button>
@@ -1893,6 +1963,82 @@ renderProperties();
 
 
 // ============================================
+// ADDRESS SEARCH + GEOCODING
+// ============================================
+
+window.searchAddress = async function() {
+  const query = document.getElementById('addressSearch').value.trim();
+  if (!query) return;
+
+  const results = document.getElementById('searchResults');
+  results.innerHTML = '<div class="search-loading">Searching...</div>';
+  results.classList.add('active');
+
+  try {
+    // Append Atlanta GA if not already specified to bias results
+    const searchQuery = query.toLowerCase().includes('atlanta') ? query : query + ', Atlanta, GA';
+    const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(searchQuery)}&limit=5&countrycodes=us&viewbox=-84.55,33.80,-84.35,33.68&bounded=0`;
+
+    const resp = await fetch(url, {
+      headers: { 'User-Agent': 'Rhino8-InvestmentMap/1.0' }
+    });
+    const data = await resp.json();
+
+    if (data.length === 0) {
+      results.innerHTML = '<div class="search-loading">No results found. Try a more specific address.</div>';
+      setTimeout(() => results.classList.remove('active'), 3000);
+      return;
+    }
+
+    results.innerHTML = '';
+    data.forEach((item, idx) => {
+      const div = document.createElement('div');
+      div.className = 'search-result-item';
+      div.textContent = item.display_name;
+      div.onclick = () => selectSearchResult(item);
+      results.appendChild(div);
+    });
+
+  } catch (err) {
+    results.innerHTML = '<div class="search-loading">Search failed. Check your connection.</div>';
+    setTimeout(() => results.classList.remove('active'), 3000);
+  }
+};
+
+window.selectSearchResult = function(item) {
+  const lat = parseFloat(item.lat);
+  const lng = parseFloat(item.lon);
+
+  // Close search results
+  document.getElementById('searchResults').classList.remove('active');
+
+  // Fly to location
+  map.flyTo([lat, lng], 17, { duration: 1.2 });
+
+  // Auto-fill the address and open the property form
+  setTimeout(() => {
+    showPropertyForm(lat, lng);
+    // Pre-fill the address field after popup renders
+    setTimeout(() => {
+      const addrField = document.getElementById('pf_address');
+      if (addrField) {
+        // Extract short address from display_name
+        const parts = item.display_name.split(',');
+        addrField.value = parts.slice(0, 3).join(',').trim();
+      }
+    }, 200);
+  }, 800);
+};
+
+// Close search results when clicking elsewhere
+document.addEventListener('click', function(e) {
+  const wrapper = document.querySelector('.search-wrapper');
+  if (wrapper && !wrapper.contains(e.target)) {
+    document.getElementById('searchResults').classList.remove('active');
+  }
+});
+
+// ============================================
 // LAYER CONTROL
 // ============================================
 
@@ -2153,6 +2299,10 @@ document.addEventListener('keydown', function(e) {
   }
   if (e.key === 'f' && !e.ctrlKey && !e.metaKey && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
     toggleFilter();
+  }
+  if (e.key === 's' && !e.ctrlKey && !e.metaKey && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+    e.preventDefault();
+    document.getElementById('addressSearch').focus();
   }
 });
 
