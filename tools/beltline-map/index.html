@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rhino8 | Atlanta Westside Investment Map</title>
+<title>Rhino8 | Atlanta Westside Investment Map — Full Coverage</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <style>
@@ -26,6 +26,7 @@
     --orange: #ff9100;
     --red: #ff5252;
     --blue: #448aff;
+    --purple: #b388ff;
   }
 
   body {
@@ -123,6 +124,8 @@
     color: var(--text) !important;
     padding: 8px 12px !important;
     box-shadow: 0 4px 20px rgba(0,0,0,0.5) !important;
+    max-height: 80vh !important;
+    overflow-y: auto !important;
   }
   .leaflet-control-layers-toggle {
     background-color: var(--dark-card) !important;
@@ -304,7 +307,9 @@
     border-radius: 10px;
     padding: 14px 18px;
     z-index: 1001;
-    min-width: 200px;
+    min-width: 210px;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
     box-shadow: 0 4px 20px rgba(0,0,0,0.5);
   }
   .legend-title {
@@ -335,6 +340,12 @@
     border-radius: 2px;
     flex-shrink: 0;
   }
+  .legend-line-dashed {
+    width: 14px;
+    height: 0px;
+    border-top: 3px dashed;
+    flex-shrink: 0;
+  }
   .legend-ring {
     width: 14px;
     height: 14px;
@@ -343,8 +354,17 @@
     border: 2px solid;
     background: transparent;
   }
+  .legend-circle {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-  /* INFO PANEL — hover proximity */
+  /* INFO PANEL -- hover proximity */
   .info-panel {
     position: fixed;
     top: 62px;
@@ -354,7 +374,7 @@
     border-radius: 10px;
     padding: 14px 18px;
     z-index: 1001;
-    min-width: 240px;
+    min-width: 250px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.5);
     display: none;
   }
@@ -520,7 +540,7 @@
 <div id="header">
   <div class="brand">
     <div class="logo">R8</div>
-    <h1>Rhino8 <span>Atlanta Westside Investment Map</span></h1>
+    <h1>Rhino8 <span>Atlanta Westside Investment Map &mdash; Full Coverage</span></h1>
   </div>
   <div class="header-actions">
     <button class="header-btn" id="btnFilter" onclick="toggleFilter()">Filter</button>
@@ -567,8 +587,20 @@
     <span class="info-value" id="infoBeltDist">--</span>
   </div>
   <div class="info-row">
+    <span class="info-label">Nearest MARTA</span>
+    <span class="info-value" id="infoMarta">--</span>
+  </div>
+  <div class="info-row">
+    <span class="info-label">MARTA Distance</span>
+    <span class="info-value" id="infoMartaDist">--</span>
+  </div>
+  <div class="info-row">
     <span class="info-label">Opportunity Zone</span>
     <span class="info-value" id="infoOZ">--</span>
+  </div>
+  <div class="info-row">
+    <span class="info-label">Investment Zone</span>
+    <span class="info-value" id="infoInZone">--</span>
   </div>
   <div class="score-bar"><div class="score-fill" id="scoreFill"></div></div>
   <div class="score-label" id="scoreLabel" style="color: var(--gold);">--</div>
@@ -577,13 +609,17 @@
 <!-- LEGEND -->
 <div class="legend-panel">
   <div class="legend-title">Legend</div>
-  <div class="legend-item"><div class="legend-line" style="background:#00e676;"></div>Beltline Trail</div>
+  <div class="legend-item"><div class="legend-line" style="background:#00e676;"></div>BeltLine Trail (Built)</div>
+  <div class="legend-item"><div class="legend-line-dashed" style="border-color:#00e676;"></div>BeltLine (Planned)</div>
   <div class="legend-item"><div class="legend-color" style="background:rgba(0,230,118,0.25); border:1px solid #00e676;"></div>Parks &amp; Green Space</div>
   <div class="legend-item"><div class="legend-ring" style="border-color:#00e676;"></div>0.25 mi (Premium)</div>
   <div class="legend-item"><div class="legend-ring" style="border-color:#ffd740;"></div>0.5 mi (Strong)</div>
   <div class="legend-item"><div class="legend-ring" style="border-color:#ff9100;"></div>1 mi (Good)</div>
   <div class="legend-item"><div class="legend-color" style="background:rgba(68,138,255,0.3); border:1px solid #448aff;"></div>Opportunity Zone</div>
   <div class="legend-item"><div class="legend-color" style="background:#448aff;"></div>Development</div>
+  <div class="legend-item"><div class="legend-circle" style="background:#b388ff;"></div>MARTA Station</div>
+  <div class="legend-item"><div class="legend-color" style="background:rgba(200,168,78,0.3); border:2px solid #c8a84e;"></div>Investment Zone</div>
+  <div class="legend-item"><div class="legend-line-dashed" style="border-color:rgba(255,255,255,0.35);"></div>Interstate Highways</div>
   <div class="legend-item"><div class="legend-color" style="background:#c8a84e;"></div>My Properties</div>
   <div class="legend-title" style="margin-top:10px;">Property Pins</div>
   <div class="legend-item"><div class="legend-color" style="background:#00e676;"></div>&le;50% ARV (Great)</div>
@@ -606,6 +642,18 @@
     <div class="stat-value" id="statAvgARV">--</div>
     <div class="stat-label">Avg % ARV</div>
   </div>
+  <div class="stat-item">
+    <div class="stat-value" id="statParks">19</div>
+    <div class="stat-label">Parks</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-value" id="statOZ">12</div>
+    <div class="stat-label">OZ Tracts</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-value" id="statMarta">8</div>
+    <div class="stat-label">MARTA Stations</div>
+  </div>
 </div>
 
 <script>
@@ -616,8 +664,11 @@
 const MILES_TO_METERS = 1609.34;
 const FEET_PER_MILE = 5280;
 
-// Parks data
+// ============================================
+// PARKS DATA (Original 10 + 9 new = 19 total)
+// ============================================
 const PARKS = [
+  // --- Original parks ---
   { name: "Westside Park", lat: 33.7720, lng: -84.4280, radius: 450, desc: "280 acres, largest park in Atlanta. Opened 2022. Former Bellwood Quarry." },
   { name: "Maddox Park", lat: 33.7580, lng: -84.4220, radius: 200, desc: "Historic Westside park with athletic fields and community center." },
   { name: "Washington Park", lat: 33.7480, lng: -84.4190, radius: 220, desc: "Historic park, one of Atlanta's oldest. Tennis, pool, playground." },
@@ -627,11 +678,39 @@ const PARKS = [
   { name: "Anderson Park", lat: 33.7740, lng: -84.4150, radius: 120, desc: "Neighborhood park in the Bankhead area." },
   { name: "Lindsay Street Park", lat: 33.7610, lng: -84.4100, radius: 80, desc: "Pocket park in English Avenue neighborhood." },
   { name: "Cook Park", lat: 33.7540, lng: -84.4130, radius: 100, desc: "Neighborhood park near AUC." },
-  { name: "Rose Circle Park", lat: 33.7580, lng: -84.4310, radius: 90, desc: "Small park in the Dixie Hills neighborhood." }
+  { name: "Rose Circle Park", lat: 33.7580, lng: -84.4310, radius: 90, desc: "Small park in the Dixie Hills neighborhood." },
+  // --- New parks (Southside / Southwest expansion) ---
+  { name: "Cascade Springs Nature Preserve", lat: 33.7230, lng: -84.4710, radius: 320, desc: "120-acre nature preserve with waterfalls, trails, and bamboo forest. Hidden gem of SW Atlanta." },
+  { name: "Adams Park", lat: 33.7130, lng: -84.4850, radius: 200, desc: "Community recreation center and park in Adamsville area. Athletic fields and playground." },
+  { name: "Greenbriar Park", lat: 33.7050, lng: -84.4680, radius: 180, desc: "Neighborhood park near Greenbriar Mall in Southwest Atlanta." },
+  { name: "Perkerson Park", lat: 33.7120, lng: -84.4120, radius: 220, desc: "Large community park with walking trails, athletic fields, and splash pad. Capitol View area." },
+  { name: "Pittsburgh Yards", lat: 33.7320, lng: -84.4050, radius: 140, desc: "Mixed-use development and community space in historic Pittsburgh neighborhood. Innovation hub." },
+  { name: "Capitol View Park", lat: 33.7200, lng: -84.4150, radius: 130, desc: "Neighborhood park serving the Capitol View and Capitol View Manor communities." },
+  { name: "Lionel Hampton Trail", lat: 33.7280, lng: -84.3990, radius: 100, desc: "BeltLine-connected trail corridor. Key connector for Southside neighborhoods." },
+  { name: "Oakland City Park", lat: 33.7220, lng: -84.4260, radius: 160, desc: "Community park near Oakland City MARTA station. Athletic fields and recreation." },
+  { name: "Outdoor Activity Center", lat: 33.7150, lng: -84.4240, radius: 250, desc: "135-acre urban nature preserve operated by Georgia Audubon. Trails, wetlands, wildlife." }
 ];
 
-// Westside Beltline trail approximate coordinates
-const BELTLINE_COORDS = [
+// ============================================
+// MARTA STATIONS
+// ============================================
+const MARTA_STATIONS = [
+  { name: "Five Points Station", lat: 33.7540, lng: -84.3916, lines: "Red/Gold/Blue/Green", desc: "Central hub. All 4 rail lines converge here. Highest ridership in system." },
+  { name: "West End Station", lat: 33.7365, lng: -84.4128, lines: "Red/Gold", desc: "Southside station. TOD area with active redevelopment. BeltLine adjacent." },
+  { name: "Oakland City Station", lat: 33.7172, lng: -84.4252, lines: "Red/Gold", desc: "Southside station serving Oakland City, Sylvan Hills. TOD opportunity." },
+  { name: "Lakewood/Ft McPherson Station", lat: 33.7003, lng: -84.4293, lines: "Red/Gold", desc: "Southside station near Tyler Perry Studios and Fort McPherson redevelopment." },
+  { name: "Bankhead Station", lat: 33.7724, lng: -84.4286, lines: "Green", desc: "Westside station serving Bankhead, Grove Park. BeltLine Westside Trail connection." },
+  { name: "Vine City Station", lat: 33.7565, lng: -84.4043, lines: "Blue/Green", desc: "Near Mercedes-Benz Stadium, State Farm Arena. Major event transit hub." },
+  { name: "Ashby Station", lat: 33.7529, lng: -84.4170, lines: "Blue/Green", desc: "Serving AUC (Morehouse, Spelman, Clark Atlanta). West End connector." },
+  { name: "Hamilton E. Holmes Station", lat: 33.7547, lng: -84.4697, lines: "Blue/Green", desc: "Western terminus. Park-and-ride. Serves Adamsville, Collier Heights." }
+];
+
+// ============================================
+// BELTLINE TRAIL COORDINATES
+// ============================================
+
+// Westside BeltLine trail (existing — original coords)
+const BELTLINE_WESTSIDE_COORDS = [
   [33.7830, -84.4220],
   [33.7810, -84.4210],
   [33.7790, -84.4195],
@@ -658,8 +737,8 @@ const BELTLINE_COORDS = [
   [33.7435, -84.4000]
 ];
 
-// Planned Beltline extension (dashed)
-const BELTLINE_PLANNED = [
+// Planned Westside extension north (dashed)
+const BELTLINE_WESTSIDE_PLANNED = [
   [33.7830, -84.4220],
   [33.7850, -84.4230],
   [33.7870, -84.4245],
@@ -667,8 +746,47 @@ const BELTLINE_PLANNED = [
   [33.7910, -84.4270]
 ];
 
-// Opportunity Zone polygons (approximate census tract boundaries)
+// Southside BeltLine trail — completed sections (approximate)
+const BELTLINE_SOUTHSIDE_BUILT = [
+  [33.7435, -84.4000],
+  [33.7410, -84.3995],
+  [33.7385, -84.3990],
+  [33.7365, -84.3988],
+  [33.7345, -84.3990],
+  [33.7325, -84.3995],
+  [33.7305, -84.4000],
+  [33.7285, -84.4010],
+  [33.7270, -84.4020]
+];
+
+// Southside BeltLine trail — planned sections (approximate path through Pittsburgh, Capitol View)
+const BELTLINE_SOUTHSIDE_PLANNED = [
+  [33.7270, -84.4020],
+  [33.7250, -84.4035],
+  [33.7230, -84.4050],
+  [33.7210, -84.4068],
+  [33.7190, -84.4085],
+  [33.7170, -84.4100],
+  [33.7150, -84.4115],
+  [33.7130, -84.4130],
+  [33.7110, -84.4148],
+  [33.7090, -84.4165],
+  [33.7070, -84.4180],
+  [33.7050, -84.4195]
+];
+
+// Combined all beltline coords for proximity calc
+const ALL_BELTLINE_COORDS = [
+  ...BELTLINE_WESTSIDE_COORDS,
+  ...BELTLINE_SOUTHSIDE_BUILT,
+  ...BELTLINE_SOUTHSIDE_PLANNED
+];
+
+// ============================================
+// OPPORTUNITY ZONES (Original 6 + 6 new = 12)
+// ============================================
 const OZ_ZONES = [
+  // --- Original zones ---
   {
     name: "English Avenue / Vine City",
     tract: "13121-0039",
@@ -716,11 +834,63 @@ const OZ_ZONES = [
       [33.7650, -84.4400], [33.7650, -84.4250], [33.7560, -84.4250],
       [33.7560, -84.4400], [33.7650, -84.4400]
     ]
+  },
+  // --- New Southside/Southwest OZ tracts ---
+  {
+    name: "Capitol View / Capitol View Manor",
+    tract: "13121-0068",
+    coords: [
+      [33.7280, -84.4220], [33.7280, -84.4070], [33.7150, -84.4070],
+      [33.7150, -84.4220], [33.7280, -84.4220]
+    ]
+  },
+  {
+    name: "Pittsburgh / Mechanicsville",
+    tract: "13121-0046",
+    coords: [
+      [33.7440, -84.4100], [33.7440, -84.3940], [33.7320, -84.3940],
+      [33.7320, -84.4100], [33.7440, -84.4100]
+    ]
+  },
+  {
+    name: "Sylvan Hills / Oakland City",
+    tract: "13121-0072",
+    coords: [
+      [33.7320, -84.4380], [33.7320, -84.4200], [33.7150, -84.4200],
+      [33.7150, -84.4380], [33.7320, -84.4380]
+    ]
+  },
+  {
+    name: "Lakewood Heights",
+    tract: "13121-0076",
+    coords: [
+      [33.7150, -84.4070], [33.7150, -84.3900], [33.7020, -84.3900],
+      [33.7020, -84.4070], [33.7150, -84.4070]
+    ]
+  },
+  {
+    name: "Adair Park / West End",
+    tract: "13121-0057",
+    coords: [
+      [33.7440, -84.4250], [33.7440, -84.4100], [33.7320, -84.4100],
+      [33.7320, -84.4250], [33.7440, -84.4250]
+    ]
+  },
+  {
+    name: "Westview / Cascade Heights Entry",
+    tract: "13121-0060",
+    coords: [
+      [33.7440, -84.4470], [33.7440, -84.4250], [33.7320, -84.4250],
+      [33.7320, -84.4470], [33.7440, -84.4470]
+    ]
   }
 ];
 
-// Known developments
+// ============================================
+// DEVELOPMENTS (Original 8 + 6 new = 14)
+// ============================================
 const DEVELOPMENTS = [
+  // --- Original ---
   {
     name: "Microsoft Data Center Campus",
     lat: 33.7735, lng: -84.4260,
@@ -768,10 +938,49 @@ const DEVELOPMENTS = [
     lat: 33.7780, lng: -84.4300,
     desc: "Multi-mile greenway trail and stormwater infrastructure along Proctor Creek. Connects neighborhoods to Westside Park.",
     status: "Under Development"
+  },
+  // --- New Southside/Southwest developments ---
+  {
+    name: "Tyler Perry Studios (Fort McPherson)",
+    lat: 33.7100, lng: -84.4350,
+    desc: "330-acre film studio complex on former Fort McPherson. Largest production studio in the US. Major economic engine for SW Atlanta.",
+    status: "Complete"
+  },
+  {
+    name: "Oakland City MARTA TOD",
+    lat: 33.7172, lng: -84.4255,
+    desc: "Transit-Oriented Development around Oakland City MARTA station. Mixed-use residential, retail, community space. Walking distance to BeltLine.",
+    status: "Planned"
+  },
+  {
+    name: "West End MARTA Station Redevelopment",
+    lat: 33.7368, lng: -84.4130,
+    desc: "Mixed-use TOD adjacent to West End station. Residential, retail, office. BeltLine Southside Trail adjacent. Key catalytic project.",
+    status: "Under Development"
+  },
+  {
+    name: "Greenbriar Mall Redevelopment",
+    lat: 33.7065, lng: -84.4695,
+    desc: "Plans for major redevelopment of the historic Greenbriar Mall into mixed-use destination. Residential, retail, entertainment, community space.",
+    status: "Planned"
+  },
+  {
+    name: "Fort McPherson Mixed-Use Redevelopment",
+    lat: 33.7060, lng: -84.4310,
+    desc: "Beyond Tyler Perry Studios, the broader Fort McPherson site includes plans for housing, retail, parks, and innovation space. ~145 acres available.",
+    status: "Planned"
+  },
+  {
+    name: "Lee + White / BeltLine Westside Connector",
+    lat: 33.7380, lng: -84.4065,
+    desc: "Adaptive reuse food hall and mixed-use corridor along the BeltLine. Breweries, restaurants, retail. Model for Southside development.",
+    status: "Complete"
   }
 ];
 
-// Jamaal's properties
+// ============================================
+// JAMAAL'S PROPERTIES
+// ============================================
 const MY_PROPERTIES = [
   {
     name: "1876 Madrona St NW",
@@ -787,26 +996,213 @@ const MY_PROPERTIES = [
   }
 ];
 
+// ============================================
+// INTERSTATE HIGHWAYS (approximate polyline coords)
+// ============================================
+
+// I-75/I-85 Downtown Connector running south from Midtown through Downtown
+const I75_I85_CONNECTOR = [
+  [33.7900, -84.3870],
+  [33.7860, -84.3875],
+  [33.7820, -84.3880],
+  [33.7780, -84.3882],
+  [33.7740, -84.3885],
+  [33.7700, -84.3888],
+  [33.7660, -84.3890],
+  [33.7620, -84.3892],
+  [33.7580, -84.3895],
+  [33.7540, -84.3900],
+  [33.7500, -84.3910],
+  [33.7460, -84.3920],
+  [33.7420, -84.3930],
+  [33.7380, -84.3940],
+  [33.7340, -84.3948],
+  [33.7300, -84.3955],
+  [33.7260, -84.3960],
+  [33.7220, -84.3968]
+];
+
+// I-20 heading west from Downtown
+const I20_WEST = [
+  [33.7510, -84.3920],
+  [33.7490, -84.3970],
+  [33.7470, -84.4020],
+  [33.7445, -84.4080],
+  [33.7425, -84.4140],
+  [33.7405, -84.4200],
+  [33.7385, -84.4260],
+  [33.7365, -84.4320],
+  [33.7345, -84.4380],
+  [33.7325, -84.4440],
+  [33.7305, -84.4500],
+  [33.7290, -84.4560],
+  [33.7275, -84.4620],
+  [33.7260, -84.4680],
+  [33.7245, -84.4740],
+  [33.7230, -84.4810],
+  [33.7210, -84.4880],
+  [33.7195, -84.4940],
+  [33.7180, -84.5010],
+  [33.7165, -84.5080]
+];
+
+// I-75 heading northwest from Downtown toward I-285
+const I75_NORTHWEST = [
+  [33.7580, -84.3895],
+  [33.7620, -84.3940],
+  [33.7660, -84.3980],
+  [33.7700, -84.4010],
+  [33.7740, -84.4030],
+  [33.7780, -84.4060],
+  [33.7820, -84.4100],
+  [33.7860, -84.4140],
+  [33.7900, -84.4175],
+  [33.7950, -84.4210],
+  [33.8000, -84.4250],
+  [33.8050, -84.4290],
+  [33.8100, -84.4330],
+  [33.8150, -84.4370],
+  [33.8200, -84.4410],
+  [33.8250, -84.4450],
+  [33.8300, -84.4490]
+];
+
+// I-285 south/west loop (from south where I-75 meets it, arcing west and north)
+const I285_LOOP = [
+  [33.6880, -84.3900],
+  [33.6870, -84.3980],
+  [33.6865, -84.4060],
+  [33.6862, -84.4140],
+  [33.6860, -84.4220],
+  [33.6865, -84.4300],
+  [33.6870, -84.4380],
+  [33.6880, -84.4460],
+  [33.6895, -84.4540],
+  [33.6910, -84.4620],
+  [33.6935, -84.4700],
+  [33.6960, -84.4770],
+  [33.6990, -84.4840],
+  [33.7025, -84.4910],
+  [33.7060, -84.4970],
+  [33.7100, -84.5020],
+  [33.7145, -84.5060],
+  [33.7195, -84.5090],
+  [33.7245, -84.5110],
+  [33.7300, -84.5120],
+  [33.7360, -84.5125],
+  [33.7420, -84.5120],
+  [33.7480, -84.5110],
+  [33.7540, -84.5095],
+  [33.7600, -84.5070],
+  [33.7660, -84.5040],
+  [33.7720, -84.5000],
+  [33.7780, -84.4960],
+  [33.7840, -84.4910],
+  [33.7900, -84.4860],
+  [33.7950, -84.4800],
+  [33.8000, -84.4740],
+  [33.8050, -84.4680],
+  [33.8100, -84.4620],
+  [33.8150, -84.4560],
+  [33.8200, -84.4510],
+  [33.8250, -84.4470],
+  [33.8300, -84.4440]
+];
+
+// ============================================
+// INVESTMENT ZONE BOUNDARY (Half-Moon / Crescent)
+// Covers Atlanta's Westside inside city limits
+// East: Downtown Connector (I-85/I-75)
+// South: I-20 west then I-285 south
+// West: I-285 west loop north
+// North: I-75 NW to I-285
+// ============================================
+const INVESTMENT_ZONE = [
+  // Start at Downtown (I-75/I-85/I-20 interchange area)
+  [33.7540, -84.3900],
+  // East edge: follow Downtown Connector south
+  [33.7500, -84.3910],
+  [33.7460, -84.3920],
+  [33.7420, -84.3930],
+  [33.7380, -84.3940],
+  [33.7340, -84.3948],
+  [33.7300, -84.3955],
+  [33.7260, -84.3960],
+  [33.7220, -84.3968],
+  // South: cut west along I-20 corridor and city limits
+  [33.7180, -84.3970],
+  [33.7140, -84.3975],
+  [33.7100, -84.3980],
+  [33.7050, -84.3990],
+  [33.7000, -84.4000],
+  // Southeast corner near Lakewood / city limit
+  [33.6960, -84.4050],
+  [33.6940, -84.4120],
+  [33.6930, -84.4200],
+  // Follow city limit south/southwest (staying inside Atlanta)
+  [33.6920, -84.4300],
+  [33.6920, -84.4400],
+  [33.6930, -84.4500],
+  [33.6945, -84.4600],
+  [33.6960, -84.4700],
+  // Southwest corner — near East Point border, staying inside ATL
+  [33.6980, -84.4800],
+  [33.7010, -84.4880],
+  [33.7050, -84.4940],
+  [33.7100, -84.4980],
+  // West edge — follow city limit / I-285 corridor north
+  [33.7160, -84.5010],
+  [33.7220, -84.5020],
+  [33.7280, -84.5020],
+  [33.7340, -84.5010],
+  [33.7400, -84.4990],
+  [33.7460, -84.4970],
+  [33.7520, -84.4940],
+  [33.7580, -84.4900],
+  [33.7640, -84.4860],
+  [33.7700, -84.4810],
+  [33.7760, -84.4760],
+  [33.7820, -84.4700],
+  // Northwest — heading toward I-75/I-285 interchange
+  [33.7880, -84.4640],
+  [33.7940, -84.4570],
+  [33.8000, -84.4500],
+  [33.8050, -84.4440],
+  // North edge — follow I-75 back southeast toward downtown
+  [33.8020, -84.4380],
+  [33.7970, -84.4320],
+  [33.7920, -84.4260],
+  [33.7870, -84.4200],
+  [33.7820, -84.4150],
+  [33.7780, -84.4100],
+  [33.7740, -84.4050],
+  [33.7700, -84.4010],
+  [33.7660, -84.3980],
+  [33.7620, -84.3950],
+  [33.7580, -84.3920],
+  // Close back to start
+  [33.7540, -84.3900]
+];
+
 
 // ============================================
 // MAP INITIALIZATION
 // ============================================
 
-// Dark CartoDB tile layer
 const darkTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
   attribution: '&copy; <a href="https://carto.com/">CARTO</a> &copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>',
   subdomains: 'abcd',
   maxZoom: 19
 });
 
+// Center on the half-moon area — slightly south/west of the original center
 const map = L.map('map', {
-  center: [33.7640, -84.4150],
-  zoom: 14,
+  center: [33.7350, -84.4400],
+  zoom: 12,
   layers: [darkTiles],
   zoomControl: true
 });
 
-// Move zoom control to bottom right
 map.zoomControl.setPosition('bottomright');
 
 
@@ -814,30 +1210,99 @@ map.zoomControl.setPosition('bottomright');
 // LAYER GROUPS
 // ============================================
 
+const investmentZoneLayer = L.layerGroup();
+const interstateLayer = L.layerGroup();
 const beltlineLayer = L.layerGroup();
 const parksLayer = L.layerGroup();
 const ringsLayer = L.layerGroup();
 const ozLayer = L.layerGroup();
 const developmentLayer = L.layerGroup();
+const martaLayer = L.layerGroup();
 const myPropertiesLayer = L.layerGroup();
 const propertyPinsLayer = L.layerGroup();
 
 
 // ============================================
-// 1. BELTLINE TRAIL
+// 0. INVESTMENT ZONE BOUNDARY
 // ============================================
 
-// Main trail — bright green
-L.polyline(BELTLINE_COORDS, {
+// Gold outline polygon — semi-transparent fill
+L.polygon(INVESTMENT_ZONE, {
+  color: '#c8a84e',
+  fillColor: '#c8a84e',
+  fillOpacity: 0.06,
+  weight: 3,
+  opacity: 0.7,
+  dashArray: '12, 6'
+}).bindTooltip('Rhino8 Investment Zone', { sticky: true }).addTo(investmentZoneLayer);
+
+// Glow effect
+L.polygon(INVESTMENT_ZONE, {
+  color: '#c8a84e',
+  fillColor: 'transparent',
+  fillOpacity: 0,
+  weight: 8,
+  opacity: 0.15
+}).addTo(investmentZoneLayer);
+
+investmentZoneLayer.addTo(map);
+
+
+// ============================================
+// 0b. INTERSTATE HIGHWAYS
+// ============================================
+
+const interstateStyle = {
+  color: 'rgba(255,255,255,0.35)',
+  weight: 2,
+  opacity: 0.6,
+  dashArray: '8, 6',
+  lineJoin: 'round',
+  lineCap: 'round'
+};
+
+const interstateGlowStyle = {
+  color: 'rgba(255,255,255,0.08)',
+  weight: 8,
+  opacity: 0.3,
+  lineJoin: 'round',
+  lineCap: 'round'
+};
+
+// I-75/I-85 Downtown Connector
+L.polyline(I75_I85_CONNECTOR, interstateGlowStyle).addTo(interstateLayer);
+L.polyline(I75_I85_CONNECTOR, interstateStyle).bindTooltip('I-75 / I-85 (Downtown Connector)', { sticky: true }).addTo(interstateLayer);
+
+// I-20 West
+L.polyline(I20_WEST, interstateGlowStyle).addTo(interstateLayer);
+L.polyline(I20_WEST, interstateStyle).bindTooltip('I-20 West', { sticky: true }).addTo(interstateLayer);
+
+// I-75 Northwest
+L.polyline(I75_NORTHWEST, interstateGlowStyle).addTo(interstateLayer);
+L.polyline(I75_NORTHWEST, interstateStyle).bindTooltip('I-75 Northwest', { sticky: true }).addTo(interstateLayer);
+
+// I-285 Loop
+L.polyline(I285_LOOP, interstateGlowStyle).addTo(interstateLayer);
+L.polyline(I285_LOOP, interstateStyle).bindTooltip('I-285 Perimeter', { sticky: true }).addTo(interstateLayer);
+
+interstateLayer.addTo(map);
+
+
+// ============================================
+// 1. BELTLINE TRAILS
+// ============================================
+
+// Westside Trail — bright green (built)
+L.polyline(BELTLINE_WESTSIDE_COORDS, {
   color: '#00e676',
   weight: 5,
   opacity: 0.9,
   lineJoin: 'round',
   lineCap: 'round'
-}).bindTooltip('Westside BeltLine Trail', { sticky: true }).addTo(beltlineLayer);
+}).bindTooltip('Westside BeltLine Trail (Built)', { sticky: true }).addTo(beltlineLayer);
 
-// Glow effect
-L.polyline(BELTLINE_COORDS, {
+// Westside glow
+L.polyline(BELTLINE_WESTSIDE_COORDS, {
   color: '#00e676',
   weight: 12,
   opacity: 0.15,
@@ -845,15 +1310,43 @@ L.polyline(BELTLINE_COORDS, {
   lineCap: 'round'
 }).addTo(beltlineLayer);
 
-// Planned extension — dashed
-L.polyline(BELTLINE_PLANNED, {
+// Planned Westside extension — dashed
+L.polyline(BELTLINE_WESTSIDE_PLANNED, {
   color: '#00e676',
   weight: 4,
   opacity: 0.5,
   dashArray: '10, 10',
   lineJoin: 'round',
   lineCap: 'round'
-}).bindTooltip('Planned Trail Extension', { sticky: true }).addTo(beltlineLayer);
+}).bindTooltip('Planned Westside Extension', { sticky: true }).addTo(beltlineLayer);
+
+// Southside Trail — built sections
+L.polyline(BELTLINE_SOUTHSIDE_BUILT, {
+  color: '#00e676',
+  weight: 5,
+  opacity: 0.9,
+  lineJoin: 'round',
+  lineCap: 'round'
+}).bindTooltip('Southside BeltLine Trail (Built)', { sticky: true }).addTo(beltlineLayer);
+
+// Southside glow
+L.polyline(BELTLINE_SOUTHSIDE_BUILT, {
+  color: '#00e676',
+  weight: 12,
+  opacity: 0.15,
+  lineJoin: 'round',
+  lineCap: 'round'
+}).addTo(beltlineLayer);
+
+// Southside Trail — planned sections (dashed)
+L.polyline(BELTLINE_SOUTHSIDE_PLANNED, {
+  color: '#00e676',
+  weight: 4,
+  opacity: 0.5,
+  dashArray: '10, 10',
+  lineJoin: 'round',
+  lineCap: 'round'
+}).bindTooltip('Planned Southside Trail Extension', { sticky: true }).addTo(beltlineLayer);
 
 beltlineLayer.addTo(map);
 
@@ -863,7 +1356,6 @@ beltlineLayer.addTo(map);
 // ============================================
 
 PARKS.forEach(park => {
-  // Park circle
   L.circle([park.lat, park.lng], {
     radius: park.radius,
     color: '#00e676',
@@ -876,7 +1368,6 @@ PARKS.forEach(park => {
     <div class="popup-subtitle">${park.desc}</div>
   `).bindTooltip(park.name).addTo(parksLayer);
 
-  // Park label marker
   L.marker([park.lat, park.lng], {
     icon: L.divIcon({
       className: '',
@@ -910,7 +1401,7 @@ function addRings(lat, lng, name) {
     weight: 1.5,
     opacity: 0.35,
     dashArray: '6, 4'
-  }).bindTooltip(`${name} — 0.25 mi`).addTo(ringsLayer);
+  }).bindTooltip(`${name} -- 0.25 mi`).addTo(ringsLayer);
 
   // 0.5 mile
   L.circle([lat, lng], {
@@ -921,7 +1412,7 @@ function addRings(lat, lng, name) {
     weight: 1.5,
     opacity: 0.3,
     dashArray: '6, 4'
-  }).bindTooltip(`${name} — 0.5 mi`).addTo(ringsLayer);
+  }).bindTooltip(`${name} -- 0.5 mi`).addTo(ringsLayer);
 
   // 1 mile
   L.circle([lat, lng], {
@@ -932,19 +1423,18 @@ function addRings(lat, lng, name) {
     weight: 1,
     opacity: 0.2,
     dashArray: '8, 6'
-  }).bindTooltip(`${name} — 1 mi`).addTo(ringsLayer);
+  }).bindTooltip(`${name} -- 1 mi`).addTo(ringsLayer);
 }
 
 // Rings from parks
 PARKS.forEach(p => addRings(p.lat, p.lng, p.name));
 
-// Rings from Beltline trail points (every 5th point to avoid clutter)
-for (let i = 0; i < BELTLINE_COORDS.length; i += 5) {
-  addRings(BELTLINE_COORDS[i][0], BELTLINE_COORDS[i][1], 'BeltLine');
+// Rings from Beltline trail points (every 5th point)
+for (let i = 0; i < BELTLINE_WESTSIDE_COORDS.length; i += 5) {
+  addRings(BELTLINE_WESTSIDE_COORDS[i][0], BELTLINE_WESTSIDE_COORDS[i][1], 'BeltLine');
 }
 
 // Rings OFF by default (too many circles)
-// User can toggle on via layer control
 
 
 // ============================================
@@ -1016,7 +1506,60 @@ developmentLayer.addTo(map);
 
 
 // ============================================
-// 6. MY PROPERTIES (Jamaal's)
+// 6. MARTA STATIONS
+// ============================================
+
+MARTA_STATIONS.forEach(station => {
+  L.marker([station.lat, station.lng], {
+    icon: L.divIcon({
+      className: '',
+      html: `<div style="
+        position: relative;
+        width: 22px;
+        height: 22px;
+      ">
+        <div style="
+          position: absolute;
+          top: 0; left: 0;
+          width: 22px;
+          height: 22px;
+          background: #b388ff;
+          border-radius: 50%;
+          border: 2px solid rgba(255,255,255,0.4);
+          box-shadow: 0 0 12px rgba(179,136,255,0.4);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        "><div style="
+          font-size: 9px;
+          font-weight: 800;
+          color: #0a0a0a;
+          line-height: 1;
+        ">M</div></div>
+      </div>`,
+      iconSize: [22, 22],
+      iconAnchor: [11, 11],
+      popupAnchor: [0, -11]
+    })
+  }).bindPopup(`
+    <div class="popup-title">${station.name}</div>
+    <div class="popup-subtitle">${station.desc}</div>
+    <div class="popup-row">
+      <span class="popup-label">Lines</span>
+      <span class="popup-value" style="color:#b388ff;">${station.lines}</span>
+    </div>
+    <div class="popup-row">
+      <span class="popup-label">Value Driver</span>
+      <span class="popup-value" style="color:#00e676;">High (Transit Proximity)</span>
+    </div>
+  `).bindTooltip(station.name).addTo(martaLayer);
+});
+
+martaLayer.addTo(map);
+
+
+// ============================================
+// 7. MY PROPERTIES (Jamaal's)
 // ============================================
 
 MY_PROPERTIES.forEach(prop => {
@@ -1077,7 +1620,7 @@ myPropertiesLayer.addTo(map);
 
 
 // ============================================
-// 7. PROPERTY PINS (User-added, localStorage)
+// 8. PROPERTY PINS (User-added, localStorage)
 // ============================================
 
 let properties = JSON.parse(localStorage.getItem('r8_properties') || '[]');
@@ -1168,7 +1711,7 @@ function createPropertyMarker(prop, index) {
     </div>
     <div class="popup-row">
       <span class="popup-label">% of ARV</span>
-      <span class="popup-value" style="color:${color}; font-weight:700;">${prop.arvPct.toFixed(1)}% — ${getARVLabel(prop.arvPct)}</span>
+      <span class="popup-value" style="color:${color}; font-weight:700;">${prop.arvPct.toFixed(1)}% -- ${getARVLabel(prop.arvPct)}</span>
     </div>
     <div class="popup-row">
       <span class="popup-label">Spread</span>
@@ -1252,10 +1795,7 @@ function showPropertyForm(lat, lng, existingProp, existingIndex) {
     `)
     .openOn(map);
 
-  // Set temp marker reference for cleanup
   tempMarker = popup;
-
-  // Trigger initial calc
   setTimeout(calcARV, 100);
 }
 
@@ -1268,7 +1808,7 @@ window.calcARV = function() {
   if (price && arv && arv > 0) {
     const pct = (price / arv) * 100;
     const color = getARVColor(pct);
-    display.innerHTML = `<span style="color:${color}; font-weight:700;">${pct.toFixed(1)}%</span> <span style="color:#888; font-size:11px;">— ${getARVLabel(pct)}</span>`;
+    display.innerHTML = `<span style="color:${color}; font-weight:700;">${pct.toFixed(1)}%</span> <span style="color:#888; font-size:11px;">-- ${getARVLabel(pct)}</span>`;
   } else {
     display.textContent = '--';
   }
@@ -1295,7 +1835,6 @@ window.savePropertyForm = function(lat, lng, editIndex) {
   map.closePopup();
   tempMarker = null;
 
-  // Exit add mode
   if (addMode) toggleAddMode();
 };
 
@@ -1358,11 +1897,14 @@ renderProperties();
 // ============================================
 
 const overlays = {
-  "Westside BeltLine Trail": beltlineLayer,
+  "Investment Zone Boundary": investmentZoneLayer,
+  "Interstate Highways": interstateLayer,
+  "BeltLine Trails": beltlineLayer,
   "Parks & Green Spaces": parksLayer,
   "Proximity Rings": ringsLayer,
   "Opportunity Zones": ozLayer,
   "Known Developments": developmentLayer,
+  "MARTA Stations": martaLayer,
   "My Properties": myPropertiesLayer,
   "Property Pins": propertyPinsLayer
 };
@@ -1381,7 +1923,10 @@ const infoPanel = document.getElementById('infoPanel');
 const infoPark = document.getElementById('infoPark');
 const infoParkDist = document.getElementById('infoParkDist');
 const infoBeltDist = document.getElementById('infoBeltDist');
+const infoMarta = document.getElementById('infoMarta');
+const infoMartaDist = document.getElementById('infoMartaDist');
 const infoOZ = document.getElementById('infoOZ');
+const infoInZone = document.getElementById('infoInZone');
 const scoreFill = document.getElementById('scoreFill');
 const scoreLabel = document.getElementById('scoreLabel');
 
@@ -1421,6 +1966,10 @@ function pointInPolygon(lat, lng, polygon) {
   return inside;
 }
 
+function isInInvestmentZone(lat, lng) {
+  return pointInPolygon(lat, lng, INVESTMENT_ZONE);
+}
+
 function formatDistance(miles) {
   if (miles < 0.1) {
     return Math.round(miles * FEET_PER_MILE) + ' ft';
@@ -1428,24 +1977,32 @@ function formatDistance(miles) {
   return miles.toFixed(2) + ' mi';
 }
 
-function calcInvestmentScore(parkDist, beltDist, inOZ) {
-  // Score 0-100
+function calcInvestmentScore(parkDist, beltDist, martaDist, inOZ, inZone) {
   let score = 0;
 
-  // Park proximity (max 35 pts)
-  if (parkDist <= 0.25) score += 35;
-  else if (parkDist <= 0.5) score += 28;
-  else if (parkDist <= 1.0) score += 18;
-  else if (parkDist <= 1.5) score += 8;
+  // Park proximity (max 25 pts)
+  if (parkDist <= 0.25) score += 25;
+  else if (parkDist <= 0.5) score += 20;
+  else if (parkDist <= 1.0) score += 13;
+  else if (parkDist <= 1.5) score += 6;
 
-  // Beltline proximity (max 40 pts)
-  if (beltDist <= 0.25) score += 40;
-  else if (beltDist <= 0.5) score += 32;
-  else if (beltDist <= 1.0) score += 20;
-  else if (beltDist <= 1.5) score += 10;
+  // Beltline proximity (max 30 pts)
+  if (beltDist <= 0.25) score += 30;
+  else if (beltDist <= 0.5) score += 24;
+  else if (beltDist <= 1.0) score += 15;
+  else if (beltDist <= 1.5) score += 8;
 
-  // OZ bonus (25 pts)
-  if (inOZ) score += 25;
+  // MARTA proximity (max 20 pts)
+  if (martaDist <= 0.25) score += 20;
+  else if (martaDist <= 0.5) score += 16;
+  else if (martaDist <= 1.0) score += 10;
+  else if (martaDist <= 1.5) score += 5;
+
+  // OZ bonus (15 pts)
+  if (inOZ) score += 15;
+
+  // Inside investment zone (10 pts)
+  if (inZone) score += 10;
 
   return score;
 }
@@ -1458,7 +2015,7 @@ map.on('mousemove', function(e) {
     const lat = e.latlng.lat;
     const lng = e.latlng.lng;
 
-    // Find nearest park
+    // Nearest park
     let nearestPark = null;
     let nearestParkDist = Infinity;
     PARKS.forEach(p => {
@@ -1470,20 +2027,38 @@ map.on('mousemove', function(e) {
     });
 
     // Distance to Beltline
-    const beltDist = distToPolyline(lat, lng, BELTLINE_COORDS);
+    const beltDist = distToPolyline(lat, lng, ALL_BELTLINE_COORDS);
+
+    // Nearest MARTA station
+    let nearestMarta = null;
+    let nearestMartaDist = Infinity;
+    MARTA_STATIONS.forEach(s => {
+      const d = haversineDistance(lat, lng, s.lat, s.lng);
+      if (d < nearestMartaDist) {
+        nearestMartaDist = d;
+        nearestMarta = s.name.replace(' Station', '');
+      }
+    });
 
     // OZ check
     const ozName = isInOZ(lat, lng);
 
+    // Investment zone check
+    const inZone = isInInvestmentZone(lat, lng);
+
     // Investment score
-    const score = calcInvestmentScore(nearestParkDist, beltDist, ozName);
+    const score = calcInvestmentScore(nearestParkDist, beltDist, nearestMartaDist, ozName, inZone);
 
     // Update panel
     infoPark.textContent = nearestPark || '--';
     infoParkDist.textContent = formatDistance(nearestParkDist);
     infoBeltDist.textContent = formatDistance(beltDist);
+    infoMarta.textContent = nearestMarta || '--';
+    infoMartaDist.textContent = formatDistance(nearestMartaDist);
     infoOZ.textContent = ozName || 'No';
     infoOZ.style.color = ozName ? '#00e676' : '#ff5252';
+    infoInZone.textContent = inZone ? 'Yes' : 'No';
+    infoInZone.style.color = inZone ? '#00e676' : '#ff5252';
 
     scoreFill.style.width = score + '%';
     let scoreColor;
@@ -1500,7 +2075,7 @@ map.on('mousemove', function(e) {
     else if (score >= 20) scoreText = 'Moderate Zone';
     else scoreText = 'Low Priority';
 
-    scoreLabel.textContent = `${score}/100 — ${scoreText}`;
+    scoreLabel.textContent = `${score}/100 -- ${scoreText}`;
     scoreLabel.style.color = scoreColor;
 
     infoPanel.classList.add('active');
@@ -1534,6 +2109,9 @@ function updateStats() {
   document.getElementById('statTotal').textContent = total;
   document.getElementById('statDeals').textContent = deals;
   document.getElementById('statAvgARV').textContent = avgARV;
+  document.getElementById('statParks').textContent = PARKS.length;
+  document.getElementById('statOZ').textContent = OZ_ZONES.length;
+  document.getElementById('statMarta').textContent = MARTA_STATIONS.length;
 }
 
 function exportProperties() {
