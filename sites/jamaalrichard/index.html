@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jamaal Marque Richard | Real Estate. Capital. Legacy.</title>
+<meta name="description" content="$250M+ in real estate transactions. USMC Combat Veteran. Investor. Educator. Building generational wealth through real estate and capital markets.">
+<style>
+/* ===== RESET & BASE ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #111118;
+  --bg-card: #14141c;
+  --bg-elevated: #1a1a24;
+  --gold: #c9a84c;
+  --gold-light: #d4af37;
+  --gold-dim: rgba(201, 168, 76, 0.15);
+  --gold-glow: rgba(201, 168, 76, 0.08);
+  --text-primary: #f0ece2;
+  --text-secondary: #a0998a;
+  --text-muted: #6b6560;
+  --border-subtle: rgba(201, 168, 76, 0.12);
+  --border-gold: rgba(201, 168, 76, 0.35);
+  --font-heading: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, "Times New Roman", serif;
+  --font-body: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "SF Mono", "Fira Code", "Cascadia Code", Consolas, monospace;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(201, 168, 76, 0.3);
+  color: var(--text-primary);
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(201, 168, 76, 0.25);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(201, 168, 76, 0.4);
+}
+
+/* ===== NAVIGATION ===== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.25rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.5s var(--ease-out-expo);
+  background: transparent;
+}
+
+.nav.scrolled {
+  background: rgba(10, 10, 15, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 0.85rem 2.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.nav-logo {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  letter-spacing: 0.25em;
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.25rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.4s var(--ease-out-expo);
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--gold);
+  transition: all 0.3s ease;
+}
+
+.nav-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(4.5px, 4.5px);
+}
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(4.5px, -4.5px);
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(201, 168, 76, 0.04) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 80% at 20% 80%, rgba(10, 10, 15, 0.8) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 80% at 80% 80%, rgba(10, 10, 15, 0.8) 0%, transparent 50%),
+    linear-gradient(180deg, var(--bg-primary) 0%, #0d0d14 40%, #0f0f18 60%, var(--bg-primary) 100%);
+}
+
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.03) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, var(--gold), transparent);
+  opacity: 0.3;
+  animation: heroLinePulse 3s ease-in-out infinite;
+}
+
+@keyframes heroLinePulse {
+  0%, 100% { opacity: 0.15; height: 100px; }
+  50% { opacity: 0.4; height: 140px; }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 0 2rem;
+}
+
+.hero-pre {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0;
+  transform: translateY(20px);
+  margin-bottom: 2rem;
+}
+
+.hero-name {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 6vw, 5.5rem);
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  line-height: 1.1;
+  opacity: 0;
+  transform: translateY(30px);
+  text-shadow: 0 0 80px rgba(201, 168, 76, 0.15);
+}
+
+.hero-subtitle {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 2.5vw, 1.6rem);
+  font-weight: 300;
+  letter-spacing: 0.35em;
+  color: var(--text-secondary);
+  margin-top: 1.5rem;
+  opacity: 0;
+  transform: translateY(25px);
+}
+
+.hero-divider {
+  width: 60px;
+  height: 1px;
+  background: var(--gold);
+  margin: 2rem auto;
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hero-tagline {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  opacity: 0;
+  animation: fadeInUp 1s ease 2.5s forwards;
+}
+
+.hero-scroll span {
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.hero-scroll-line {
+  width: 1px;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-scroll-line::after {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, var(--gold));
+  animation: scrollLine 2s ease-in-out infinite;
+}
+
+@keyframes scrollLine {
+  0% { top: -40px; }
+  100% { top: 40px; }
+}
+
+/* ===== SECTION BASE ===== */
+section {
+  padding: 7rem 2rem;
+  position: relative;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+  opacity: 0.7;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.section-divider {
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+  margin-bottom: 3rem;
+}
+
+/* ===== REVEAL ANIMATION ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ===== ABOUT ===== */
+.about {
+  background: var(--bg-secondary);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.about-portrait {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  background: linear-gradient(145deg, #13131b, #0e0e16);
+  border: 1px solid var(--border-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.about-portrait::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid var(--border-subtle);
+}
+
+.about-portrait-monogram {
+  font-family: var(--font-heading);
+  font-size: 4.5rem;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  opacity: 0.25;
+  user-select: none;
+}
+
+.about-portrait-label {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.about-text h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 1.75rem;
+  letter-spacing: 0.03em;
+}
+
+.about-text p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.85;
+}
+
+.about-text p:last-of-type {
+  margin-bottom: 0;
+}
+
+.about-vision {
+  margin-top: 2.5rem;
+  padding: 1.75rem 2rem;
+  border-left: 2px solid var(--gold);
+  background: var(--gold-glow);
+}
+
+.about-vision p {
+  font-family: var(--font-heading);
+  font-style: italic;
+  color: var(--text-primary) !important;
+  font-size: 1rem !important;
+  line-height: 1.8 !important;
+  margin-bottom: 0 !important;
+}
+
+/* ===== VENTURES ===== */
+.ventures {
+  background: var(--bg-primary);
+}
+
+.ventures-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.venture-card {
+  position: relative;
+  padding: 2.75rem 2.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.5s var(--ease-out-expo);
+  overflow: hidden;
+}
+
+.venture-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.venture-card:hover {
+  border-color: var(--border-gold);
+  background: var(--bg-elevated);
+  transform: translateY(-4px);
+}
+
+.venture-card:hover::before {
+  opacity: 1;
+}
+
+.venture-number {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--gold);
+  letter-spacing: 0.2em;
+  margin-bottom: 1.5rem;
+  opacity: 0.6;
+}
+
+.venture-name {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.03em;
+}
+
+.venture-desc {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.venture-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  transition: gap 0.3s ease;
+}
+
+.venture-link:hover {
+  gap: 0.85rem;
+}
+
+.venture-link-arrow {
+  display: inline-block;
+  width: 20px;
+  height: 1px;
+  background: var(--gold);
+  position: relative;
+}
+
+.venture-link-arrow::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -3px;
+  width: 7px;
+  height: 7px;
+  border-top: 1px solid var(--gold);
+  border-right: 1px solid var(--gold);
+  transform: rotate(45deg);
+}
+
+/* ===== TRACK RECORD ===== */
+.track-record {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.stat-item {
+  padding: 2rem 1rem;
+  position: relative;
+}
+
+.stat-item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 25%;
+  height: 50%;
+  width: 1px;
+  background: var(--border-subtle);
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  color: var(--gold);
+  letter-spacing: 0.02em;
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ===== PHILOSOPHY ===== */
+.philosophy {
+  background: var(--bg-primary);
+  overflow: hidden;
+}
+
+.philosophy-quote-block {
+  text-align: center;
+  padding: 3rem 0 4rem;
+  position: relative;
+}
+
+.philosophy-quote-mark {
+  font-family: var(--font-heading);
+  font-size: 6rem;
+  color: var(--gold);
+  opacity: 0.12;
+  line-height: 1;
+  margin-bottom: -2rem;
+  user-select: none;
+}
+
+.philosophy-quote {
+  font-family: var(--font-heading);
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-primary);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
+.philosophy-attribution {
+  margin-top: 1.75rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.philosophy-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.pillar {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-card);
+  position: relative;
+  transition: all 0.4s var(--ease-out-expo);
+}
+
+.pillar:hover {
+  border-color: var(--border-gold);
+  background: var(--bg-elevated);
+}
+
+.pillar-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 1.5rem;
+  position: relative;
+}
+
+.pillar-icon-diamond {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--gold);
+  transform: rotate(45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pillar-icon-inner {
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+}
+
+.pillar h4 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.pillar p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* ===== MEDIA ===== */
+.media {
+  background: var(--bg-secondary);
+  text-align: center;
+}
+
+.media-coming {
+  display: inline-block;
+  padding: 0.5rem 2rem;
+  border: 1px solid var(--border-gold);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.media-coming::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.1), transparent);
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.media-text {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  max-width: 550px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* ===== CONTACT ===== */
+.contact {
+  background: var(--bg-primary);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+}
+
+.contact-info h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.03em;
+}
+
+.contact-info p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.contact-detail-icon {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-detail-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--gold);
+  fill: none;
+  stroke-width: 1.5;
+}
+
+.contact-detail span {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  letter-spacing: 0.03em;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--gold);
+  background: var(--bg-elevated);
+  box-shadow: 0 0 0 1px rgba(201, 168, 76, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.form-group select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b6560' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+.form-group select option {
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.form-submit {
+  padding: 1rem 2.5rem;
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.4s var(--ease-out-expo);
+  position: relative;
+  overflow: hidden;
+  align-self: flex-start;
+}
+
+.form-submit::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gold);
+  transition: left 0.4s var(--ease-out-expo);
+  z-index: 0;
+}
+
+.form-submit span {
+  position: relative;
+  z-index: 1;
+}
+
+.form-submit:hover {
+  color: var(--bg-primary);
+}
+
+.form-submit:hover::before {
+  left: 0;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  padding: 3rem 2rem;
+  border-top: 1px solid var(--border-subtle);
+  background: var(--bg-primary);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-copy {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.footer-social {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-social:hover {
+  border-color: var(--gold);
+  background: var(--gold-glow);
+}
+
+.footer-social svg {
+  width: 15px;
+  height: 15px;
+  fill: var(--text-muted);
+  transition: fill 0.3s ease;
+}
+
+.footer-social:hover svg {
+  fill: var(--gold);
+}
+
+/* ===== MOBILE NAV OVERLAY ===== */
+.mobile-nav {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(10, 10, 15, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.mobile-nav.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mobile-nav a {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  letter-spacing: 0.15em;
+  transition: color 0.3s ease;
+}
+
+.mobile-nav a:hover {
+  color: var(--gold);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 868px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  section {
+    padding: 5rem 1.5rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-portrait {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .ventures-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+
+  .stat-item:nth-child(2)::after {
+    display: none;
+  }
+
+  .stat-item {
+    padding: 1.5rem 1rem;
+  }
+
+  .philosophy-pillars {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    padding: 1rem 1.25rem;
+  }
+
+  .hero-content {
+    padding: 0 1rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stat-item::after {
+    display: none;
+  }
+}
+
+/* ===== GRAIN OVERLAY ===== */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+</style>
+</head>
+<body>
+
+<!-- GRAIN OVERLAY -->
+<div class="grain"></div>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="nav">
+  <a href="#hero" class="nav-logo">JMR</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#ventures">Ventures</a></li>
+    <li><a href="#track-record">Track Record</a></li>
+    <li><a href="#philosophy">Philosophy</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#about">About</a>
+  <a href="#ventures">Ventures</a>
+  <a href="#track-record">Track Record</a>
+  <a href="#philosophy">Philosophy</a>
+  <a href="#media">Media</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-line"></div>
+  <div class="hero-content">
+    <p class="hero-pre" id="heroPre">Investor &middot; Operator &middot; Veteran</p>
+    <h1 class="hero-name" id="heroName">JAMAAL MARQUE<br>RICHARD</h1>
+    <p class="hero-subtitle" id="heroSub">Real Estate. Capital. Legacy.</p>
+    <div class="hero-divider" id="heroDivider"></div>
+    <p class="hero-tagline" id="heroTag">$250M+ in Real Estate Transactions &nbsp;|&nbsp; USMC Combat Veteran &nbsp;|&nbsp; Investor &nbsp;|&nbsp; Educator</p>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-container">
+    <div class="about-grid">
+      <div class="about-portrait reveal">
+        <span class="about-portrait-monogram">JMR</span>
+        <span class="about-portrait-label">Professional Portrait</span>
+      </div>
+      <div class="about-text">
+        <div class="reveal">
+          <span class="section-label">001 &mdash; About</span>
+          <h2 class="section-title">Discipline. Mastery. Legacy.</h2>
+          <div class="section-divider"></div>
+        </div>
+        <p class="reveal reveal-delay-1">Before the boardrooms and balance sheets, there were battlefields. As a United States Marine Corps Combat Veteran and DLAB-certified linguist, Jamaal Marque Richard learned what most business schools cannot teach: that excellence is forged under pressure, that execution is everything, and that discipline is the ultimate competitive advantage.</p>
+        <p class="reveal reveal-delay-2">That discipline has driven over $250 million in real estate transactions across more than a decade and a half. As a wholesaler, flipper, landlord, title company owner, and consultant, Jamaal has operated across every link of the real estate value chain. He does not sell houses. He builds systems that generate wealth &mdash; residential acquisitions, creative finance structures, and capital deployment strategies that consistently outperform traditional investment vehicles.</p>
+        <p class="reveal reveal-delay-3">Now based in Atlanta with operations extending to Houston, he is focused on what comes next: scaling a portfolio, raising institutional capital, and educating the next generation of investors who have been locked out of wealth-building for too long.</p>
+        <div class="about-vision reveal reveal-delay-4">
+          <p>&ldquo;Building a platform that creates wealth not just for my family, but for families who have never had access to these strategies.&rdquo;</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VENTURES -->
+<section class="ventures" id="ventures">
+  <div class="section-container">
+    <div class="reveal">
+      <span class="section-label">002 &mdash; Ventures</span>
+      <h2 class="section-title">The Portfolio</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="ventures-grid">
+      <div class="venture-card reveal reveal-delay-1">
+        <span class="venture-number">01</span>
+        <h3 class="venture-name">Vaulted Capital</h3>
+        <p class="venture-desc">Institutional-grade capital raising for real estate. Connecting accredited investors with high-yield residential and multifamily opportunities across the Southeast.</p>
+        <a href="#contact" class="venture-link">Learn More <span class="venture-link-arrow"></span></a>
+      </div>
+      <div class="venture-card reveal reveal-delay-2">
+        <span class="venture-number">02</span>
+        <h3 class="venture-name">Money Decoded</h3>
+        <p class="venture-desc">Financial education that changes bloodlines. A three-track system designed to move people from financial illiteracy to deal-closing, wealth-building operators.</p>
+        <a href="#contact" class="venture-link">Learn More <span class="venture-link-arrow"></span></a>
+      </div>
+      <div class="venture-card reveal reveal-delay-3">
+        <span class="venture-number">03</span>
+        <h3 class="venture-name">Pipeline Mastery</h3>
+        <p class="venture-desc">The system behind $250M in deal flow. A battle-tested 13-touch seller follow-up system built for wholesalers and investors who refuse to leave money on the table.</p>
+        <a href="#contact" class="venture-link">Learn More <span class="venture-link-arrow"></span></a>
+      </div>
+      <div class="venture-card reveal reveal-delay-4">
+        <span class="venture-number">04</span>
+        <h3 class="venture-name">Real Estate Portfolio</h3>
+        <p class="venture-desc">Active residential acquisitions across Atlanta and Houston. Wholesale, BRRRR, creative finance, and value-add strategies targeting overlooked neighborhoods with outsized returns.</p>
+        <a href="#contact" class="venture-link">Learn More <span class="venture-link-arrow"></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRACK RECORD -->
+<section class="track-record" id="track-record">
+  <div class="section-container">
+    <div class="reveal" style="text-align:center; margin-bottom: 3rem;">
+      <span class="section-label">003 &mdash; Track Record</span>
+      <h2 class="section-title">By the Numbers</h2>
+      <div class="section-divider" style="margin-left:auto; margin-right:auto;"></div>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-item reveal reveal-delay-1">
+        <div class="stat-number" data-target="250" data-prefix="$" data-suffix="M+">$0</div>
+        <div class="stat-label">Transaction Volume</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-2">
+        <div class="stat-number" data-target="15" data-prefix="" data-suffix="+">0</div>
+        <div class="stat-label">Years in Real Estate</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-3">
+        <div class="stat-number" data-target="100" data-prefix="" data-suffix="+">0</div>
+        <div class="stat-label">Deals Closed</div>
+      </div>
+      <div class="stat-item reveal reveal-delay-4">
+        <div class="stat-number" data-target="0" data-prefix="" data-suffix="" data-static="USMC">USMC</div>
+        <div class="stat-label">Combat Veteran</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy" id="philosophy">
+  <div class="section-container">
+    <div class="reveal">
+      <span class="section-label" style="text-align:center; display:block;">004 &mdash; Philosophy</span>
+    </div>
+    <div class="philosophy-quote-block reveal">
+      <div class="philosophy-quote-mark">&ldquo;</div>
+      <blockquote class="philosophy-quote">The wealthy don&rsquo;t work for money. They build systems that work for them.</blockquote>
+      <p class="philosophy-attribution">&mdash; Jamaal Marque Richard</p>
+    </div>
+    <div class="philosophy-pillars">
+      <div class="pillar reveal reveal-delay-1">
+        <div class="pillar-icon">
+          <div class="pillar-icon-diamond">
+            <div class="pillar-icon-inner"></div>
+          </div>
+        </div>
+        <h4>Assets Over Liabilities</h4>
+        <p>Acquire what appreciates. Eliminate what depreciates.</p>
+      </div>
+      <div class="pillar reveal reveal-delay-2">
+        <div class="pillar-icon">
+          <div class="pillar-icon-diamond">
+            <div class="pillar-icon-inner"></div>
+          </div>
+        </div>
+        <h4>Cash Flow Over Capital Gains</h4>
+        <p>Monthly income beats speculative appreciation.</p>
+      </div>
+      <div class="pillar reveal reveal-delay-3">
+        <div class="pillar-icon">
+          <div class="pillar-icon-diamond">
+            <div class="pillar-icon-inner"></div>
+          </div>
+        </div>
+        <h4>Education Over Speculation</h4>
+        <p>Knowledge compounds faster than capital.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEDIA & SPEAKING -->
+<section class="media" id="media">
+  <div class="section-container">
+    <div class="reveal">
+      <span class="section-label">005 &mdash; Media &amp; Speaking</span>
+      <h2 class="section-title">On the Record</h2>
+      <div class="section-divider" style="margin-left:auto; margin-right:auto;"></div>
+    </div>
+    <div class="reveal reveal-delay-1">
+      <div class="media-coming">Coming Soon</div>
+    </div>
+    <p class="media-text reveal reveal-delay-2">Inquiries for speaking engagements, podcast appearances, and media features &mdash; use the contact form below or reach out directly.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="reveal">
+          <span class="section-label">006 &mdash; Contact</span>
+          <h2 class="section-title">Let&rsquo;s Talk</h2>
+          <div class="section-divider"></div>
+        </div>
+        <h3 class="reveal reveal-delay-1">Whether it&rsquo;s capital, deals, or education &mdash; the conversation starts here.</h3>
+        <p class="reveal reveal-delay-2">For investment inquiries, partnership opportunities, media requests, or speaking engagements, use the form or reach out directly.</p>
+        <div class="reveal reveal-delay-3">
+          <div class="contact-detail">
+            <div class="contact-detail-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <span>Atlanta, GA</span>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <span>info@jamaalrichard.com</span>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm" action="#" method="POST">
+        <div class="form-row reveal">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Full name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Email address" required>
+          </div>
+        </div>
+        <div class="form-group reveal reveal-delay-1">
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject" required>
+            <option value="" disabled selected>Select a subject</option>
+            <option value="investment">Investment Inquiry</option>
+            <option value="media">Media</option>
+            <option value="speaking">Speaking</option>
+            <option value="partnership">Partnership</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div class="form-group reveal reveal-delay-2">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell me about your inquiry..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit reveal reveal-delay-3">
+          <span>Send Message</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-content">
+    <p class="footer-copy">&copy; 2026 Jamaal Marque Richard. All Rights Reserved.</p>
+    <div class="footer-socials">
+      <a href="#" class="footer-social" aria-label="LinkedIn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="#" class="footer-social" aria-label="Instagram" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2"/></svg>
+      </a>
+      <a href="#" class="footer-social" aria-label="X" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  "use strict";
+
+  // ===== HERO ENTRANCE ANIMATION =====
+  function animateHero() {
+    var timeline = [
+      { el: document.getElementById("heroPre"), delay: 300 },
+      { el: document.getElementById("heroName"), delay: 600 },
+      { el: document.getElementById("heroSub"), delay: 1000 },
+      { el: document.getElementById("heroDivider"), delay: 1400 },
+      { el: document.getElementById("heroTag"), delay: 1700 }
+    ];
+
+    timeline.forEach(function(item) {
+      setTimeout(function() {
+        if (item.el.id === "heroDivider") {
+          item.el.style.transition = "opacity 0.8s ease, transform 0.8s ease";
+          item.el.style.opacity = "1";
+          item.el.style.transform = "scaleX(1)";
+        } else {
+          item.el.style.transition = "opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1)";
+          item.el.style.opacity = "1";
+          item.el.style.transform = "translateY(0)";
+        }
+      }, item.delay);
+    });
+  }
+
+  // ===== NAVIGATION SCROLL =====
+  var nav = document.getElementById("nav");
+  var lastScroll = 0;
+
+  function handleNavScroll() {
+    var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollY > 80) {
+      nav.classList.add("scrolled");
+    } else {
+      nav.classList.remove("scrolled");
+    }
+    lastScroll = scrollY;
+  }
+
+  // ===== MOBILE NAV =====
+  var navToggle = document.getElementById("navToggle");
+  var mobileNav = document.getElementById("mobileNav");
+  var mobileLinks = mobileNav.querySelectorAll("a");
+
+  navToggle.addEventListener("click", function() {
+    navToggle.classList.toggle("active");
+    mobileNav.classList.toggle("open");
+    document.body.style.overflow = mobileNav.classList.contains("open") ? "hidden" : "";
+  });
+
+  mobileLinks.forEach(function(link) {
+    link.addEventListener("click", function() {
+      navToggle.classList.remove("active");
+      mobileNav.classList.remove("open");
+      document.body.style.overflow = "";
+    });
+  });
+
+  // ===== SCROLL REVEAL =====
+  var reveals = document.querySelectorAll(".reveal");
+  var revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: "0px 0px -60px 0px"
+  });
+
+  reveals.forEach(function(el) {
+    revealObserver.observe(el);
+  });
+
+  // ===== STAT COUNTER ANIMATION =====
+  var statNumbers = document.querySelectorAll(".stat-number");
+  var statsAnimated = false;
+
+  var statsObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting && !statsAnimated) {
+        statsAnimated = true;
+        animateStats();
+        statsObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  var trackRecordSection = document.getElementById("track-record");
+  if (trackRecordSection) {
+    statsObserver.observe(trackRecordSection);
+  }
+
+  function animateStats() {
+    statNumbers.forEach(function(el) {
+      var staticVal = el.getAttribute("data-static");
+      if (staticVal) return; // Skip USMC — it's static text
+
+      var target = parseInt(el.getAttribute("data-target"), 10);
+      var prefix = el.getAttribute("data-prefix") || "";
+      var suffix = el.getAttribute("data-suffix") || "";
+      var duration = 2000;
+      var startTime = null;
+
+      function easeOutQuart(t) {
+        return 1 - Math.pow(1 - t, 4);
+      }
+
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        var progress = Math.min((timestamp - startTime) / duration, 1);
+        var easedProgress = easeOutQuart(progress);
+        var current = Math.floor(easedProgress * target);
+        el.textContent = prefix + current + suffix;
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = prefix + target + suffix;
+        }
+      }
+
+      requestAnimationFrame(step);
+    });
+  }
+
+  // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener("click", function(e) {
+      var targetId = this.getAttribute("href");
+      if (targetId === "#") return;
+      var targetEl = document.querySelector(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        var offset = 80;
+        var targetPosition = targetEl.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth"
+        });
+      }
+    });
+  });
+
+  // ===== CONTACT FORM HANDLER =====
+  var contactForm = document.getElementById("contactForm");
+  contactForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+    var btn = contactForm.querySelector(".form-submit span");
+    var originalText = btn.textContent;
+    btn.textContent = "Message Sent";
+    setTimeout(function() {
+      btn.textContent = originalText;
+      contactForm.reset();
+    }, 3000);
+  });
+
+  // ===== PARALLAX-LIKE HERO EFFECT =====
+  var heroContent = document.querySelector(".hero-content");
+  function handleParallax() {
+    var scrollY = window.pageYOffset;
+    if (scrollY < window.innerHeight) {
+      var translateY = scrollY * 0.35;
+      var opacity = 1 - (scrollY / (window.innerHeight * 0.8));
+      heroContent.style.transform = "translateY(" + translateY + "px)";
+      heroContent.style.opacity = Math.max(opacity, 0);
+    }
+  }
+
+  // ===== SCROLL HANDLER (THROTTLED) =====
+  var ticking = false;
+  window.addEventListener("scroll", function() {
+    if (!ticking) {
+      requestAnimationFrame(function() {
+        handleNavScroll();
+        handleParallax();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+
+  // ===== INIT =====
+  window.addEventListener("DOMContentLoaded", function() {
+    animateHero();
+  });
+
+  // If DOM already loaded (script at bottom of body)
+  if (document.readyState === "interactive" || document.readyState === "complete") {
+    animateHero();
+  }
+
+})();
+</script>
+</body>
+</html>
