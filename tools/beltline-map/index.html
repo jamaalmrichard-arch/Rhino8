@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rhino8 | Atlanta Westside Investment Map</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --gold: #c8a84e;
+    --gold-light: #e0c872;
+    --gold-dim: #8a7535;
+    --dark: #0a0a0a;
+    --dark-card: #141414;
+    --dark-surface: #1a1a1a;
+    --dark-border: #2a2a2a;
+    --text: #e0e0e0;
+    --text-dim: #888;
+    --green: #00e676;
+    --yellow: #ffd740;
+    --orange: #ff9100;
+    --red: #ff5252;
+    --blue: #448aff;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  /* HEADER */
+  #header {
+    height: 52px;
+    background: linear-gradient(135deg, #0e0e0e 0%, #1a1a1a 100%);
+    border-bottom: 1px solid var(--dark-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 1000;
+    position: relative;
+  }
+  #header .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  #header .brand .logo {
+    width: 28px;
+    height: 28px;
+    background: var(--gold);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 14px;
+    color: var(--dark);
+  }
+  #header .brand h1 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.5px;
+  }
+  #header .brand h1 span {
+    color: var(--text-dim);
+    font-weight: 400;
+    margin-left: 8px;
+    font-size: 13px;
+  }
+  #header .header-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .header-btn {
+    background: var(--dark-surface);
+    border: 1px solid var(--dark-border);
+    color: var(--text);
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .header-btn:hover {
+    border-color: var(--gold-dim);
+    color: var(--gold);
+  }
+  .header-btn.gold {
+    background: var(--gold);
+    color: var(--dark);
+    border-color: var(--gold);
+    font-weight: 600;
+  }
+  .header-btn.gold:hover {
+    background: var(--gold-light);
+  }
+
+  /* MAP */
+  #map {
+    height: calc(100vh - 52px);
+    width: 100%;
+    background: #0a0a0a;
+  }
+
+  /* Override Leaflet controls */
+  .leaflet-control-layers {
+    background: var(--dark-card) !important;
+    border: 1px solid var(--dark-border) !important;
+    border-radius: 8px !important;
+    color: var(--text) !important;
+    padding: 8px 12px !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5) !important;
+  }
+  .leaflet-control-layers-toggle {
+    background-color: var(--dark-card) !important;
+    border: 1px solid var(--dark-border) !important;
+    border-radius: 8px !important;
+    width: 36px !important;
+    height: 36px !important;
+  }
+  .leaflet-control-layers label {
+    color: var(--text) !important;
+    font-size: 12px !important;
+    font-family: 'Inter', sans-serif !important;
+  }
+  .leaflet-control-layers-separator {
+    border-top-color: var(--dark-border) !important;
+  }
+  .leaflet-control-zoom a {
+    background: var(--dark-card) !important;
+    color: var(--gold) !important;
+    border-color: var(--dark-border) !important;
+    font-size: 16px !important;
+    width: 34px !important;
+    height: 34px !important;
+    line-height: 34px !important;
+  }
+  .leaflet-control-zoom a:hover {
+    background: var(--dark-surface) !important;
+    color: var(--gold-light) !important;
+  }
+  .leaflet-control-zoom {
+    border: none !important;
+    border-radius: 8px !important;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5) !important;
+  }
+  .leaflet-control-attribution {
+    background: rgba(10,10,10,0.85) !important;
+    color: var(--text-dim) !important;
+    font-size: 10px !important;
+  }
+  .leaflet-control-attribution a {
+    color: var(--gold-dim) !important;
+  }
+
+  /* Popups */
+  .leaflet-popup-content-wrapper {
+    background: var(--dark-card) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--dark-border) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6) !important;
+  }
+  .leaflet-popup-tip {
+    background: var(--dark-card) !important;
+    border: 1px solid var(--dark-border) !important;
+  }
+  .leaflet-popup-close-button {
+    color: var(--text-dim) !important;
+    font-size: 18px !important;
+  }
+  .leaflet-popup-close-button:hover {
+    color: var(--gold) !important;
+  }
+  .leaflet-popup-content {
+    margin: 12px 16px !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Popup content styles */
+  .popup-title {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .popup-subtitle {
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+  }
+  .popup-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 0;
+    border-bottom: 1px solid var(--dark-border);
+    font-size: 12px;
+  }
+  .popup-row:last-child { border-bottom: none; }
+  .popup-label { color: var(--text-dim); }
+  .popup-value { color: var(--text); font-weight: 500; }
+
+  /* Property form popup */
+  .prop-form { min-width: 260px; }
+  .prop-form .popup-title { margin-bottom: 10px; }
+  .prop-form label {
+    display: block;
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-bottom: 3px;
+    margin-top: 8px;
+  }
+  .prop-form input, .prop-form textarea {
+    width: 100%;
+    background: var(--dark-surface);
+    border: 1px solid var(--dark-border);
+    color: var(--text);
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .prop-form input:focus, .prop-form textarea:focus {
+    border-color: var(--gold-dim);
+  }
+  .prop-form textarea { resize: vertical; height: 50px; }
+  .prop-form .arv-display {
+    background: var(--dark-surface);
+    border: 1px solid var(--dark-border);
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 4px;
+  }
+  .prop-form .form-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .prop-form .btn-save {
+    flex: 1;
+    background: var(--gold);
+    color: var(--dark);
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+  }
+  .prop-form .btn-save:hover { background: var(--gold-light); }
+  .prop-form .btn-cancel {
+    flex: 1;
+    background: var(--dark-surface);
+    color: var(--text-dim);
+    border: 1px solid var(--dark-border);
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+  }
+  .prop-form .btn-cancel:hover { color: var(--text); border-color: #444; }
+  .prop-form .btn-delete {
+    background: transparent;
+    color: var(--red);
+    border: 1px solid var(--red);
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    margin-top: 8px;
+    width: 100%;
+  }
+
+  /* LEGEND */
+  .legend-panel {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    border-radius: 10px;
+    padding: 14px 18px;
+    z-index: 1001;
+    min-width: 200px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  }
+  .legend-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-bottom: 5px;
+  }
+  .legend-color {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .legend-line {
+    width: 14px;
+    height: 3px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .legend-ring {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 2px solid;
+    background: transparent;
+  }
+
+  /* INFO PANEL — hover proximity */
+  .info-panel {
+    position: fixed;
+    top: 62px;
+    right: 20px;
+    background: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    border-radius: 10px;
+    padding: 14px 18px;
+    z-index: 1001;
+    min-width: 240px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    display: none;
+  }
+  .info-panel.active { display: block; }
+  .info-panel .info-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .info-panel .info-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    padding: 3px 0;
+  }
+  .info-panel .info-label { color: var(--text-dim); }
+  .info-panel .info-value { color: var(--text); font-weight: 500; }
+  .info-panel .score-bar {
+    margin-top: 10px;
+    height: 6px;
+    background: var(--dark-surface);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .info-panel .score-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.3s;
+  }
+  .info-panel .score-label {
+    font-size: 11px;
+    margin-top: 4px;
+    font-weight: 600;
+  }
+
+  /* FILTER PANEL */
+  .filter-panel {
+    position: fixed;
+    top: 62px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    border-radius: 10px;
+    padding: 10px 16px;
+    z-index: 1001;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    display: none;
+    align-items: center;
+    gap: 12px;
+  }
+  .filter-panel.active { display: flex; }
+  .filter-panel label {
+    font-size: 11px;
+    color: var(--text-dim);
+    white-space: nowrap;
+  }
+  .filter-panel select {
+    background: var(--dark-surface);
+    border: 1px solid var(--dark-border);
+    color: var(--text);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+  }
+  .filter-panel .close-filter {
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0 4px;
+  }
+  .filter-panel .close-filter:hover { color: var(--text); }
+
+  /* ADD PROPERTY MODE INDICATOR */
+  .add-mode-banner {
+    position: fixed;
+    top: 62px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gold);
+    color: var(--dark);
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    z-index: 1002;
+    display: none;
+    box-shadow: 0 4px 20px rgba(200,168,78,0.3);
+    cursor: pointer;
+  }
+  .add-mode-banner.active { display: block; }
+
+  /* STATS BAR */
+  .stats-bar {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    border-radius: 10px;
+    padding: 12px 16px;
+    z-index: 1001;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    display: flex;
+    gap: 20px;
+  }
+  .stat-item {
+    text-align: center;
+  }
+  .stat-item .stat-value {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gold);
+  }
+  .stat-item .stat-label {
+    font-size: 10px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Tooltip styling */
+  .leaflet-tooltip {
+    background: var(--dark-card) !important;
+    border: 1px solid var(--dark-border) !important;
+    color: var(--text) !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 11px !important;
+    border-radius: 6px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4) !important;
+    padding: 4px 8px !important;
+  }
+  .leaflet-tooltip-top:before { border-top-color: var(--dark-border) !important; }
+  .leaflet-tooltip-bottom:before { border-bottom-color: var(--dark-border) !important; }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    #header { padding: 0 12px; }
+    #header .brand h1 span { display: none; }
+    .legend-panel { bottom: 10px; left: 10px; padding: 10px 14px; min-width: 170px; }
+    .stats-bar { bottom: 10px; right: 10px; padding: 8px 12px; gap: 12px; }
+    .stat-item .stat-value { font-size: 14px; }
+    .info-panel { right: 10px; min-width: 200px; }
+    .filter-panel { width: 90%; }
+    .add-mode-banner { width: 80%; text-align: center; }
+  }
+  @media (max-width: 480px) {
+    .stats-bar { flex-wrap: wrap; gap: 8px; }
+    .legend-panel { max-width: 160px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="header">
+  <div class="brand">
+    <div class="logo">R8</div>
+    <h1>Rhino8 <span>Atlanta Westside Investment Map</span></h1>
+  </div>
+  <div class="header-actions">
+    <button class="header-btn" id="btnFilter" onclick="toggleFilter()">Filter</button>
+    <button class="header-btn" id="btnExport" onclick="exportProperties()">Export CSV</button>
+    <button class="header-btn gold" id="btnAddProperty" onclick="toggleAddMode()">+ Add Property</button>
+  </div>
+</div>
+
+<!-- MAP -->
+<div id="map"></div>
+
+<!-- ADD MODE BANNER -->
+<div class="add-mode-banner" id="addModeBanner" onclick="toggleAddMode()">
+  Click anywhere on the map to drop a pin &mdash; Click here to cancel
+</div>
+
+<!-- FILTER PANEL -->
+<div class="filter-panel" id="filterPanel">
+  <label>Show properties:</label>
+  <select id="arvFilter" onchange="applyFilter()">
+    <option value="all">All Properties</option>
+    <option value="green">Green (&le;50% ARV)</option>
+    <option value="yellow">Yellow (50-65% ARV)</option>
+    <option value="orange">Orange (65-70% ARV)</option>
+    <option value="red">Red (&gt;70% ARV)</option>
+    <option value="deals">Deals Only (&le;65% ARV)</option>
+  </select>
+  <button class="close-filter" onclick="toggleFilter()">&times;</button>
+</div>
+
+<!-- INFO PANEL (hover proximity) -->
+<div class="info-panel" id="infoPanel">
+  <div class="info-title">Investment Zone Score</div>
+  <div class="info-row">
+    <span class="info-label">Nearest Park</span>
+    <span class="info-value" id="infoPark">--</span>
+  </div>
+  <div class="info-row">
+    <span class="info-label">Park Distance</span>
+    <span class="info-value" id="infoParkDist">--</span>
+  </div>
+  <div class="info-row">
+    <span class="info-label">Beltline Distance</span>
+    <span class="info-value" id="infoBeltDist">--</span>
+  </div>
+  <div class="info-row">
+    <span class="info-label">Opportunity Zone</span>
+    <span class="info-value" id="infoOZ">--</span>
+  </div>
+  <div class="score-bar"><div class="score-fill" id="scoreFill"></div></div>
+  <div class="score-label" id="scoreLabel" style="color: var(--gold);">--</div>
+</div>
+
+<!-- LEGEND -->
+<div class="legend-panel">
+  <div class="legend-title">Legend</div>
+  <div class="legend-item"><div class="legend-line" style="background:#00e676;"></div>Beltline Trail</div>
+  <div class="legend-item"><div class="legend-color" style="background:rgba(0,230,118,0.25); border:1px solid #00e676;"></div>Parks &amp; Green Space</div>
+  <div class="legend-item"><div class="legend-ring" style="border-color:#00e676;"></div>0.25 mi (Premium)</div>
+  <div class="legend-item"><div class="legend-ring" style="border-color:#ffd740;"></div>0.5 mi (Strong)</div>
+  <div class="legend-item"><div class="legend-ring" style="border-color:#ff9100;"></div>1 mi (Good)</div>
+  <div class="legend-item"><div class="legend-color" style="background:rgba(68,138,255,0.3); border:1px solid #448aff;"></div>Opportunity Zone</div>
+  <div class="legend-item"><div class="legend-color" style="background:#448aff;"></div>Development</div>
+  <div class="legend-item"><div class="legend-color" style="background:#c8a84e;"></div>My Properties</div>
+  <div class="legend-title" style="margin-top:10px;">Property Pins</div>
+  <div class="legend-item"><div class="legend-color" style="background:#00e676;"></div>&le;50% ARV (Great)</div>
+  <div class="legend-item"><div class="legend-color" style="background:#ffd740;"></div>50-65% ARV (Good)</div>
+  <div class="legend-item"><div class="legend-color" style="background:#ff9100;"></div>65-70% ARV (Fair)</div>
+  <div class="legend-item"><div class="legend-color" style="background:#ff5252;"></div>&gt;70% ARV (Pass)</div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar" id="statsBar">
+  <div class="stat-item">
+    <div class="stat-value" id="statTotal">0</div>
+    <div class="stat-label">Properties</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-value" id="statDeals">0</div>
+    <div class="stat-label">Deals (&le;65%)</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-value" id="statAvgARV">--</div>
+    <div class="stat-label">Avg % ARV</div>
+  </div>
+</div>
+
+<script>
+// ============================================
+// CONFIGURATION & DATA
+// ============================================
+
+const MILES_TO_METERS = 1609.34;
+const FEET_PER_MILE = 5280;
+
+// Parks data
+const PARKS = [
+  { name: "Westside Park", lat: 33.7720, lng: -84.4280, radius: 450, desc: "280 acres, largest park in Atlanta. Opened 2022. Former Bellwood Quarry." },
+  { name: "Maddox Park", lat: 33.7580, lng: -84.4220, radius: 200, desc: "Historic Westside park with athletic fields and community center." },
+  { name: "Washington Park", lat: 33.7480, lng: -84.4190, radius: 220, desc: "Historic park, one of Atlanta's oldest. Tennis, pool, playground." },
+  { name: "Mozley Park", lat: 33.7530, lng: -84.4360, radius: 180, desc: "Community park with recreation center and athletic fields." },
+  { name: "Vine City Park", lat: 33.7570, lng: -84.4060, radius: 120, desc: "Neighborhood park in Vine City. Close to Mercedes-Benz Stadium." },
+  { name: "Enota Park", lat: 33.7660, lng: -84.4200, radius: 150, desc: "Community park near Grove Park neighborhood." },
+  { name: "Anderson Park", lat: 33.7740, lng: -84.4150, radius: 120, desc: "Neighborhood park in the Bankhead area." },
+  { name: "Lindsay Street Park", lat: 33.7610, lng: -84.4100, radius: 80, desc: "Pocket park in English Avenue neighborhood." },
+  { name: "Cook Park", lat: 33.7540, lng: -84.4130, radius: 100, desc: "Neighborhood park near AUC." },
+  { name: "Rose Circle Park", lat: 33.7580, lng: -84.4310, radius: 90, desc: "Small park in the Dixie Hills neighborhood." }
+];
+
+// Westside Beltline trail approximate coordinates
+const BELTLINE_COORDS = [
+  [33.7830, -84.4220],
+  [33.7810, -84.4210],
+  [33.7790, -84.4195],
+  [33.7770, -84.4185],
+  [33.7750, -84.4175],
+  [33.7730, -84.4168],
+  [33.7710, -84.4160],
+  [33.7695, -84.4148],
+  [33.7680, -84.4135],
+  [33.7665, -84.4120],
+  [33.7650, -84.4108],
+  [33.7635, -84.4095],
+  [33.7620, -84.4082],
+  [33.7605, -84.4070],
+  [33.7590, -84.4060],
+  [33.7575, -84.4050],
+  [33.7560, -84.4042],
+  [33.7545, -84.4035],
+  [33.7530, -84.4028],
+  [33.7510, -84.4020],
+  [33.7490, -84.4015],
+  [33.7470, -84.4010],
+  [33.7450, -84.4005],
+  [33.7435, -84.4000]
+];
+
+// Planned Beltline extension (dashed)
+const BELTLINE_PLANNED = [
+  [33.7830, -84.4220],
+  [33.7850, -84.4230],
+  [33.7870, -84.4245],
+  [33.7890, -84.4255],
+  [33.7910, -84.4270]
+];
+
+// Opportunity Zone polygons (approximate census tract boundaries)
+const OZ_ZONES = [
+  {
+    name: "English Avenue / Vine City",
+    tract: "13121-0039",
+    coords: [
+      [33.7630, -84.4120], [33.7630, -84.3980], [33.7530, -84.3980],
+      [33.7530, -84.4120], [33.7630, -84.4120]
+    ]
+  },
+  {
+    name: "Bankhead / Grove Park",
+    tract: "13121-0087",
+    coords: [
+      [33.7820, -84.4350], [33.7820, -84.4140], [33.7700, -84.4140],
+      [33.7700, -84.4350], [33.7820, -84.4350]
+    ]
+  },
+  {
+    name: "Ashview Heights / AUC",
+    tract: "13121-0041",
+    coords: [
+      [33.7600, -84.4250], [33.7600, -84.4100], [33.7480, -84.4100],
+      [33.7480, -84.4250], [33.7600, -84.4250]
+    ]
+  },
+  {
+    name: "Carey Park / Hunter Hills",
+    tract: "13121-0044",
+    coords: [
+      [33.7530, -84.4360], [33.7530, -84.4250], [33.7440, -84.4250],
+      [33.7440, -84.4360], [33.7530, -84.4360]
+    ]
+  },
+  {
+    name: "English Avenue North",
+    tract: "13121-0038",
+    coords: [
+      [33.7700, -84.4140], [33.7700, -84.4020], [33.7630, -84.4020],
+      [33.7630, -84.4140], [33.7700, -84.4140]
+    ]
+  },
+  {
+    name: "Dixie Hills",
+    tract: "13121-0050",
+    coords: [
+      [33.7650, -84.4400], [33.7650, -84.4250], [33.7560, -84.4250],
+      [33.7560, -84.4400], [33.7650, -84.4400]
+    ]
+  }
+];
+
+// Known developments
+const DEVELOPMENTS = [
+  {
+    name: "Microsoft Data Center Campus",
+    lat: 33.7735, lng: -84.4260,
+    desc: "Massive data center campus adjacent to Westside Park. Multi-billion dollar investment bringing jobs and infrastructure to the Westside.",
+    status: "Under Development"
+  },
+  {
+    name: "Westside Park Phase 2 Expansion",
+    lat: 33.7740, lng: -84.4310,
+    desc: "Additional trails, amenities, and parkland expansion. Connecting to the BeltLine Westside Trail.",
+    status: "Planned"
+  },
+  {
+    name: "BeltLine Westside Trail Extension",
+    lat: 33.7870, lng: -84.4245,
+    desc: "Northward extension of the Westside Trail toward Bankhead MARTA station. Will complete the full loop.",
+    status: "Planned"
+  },
+  {
+    name: "Mercedes-Benz Stadium District",
+    lat: 33.7553, lng: -84.4006,
+    desc: "Continued mixed-use development around the stadium. Hotels, retail, residential in the Vine City area.",
+    status: "Ongoing"
+  },
+  {
+    name: "The Gulch Redevelopment (CIM Group)",
+    lat: 33.7510, lng: -84.3940,
+    desc: "Massive $5B+ mixed-use development. 40 acres downtown near Westside. Office, residential, retail, entertainment.",
+    status: "Approved / Early Phase"
+  },
+  {
+    name: "Rodney Cook Sr. Park",
+    lat: 33.7585, lng: -84.4035,
+    desc: "Completed stormwater park and memorial in Vine City. Major green infrastructure investment.",
+    status: "Complete"
+  },
+  {
+    name: "Westside Future Fund Revitalization",
+    lat: 33.7610, lng: -84.4090,
+    desc: "Anti-displacement program. New affordable housing, homeownership, and community investment in English Avenue and Vine City.",
+    status: "Ongoing"
+  },
+  {
+    name: "Proctor Creek Greenway",
+    lat: 33.7780, lng: -84.4300,
+    desc: "Multi-mile greenway trail and stormwater infrastructure along Proctor Creek. Connects neighborhoods to Westside Park.",
+    status: "Under Development"
+  }
+];
+
+// Jamaal's properties
+const MY_PROPERTIES = [
+  {
+    name: "1876 Madrona St NW",
+    lat: 33.7720, lng: -84.4180,
+    desc: "4br/2ba rental property. Closing deal. Seller: Juan Blackwell.",
+    status: "Closing"
+  },
+  {
+    name: "1255 North Ave NW",
+    lat: 33.7670, lng: -84.4050,
+    desc: "Under renovation. Nanny moving in upon completion.",
+    status: "Renovation"
+  }
+];
+
+
+// ============================================
+// MAP INITIALIZATION
+// ============================================
+
+// Dark CartoDB tile layer
+const darkTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+  attribution: '&copy; <a href="https://carto.com/">CARTO</a> &copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>',
+  subdomains: 'abcd',
+  maxZoom: 19
+});
+
+const map = L.map('map', {
+  center: [33.7640, -84.4150],
+  zoom: 14,
+  layers: [darkTiles],
+  zoomControl: true
+});
+
+// Move zoom control to bottom right
+map.zoomControl.setPosition('bottomright');
+
+
+// ============================================
+// LAYER GROUPS
+// ============================================
+
+const beltlineLayer = L.layerGroup();
+const parksLayer = L.layerGroup();
+const ringsLayer = L.layerGroup();
+const ozLayer = L.layerGroup();
+const developmentLayer = L.layerGroup();
+const myPropertiesLayer = L.layerGroup();
+const propertyPinsLayer = L.layerGroup();
+
+
+// ============================================
+// 1. BELTLINE TRAIL
+// ============================================
+
+// Main trail — bright green
+L.polyline(BELTLINE_COORDS, {
+  color: '#00e676',
+  weight: 5,
+  opacity: 0.9,
+  lineJoin: 'round',
+  lineCap: 'round'
+}).bindTooltip('Westside BeltLine Trail', { sticky: true }).addTo(beltlineLayer);
+
+// Glow effect
+L.polyline(BELTLINE_COORDS, {
+  color: '#00e676',
+  weight: 12,
+  opacity: 0.15,
+  lineJoin: 'round',
+  lineCap: 'round'
+}).addTo(beltlineLayer);
+
+// Planned extension — dashed
+L.polyline(BELTLINE_PLANNED, {
+  color: '#00e676',
+  weight: 4,
+  opacity: 0.5,
+  dashArray: '10, 10',
+  lineJoin: 'round',
+  lineCap: 'round'
+}).bindTooltip('Planned Trail Extension', { sticky: true }).addTo(beltlineLayer);
+
+beltlineLayer.addTo(map);
+
+
+// ============================================
+// 2. PARKS & GREEN SPACES
+// ============================================
+
+PARKS.forEach(park => {
+  // Park circle
+  L.circle([park.lat, park.lng], {
+    radius: park.radius,
+    color: '#00e676',
+    fillColor: '#00e676',
+    fillOpacity: 0.15,
+    weight: 2,
+    opacity: 0.6
+  }).bindPopup(`
+    <div class="popup-title">${park.name}</div>
+    <div class="popup-subtitle">${park.desc}</div>
+  `).bindTooltip(park.name).addTo(parksLayer);
+
+  // Park label marker
+  L.marker([park.lat, park.lng], {
+    icon: L.divIcon({
+      className: '',
+      html: `<div style="
+        background: rgba(0,230,118,0.2);
+        border: 1px solid #00e676;
+        border-radius: 50%;
+        width: 12px;
+        height: 12px;
+      "></div>`,
+      iconSize: [12, 12],
+      iconAnchor: [6, 6]
+    })
+  }).addTo(parksLayer);
+});
+
+parksLayer.addTo(map);
+
+
+// ============================================
+// 3. PROXIMITY RINGS
+// ============================================
+
+function addRings(lat, lng, name) {
+  // 0.25 mile
+  L.circle([lat, lng], {
+    radius: 0.25 * MILES_TO_METERS,
+    color: '#00e676',
+    fillColor: '#00e676',
+    fillOpacity: 0.03,
+    weight: 1.5,
+    opacity: 0.35,
+    dashArray: '6, 4'
+  }).bindTooltip(`${name} — 0.25 mi`).addTo(ringsLayer);
+
+  // 0.5 mile
+  L.circle([lat, lng], {
+    radius: 0.5 * MILES_TO_METERS,
+    color: '#ffd740',
+    fillColor: '#ffd740',
+    fillOpacity: 0.02,
+    weight: 1.5,
+    opacity: 0.3,
+    dashArray: '6, 4'
+  }).bindTooltip(`${name} — 0.5 mi`).addTo(ringsLayer);
+
+  // 1 mile
+  L.circle([lat, lng], {
+    radius: 1.0 * MILES_TO_METERS,
+    color: '#ff9100',
+    fillColor: '#ff9100',
+    fillOpacity: 0.01,
+    weight: 1,
+    opacity: 0.2,
+    dashArray: '8, 6'
+  }).bindTooltip(`${name} — 1 mi`).addTo(ringsLayer);
+}
+
+// Rings from parks
+PARKS.forEach(p => addRings(p.lat, p.lng, p.name));
+
+// Rings from Beltline trail points (every 5th point to avoid clutter)
+for (let i = 0; i < BELTLINE_COORDS.length; i += 5) {
+  addRings(BELTLINE_COORDS[i][0], BELTLINE_COORDS[i][1], 'BeltLine');
+}
+
+// Rings OFF by default (too many circles)
+// User can toggle on via layer control
+
+
+// ============================================
+// 4. OPPORTUNITY ZONES
+// ============================================
+
+OZ_ZONES.forEach(oz => {
+  L.polygon(oz.coords, {
+    color: '#448aff',
+    fillColor: '#448aff',
+    fillOpacity: 0.12,
+    weight: 2,
+    opacity: 0.5,
+    dashArray: '4, 4'
+  }).bindPopup(`
+    <div class="popup-title">Opportunity Zone</div>
+    <div class="popup-subtitle">${oz.name}</div>
+    <div class="popup-row">
+      <span class="popup-label">Census Tract</span>
+      <span class="popup-value">${oz.tract}</span>
+    </div>
+    <div class="popup-row">
+      <span class="popup-label">Tax Benefit</span>
+      <span class="popup-value" style="color:#00e676;">Capital Gains Deferral</span>
+    </div>
+  `).bindTooltip(`OZ: ${oz.name}`).addTo(ozLayer);
+});
+
+ozLayer.addTo(map);
+
+
+// ============================================
+// 5. KNOWN DEVELOPMENTS
+// ============================================
+
+DEVELOPMENTS.forEach(dev => {
+  const statusColor = dev.status === 'Complete' ? '#00e676' :
+                      dev.status === 'Ongoing' ? '#ffd740' :
+                      dev.status === 'Under Development' ? '#ff9100' : '#448aff';
+
+  L.marker([dev.lat, dev.lng], {
+    icon: L.divIcon({
+      className: '',
+      html: `<div style="
+        background: ${statusColor};
+        width: 18px;
+        height: 18px;
+        border-radius: 4px;
+        border: 2px solid rgba(255,255,255,0.3);
+        box-shadow: 0 0 10px ${statusColor}44;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      "><div style="width:6px;height:6px;background:white;border-radius:1px;"></div></div>`,
+      iconSize: [18, 18],
+      iconAnchor: [9, 9]
+    })
+  }).bindPopup(`
+    <div class="popup-title">${dev.name}</div>
+    <div class="popup-subtitle">${dev.desc}</div>
+    <div class="popup-row">
+      <span class="popup-label">Status</span>
+      <span class="popup-value" style="color:${statusColor};">${dev.status}</span>
+    </div>
+  `).bindTooltip(dev.name).addTo(developmentLayer);
+});
+
+developmentLayer.addTo(map);
+
+
+// ============================================
+// 6. MY PROPERTIES (Jamaal's)
+// ============================================
+
+MY_PROPERTIES.forEach(prop => {
+  const statusColor = prop.status === 'Closing' ? '#ffd740' : '#ff9100';
+
+  L.marker([prop.lat, prop.lng], {
+    icon: L.divIcon({
+      className: '',
+      html: `<div style="
+        position: relative;
+        width: 28px;
+        height: 28px;
+      ">
+        <div style="
+          position: absolute;
+          top: 0; left: 0;
+          width: 28px;
+          height: 28px;
+          background: #c8a84e;
+          border-radius: 50% 50% 50% 0;
+          transform: rotate(-45deg);
+          border: 2px solid #e0c872;
+          box-shadow: 0 0 16px rgba(200,168,78,0.4);
+        "></div>
+        <div style="
+          position: absolute;
+          top: 3px; left: 3px;
+          width: 22px;
+          height: 22px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 12px;
+          font-weight: 800;
+          color: #0a0a0a;
+          z-index: 1;
+        ">R8</div>
+      </div>`,
+      iconSize: [28, 28],
+      iconAnchor: [14, 28],
+      popupAnchor: [0, -28]
+    })
+  }).bindPopup(`
+    <div class="popup-title" style="font-size:15px;">${prop.name}</div>
+    <div class="popup-subtitle">${prop.desc}</div>
+    <div class="popup-row">
+      <span class="popup-label">Status</span>
+      <span class="popup-value" style="color:${statusColor};">${prop.status}</span>
+    </div>
+    <div class="popup-row">
+      <span class="popup-label">Owner</span>
+      <span class="popup-value" style="color:var(--gold);">Jamaal Richard</span>
+    </div>
+  `).bindTooltip(prop.name).addTo(myPropertiesLayer);
+});
+
+myPropertiesLayer.addTo(map);
+
+
+// ============================================
+// 7. PROPERTY PINS (User-added, localStorage)
+// ============================================
+
+let properties = JSON.parse(localStorage.getItem('r8_properties') || '[]');
+let addMode = false;
+let tempMarker = null;
+
+function saveProperties() {
+  localStorage.setItem('r8_properties', JSON.stringify(properties));
+  updateStats();
+}
+
+function getARVColor(pct) {
+  if (pct <= 50) return '#00e676';
+  if (pct <= 65) return '#ffd740';
+  if (pct <= 70) return '#ff9100';
+  return '#ff5252';
+}
+
+function getARVLabel(pct) {
+  if (pct <= 50) return 'Great Deal';
+  if (pct <= 65) return 'Good Deal';
+  if (pct <= 70) return 'Fair';
+  return 'Pass';
+}
+
+function createPropertyMarker(prop, index) {
+  const color = getARVColor(prop.arvPct);
+
+  const marker = L.marker([prop.lat, prop.lng], {
+    icon: L.divIcon({
+      className: '',
+      html: `<div style="
+        position: relative;
+        width: 24px;
+        height: 24px;
+      ">
+        <div style="
+          position: absolute;
+          top: 0; left: 0;
+          width: 24px;
+          height: 24px;
+          background: ${color};
+          border-radius: 50% 50% 50% 0;
+          transform: rotate(-45deg);
+          border: 2px solid rgba(255,255,255,0.3);
+          box-shadow: 0 0 12px ${color}44;
+        "></div>
+        <div style="
+          position: absolute;
+          top: 2px; left: 2px;
+          width: 20px;
+          height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 9px;
+          font-weight: 800;
+          color: #0a0a0a;
+          z-index: 1;
+        ">${Math.round(prop.arvPct)}%</div>
+      </div>`,
+      iconSize: [24, 24],
+      iconAnchor: [12, 24],
+      popupAnchor: [0, -24]
+    }),
+    propertyIndex: index,
+    arvPct: prop.arvPct
+  });
+
+  const fmtPrice = prop.price ? '$' + Number(prop.price).toLocaleString() : '--';
+  const fmtARV = prop.arv ? '$' + Number(prop.arv).toLocaleString() : '--';
+  const fmtRehab = prop.rehab ? '$' + Number(prop.rehab).toLocaleString() : '--';
+  const spread = (prop.arv && prop.price && prop.rehab) ? '$' + (prop.arv - prop.price - prop.rehab).toLocaleString() : '--';
+
+  marker.bindPopup(`
+    <div class="popup-title">${prop.address || 'Unnamed Property'}</div>
+    <div class="popup-row">
+      <span class="popup-label">List Price</span>
+      <span class="popup-value">${fmtPrice}</span>
+    </div>
+    <div class="popup-row">
+      <span class="popup-label">ARV</span>
+      <span class="popup-value">${fmtARV}</span>
+    </div>
+    <div class="popup-row">
+      <span class="popup-label">Rehab</span>
+      <span class="popup-value">${fmtRehab}</span>
+    </div>
+    <div class="popup-row">
+      <span class="popup-label">% of ARV</span>
+      <span class="popup-value" style="color:${color}; font-weight:700;">${prop.arvPct.toFixed(1)}% — ${getARVLabel(prop.arvPct)}</span>
+    </div>
+    <div class="popup-row">
+      <span class="popup-label">Spread</span>
+      <span class="popup-value">${spread}</span>
+    </div>
+    ${prop.notes ? `<div style="margin-top:8px;font-size:11px;color:#888;border-top:1px solid #2a2a2a;padding-top:6px;">${prop.notes}</div>` : ''}
+    <button onclick="editProperty(${index})" style="
+      margin-top:10px;
+      background:#c8a84e;
+      color:#0a0a0a;
+      border:none;
+      padding:6px 12px;
+      border-radius:4px;
+      font-size:11px;
+      font-weight:600;
+      cursor:pointer;
+      font-family:'Inter',sans-serif;
+      margin-right:6px;
+    ">Edit</button>
+    <button onclick="deleteProperty(${index})" style="
+      margin-top:10px;
+      background:transparent;
+      color:#ff5252;
+      border:1px solid #ff5252;
+      padding:6px 12px;
+      border-radius:4px;
+      font-size:11px;
+      cursor:pointer;
+      font-family:'Inter',sans-serif;
+    ">Delete</button>
+  `).bindTooltip(`${prop.address || 'Property'} (${prop.arvPct.toFixed(0)}%)`);
+
+  return marker;
+}
+
+function renderProperties() {
+  propertyPinsLayer.clearLayers();
+  const filter = document.getElementById('arvFilter').value;
+
+  properties.forEach((prop, i) => {
+    let show = true;
+    if (filter === 'green' && prop.arvPct > 50) show = false;
+    if (filter === 'yellow' && (prop.arvPct <= 50 || prop.arvPct > 65)) show = false;
+    if (filter === 'orange' && (prop.arvPct <= 65 || prop.arvPct > 70)) show = false;
+    if (filter === 'red' && prop.arvPct <= 70) show = false;
+    if (filter === 'deals' && prop.arvPct > 65) show = false;
+
+    if (show) {
+      const marker = createPropertyMarker(prop, i);
+      marker.addTo(propertyPinsLayer);
+    }
+  });
+}
+
+function showPropertyForm(lat, lng, existingProp, existingIndex) {
+  const isEdit = existingProp !== undefined;
+  const p = existingProp || {};
+
+  const popup = L.popup({ maxWidth: 320, closeOnClick: false, autoClose: false })
+    .setLatLng([lat, lng])
+    .setContent(`
+      <div class="prop-form" id="propForm">
+        <div class="popup-title">${isEdit ? 'Edit' : 'Add'} Property Pin</div>
+        <label>Address</label>
+        <input type="text" id="pf_address" value="${p.address || ''}" placeholder="123 Street NW, Atlanta, GA" />
+        <label>List Price ($)</label>
+        <input type="number" id="pf_price" value="${p.price || ''}" placeholder="150000" oninput="calcARV()" />
+        <label>ARV Estimate ($)</label>
+        <input type="number" id="pf_arv" value="${p.arv || ''}" placeholder="250000" oninput="calcARV()" />
+        <label>Rehab Estimate ($)</label>
+        <input type="number" id="pf_rehab" value="${p.rehab || ''}" placeholder="40000" oninput="calcARV()" />
+        <label>% of ARV</label>
+        <div class="arv-display" id="pf_arvDisplay">--</div>
+        <label>Notes</label>
+        <textarea id="pf_notes" placeholder="Motivation, condition, etc.">${p.notes || ''}</textarea>
+        <div class="form-actions">
+          <button class="btn-save" onclick="savePropertyForm(${lat}, ${lng}, ${isEdit ? existingIndex : -1})">${isEdit ? 'Update' : 'Save Pin'}</button>
+          <button class="btn-cancel" onclick="cancelPropertyForm()">Cancel</button>
+        </div>
+      </div>
+    `)
+    .openOn(map);
+
+  // Set temp marker reference for cleanup
+  tempMarker = popup;
+
+  // Trigger initial calc
+  setTimeout(calcARV, 100);
+}
+
+window.calcARV = function() {
+  const price = parseFloat(document.getElementById('pf_price')?.value);
+  const arv = parseFloat(document.getElementById('pf_arv')?.value);
+  const display = document.getElementById('pf_arvDisplay');
+  if (!display) return;
+
+  if (price && arv && arv > 0) {
+    const pct = (price / arv) * 100;
+    const color = getARVColor(pct);
+    display.innerHTML = `<span style="color:${color}; font-weight:700;">${pct.toFixed(1)}%</span> <span style="color:#888; font-size:11px;">— ${getARVLabel(pct)}</span>`;
+  } else {
+    display.textContent = '--';
+  }
+};
+
+window.savePropertyForm = function(lat, lng, editIndex) {
+  const address = document.getElementById('pf_address').value;
+  const price = parseFloat(document.getElementById('pf_price').value) || 0;
+  const arv = parseFloat(document.getElementById('pf_arv').value) || 0;
+  const rehab = parseFloat(document.getElementById('pf_rehab').value) || 0;
+  const notes = document.getElementById('pf_notes').value;
+  const arvPct = arv > 0 ? (price / arv) * 100 : 100;
+
+  const propData = { lat, lng, address, price, arv, rehab, arvPct, notes, created: new Date().toISOString() };
+
+  if (editIndex >= 0) {
+    properties[editIndex] = { ...properties[editIndex], ...propData };
+  } else {
+    properties.push(propData);
+  }
+
+  saveProperties();
+  renderProperties();
+  map.closePopup();
+  tempMarker = null;
+
+  // Exit add mode
+  if (addMode) toggleAddMode();
+};
+
+window.cancelPropertyForm = function() {
+  map.closePopup();
+  tempMarker = null;
+  if (addMode) toggleAddMode();
+};
+
+window.editProperty = function(index) {
+  const p = properties[index];
+  map.closePopup();
+  setTimeout(() => showPropertyForm(p.lat, p.lng, p, index), 100);
+};
+
+window.deleteProperty = function(index) {
+  if (confirm('Delete this property pin?')) {
+    properties.splice(index, 1);
+    saveProperties();
+    renderProperties();
+    map.closePopup();
+  }
+};
+
+function toggleAddMode() {
+  addMode = !addMode;
+  const banner = document.getElementById('addModeBanner');
+  const btn = document.getElementById('btnAddProperty');
+
+  if (addMode) {
+    banner.classList.add('active');
+    btn.textContent = 'Cancel';
+    btn.style.background = '#ff5252';
+    btn.style.borderColor = '#ff5252';
+    map.getContainer().style.cursor = 'crosshair';
+  } else {
+    banner.classList.remove('active');
+    btn.textContent = '+ Add Property';
+    btn.style.background = '';
+    btn.style.borderColor = '';
+    map.getContainer().style.cursor = '';
+    if (tempMarker) {
+      map.closePopup();
+      tempMarker = null;
+    }
+  }
+}
+
+map.on('click', function(e) {
+  if (!addMode) return;
+  showPropertyForm(e.latlng.lat, e.latlng.lng);
+});
+
+propertyPinsLayer.addTo(map);
+renderProperties();
+
+
+// ============================================
+// LAYER CONTROL
+// ============================================
+
+const overlays = {
+  "Westside BeltLine Trail": beltlineLayer,
+  "Parks & Green Spaces": parksLayer,
+  "Proximity Rings": ringsLayer,
+  "Opportunity Zones": ozLayer,
+  "Known Developments": developmentLayer,
+  "My Properties": myPropertiesLayer,
+  "Property Pins": propertyPinsLayer
+};
+
+L.control.layers(null, overlays, {
+  position: 'topright',
+  collapsed: true
+}).addTo(map);
+
+
+// ============================================
+// INVESTMENT ZONE SCORE (hover)
+// ============================================
+
+const infoPanel = document.getElementById('infoPanel');
+const infoPark = document.getElementById('infoPark');
+const infoParkDist = document.getElementById('infoParkDist');
+const infoBeltDist = document.getElementById('infoBeltDist');
+const infoOZ = document.getElementById('infoOZ');
+const scoreFill = document.getElementById('scoreFill');
+const scoreLabel = document.getElementById('scoreLabel');
+
+function haversineDistance(lat1, lng1, lat2, lng2) {
+  const R = 3958.8; // miles
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLng = (lng2 - lng1) * Math.PI / 180;
+  const a = Math.sin(dLat/2)**2 + Math.cos(lat1*Math.PI/180) * Math.cos(lat2*Math.PI/180) * Math.sin(dLng/2)**2;
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+function distToPolyline(lat, lng, coords) {
+  let minDist = Infinity;
+  coords.forEach(c => {
+    const d = haversineDistance(lat, lng, c[0], c[1]);
+    if (d < minDist) minDist = d;
+  });
+  return minDist;
+}
+
+function isInOZ(lat, lng) {
+  for (const oz of OZ_ZONES) {
+    if (pointInPolygon(lat, lng, oz.coords)) return oz.name;
+  }
+  return null;
+}
+
+function pointInPolygon(lat, lng, polygon) {
+  let inside = false;
+  for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
+    const yi = polygon[i][0], xi = polygon[i][1];
+    const yj = polygon[j][0], xj = polygon[j][1];
+    if (((yi > lat) !== (yj > lat)) && (lng < (xj - xi) * (lat - yi) / (yj - yi) + xi)) {
+      inside = !inside;
+    }
+  }
+  return inside;
+}
+
+function formatDistance(miles) {
+  if (miles < 0.1) {
+    return Math.round(miles * FEET_PER_MILE) + ' ft';
+  }
+  return miles.toFixed(2) + ' mi';
+}
+
+function calcInvestmentScore(parkDist, beltDist, inOZ) {
+  // Score 0-100
+  let score = 0;
+
+  // Park proximity (max 35 pts)
+  if (parkDist <= 0.25) score += 35;
+  else if (parkDist <= 0.5) score += 28;
+  else if (parkDist <= 1.0) score += 18;
+  else if (parkDist <= 1.5) score += 8;
+
+  // Beltline proximity (max 40 pts)
+  if (beltDist <= 0.25) score += 40;
+  else if (beltDist <= 0.5) score += 32;
+  else if (beltDist <= 1.0) score += 20;
+  else if (beltDist <= 1.5) score += 10;
+
+  // OZ bonus (25 pts)
+  if (inOZ) score += 25;
+
+  return score;
+}
+
+let hoverTimeout;
+
+map.on('mousemove', function(e) {
+  clearTimeout(hoverTimeout);
+  hoverTimeout = setTimeout(() => {
+    const lat = e.latlng.lat;
+    const lng = e.latlng.lng;
+
+    // Find nearest park
+    let nearestPark = null;
+    let nearestParkDist = Infinity;
+    PARKS.forEach(p => {
+      const d = haversineDistance(lat, lng, p.lat, p.lng);
+      if (d < nearestParkDist) {
+        nearestParkDist = d;
+        nearestPark = p.name;
+      }
+    });
+
+    // Distance to Beltline
+    const beltDist = distToPolyline(lat, lng, BELTLINE_COORDS);
+
+    // OZ check
+    const ozName = isInOZ(lat, lng);
+
+    // Investment score
+    const score = calcInvestmentScore(nearestParkDist, beltDist, ozName);
+
+    // Update panel
+    infoPark.textContent = nearestPark || '--';
+    infoParkDist.textContent = formatDistance(nearestParkDist);
+    infoBeltDist.textContent = formatDistance(beltDist);
+    infoOZ.textContent = ozName || 'No';
+    infoOZ.style.color = ozName ? '#00e676' : '#ff5252';
+
+    scoreFill.style.width = score + '%';
+    let scoreColor;
+    if (score >= 80) scoreColor = '#00e676';
+    else if (score >= 60) scoreColor = '#ffd740';
+    else if (score >= 40) scoreColor = '#ff9100';
+    else scoreColor = '#ff5252';
+    scoreFill.style.background = `linear-gradient(90deg, ${scoreColor}, ${scoreColor}88)`;
+
+    let scoreText;
+    if (score >= 80) scoreText = 'Premium Zone';
+    else if (score >= 60) scoreText = 'Strong Zone';
+    else if (score >= 40) scoreText = 'Good Zone';
+    else if (score >= 20) scoreText = 'Moderate Zone';
+    else scoreText = 'Low Priority';
+
+    scoreLabel.textContent = `${score}/100 — ${scoreText}`;
+    scoreLabel.style.color = scoreColor;
+
+    infoPanel.classList.add('active');
+  }, 50);
+});
+
+map.on('mouseout', function() {
+  clearTimeout(hoverTimeout);
+  infoPanel.classList.remove('active');
+});
+
+
+// ============================================
+// UI FUNCTIONS
+// ============================================
+
+function toggleFilter() {
+  const panel = document.getElementById('filterPanel');
+  panel.classList.toggle('active');
+}
+
+function applyFilter() {
+  renderProperties();
+}
+
+function updateStats() {
+  const total = properties.length;
+  const deals = properties.filter(p => p.arvPct <= 65).length;
+  const avgARV = total > 0 ? (properties.reduce((s, p) => s + p.arvPct, 0) / total).toFixed(1) + '%' : '--';
+
+  document.getElementById('statTotal').textContent = total;
+  document.getElementById('statDeals').textContent = deals;
+  document.getElementById('statAvgARV').textContent = avgARV;
+}
+
+function exportProperties() {
+  if (properties.length === 0) {
+    alert('No properties to export. Add some pins first.');
+    return;
+  }
+
+  let csv = 'Address,Latitude,Longitude,List Price,ARV,Rehab,% of ARV,Notes,Date Added\n';
+  properties.forEach(p => {
+    csv += `"${p.address || ''}",${p.lat},${p.lng},${p.price || ''},${p.arv || ''},${p.rehab || ''},${p.arvPct.toFixed(1)}%,"${(p.notes || '').replace(/"/g, '""')}",${p.created || ''}\n`;
+  });
+
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `rhino8_properties_${new Date().toISOString().split('T')[0]}.csv`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+// Initial stats
+updateStats();
+
+
+// ============================================
+// KEYBOARD SHORTCUTS
+// ============================================
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    if (addMode) toggleAddMode();
+    const fp = document.getElementById('filterPanel');
+    if (fp.classList.contains('active')) toggleFilter();
+  }
+  if (e.key === 'a' && !e.ctrlKey && !e.metaKey && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+    toggleAddMode();
+  }
+  if (e.key === 'f' && !e.ctrlKey && !e.metaKey && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+    toggleFilter();
+  }
+});
+
+</script>
+</body>
+</html>
