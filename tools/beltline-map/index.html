@@ -285,7 +285,7 @@
   .popup-value { color: var(--text); font-weight: 500; }
 
   /* Property form popup */
-  .prop-form { min-width: 260px; }
+  .prop-form { min-width: 320px; }
   .prop-form .popup-title { margin-bottom: 10px; }
   .prop-form label {
     display: block;
@@ -294,7 +294,7 @@
     margin-bottom: 3px;
     margin-top: 8px;
   }
-  .prop-form input, .prop-form textarea {
+  .prop-form input, .prop-form textarea, .prop-form select {
     width: 100%;
     background: var(--dark-surface);
     border: 1px solid var(--dark-border);
@@ -306,7 +306,7 @@
     outline: none;
     transition: border-color 0.2s;
   }
-  .prop-form input:focus, .prop-form textarea:focus {
+  .prop-form input:focus, .prop-form textarea:focus, .prop-form select:focus {
     border-color: var(--gold-dim);
   }
   .prop-form textarea { resize: vertical; height: 50px; }
@@ -361,6 +361,65 @@
     margin-top: 8px;
     width: 100%;
   }
+  .prop-form .section-divider {
+    border: none;
+    border-top: 1px solid var(--dark-border);
+    margin: 14px 0 8px 0;
+  }
+  .prop-form .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 6px;
+  }
+  .prop-form .grid-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .prop-form .grid-3col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+  }
+  .prop-form .grid-cell label {
+    margin-top: 0;
+  }
+  .rental-summary {
+    background: var(--dark-surface);
+    border: 1px solid var(--dark-border);
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin-top: 10px;
+    font-size: 11px;
+  }
+  .rental-summary .rs-title {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 6px;
+  }
+  .rental-summary .rs-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 0;
+    border-bottom: 1px solid rgba(42,42,42,0.5);
+  }
+  .rental-summary .rs-row:last-child { border-bottom: none; }
+  .rental-summary .rs-row.rs-highlight {
+    font-weight: 700;
+    padding: 4px 0;
+    border-bottom: none;
+    margin-top: 4px;
+    border-top: 1px solid var(--dark-border);
+    padding-top: 6px;
+  }
+  .rental-summary .rs-label { color: var(--text-dim); }
+  .rental-summary .rs-value { color: var(--text); font-weight: 500; }
 
   /* LEGEND */
   .legend-panel {
@@ -713,6 +772,18 @@
     <div class="stat-label">Avg % ARV</div>
   </div>
   <div class="stat-item">
+    <div class="stat-value" id="statMonthlyRent">--</div>
+    <div class="stat-label">Mo. Rent</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-value" id="statAvgNOI">--</div>
+    <div class="stat-label">Avg NOI</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-value" id="statAnnualNOI">--</div>
+    <div class="stat-label">Annual NOI</div>
+  </div>
+  <div class="stat-item">
     <div class="stat-value" id="statParks">19</div>
     <div class="stat-label">Parks</div>
   </div>
@@ -733,6 +804,50 @@
 
 const MILES_TO_METERS = 1609.34;
 const FEET_PER_MILE = 5280;
+
+// ============================================
+// RENTAL INCOME DATA — Section 8 & Market Rates
+// ============================================
+
+// 2025 HUD Fair Market Rents - Atlanta-Sandy Springs-Roswell MSA
+const SECTION_8_FMR = {
+  0: 1298,  // Studio
+  1: 1412,  // 1BR
+  2: 1589,  // 2BR
+  3: 2048,  // 3BR
+  4: 2399,  // 4BR
+  5: 2759   // 5BR
+};
+
+// Small Area FMR by ZIP (Atlanta Housing uses SAFMRs)
+// These are approximate - actual rates vary
+const SAFMR_BY_ZIP = {
+  '30310': { 0: 1150, 1: 1250, 2: 1400, 3: 1800, 4: 2100, 5: 2400 },
+  '30311': { 0: 1100, 1: 1200, 2: 1350, 3: 1750, 4: 2050, 5: 2350 },
+  '30314': { 0: 1100, 1: 1200, 2: 1350, 3: 1750, 4: 2050, 5: 2350 },
+  '30318': { 0: 1200, 1: 1300, 2: 1500, 3: 1900, 4: 2250, 5: 2600 },
+  '30331': { 0: 1150, 1: 1250, 2: 1400, 3: 1800, 4: 2100, 5: 2400 },
+  '30344': { 0: 1100, 1: 1200, 2: 1350, 3: 1750, 4: 2050, 5: 2350 }
+};
+
+// Market rate estimates by bedroom (Westside Atlanta averages)
+const MARKET_RENT = {
+  1: 1100,
+  2: 1400,
+  3: 1800,
+  4: 2100,
+  5: 2500
+};
+
+// Rental expense defaults
+const RENTAL_DEFAULTS = {
+  vacancyMarket: 0.08,   // 8% vacancy for market rate
+  vacancyS8: 0.03,       // 3% vacancy for Section 8
+  management: 0.10,      // 10% property management
+  insurance: 125,        // $125/mo insurance estimate
+  taxes: 250,            // $250/mo property tax default (Fulton County avg)
+  maintenance: 0.05      // 5% maintenance reserve
+};
 
 // ============================================
 // PARKS DATA (Original 10 + 9 new = 19 total)
@@ -758,7 +873,10 @@ const PARKS = [
   { name: "Capitol View Park", lat: 33.7200, lng: -84.4150, radius: 130, desc: "Neighborhood park serving the Capitol View and Capitol View Manor communities." },
   { name: "Lionel Hampton Trail", lat: 33.7280, lng: -84.3990, radius: 100, desc: "BeltLine-connected trail corridor. Key connector for Southside neighborhoods." },
   { name: "Oakland City Park", lat: 33.7220, lng: -84.4260, radius: 160, desc: "Community park near Oakland City MARTA station. Athletic fields and recreation." },
-  { name: "Outdoor Activity Center", lat: 33.7150, lng: -84.4240, radius: 250, desc: "135-acre urban nature preserve operated by Georgia Audubon. Trails, wetlands, wildlife." }
+  { name: "Outdoor Activity Center", lat: 33.7150, lng: -84.4240, radius: 250, desc: "135-acre urban nature preserve operated by Georgia Audubon. Trails, wetlands, wildlife." },
+  // --- Additional parks / green spaces ---
+  { name: "Mason Turner Park (Under Construction)", lat: 33.7630, lng: -84.4130, radius: 160, desc: "New park under construction off Mason Turner Rd NW. Part of Westside revitalization and green infrastructure investment." },
+  { name: "Rodney Cook Sr. Park", lat: 33.7565, lng: -84.4045, radius: 140, desc: "18-acre park in Vine City. Stormwater management + monument to civil rights leaders. Opened 2021." }
 ];
 
 // ============================================
@@ -845,11 +963,26 @@ const BELTLINE_SOUTHSIDE_PLANNED = [
   [33.7050, -84.4195]
 ];
 
-// Combined all beltline coords for proximity calc
+// Proctor Creek Greenway — Westside Reservoir Park to Maddox Park via Hollowell
+const PROCTOR_CREEK_GREENWAY = [
+  [33.7750, -84.4290],  // Westside Reservoir Park (south end)
+  [33.7730, -84.4270],
+  [33.7710, -84.4250],  // Along Proctor Creek
+  [33.7690, -84.4240],
+  [33.7670, -84.4230],  // Crossing near Hollowell Pkwy
+  [33.7650, -84.4225],
+  [33.7630, -84.4220],
+  [33.7610, -84.4218],
+  [33.7590, -84.4220],  // Approaching Maddox Park
+  [33.7580, -84.4220]   // Maddox Park
+];
+
+// Combined all beltline/greenway coords for proximity calc
 const ALL_BELTLINE_COORDS = [
   ...BELTLINE_WESTSIDE_COORDS,
   ...BELTLINE_SOUTHSIDE_BUILT,
-  ...BELTLINE_SOUTHSIDE_PLANNED
+  ...BELTLINE_SOUTHSIDE_PLANNED,
+  ...PROCTOR_CREEK_GREENWAY
 ];
 
 // ============================================
@@ -1055,14 +1188,14 @@ const MY_PROPERTIES = [
   {
     name: "1876 Madrona St NW",
     lat: 33.7720, lng: -84.4180,
-    desc: "4br/2ba rental property. Closing deal. Seller: Juan Blackwell.",
-    status: "Closing"
+    desc: "4br/2ba | $176K purchase | $335K ARV | $48.9K rehab | Dark Modern Ranch design. Seller: Juan Blackwell.",
+    status: "Under Contract"
   },
   {
     name: "1255 North Ave NW",
     lat: 33.7670, lng: -84.4050,
-    desc: "Under renovation. Nanny moving in upon completion.",
-    status: "Renovation"
+    desc: "OWNED. First completed project. 4br rental — nanny occupying.",
+    status: "Completed"
   }
 ];
 
@@ -1418,6 +1551,16 @@ L.polyline(BELTLINE_SOUTHSIDE_PLANNED, {
   lineCap: 'round'
 }).bindTooltip('Planned Southside Trail Extension', { sticky: true }).addTo(beltlineLayer);
 
+// Proctor Creek Greenway — Westside Reservoir Park to Maddox Park
+L.polyline(PROCTOR_CREEK_GREENWAY, {
+  color: '#4caf50',
+  weight: 5,
+  opacity: 0.7,
+  dashArray: '8, 6',
+  lineJoin: 'round',
+  lineCap: 'round'
+}).bindTooltip('Proctor Creek Greenway (Westside Reservoir → Maddox Park)', { sticky: true }).addTo(beltlineLayer);
+
 beltlineLayer.addTo(map);
 
 
@@ -1765,8 +1908,45 @@ function createPropertyMarker(prop, index) {
   const fmtRehab = prop.rehab ? '$' + Number(prop.rehab).toLocaleString() : '--';
   const spread = (prop.arv && prop.price && prop.rehab) ? '$' + (prop.arv - prop.price - prop.rehab).toLocaleString() : '--';
 
+  // Rental data for popup
+  const hasRental = prop.beds && prop.beds > 0;
+  const noiColor = (prop.monthlyNOI || 0) >= 0 ? '#c8a84e' : '#ff5252';
+  const rentTypeLabel = prop.rentType === 's8' ? 'Section 8' : prop.rentType === 'both' ? 'Market / S8' : 'Market';
+  const activeRentFmt = prop.activeRent ? '$' + Number(prop.activeRent).toLocaleString() : '--';
+  const noiFmt = prop.monthlyNOI !== undefined && prop.monthlyNOI !== null ? '$' + Math.round(prop.monthlyNOI).toLocaleString() : '--';
+  const capFmt = prop.capRate !== undefined && prop.capRate !== null ? prop.capRate.toFixed(1) + '%' : '--';
+
+  let rentalSection = '';
+  if (hasRental) {
+    rentalSection = `
+    <div style="border-top:1px solid #2a2a2a;margin-top:8px;padding-top:8px;">
+      <div style="font-size:10px;font-weight:700;color:#c8a84e;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:4px;">Rental Analysis</div>
+      <div class="popup-row">
+        <span class="popup-label">Beds / Baths</span>
+        <span class="popup-value">${prop.beds}br / ${prop.baths || '--'}ba${prop.sqft ? ' / ' + Number(prop.sqft).toLocaleString() + ' sqft' : ''}</span>
+      </div>
+      <div class="popup-row">
+        <span class="popup-label">Rent Type</span>
+        <span class="popup-value">${rentTypeLabel}</span>
+      </div>
+      <div class="popup-row">
+        <span class="popup-label">Monthly Rent</span>
+        <span class="popup-value">${activeRentFmt}</span>
+      </div>
+      <div class="popup-row">
+        <span class="popup-label">Monthly NOI</span>
+        <span class="popup-value" style="color:${noiColor};font-weight:700;">${noiFmt}</span>
+      </div>
+      <div class="popup-row">
+        <span class="popup-label">Cap Rate</span>
+        <span class="popup-value">${capFmt}</span>
+      </div>
+    </div>`;
+  }
+
   marker.bindPopup(`
     <div class="popup-title">${prop.address || 'Unnamed Property'}</div>
+    <div style="font-size:10px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:4px;">Deal Analysis</div>
     <div class="popup-row">
       <span class="popup-label">List Price</span>
       <span class="popup-value">${fmtPrice}</span>
@@ -1788,6 +1968,7 @@ function createPropertyMarker(prop, index) {
       <span class="popup-value">${spread}</span>
     </div>
     ${prop.notes ? `<div style="margin-top:8px;font-size:11px;color:#888;border-top:1px solid #2a2a2a;padding-top:6px;">${prop.notes}</div>` : ''}
+    ${rentalSection}
     <button onclick="editProperty(${index})" style="
       margin-top:10px;
       background:#c8a84e;
@@ -1812,7 +1993,7 @@ function createPropertyMarker(prop, index) {
       cursor:pointer;
       font-family:'Inter',sans-serif;
     ">Delete</button>
-  `).bindTooltip(`${prop.address || 'Property'} (${prop.arvPct.toFixed(0)}%)`);
+  `, { maxWidth: 350 }).bindTooltip(`${prop.address || 'Property'} (${prop.arvPct.toFixed(0)}%${hasRental ? ' | NOI: ' + noiFmt : ''})`);
 
   return marker;
 }
@@ -1840,23 +2021,85 @@ function showPropertyForm(lat, lng, existingProp, existingIndex) {
   const isEdit = existingProp !== undefined;
   const p = existingProp || {};
 
-  const popup = L.popup({ maxWidth: 320, closeOnClick: false, autoClose: false })
+  const popup = L.popup({ maxWidth: 400, maxHeight: 600, closeOnClick: false, autoClose: false })
     .setLatLng([lat, lng])
     .setContent(`
       <div class="prop-form" id="propForm">
         <div class="popup-title">${isEdit ? 'Edit' : 'Add'} Property Pin</div>
+
+        <div class="section-label">Deal Analysis</div>
         <label>Address</label>
-        <input type="text" id="pf_address" value="${p.address || ''}" placeholder="123 Street NW, Atlanta, GA" />
+        <input type="text" id="pf_address" value="${p.address || ''}" placeholder="123 Street NW, Atlanta, GA 30318" oninput="detectZipFromAddress()" />
         <label>List Price ($)</label>
-        <input type="number" id="pf_price" value="${p.price || ''}" placeholder="150000" oninput="calcARV()" />
+        <input type="number" id="pf_price" value="${p.price || ''}" placeholder="150000" oninput="calcARV(); calcRentalSummary();" />
         <label>ARV Estimate ($)</label>
         <input type="number" id="pf_arv" value="${p.arv || ''}" placeholder="250000" oninput="calcARV()" />
         <label>Rehab Estimate ($)</label>
-        <input type="number" id="pf_rehab" value="${p.rehab || ''}" placeholder="40000" oninput="calcARV()" />
+        <input type="number" id="pf_rehab" value="${p.rehab || ''}" placeholder="40000" oninput="calcARV(); calcRentalSummary();" />
         <label>% of ARV</label>
         <div class="arv-display" id="pf_arvDisplay">--</div>
         <label>Notes</label>
         <textarea id="pf_notes" placeholder="Motivation, condition, etc.">${p.notes || ''}</textarea>
+
+        <hr class="section-divider" />
+        <div class="section-label">Rental Analysis</div>
+
+        <div class="grid-3col">
+          <div class="grid-cell">
+            <label>Bedrooms</label>
+            <select id="pf_beds" onchange="updateRentEstimates(); calcRentalSummary();">
+              <option value="">--</option>
+              <option value="1" ${p.beds == 1 ? 'selected' : ''}>1</option>
+              <option value="2" ${p.beds == 2 ? 'selected' : ''}>2</option>
+              <option value="3" ${p.beds == 3 ? 'selected' : ''}>3</option>
+              <option value="4" ${p.beds == 4 ? 'selected' : ''}>4</option>
+              <option value="5" ${p.beds == 5 ? 'selected' : ''}>5</option>
+            </select>
+          </div>
+          <div class="grid-cell">
+            <label>Bathrooms</label>
+            <select id="pf_baths" onchange="calcRentalSummary();">
+              <option value="">--</option>
+              <option value="1" ${p.baths == 1 ? 'selected' : ''}>1</option>
+              <option value="1.5" ${p.baths == 1.5 ? 'selected' : ''}>1.5</option>
+              <option value="2" ${p.baths == 2 ? 'selected' : ''}>2</option>
+              <option value="2.5" ${p.baths == 2.5 ? 'selected' : ''}>2.5</option>
+              <option value="3" ${p.baths == 3 ? 'selected' : ''}>3</option>
+            </select>
+          </div>
+          <div class="grid-cell">
+            <label>Sq Ft</label>
+            <input type="number" id="pf_sqft" value="${p.sqft || ''}" placeholder="1400" />
+          </div>
+        </div>
+
+        <label>Rent Type</label>
+        <select id="pf_rentType" onchange="updateRentEstimates(); calcRentalSummary();">
+          <option value="market" ${p.rentType === 'market' ? 'selected' : ''}>Market Rate</option>
+          <option value="s8" ${p.rentType === 's8' ? 'selected' : ''}>Section 8</option>
+          <option value="both" ${p.rentType === 'both' ? 'selected' : ''}>Both (compare)</option>
+        </select>
+
+        <div id="pf_zipInfo" style="font-size:10px;color:var(--text-dim);margin-top:4px;display:none;">
+          ZIP detected: <span id="pf_zipDisplay" style="color:var(--gold);font-weight:600;">--</span> (SAFMR rates applied)
+        </div>
+
+        <div class="grid-2col">
+          <div class="grid-cell">
+            <label>Monthly Rent (Market)</label>
+            <input type="number" id="pf_rentMarket" value="${p.rentMarket || ''}" placeholder="auto" oninput="calcRentalSummary();" />
+          </div>
+          <div class="grid-cell">
+            <label>Monthly Rent (S8)</label>
+            <input type="number" id="pf_rentS8" value="${p.rentS8 || ''}" placeholder="auto" oninput="calcRentalSummary();" />
+          </div>
+        </div>
+
+        <div class="rental-summary" id="rentalSummary" style="display:none;">
+          <div class="rs-title">Cash Flow Projection</div>
+          <div id="rentalSummaryContent">--</div>
+        </div>
+
         <div class="form-actions">
           <button class="btn-save" onclick="savePropertyForm(${lat}, ${lng}, ${isEdit ? existingIndex : -1})">${isEdit ? 'Update' : 'Save Pin'}</button>
           <button class="btn-cancel" onclick="cancelPropertyForm()">Cancel</button>
@@ -1866,7 +2109,12 @@ function showPropertyForm(lat, lng, existingProp, existingIndex) {
     .openOn(map);
 
   tempMarker = popup;
-  setTimeout(calcARV, 100);
+  setTimeout(() => {
+    calcARV();
+    detectZipFromAddress();
+    updateRentEstimates();
+    calcRentalSummary();
+  }, 100);
 }
 
 window.calcARV = function() {
@@ -1884,6 +2132,169 @@ window.calcARV = function() {
   }
 };
 
+// Track detected ZIP for SAFMR lookup
+let detectedZip = '';
+
+window.detectZipFromAddress = function() {
+  const addr = document.getElementById('pf_address')?.value || '';
+  const zipMatch = addr.match(/\b(3\d{4})\b/);
+  const zipInfo = document.getElementById('pf_zipInfo');
+  const zipDisplay = document.getElementById('pf_zipDisplay');
+
+  if (zipMatch && SAFMR_BY_ZIP[zipMatch[1]]) {
+    detectedZip = zipMatch[1];
+    if (zipInfo) zipInfo.style.display = 'block';
+    if (zipDisplay) zipDisplay.textContent = detectedZip;
+    updateRentEstimates();
+    calcRentalSummary();
+  } else {
+    detectedZip = '';
+    if (zipInfo) zipInfo.style.display = 'none';
+  }
+};
+
+window.updateRentEstimates = function() {
+  const beds = parseInt(document.getElementById('pf_beds')?.value) || 0;
+  const marketInput = document.getElementById('pf_rentMarket');
+  const s8Input = document.getElementById('pf_rentS8');
+  if (!marketInput || !s8Input) return;
+
+  // Only auto-fill if the field is empty or was previously auto-filled
+  if (beds > 0) {
+    if (!marketInput.value || marketInput.dataset.auto === 'true') {
+      marketInput.value = MARKET_RENT[beds] || '';
+      marketInput.dataset.auto = 'true';
+    }
+
+    // Use SAFMR if ZIP detected, otherwise use metro FMR
+    let s8Rate;
+    if (detectedZip && SAFMR_BY_ZIP[detectedZip]) {
+      s8Rate = SAFMR_BY_ZIP[detectedZip][beds];
+    } else {
+      s8Rate = SECTION_8_FMR[beds];
+    }
+    if (!s8Input.value || s8Input.dataset.auto === 'true') {
+      s8Input.value = s8Rate || '';
+      s8Input.dataset.auto = 'true';
+    }
+  }
+};
+
+// Mark field as manually edited when user types
+document.addEventListener('input', function(e) {
+  if (e.target.id === 'pf_rentMarket' || e.target.id === 'pf_rentS8') {
+    e.target.dataset.auto = 'false';
+  }
+});
+
+window.calcRentalCashFlow = function(grossRent, rentType, price, rehab) {
+  if (!grossRent || grossRent <= 0) return null;
+
+  const isS8 = rentType === 's8';
+  const vacancyRate = isS8 ? RENTAL_DEFAULTS.vacancyS8 : RENTAL_DEFAULTS.vacancyMarket;
+  const vacancy = grossRent * vacancyRate;
+  const effectiveRent = grossRent - vacancy;
+  const mgmt = effectiveRent * RENTAL_DEFAULTS.management;
+  const insurance = RENTAL_DEFAULTS.insurance;
+  const taxes = RENTAL_DEFAULTS.taxes;
+  const maintenance = effectiveRent * RENTAL_DEFAULTS.maintenance;
+
+  const totalExpenses = vacancy + mgmt + insurance + taxes + maintenance;
+  const monthlyNOI = grossRent - totalExpenses;
+  const annualNOI = monthlyNOI * 12;
+
+  let capRate = null;
+  let cashOnCash = null;
+  if (price && price > 0) {
+    capRate = (annualNOI / price) * 100;
+  }
+  if (price && price > 0 && rehab !== undefined) {
+    const totalInvested = price + (rehab || 0);
+    if (totalInvested > 0) {
+      cashOnCash = (annualNOI / totalInvested) * 100;
+    }
+  }
+
+  return {
+    grossRent,
+    vacancy,
+    vacancyRate,
+    effectiveRent,
+    mgmt,
+    insurance,
+    taxes,
+    maintenance,
+    totalExpenses,
+    monthlyNOI,
+    annualNOI,
+    capRate,
+    cashOnCash
+  };
+};
+
+window.calcRentalSummary = function() {
+  const summaryDiv = document.getElementById('rentalSummary');
+  const contentDiv = document.getElementById('rentalSummaryContent');
+  if (!summaryDiv || !contentDiv) return;
+
+  const rentType = document.getElementById('pf_rentType')?.value || 'market';
+  const marketRent = parseFloat(document.getElementById('pf_rentMarket')?.value) || 0;
+  const s8Rent = parseFloat(document.getElementById('pf_rentS8')?.value) || 0;
+  const price = parseFloat(document.getElementById('pf_price')?.value) || 0;
+  const rehab = parseFloat(document.getElementById('pf_rehab')?.value) || 0;
+
+  if (!marketRent && !s8Rent) {
+    summaryDiv.style.display = 'none';
+    return;
+  }
+
+  summaryDiv.style.display = 'block';
+  let html = '';
+
+  function renderBlock(label, cf, typeLabel) {
+    if (!cf) return '';
+    const noiColor = cf.monthlyNOI >= 0 ? 'var(--gold)' : 'var(--red)';
+    let block = `
+      ${typeLabel ? `<div style="font-size:10px;font-weight:700;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;margin-top:6px;">${typeLabel}</div>` : ''}
+      <div class="rs-row"><span class="rs-label">Gross Rent</span><span class="rs-value">$${cf.grossRent.toLocaleString()}</span></div>
+      <div class="rs-row"><span class="rs-label">Vacancy (${(cf.vacancyRate*100).toFixed(0)}%)</span><span class="rs-value" style="color:var(--red);">-$${Math.round(cf.vacancy).toLocaleString()}</span></div>
+      <div class="rs-row"><span class="rs-label">Mgmt (10%)</span><span class="rs-value" style="color:var(--red);">-$${Math.round(cf.mgmt).toLocaleString()}</span></div>
+      <div class="rs-row"><span class="rs-label">Insurance</span><span class="rs-value" style="color:var(--red);">-$${cf.insurance.toLocaleString()}</span></div>
+      <div class="rs-row"><span class="rs-label">Taxes</span><span class="rs-value" style="color:var(--red);">-$${cf.taxes.toLocaleString()}</span></div>
+      <div class="rs-row"><span class="rs-label">Maint (5%)</span><span class="rs-value" style="color:var(--red);">-$${Math.round(cf.maintenance).toLocaleString()}</span></div>
+      <div class="rs-row rs-highlight"><span class="rs-label">Monthly NOI</span><span class="rs-value" style="color:${noiColor};font-size:13px;">$${Math.round(cf.monthlyNOI).toLocaleString()}</span></div>
+      <div class="rs-row"><span class="rs-label">Annual NOI</span><span class="rs-value" style="color:${noiColor};">$${Math.round(cf.annualNOI).toLocaleString()}</span></div>`;
+    if (cf.capRate !== null) {
+      const capColor = cf.capRate >= 8 ? 'var(--green)' : cf.capRate >= 5 ? 'var(--gold)' : 'var(--red)';
+      block += `<div class="rs-row"><span class="rs-label">Cap Rate</span><span class="rs-value" style="color:${capColor};">${cf.capRate.toFixed(1)}%</span></div>`;
+    }
+    if (cf.cashOnCash !== null) {
+      const cocColor = cf.cashOnCash >= 10 ? 'var(--green)' : cf.cashOnCash >= 6 ? 'var(--gold)' : 'var(--red)';
+      block += `<div class="rs-row"><span class="rs-label">Cash-on-Cash</span><span class="rs-value" style="color:${cocColor};">${cf.cashOnCash.toFixed(1)}%</span></div>`;
+    }
+    return block;
+  }
+
+  if (rentType === 'market' && marketRent > 0) {
+    const cf = calcRentalCashFlow(marketRent, 'market', price, rehab);
+    html = renderBlock('Market Rate', cf, null);
+  } else if (rentType === 's8' && s8Rent > 0) {
+    const cf = calcRentalCashFlow(s8Rent, 's8', price, rehab);
+    html = renderBlock('Section 8', cf, null);
+  } else if (rentType === 'both') {
+    if (marketRent > 0) {
+      const cf1 = calcRentalCashFlow(marketRent, 'market', price, rehab);
+      html += renderBlock('Market Rate', cf1, 'Market Rate');
+    }
+    if (s8Rent > 0) {
+      const cf2 = calcRentalCashFlow(s8Rent, 's8', price, rehab);
+      html += renderBlock('Section 8', cf2, 'Section 8');
+    }
+  }
+
+  contentDiv.innerHTML = html || '<span style="color:var(--text-dim);">Enter bedrooms to see projections</span>';
+};
+
 window.savePropertyForm = function(lat, lng, editIndex) {
   const address = document.getElementById('pf_address').value;
   const price = parseFloat(document.getElementById('pf_price').value) || 0;
@@ -1892,7 +2303,34 @@ window.savePropertyForm = function(lat, lng, editIndex) {
   const notes = document.getElementById('pf_notes').value;
   const arvPct = arv > 0 ? (price / arv) * 100 : 100;
 
-  const propData = { lat, lng, address, price, arv, rehab, arvPct, notes, created: new Date().toISOString() };
+  // Rental fields
+  const beds = parseFloat(document.getElementById('pf_beds').value) || 0;
+  const baths = parseFloat(document.getElementById('pf_baths').value) || 0;
+  const sqft = parseFloat(document.getElementById('pf_sqft').value) || 0;
+  const rentType = document.getElementById('pf_rentType').value;
+  const rentMarket = parseFloat(document.getElementById('pf_rentMarket').value) || 0;
+  const rentS8 = parseFloat(document.getElementById('pf_rentS8').value) || 0;
+
+  // Calculate NOI for storage
+  let monthlyNOI = 0;
+  let annualNOI = 0;
+  let capRate = null;
+  let activeRent = 0;
+
+  if (rentType === 's8' && rentS8 > 0) {
+    const cf = calcRentalCashFlow(rentS8, 's8', price, rehab);
+    if (cf) { monthlyNOI = cf.monthlyNOI; annualNOI = cf.annualNOI; capRate = cf.capRate; activeRent = rentS8; }
+  } else if (rentMarket > 0) {
+    const cf = calcRentalCashFlow(rentMarket, 'market', price, rehab);
+    if (cf) { monthlyNOI = cf.monthlyNOI; annualNOI = cf.annualNOI; capRate = cf.capRate; activeRent = rentMarket; }
+  }
+
+  const propData = {
+    lat, lng, address, price, arv, rehab, arvPct, notes,
+    beds, baths, sqft, rentType, rentMarket, rentS8,
+    monthlyNOI, annualNOI, capRate, activeRent,
+    created: new Date().toISOString()
+  };
 
   if (editIndex >= 0) {
     properties[editIndex] = { ...properties[editIndex], ...propData };
@@ -2025,6 +2463,21 @@ window.selectSearchResult = function(item) {
         // Extract short address from display_name
         const parts = item.display_name.split(',');
         addrField.value = parts.slice(0, 3).join(',').trim();
+        // Trigger ZIP detection from the full display name
+        detectZipFromAddress();
+        // Also try to detect ZIP from full display_name if not found in short address
+        if (!detectedZip) {
+          const fullZipMatch = item.display_name.match(/\b(3\d{4})\b/);
+          if (fullZipMatch && SAFMR_BY_ZIP[fullZipMatch[1]]) {
+            detectedZip = fullZipMatch[1];
+            const zipInfo = document.getElementById('pf_zipInfo');
+            const zipDisplay = document.getElementById('pf_zipDisplay');
+            if (zipInfo) zipInfo.style.display = 'block';
+            if (zipDisplay) zipDisplay.textContent = detectedZip;
+            updateRentEstimates();
+            calcRentalSummary();
+          }
+        }
       }
     }, 200);
   }, 800);
@@ -2252,9 +2705,32 @@ function updateStats() {
   const deals = properties.filter(p => p.arvPct <= 65).length;
   const avgARV = total > 0 ? (properties.reduce((s, p) => s + p.arvPct, 0) / total).toFixed(1) + '%' : '--';
 
+  // Rental stats
+  const rentalProps = properties.filter(p => p.activeRent && p.activeRent > 0);
+  const totalMonthlyRent = rentalProps.reduce((s, p) => s + (p.activeRent || 0), 0);
+  const totalAnnualNOI = rentalProps.reduce((s, p) => s + (p.annualNOI || 0), 0);
+  const avgNOI = rentalProps.length > 0 ? totalAnnualNOI / rentalProps.length / 12 : 0;
+
   document.getElementById('statTotal').textContent = total;
   document.getElementById('statDeals').textContent = deals;
   document.getElementById('statAvgARV').textContent = avgARV;
+
+  const statMonthlyRent = document.getElementById('statMonthlyRent');
+  const statAvgNOI = document.getElementById('statAvgNOI');
+  const statAnnualNOI = document.getElementById('statAnnualNOI');
+
+  if (rentalProps.length > 0) {
+    statMonthlyRent.textContent = '$' + totalMonthlyRent.toLocaleString();
+    statAvgNOI.textContent = '$' + Math.round(avgNOI).toLocaleString();
+    statAvgNOI.style.color = avgNOI >= 0 ? 'var(--gold)' : 'var(--red)';
+    statAnnualNOI.textContent = '$' + Math.round(totalAnnualNOI).toLocaleString();
+    statAnnualNOI.style.color = totalAnnualNOI >= 0 ? 'var(--gold)' : 'var(--red)';
+  } else {
+    statMonthlyRent.textContent = '--';
+    statAvgNOI.textContent = '--';
+    statAnnualNOI.textContent = '--';
+  }
+
   document.getElementById('statParks').textContent = PARKS.length;
   document.getElementById('statOZ').textContent = OZ_ZONES.length;
   document.getElementById('statMarta').textContent = MARTA_STATIONS.length;
@@ -2266,9 +2742,9 @@ function exportProperties() {
     return;
   }
 
-  let csv = 'Address,Latitude,Longitude,List Price,ARV,Rehab,% of ARV,Notes,Date Added\n';
+  let csv = 'Address,Latitude,Longitude,List Price,ARV,Rehab,% of ARV,Bedrooms,Bathrooms,Sq Ft,Rent Type,Market Rent,S8 Rent,Monthly NOI,Annual NOI,Cap Rate,Notes,Date Added\n';
   properties.forEach(p => {
-    csv += `"${p.address || ''}",${p.lat},${p.lng},${p.price || ''},${p.arv || ''},${p.rehab || ''},${p.arvPct.toFixed(1)}%,"${(p.notes || '').replace(/"/g, '""')}",${p.created || ''}\n`;
+    csv += `"${p.address || ''}",${p.lat},${p.lng},${p.price || ''},${p.arv || ''},${p.rehab || ''},${p.arvPct.toFixed(1)}%,${p.beds || ''},${p.baths || ''},${p.sqft || ''},"${p.rentType || ''}",${p.rentMarket || ''},${p.rentS8 || ''},${p.monthlyNOI !== undefined ? Math.round(p.monthlyNOI) : ''},${p.annualNOI !== undefined ? Math.round(p.annualNOI) : ''},${p.capRate !== undefined && p.capRate !== null ? p.capRate.toFixed(1) + '%' : ''},"${(p.notes || '').replace(/"/g, '""')}",${p.created || ''}\n`;
   });
 
   const blob = new Blob([csv], { type: 'text/csv' });
@@ -2294,13 +2770,13 @@ document.addEventListener('keydown', function(e) {
     const fp = document.getElementById('filterPanel');
     if (fp.classList.contains('active')) toggleFilter();
   }
-  if (e.key === 'a' && !e.ctrlKey && !e.metaKey && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+  if (e.key === 'a' && !e.ctrlKey && !e.metaKey && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA' && document.activeElement.tagName !== 'SELECT') {
     toggleAddMode();
   }
-  if (e.key === 'f' && !e.ctrlKey && !e.metaKey && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+  if (e.key === 'f' && !e.ctrlKey && !e.metaKey && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA' && document.activeElement.tagName !== 'SELECT') {
     toggleFilter();
   }
-  if (e.key === 's' && !e.ctrlKey && !e.metaKey && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+  if (e.key === 's' && !e.ctrlKey && !e.metaKey && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA' && document.activeElement.tagName !== 'SELECT') {
     e.preventDefault();
     document.getElementById('addressSearch').focus();
   }
