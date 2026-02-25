@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Last Chance — Essential Templates | J. Marque</title>
+<meta name="description" content="Budget template and financial calculator — just the essentials for $27. Last chance before you move on.">
+<style>
+  /* ============================================================
+     DOWNSELL — Mini Template Pack ($27)
+     Brand: Gold #c8a84e / Black #0a0a0a
+     Font: Segoe UI, system-ui, sans-serif
+     Mobile-first responsive
+     ============================================================ */
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: #0a0a0a;
+    color: #ffffff;
+    line-height: 1.6;
+  }
+
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+
+  /* ====== LAYOUT ====== */
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ====== COLORS ====== */
+  .gold { color: #c8a84e; }
+
+  /* ====== TOP BANNER ====== */
+  .top-banner {
+    background: #111;
+    border-bottom: 1px solid rgba(200,168,78,0.15);
+    padding: 12px 24px;
+    text-align: center;
+  }
+
+  .top-banner p {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+  }
+
+  .top-banner span {
+    color: #c8a84e;
+  }
+
+  /* ====== HERO ====== */
+  .ds-hero {
+    padding: 64px 0 48px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ds-hero::before {
+    content: '';
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(200,168,78,0.04) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .ds-hero .container { position: relative; z-index: 2; }
+
+  .empathy-open {
+    font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+    font-weight: 400;
+    font-style: italic;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.7;
+    max-width: 500px;
+    margin: 0 auto 28px;
+  }
+
+  .ds-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    background: rgba(200,168,78,0.08);
+    border: 1px solid rgba(200,168,78,0.15);
+    padding: 6px 16px;
+    border-radius: 3px;
+    margin-bottom: 24px;
+  }
+
+  .headline {
+    font-size: clamp(1.5rem, 4vw, 2.1rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+
+  .subheadline {
+    font-size: clamp(0.92rem, 2vw, 1.05rem);
+    font-weight: 400;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 0;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ====== DIVIDER ====== */
+  .divider {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #c8a84e, transparent);
+    margin: 0 auto;
+  }
+
+  /* ====== SECTION STYLES ====== */
+  .label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 16px;
+    line-height: 1.25;
+  }
+
+  .section-sub {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    color: rgba(255,255,255,0.55);
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto 36px;
+    line-height: 1.6;
+  }
+
+  section {
+    padding: 56px 0;
+  }
+
+  .section-border {
+    border-top: 1px solid rgba(200,168,78,0.1);
+  }
+
+  /* ====== TWO PRODUCT CARDS ====== */
+  .product-pair {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: 480px) {
+    .product-pair {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .ds-card {
+    background: linear-gradient(135deg, #141414 0%, #111 100%);
+    border: 1px solid rgba(200,168,78,0.15);
+    border-radius: 8px;
+    padding: 32px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ds-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #c8a84e, transparent);
+  }
+
+  .ds-card-icon {
+    width: 52px;
+    height: 52px;
+    border: 2px solid rgba(200,168,78,0.25);
+    border-radius: 8px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(200,168,78,0.04);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #c8a84e;
+  }
+
+  .ds-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .ds-card p {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+  }
+
+  /* ====== QUICK BENEFITS ====== */
+  .quick-benefits {
+    list-style: none;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .quick-benefits li {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.75);
+    padding: 12px 0 12px 32px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .quick-benefits li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border: 2px solid #c8a84e;
+    border-radius: 50%;
+  }
+
+  .quick-benefits li::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 5px;
+    height: 8px;
+    border-right: 2px solid #c8a84e;
+    border-bottom: 2px solid #c8a84e;
+  }
+
+  /* ====== GUARANTEE ====== */
+  .guarantee {
+    text-align: center;
+    padding: 36px 0;
+    border-top: 1px solid rgba(200,168,78,0.1);
+  }
+
+  .guarantee-badge {
+    width: 64px;
+    height: 64px;
+    border: 2px solid #c8a84e;
+    border-radius: 50%;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: rgba(200,168,78,0.04);
+  }
+
+  .guarantee-badge-num {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #c8a84e;
+    line-height: 1;
+  }
+
+  .guarantee-badge-text {
+    font-size: 0.45rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    margin-top: 2px;
+  }
+
+  .guarantee h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+  }
+
+  .guarantee p {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.7;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  /* ====== CTA SECTION ====== */
+  .cta-section {
+    text-align: center;
+    padding: 56px 0;
+    background: linear-gradient(180deg, #0a0a0a 0%, #0e0d09 50%, #0a0a0a 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(200,168,78,0.04) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .cta-section .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .price-display {
+    margin-bottom: 8px;
+  }
+
+  .price-was {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.25);
+    text-decoration: line-through;
+    margin-right: 10px;
+  }
+
+  .price-now {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #c8a84e;
+  }
+
+  .price-note {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 8px;
+  }
+
+  .financing-note {
+    font-size: 0.78rem;
+    color: rgba(200,168,78,0.5);
+    margin-bottom: 28px;
+    font-style: italic;
+  }
+
+  /* ====== BUTTONS ====== */
+  .btn-cta {
+    display: inline-block;
+    padding: 18px 44px;
+    background: linear-gradient(135deg, #c8a84e 0%, #a68a3a 100%);
+    border: none;
+    border-radius: 6px;
+    color: #0a0a0a;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(200,168,78,0.2);
+    width: 100%;
+    max-width: 440px;
+  }
+
+  .btn-cta:hover {
+    background: linear-gradient(135deg, #d4b45a 0%, #b89842 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 28px rgba(200,168,78,0.35);
+  }
+
+  .btn-cta:active { transform: translateY(0); }
+
+  .btn-sub {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.76rem;
+    color: rgba(255,255,255,0.4);
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .btn-skip {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.2);
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.2s;
+    background: none;
+    border: none;
+    font-family: inherit;
+  }
+
+  .btn-skip:hover {
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* ====== FOOTER ====== */
+  .footer {
+    padding: 36px 24px;
+    text-align: center;
+    border-top: 1px solid rgba(200,168,78,0.08);
+  }
+
+  .footer-brand {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    opacity: 0.5;
+    margin-bottom: 10px;
+  }
+
+  .footer-disclaimer {
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.18);
+    line-height: 1.7;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* ====== RESPONSIVE ====== */
+  @media (max-width: 640px) {
+    section {
+      padding: 44px 0;
+    }
+
+    .btn-cta {
+      padding: 16px 28px;
+      font-size: 0.92rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     TOP BANNER
+     ============================================================ -->
+<div class="top-banner">
+  <p>Before you go &mdash; <span>one more thing</span></p>
+</div>
+
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="ds-hero">
+  <div class="container">
+    <p class="empathy-open">I get it. $47 felt like a lot right now, especially right after buying the trilogy. You are being careful with your money, and honestly, that is exactly the kind of discipline that builds wealth in the first place.</p>
+
+    <span class="ds-badge">Reduced Offer</span>
+
+    <h1 class="headline">How About Just the 2 Most<br>Essential Tools for <span class="gold">$27</span>?</h1>
+
+    <p class="subheadline">Skip the full pack. Grab the two templates that readers say made the biggest difference on Day 1: the budget template that finds money hiding in your current income, and the financial calculator that tells you whether a deal is worth your time.</p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TWO PRODUCTS
+     ============================================================ -->
+<section class="section-border">
+  <div class="container">
+    <p class="label">The Essentials</p>
+    <h2 class="section-title">Two Tools. <span class="gold">Immediate Impact.</span></h2>
+    <p class="section-sub">These are the two files that people use more than any others. They take 10 minutes to fill out and change how you look at your money from that point forward.</p>
+
+    <div class="product-pair">
+      <div class="ds-card">
+        <div class="ds-card-icon">$</div>
+        <h3>Budget Template</h3>
+        <p>Know exactly where every dollar goes. Spot the money you are currently losing each month. Most people find $200-$500 in waste they had no idea existed. That is seed money for your first investment.</p>
+      </div>
+
+      <div class="ds-card">
+        <div class="ds-card-icon">#</div>
+        <h3>Financial Calculator</h3>
+        <p>Analyze any deal or investment in under 5 minutes. Cash flow, ROI, cap rate, break-even. Plug in the numbers and get a clear verdict. No guessing. No spreadsheet engineering.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     QUICK BENEFITS
+     ============================================================ -->
+<section class="section-border">
+  <div class="container">
+    <h2 class="section-title">What These Two Tools Give You</h2>
+
+    <ul class="quick-benefits">
+      <li>A complete picture of your monthly cash flow in 10 minutes</li>
+      <li>The ability to evaluate any deal or investment with real numbers, not gut feelings</li>
+      <li>A clear starting point for finding the capital already sitting in your current income</li>
+      <li>Ready to use today. No setup, no configuration, no learning curve.</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     GUARANTEE
+     ============================================================ -->
+<div class="guarantee">
+  <div class="container">
+    <div class="guarantee-badge">
+      <span class="guarantee-badge-num">30</span>
+      <span class="guarantee-badge-text">Day</span>
+    </div>
+    <h3>30-Day Money-Back Guarantee</h3>
+    <p>Use them for 30 days. If they do not give you clarity on your finances, send one email for a full refund. Simple as that.</p>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     CTA SECTION
+     ============================================================ -->
+<section class="cta-section">
+  <div class="container">
+    <h2 class="section-title">Just the Two Essentials.<br><span class="gold">$27. Done.</span></h2>
+
+    <div class="price-display">
+      <span class="price-was">$47</span>
+      <span class="price-now">$27</span>
+    </div>
+    <p class="price-note">One-time payment. Instant delivery.</p>
+    <p class="financing-note">Pay as low as $7/mo with Fanbasis financing</p>
+
+    <!-- GHL: Replace href with downsell checkout link -->
+    <a href="#add-to-order" class="btn-cta">Yes, Add the Essentials &mdash; $27<span class="btn-sub">Budget template + financial calculator. Instant access.</span></a>
+
+    <!-- GHL: Replace href with skip link to questionnaire -->
+    <a href="#no-thanks" class="btn-skip">No thanks, I do not need these tools</a>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="footer-brand">J. Marque &nbsp;|&nbsp; Money Decoded</div>
+  <p class="footer-disclaimer">
+    This is a reduced offer available only on this page. The Essential Templates Pack is a digital product delivered instantly after purchase. Templates are provided for educational purposes and are not a substitute for professional financial, legal, or tax advice. Individual results depend on personal effort and circumstances. All sales backed by a 30-day money-back guarantee.
+  </p>
+</footer>
+
+</body>
+</html>

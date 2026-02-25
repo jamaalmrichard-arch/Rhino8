@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Bump — Audio Trilogy Kit | Money Decoded</title>
+<meta name="description" content="Audio Trilogy Kit order bump component for the $7 checkout page. Styled checkbox section for GHL embedding.">
+<style>
+  /* ============================================================
+     ORDER BUMP — Audio Trilogy Kit ($9)
+     This is a COMPONENT, not a full page.
+     Embed this inside the $7 checkout form in GHL.
+     Brand: Gold #c8a84e / Black #0a0a0a
+     Font: Segoe UI, system-ui, sans-serif
+     ============================================================ */
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  /* ====== DEMO WRAPPER (remove when embedding in GHL) ====== */
+  .demo-wrapper {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: #0a0a0a;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+  }
+
+  .demo-context {
+    max-width: 520px;
+    width: 100%;
+  }
+
+  .demo-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+    text-align: center;
+    margin-bottom: 16px;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  }
+
+  /* ============================================================
+     ORDER BUMP COMPONENT — Copy everything below this line
+     into your GHL checkout page custom code section.
+     ============================================================ */
+
+  .order-bump {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, #111 0%, #0e0e0e 100%);
+    border: 2px dashed rgba(200,168,78,0.35);
+    border-radius: 8px;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    max-width: 520px;
+    width: 100%;
+    transition: border-color 0.2s;
+  }
+
+  .order-bump:hover {
+    border-color: rgba(200,168,78,0.55);
+  }
+
+  /* Gold accent bar at top */
+  .order-bump::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #c8a84e, rgba(200,168,78,0.2));
+  }
+
+  /* ====== HEADER ROW ====== */
+  .ob-header {
+    background: rgba(200,168,78,0.06);
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid rgba(200,168,78,0.1);
+  }
+
+  .ob-arrow {
+    font-size: 1.1rem;
+    color: #c8a84e;
+    line-height: 1;
+    flex-shrink: 0;
+    animation: ob-bounce 1.5s ease-in-out infinite;
+  }
+
+  @keyframes ob-bounce {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(4px); }
+  }
+
+  .ob-header-text {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #c8a84e;
+  }
+
+  /* ====== CHECKBOX AREA ====== */
+  .ob-body {
+    padding: 20px;
+  }
+
+  .ob-checkbox-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    cursor: pointer;
+  }
+
+  /* Custom checkbox */
+  .ob-check {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .ob-check input {
+    position: absolute;
+    opacity: 0;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    margin: 0;
+    z-index: 2;
+  }
+
+  .ob-check-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background: #0a0a0a;
+    border: 2px solid rgba(200,168,78,0.4);
+    border-radius: 4px;
+    transition: all 0.15s ease;
+  }
+
+  .ob-check input:checked ~ .ob-check-box {
+    background: #c8a84e;
+    border-color: #c8a84e;
+  }
+
+  .ob-check-box::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 7px;
+    width: 6px;
+    height: 11px;
+    border: solid #0a0a0a;
+    border-width: 0 2.5px 2.5px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+
+  .ob-check input:checked ~ .ob-check-box::after {
+    opacity: 1;
+  }
+
+  /* ====== CONTENT ====== */
+  .ob-content {
+    flex: 1;
+  }
+
+  .ob-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.3;
+    margin-bottom: 6px;
+  }
+
+  .ob-title .ob-gold {
+    color: #c8a84e;
+  }
+
+  .ob-desc {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  /* ====== AUDIO ICON ROW ====== */
+  .ob-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .ob-feature {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.5px;
+  }
+
+  .ob-feature-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(200,168,78,0.08);
+    border: 1px solid rgba(200,168,78,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* Mini play triangle */
+  .ob-play {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 4px 0 4px 6px;
+    border-color: transparent transparent transparent #c8a84e;
+    margin-left: 1px;
+  }
+
+  /* Mini audio bars */
+  .ob-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 1px;
+    height: 10px;
+  }
+
+  .ob-bars span {
+    display: block;
+    width: 2px;
+    background: #c8a84e;
+    border-radius: 1px;
+  }
+
+  .ob-bars span:nth-child(1) { height: 3px; }
+  .ob-bars span:nth-child(2) { height: 7px; }
+  .ob-bars span:nth-child(3) { height: 5px; }
+  .ob-bars span:nth-child(4) { height: 9px; }
+  .ob-bars span:nth-child(5) { height: 4px; }
+
+  /* ====== PRICE TAG ====== */
+  .ob-price-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .ob-price-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #0a0a0a;
+    background: linear-gradient(135deg, #c8a84e 0%, #a68a3a 100%);
+    padding: 4px 10px;
+    border-radius: 3px;
+  }
+
+  .ob-price-context {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* ====== RESPONSIVE ====== */
+  @media (max-width: 480px) {
+    .ob-body {
+      padding: 16px;
+    }
+
+    .ob-title {
+      font-size: 0.92rem;
+    }
+
+    .ob-desc {
+      font-size: 0.82rem;
+    }
+
+    .ob-features {
+      gap: 8px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     DEMO WRAPPER
+     Remove this wrapper when embedding in GHL.
+     The .order-bump div is the only thing you need.
+     ============================================================ -->
+<div class="demo-wrapper">
+  <div class="demo-context">
+    <p class="demo-label">Order bump component &mdash; embed inside $7 checkout form</p>
+
+    <!-- ======================================================
+         ORDER BUMP COMPONENT START
+         Copy from here when embedding in GHL checkout page.
+         ====================================================== -->
+    <div class="order-bump">
+
+      <!-- Header strip -->
+      <div class="ob-header">
+        <span class="ob-arrow">&#9658;</span>
+        <span class="ob-header-text">Add This to Your Order</span>
+      </div>
+
+      <!-- Body -->
+      <div class="ob-body">
+        <label class="ob-checkbox-row">
+
+          <!-- Custom checkbox -->
+          <div class="ob-check">
+            <!-- GHL: Wire this checkbox to add $9 to cart -->
+            <input type="checkbox" name="order_bump_audio" value="audio_trilogy_kit">
+            <div class="ob-check-box"></div>
+          </div>
+
+          <!-- Copy block -->
+          <div class="ob-content">
+            <p class="ob-title">YES! Add the <span class="ob-gold">Audio Trilogy Kit</span> for just $9</p>
+
+            <p class="ob-desc">Listen to all 3 books on the go. Same content, audio format. Built for commutes, workouts, gym sessions, and late-night multitasking. Hit play instead of flipping pages. Absorb the material in half the time while doing something else.</p>
+
+            <!-- Feature badges -->
+            <div class="ob-features">
+              <div class="ob-feature">
+                <div class="ob-feature-icon">
+                  <div class="ob-play"></div>
+                </div>
+                3 Full Audiobooks
+              </div>
+              <div class="ob-feature">
+                <div class="ob-feature-icon">
+                  <div class="ob-bars">
+                    <span></span><span></span><span></span><span></span><span></span>
+                  </div>
+                </div>
+                Instant Access
+              </div>
+              <div class="ob-feature">
+                <div class="ob-feature-icon">
+                  <div class="ob-play"></div>
+                </div>
+                Download &amp; Keep
+              </div>
+            </div>
+
+            <!-- Price -->
+            <div class="ob-price-row">
+              <span class="ob-price-tag">Only $9</span>
+              <span class="ob-price-context">Added to your $7 order</span>
+            </div>
+          </div>
+
+        </label>
+      </div>
+
+    </div>
+    <!-- ======================================================
+         ORDER BUMP COMPONENT END
+         ====================================================== -->
+
+  </div>
+</div>
+
+</body>
+</html>

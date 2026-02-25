@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One-Time Offer — Quick-Start Templates Pack | J. Marque</title>
+<meta name="description" content="Financial calculator, budget template, net worth tracker, and lender file template. One-time offer — this page will not be shown again.">
+<style>
+  /* ============================================================
+     OTO1 — Quick-Start Templates Pack ($47)
+     Brand: Gold #c8a84e / Black #0a0a0a
+     Font: Segoe UI, system-ui, sans-serif
+     Mobile-first responsive
+     ============================================================ */
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: #0a0a0a;
+    color: #ffffff;
+    line-height: 1.6;
+  }
+
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+
+  /* ====== LAYOUT ====== */
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ====== COLORS ====== */
+  .gold { color: #c8a84e; }
+
+  /* ====== PROCESSING BANNER ====== */
+  .processing-bar {
+    background: linear-gradient(90deg, #c8a84e 0%, #a68a3a 100%);
+    padding: 14px 24px;
+    text-align: center;
+  }
+
+  .processing-bar p {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #0a0a0a;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ====== PROGRESS STEPS ====== */
+  .progress {
+    padding: 32px 24px 0;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .progress-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .progress-step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+  }
+
+  .progress-step--done {
+    color: #c8a84e;
+  }
+
+  .progress-step--active {
+    color: #ffffff;
+  }
+
+  .progress-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+  }
+
+  .progress-step--done .progress-dot {
+    border-color: #c8a84e;
+    background: rgba(200,168,78,0.1);
+    color: #c8a84e;
+  }
+
+  .progress-step--active .progress-dot {
+    border-color: #ffffff;
+    background: rgba(255,255,255,0.1);
+    color: #ffffff;
+  }
+
+  .progress-line {
+    width: 40px;
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+    margin: 0 12px;
+  }
+
+  .progress-line--done {
+    background: rgba(200,168,78,0.4);
+  }
+
+  /* ====== TIMER ====== */
+  .timer-wrap {
+    text-align: center;
+    padding: 32px 0 0;
+  }
+
+  .timer-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 12px;
+  }
+
+  .timer {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .timer-block {
+    background: #111;
+    border: 1px solid rgba(200,168,78,0.15);
+    border-radius: 6px;
+    padding: 10px 14px;
+    min-width: 56px;
+    text-align: center;
+  }
+
+  .timer-num {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #c8a84e;
+    line-height: 1;
+    display: block;
+  }
+
+  .timer-unit {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    margin-top: 4px;
+    display: block;
+  }
+
+  .timer-sep {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: rgba(200,168,78,0.4);
+  }
+
+  /* ====== HERO ====== */
+  .oto-hero {
+    padding: 48px 0 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .oto-hero::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(200,168,78,0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .oto-hero .container { position: relative; z-index: 2; }
+
+  .wait-text {
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    font-weight: 400;
+    font-style: italic;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 12px;
+  }
+
+  .headline {
+    font-size: clamp(1.6rem, 4.5vw, 2.4rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+
+  .subheadline {
+    font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+    font-weight: 400;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 8px;
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .oto-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #0a0a0a;
+    background: linear-gradient(135deg, #c8a84e 0%, #a68a3a 100%);
+    padding: 6px 18px;
+    border-radius: 3px;
+    margin-bottom: 24px;
+  }
+
+  /* ====== SECTION STYLES ====== */
+  .label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 1.25;
+  }
+
+  .section-sub {
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    max-width: 580px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+  }
+
+  section {
+    padding: 60px 0;
+  }
+
+  .section-border {
+    border-top: 1px solid rgba(200,168,78,0.1);
+  }
+
+  .divider {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #c8a84e, transparent);
+    margin: 0 auto;
+  }
+
+  /* ====== PRODUCT CARDS ====== */
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  @media (min-width: 520px) {
+    .product-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .product-card {
+    background: linear-gradient(135deg, #141414 0%, #111 100%);
+    border: 1px solid rgba(200,168,78,0.12);
+    border-radius: 8px;
+    padding: 28px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #c8a84e, transparent);
+  }
+
+  .product-icon {
+    width: 56px;
+    height: 56px;
+    border: 2px solid rgba(200,168,78,0.3);
+    border-radius: 8px;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(200,168,78,0.04);
+  }
+
+  /* CSS-only icons for each template */
+  .icon-calc {
+    position: relative;
+    width: 24px;
+    height: 28px;
+  }
+
+  .icon-calc::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 28px;
+    border: 2px solid #c8a84e;
+    border-radius: 3px;
+  }
+
+  .icon-calc::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    width: 14px;
+    height: 2px;
+    background: #c8a84e;
+    box-shadow: 0 5px 0 #c8a84e, 0 10px 0 #c8a84e;
+  }
+
+  .icon-budget {
+    position: relative;
+    width: 22px;
+    height: 26px;
+  }
+
+  .icon-budget::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 22px;
+    height: 26px;
+    border: 2px solid #c8a84e;
+    border-radius: 3px;
+  }
+
+  .icon-budget::after {
+    content: '$';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #c8a84e;
+  }
+
+  .icon-networth {
+    position: relative;
+    width: 24px;
+    height: 24px;
+  }
+
+  .icon-networth::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    border-left: 2px solid #c8a84e;
+    border-bottom: 2px solid #c8a84e;
+  }
+
+  .icon-networth::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    width: 16px;
+    height: 12px;
+    border-bottom: 2px solid #c8a84e;
+    border-right: 2px solid #c8a84e;
+    transform: skewY(-20deg);
+  }
+
+  .icon-lender {
+    position: relative;
+    width: 20px;
+    height: 26px;
+  }
+
+  .icon-lender::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 26px;
+    border: 2px solid #c8a84e;
+    border-radius: 3px;
+  }
+
+  .icon-lender::after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 5px;
+    width: 10px;
+    height: 2px;
+    background: #c8a84e;
+    box-shadow: 0 4px 0 #c8a84e, 0 8px 0 #c8a84e, 0 12px 0 #c8a84e;
+  }
+
+  .product-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+  }
+
+  .product-desc {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.6;
+  }
+
+  /* ====== WHAT YOU GET LIST ====== */
+  .benefit-list {
+    list-style: none;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  .benefit-list li {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.8);
+    padding: 14px 0 14px 36px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .benefit-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    border: 2px solid #c8a84e;
+    border-radius: 50%;
+  }
+
+  .benefit-list li::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 5px;
+    height: 9px;
+    border-right: 2px solid #c8a84e;
+    border-bottom: 2px solid #c8a84e;
+  }
+
+  /* ====== WITHOUT/WITH COMPARISON ====== */
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: 520px) {
+    .compare-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .compare-col {
+    background: #111;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 8px;
+    padding: 28px 24px;
+  }
+
+  .compare-col--with {
+    border-color: rgba(200,168,78,0.2);
+    background: linear-gradient(135deg, #141410 0%, #111 100%);
+  }
+
+  .compare-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .compare-col:not(.compare-col--with) .compare-label {
+    color: rgba(255,255,255,0.35);
+  }
+
+  .compare-col--with .compare-label {
+    color: #c8a84e;
+  }
+
+  .compare-list {
+    list-style: none;
+  }
+
+  .compare-list li {
+    font-size: 0.9rem;
+    padding: 8px 0 8px 24px;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .compare-col:not(.compare-col--with) .compare-list li {
+    color: rgba(255,255,255,0.4);
+  }
+
+  .compare-col:not(.compare-col--with) .compare-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 14px;
+    height: 2px;
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-50%);
+  }
+
+  .compare-col--with .compare-list li {
+    color: rgba(255,255,255,0.8);
+  }
+
+  .compare-col--with .compare-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 5px;
+    height: 9px;
+    border-right: 2px solid #c8a84e;
+    border-bottom: 2px solid #c8a84e;
+  }
+
+  /* ====== TESTIMONIALS ====== */
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  @media (min-width: 520px) {
+    .testimonial-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .test-card {
+    background: #111;
+    border: 1px solid rgba(200,168,78,0.12);
+    border-radius: 8px;
+    padding: 28px 24px;
+    position: relative;
+  }
+
+  .test-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #c8a84e, transparent);
+    border-radius: 8px 8px 0 0;
+  }
+
+  .test-quote {
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+
+  .test-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .test-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(200,168,78,0.1);
+    border: 1px solid rgba(200,168,78,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #c8a84e;
+    flex-shrink: 0;
+  }
+
+  .test-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #ffffff;
+  }
+
+  .test-detail {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* ====== GUARANTEE ====== */
+  .guarantee {
+    text-align: center;
+    padding: 40px 0;
+  }
+
+  .guarantee-badge {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #c8a84e;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: rgba(200,168,78,0.04);
+  }
+
+  .guarantee-badge-num {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #c8a84e;
+    line-height: 1;
+  }
+
+  .guarantee-badge-text {
+    font-size: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    line-height: 1;
+    margin-top: 2px;
+  }
+
+  .guarantee h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .guarantee p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.7;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* ====== CTA SECTION ====== */
+  .cta-section {
+    text-align: center;
+    padding: 60px 0;
+    background: linear-gradient(180deg, #0a0a0a 0%, #0e0d09 50%, #0a0a0a 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(200,168,78,0.05) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .cta-section .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  .price-display {
+    margin-bottom: 8px;
+  }
+
+  .price-was {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.3);
+    text-decoration: line-through;
+    margin-right: 12px;
+  }
+
+  .price-now {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #c8a84e;
+  }
+
+  .price-note {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 8px;
+  }
+
+  .financing-note {
+    font-size: 0.8rem;
+    color: rgba(200,168,78,0.6);
+    margin-bottom: 32px;
+    font-style: italic;
+  }
+
+  /* ====== BUTTONS ====== */
+  .btn-cta {
+    display: inline-block;
+    padding: 20px 48px;
+    background: linear-gradient(135deg, #c8a84e 0%, #a68a3a 100%);
+    border: none;
+    border-radius: 6px;
+    color: #0a0a0a;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(200,168,78,0.25);
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .btn-cta:hover {
+    background: linear-gradient(135deg, #d4b45a 0%, #b89842 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 28px rgba(200,168,78,0.4);
+  }
+
+  .btn-cta:active { transform: translateY(0); }
+
+  .btn-sub {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.4);
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .btn-skip {
+    display: inline-block;
+    margin-top: 24px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.25);
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.2s;
+    background: none;
+    border: none;
+    font-family: inherit;
+  }
+
+  .btn-skip:hover {
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* ====== FOOTER ====== */
+  .footer {
+    padding: 40px 24px;
+    text-align: center;
+    border-top: 1px solid rgba(200,168,78,0.08);
+  }
+
+  .footer-brand {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c8a84e;
+    opacity: 0.5;
+    margin-bottom: 12px;
+  }
+
+  .footer-disclaimer {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.2);
+    line-height: 1.7;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  /* ====== RESPONSIVE ====== */
+  @media (max-width: 640px) {
+    section {
+      padding: 48px 0;
+    }
+
+    .btn-cta {
+      padding: 18px 32px;
+      font-size: 0.95rem;
+    }
+
+    .progress-steps {
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .progress-line {
+      width: 24px;
+      margin: 0 6px;
+    }
+
+    .progress-step span:not(.progress-dot) {
+      display: none;
+    }
+
+    .timer-block {
+      padding: 8px 10px;
+      min-width: 48px;
+    }
+
+    .timer-num {
+      font-size: 1.2rem;
+    }
+  }
+
+  /* ====== TESTIMONIALS ====== */
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 520px) {
+    .testimonial-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .test-card {
+    background: #111;
+    border: 1px solid rgba(200,168,78,0.1);
+    border-radius: 8px;
+    padding: 24px;
+    position: relative;
+  }
+
+  .test-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(200,168,78,0.3), transparent);
+  }
+
+  .test-quote {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+    font-style: italic;
+    margin-bottom: 16px;
+  }
+
+  .test-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .test-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(200,168,78,0.08);
+    border: 1px solid rgba(200,168,78,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #c8a84e;
+    letter-spacing: 1px;
+    flex-shrink: 0;
+  }
+
+  .test-name {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .test-detail {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.35);
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     PROCESSING BANNER
+     ============================================================ -->
+<div class="processing-bar">
+  <p>Your order is being processed &mdash; do not close this page</p>
+</div>
+
+
+<!-- ============================================================
+     PROGRESS STEPS
+     ============================================================ -->
+<div class="progress">
+  <div class="progress-steps">
+    <div class="progress-step progress-step--done">
+      <span class="progress-dot">1</span>
+      <span>Trilogy</span>
+    </div>
+    <div class="progress-line progress-line--done"></div>
+    <div class="progress-step progress-step--active">
+      <span class="progress-dot">2</span>
+      <span>Templates</span>
+    </div>
+    <div class="progress-line"></div>
+    <div class="progress-step">
+      <span class="progress-dot">3</span>
+      <span>Your Path</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     TIMER
+     ============================================================ -->
+<div class="timer-wrap">
+  <div class="timer-label">This offer expires in</div>
+  <div class="timer">
+    <div class="timer-block">
+      <span class="timer-num" id="timer-min">14</span>
+      <span class="timer-unit">Min</span>
+    </div>
+    <span class="timer-sep">:</span>
+    <div class="timer-block">
+      <span class="timer-num" id="timer-sec">59</span>
+      <span class="timer-unit">Sec</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="oto-hero">
+  <div class="container">
+    <p class="wait-text">Wait &mdash; Your Order Is Being Processed...</p>
+
+    <span class="oto-badge">One-Time Offer</span>
+
+    <h1 class="headline">Before You Go, Grab the Tools That<br>Turn Knowledge Into <span class="gold">Action</span></h1>
+
+    <p class="subheadline">You just picked up the Money Decoded trilogy. You now have the blueprint for building wealth. But a blueprint without tools is just a reading assignment. These four templates close the gap between knowing what to do and actually doing it.</p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     4 TEMPLATE PRODUCTS
+     ============================================================ -->
+<section class="section-border">
+  <div class="container">
+    <p class="label">What Is Inside</p>
+    <h2 class="section-title">4 Ready-to-Use Financial Tools<br>Built by an <span class="gold">Operator</span></h2>
+    <p class="section-sub">These are the same tools used to manage real portfolios, close real deals, and walk into lender meetings with confidence. They are not generic downloads from a template site. Each one was built from two decades of financial operations.</p>
+
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-icon">
+          <div class="icon-calc"></div>
+        </div>
+        <div class="product-name">Financial Calculator Spreadsheet</div>
+        <div class="product-desc">Run your numbers on any deal in under 5 minutes. Cash flow projections, ROI, cap rate, cash-on-cash return, and break-even analysis. Plug in the numbers, read the verdict.</div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon">
+          <div class="icon-budget"></div>
+        </div>
+        <div class="product-name">Budget Template</div>
+        <div class="product-desc">Track every dollar coming in and going out. Know exactly where your money goes each month so you can find the capital hiding in your current income. Built for real life, not theory.</div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon">
+          <div class="icon-networth"></div>
+        </div>
+        <div class="product-name">Net Worth Tracker</div>
+        <div class="product-desc">See your total financial picture on one page. Assets, liabilities, and the number that actually matters. Update it monthly and watch the trajectory shift once you start executing.</div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon">
+          <div class="icon-lender"></div>
+        </div>
+        <div class="product-name">Lender File Template</div>
+        <div class="product-desc">Walk into any lender meeting looking like you have done this before. Pre-formatted documentation package that shows banks and private lenders you are organized, prepared, and serious.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     WHY THIS MATTERS
+     ============================================================ -->
+<section class="section-border">
+  <div class="container">
+    <p class="label">Why This Matters</p>
+    <h2 class="section-title">The Trilogy Tells You What to Do.<br>These Tools Help You <span class="gold">Do It</span>.</h2>
+
+    <ul class="benefit-list">
+      <li>Stop guessing your numbers. The financial calculator tells you whether a deal is worth pursuing in under 5 minutes flat.</li>
+      <li>Find hidden capital in your current income. Most people leak $200-$500/month without realizing it. The budget template exposes every dollar.</li>
+      <li>Track your progress with cold, hard proof. Your net worth tracker gives you a scoreboard that updates every month.</li>
+      <li>Walk into lender meetings prepared. The lender file template is the difference between hearing "we need more information" and hearing "let me run this up the chain."</li>
+      <li>Save 10-20 hours of building these yourself. These are done. Download, fill in, execute. That time goes back into finding your first deal.</li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     WITHOUT vs WITH
+     ============================================================ -->
+<section class="section-border">
+  <div class="container">
+    <h2 class="section-title">Two Paths Forward</h2>
+
+    <div class="compare-grid">
+      <div class="compare-col">
+        <div class="compare-label">Without the Templates</div>
+        <ul class="compare-list">
+          <li>Build your own spreadsheets from scratch</li>
+          <li>Guess whether a deal is profitable</li>
+          <li>Show up to lender meetings scrambling for docs</li>
+          <li>Lose track of where your money actually goes</li>
+          <li>Spend weeks building what already exists</li>
+        </ul>
+      </div>
+      <div class="compare-col compare-col--with">
+        <div class="compare-label">With the Templates</div>
+        <ul class="compare-list">
+          <li>Download, open, fill in the blanks</li>
+          <li>Know your exact ROI before you make an offer</li>
+          <li>Hand lenders a professional package on Day 1</li>
+          <li>See every dollar, every month, on one page</li>
+          <li>Start executing today, not next month</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TESTIMONIALS
+     ============================================================ -->
+<section class="section-border">
+  <div class="container">
+    <p class="label">From Readers Who Took Action</p>
+    <h2 class="section-title">They Read the Books. They Used the Tools.<br><span class="gold">They Moved.</span></h2>
+
+    <div class="testimonial-grid">
+      <div class="test-card">
+        <p class="test-quote">"The budget template alone changed how I look at money. I found $600 a month I was losing to subscriptions and impulse spending. Within 60 days I had enough saved for earnest money on my first wholesale deal."</p>
+        <div class="test-author">
+          <div class="test-avatar">D.R.</div>
+          <div>
+            <div class="test-name">D. Robinson</div>
+            <div class="test-detail">First-time investor, Memphis</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <p class="test-quote">"I walked into a private lender meeting with the lender file filled out. He told me I was more prepared than people who had been investing for years. Got funded that same week. The template paid for itself 1,000 times over."</p>
+        <div class="test-author">
+          <div class="test-avatar">T.W.</div>
+          <div>
+            <div class="test-name">T. Washington</div>
+            <div class="test-detail">Wholesale investor, Houston</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <p class="test-quote">"Tracking my net worth every month sounds basic. But watching that number go from negative to positive gave me more confidence than any course ever did. Seeing the trajectory change on the tracker made it feel real."</p>
+        <div class="test-author">
+          <div class="test-avatar">K.J.</div>
+          <div>
+            <div class="test-name">K. Jackson</div>
+            <div class="test-detail">W-2 employee building on the side, Atlanta</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-card">
+        <p class="test-quote">"I used to analyze deals in my head and talk myself out of every single one. The calculator forced me to look at actual numbers instead of feelings. Turned out the deals I was scared of were actually solid."</p>
+        <div class="test-author">
+          <div class="test-avatar">M.L.</div>
+          <div>
+            <div class="test-name">M. Lewis</div>
+            <div class="test-detail">Part-time investor, Dallas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     GUARANTEE
+     ============================================================ -->
+<div class="guarantee">
+  <div class="container">
+    <div class="guarantee-badge">
+      <span class="guarantee-badge-num">30</span>
+      <span class="guarantee-badge-text">Day</span>
+    </div>
+    <h3>30-Day Money-Back Guarantee</h3>
+    <p>Use the templates for a full 30 days. If they do not save you time and give you clarity on your financial position, send one email and you get every penny back. No hoops. No questions. No hassle.</p>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     CTA SECTION
+     ============================================================ -->
+<section class="cta-section section-border">
+  <div class="container">
+    <p class="label">One-Time Offer</p>
+    <h2 class="section-title">Add the Quick-Start Templates<br>to Your Order</h2>
+
+    <div class="price-display">
+      <span class="price-was">$97</span>
+      <span class="price-now">$47</span>
+    </div>
+    <p class="price-note">One-time payment. Instant delivery. Yours forever.</p>
+    <p class="financing-note">Pay as low as $12/mo with Fanbasis financing</p>
+
+    <!-- GHL: Replace href with upsell checkout link -->
+    <a href="#add-to-order" class="btn-cta">Yes, Add This to My Order &mdash; $47<span class="btn-sub">Instant access. Added to your trilogy purchase.</span></a>
+
+    <!-- GHL: Replace href with skip/decline link to questionnaire (or downsell page) -->
+    <a href="downsell-mini-templates.html" class="btn-skip">No thanks, I will figure it out myself</a>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="footer-brand">J. Marque &nbsp;|&nbsp; Money Decoded</div>
+  <p class="footer-disclaimer">
+    This is a one-time offer available only on this page. Once you leave, this pricing will not be available again. The Quick-Start Templates Pack is a digital product delivered instantly after purchase. Templates are provided for educational purposes and are not a substitute for professional financial, legal, or tax advice. Individual results depend on personal effort and circumstances. All sales backed by a 30-day money-back guarantee.
+  </p>
+</footer>
+
+
+<!-- ============================================================
+     COUNTDOWN TIMER SCRIPT
+     ============================================================ -->
+<script>
+(function() {
+  var minutes = 14;
+  var seconds = 59;
+  var minEl = document.getElementById('timer-min');
+  var secEl = document.getElementById('timer-sec');
+
+  function tick() {
+    if (seconds === 0) {
+      if (minutes === 0) {
+        minEl.textContent = '00';
+        secEl.textContent = '00';
+        return;
+      }
+      minutes--;
+      seconds = 59;
+    } else {
+      seconds--;
+    }
+    minEl.textContent = minutes < 10 ? '0' + minutes : minutes;
+    secEl.textContent = seconds < 10 ? '0' + seconds : seconds;
+  }
+
+  setInterval(tick, 1000);
+})();
+</script>
+
+</body>
+</html>
