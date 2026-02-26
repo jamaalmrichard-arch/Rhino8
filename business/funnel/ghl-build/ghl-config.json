@@ -1,0 +1,118 @@
+{
+  "meta": {
+    "project": "Money Decoded — 3-Track Funnel",
+    "brand": "J. Marque",
+    "created": "2026-02-25",
+    "description": "Master config for GHL API automation. 36 tags, 2 custom fields, 54 email templates (49 sequence + 5 transactional)."
+  },
+
+  "tags": [
+    {"name": "lead", "category": "lifecycle"},
+    {"name": "book1-downloaded", "category": "lifecycle"},
+    {"name": "buyer", "category": "lifecycle"},
+    {"name": "trilogy-purchased", "category": "lifecycle"},
+    {"name": "track-active", "category": "track"},
+    {"name": "track-passive", "category": "track"},
+    {"name": "track-foundation", "category": "track"},
+    {"name": "deal-machine-buyer", "category": "lifecycle"},
+    {"name": "wealth-shift-buyer", "category": "lifecycle"},
+    {"name": "foundation-buyer", "category": "lifecycle"},
+    {"name": "applicant", "category": "lifecycle"},
+    {"name": "booked-call", "category": "lifecycle"},
+    {"name": "call-completed", "category": "lifecycle"},
+    {"name": "enrolled-group", "category": "lifecycle"},
+    {"name": "enrolled-1on1", "category": "lifecycle"},
+    {"name": "active-student", "category": "lifecycle"},
+    {"name": "graduated", "category": "lifecycle"},
+    {"name": "no-show", "category": "lifecycle"},
+    {"name": "engaged-7d", "category": "engagement"},
+    {"name": "engaged-30d", "category": "engagement"},
+    {"name": "cold-30", "category": "engagement"},
+    {"name": "cold-90", "category": "engagement"},
+    {"name": "unsubscribed", "category": "system"},
+    {"name": "in-sequence-a", "category": "sequence"},
+    {"name": "in-sequence-b1", "category": "sequence"},
+    {"name": "in-sequence-b2", "category": "sequence"},
+    {"name": "in-sequence-b3", "category": "sequence"},
+    {"name": "in-sequence-c1", "category": "sequence"},
+    {"name": "in-sequence-c2", "category": "sequence"},
+    {"name": "in-sequence-c3", "category": "sequence"},
+    {"name": "in-sequence-d", "category": "sequence"},
+    {"name": "completed-sequence-a", "category": "sequence"},
+    {"name": "source-tiktok", "category": "traffic"},
+    {"name": "source-instagram", "category": "traffic"},
+    {"name": "source-organic", "category": "traffic"},
+    {"name": "source-gumroad", "category": "traffic"}
+  ],
+
+  "custom_fields": [
+    {
+      "name": "investor_track",
+      "dataType": "RADIO",
+      "options": ["active", "passive", "foundation"]
+    },
+    {
+      "name": "funnel_source",
+      "dataType": "TEXT"
+    }
+  ],
+
+  "email_templates": [
+    {"id": "a1", "name": "Seq A — Email 1: Red Pill", "subject": "You just took the red pill on money", "preview": "Welcome to the other side.", "from_name": "J. Marque", "sequence": "a", "day": 0, "html_file": "ghl-emails/sequence-a/a1-red-pill.html"},
+    {"id": "a2", "name": "Seq A — Email 2: August 1971", "subject": "What happened on August 15, 1971", "preview": "One Sunday night changed everything.", "from_name": "J. Marque", "sequence": "a", "day": 1, "html_file": "ghl-emails/sequence-a/a2-august-1971.html"},
+    {"id": "a3", "name": "Seq A — Email 3: Bank Lie", "subject": "The $847/year lie your bank is telling you", "preview": "Your savings account is costing you money.", "from_name": "J. Marque", "sequence": "a", "day": 2, "html_file": "ghl-emails/sequence-a/a3-bank-lie.html"},
+    {"id": "a4", "name": "Seq A — Email 4: BlackRock", "subject": "BlackRock just bet $4.7 billion on this", "preview": "When the biggest fund on earth moves, pay attention.", "from_name": "J. Marque", "sequence": "a", "day": 4, "html_file": "ghl-emails/sequence-a/a4-blackrock.html"},
+    {"id": "a5", "name": "Seq A — Email 5: Social Proof", "subject": "\"I read all 3 in one weekend\" — Marcus, Atlanta", "preview": "His exact words after finishing Book 3.", "from_name": "J. Marque", "sequence": "a", "day": 5, "html_file": "ghl-emails/sequence-a/a5-social-proof.html"},
+    {"id": "a6", "name": "Seq A — Email 6: Last Chance", "subject": "Last chance at $7 — price going up", "preview": "This is my last email about this.", "from_name": "J. Marque", "sequence": "a", "day": 7, "html_file": "ghl-emails/sequence-a/a6-last-chance.html"},
+
+    {"id": "b1-1", "name": "Seq B1 — Email 1: Active Track", "subject": "You picked the active track — your books are ready", "preview": "Trilogy download inside. Plus what's next for deal-makers.", "from_name": "J. Marque", "sequence": "b1", "day": 0, "html_file": "ghl-emails/sequence-b1/b1-1-active-track.html"},
+    {"id": "b1-2", "name": "Seq B1 — Email 2: Gap", "subject": "The gap nobody talks about", "preview": "Knowing how money works won't make you rich.", "from_name": "J. Marque", "sequence": "b1", "day": 2, "html_file": "ghl-emails/sequence-b1/b1-2-gap.html"},
+    {"id": "b1-3", "name": "Seq B1 — Email 3: Deal Machine", "subject": "6 modules, 12 templates, your first deal", "preview": "What's inside The Deal Machine — and why Module 2 alone is worth $5K.", "from_name": "J. Marque", "sequence": "b1", "day": 4, "html_file": "ghl-emails/sequence-b1/b1-3-deal-machine-breakdown.html"},
+    {"id": "b1-4", "name": "Seq B1 — Email 4: Soft Close", "subject": "{{contact.first_name}}, one more thing", "preview": "$147 vs your first deal. Let me do the math.", "from_name": "J. Marque", "sequence": "b1", "day": 7, "html_file": "ghl-emails/sequence-b1/b1-4-one-more-thing.html"},
+
+    {"id": "b2-1", "name": "Seq B2 — Email 1: Passive Track", "subject": "Smart choice — your trilogy is ready", "preview": "You chose the wealth repositioning track. Here are your books.", "from_name": "J. Marque", "sequence": "b2", "day": 0, "html_file": "ghl-emails/sequence-b2/b2-1-passive-track.html"},
+    {"id": "b2-2", "name": "Seq B2 — Email 2: Fee Problem", "subject": "You see the problem now — here's the question", "preview": "Knowing fees are eating your retirement is step one. Step two is harder.", "from_name": "J. Marque", "sequence": "b2", "day": 2, "html_file": "ghl-emails/sequence-b2/b2-2-problem-question.html"},
+    {"id": "b2-3", "name": "Seq B2 — Email 3: Wealth Shift", "subject": "What's inside The Wealth Shift", "preview": "5 modules, 8 worksheets, and a calculator that changes how you see your portfolio.", "from_name": "J. Marque", "sequence": "b2", "day": 4, "html_file": "ghl-emails/sequence-b2/b2-3-wealth-shift-breakdown.html"},
+    {"id": "b2-4", "name": "Seq B2 — Email 4: Cost of Waiting", "subject": "The real cost of waiting", "preview": "$197 now vs $3K-$15K per year you keep losing.", "from_name": "J. Marque", "sequence": "b2", "day": 7, "html_file": "ghl-emails/sequence-b2/b2-4-cost-of-waiting.html"},
+
+    {"id": "b3-1", "name": "Seq B3 — Email 1: Foundation Track", "subject": "Respect — your books are ready", "preview": "You said you're building from the ground up. That takes guts.", "from_name": "J. Marque", "sequence": "b3", "day": 0, "html_file": "ghl-emails/sequence-b3/b3-1-foundation-track.html"},
+    {"id": "b3-2", "name": "Seq B3 — Email 2: Eyes Open", "subject": "Eyes open is just the beginning", "preview": "The trilogy showed you the truth. But truth without a plan is just stress.", "from_name": "J. Marque", "sequence": "b3", "day": 2, "html_file": "ghl-emails/sequence-b3/b3-2-eyes-open.html"},
+    {"id": "b3-3", "name": "Seq B3 — Email 3: Foundation", "subject": "7 modules. 9 worksheets. One hour to start.", "preview": "What's inside The Foundation — and why Module 1 finds money you didn't know you had.", "from_name": "J. Marque", "sequence": "b3", "day": 4, "html_file": "ghl-emails/sequence-b3/b3-3-foundation-breakdown.html"},
+    {"id": "b3-4", "name": "Seq B3 — Email 4: No Shame", "subject": "{{contact.first_name}}, no shame in starting here", "preview": "$97 vs the $200-$800/month you don't know you're losing.", "from_name": "J. Marque", "sequence": "b3", "day": 7, "html_file": "ghl-emails/sequence-b3/b3-4-no-shame.html"},
+
+    {"id": "c1-1", "name": "Seq C1 — Email 1: Deal Track Welcome", "subject": "You're in the deal-making track now", "preview": "Your Deal Machine guide + audio modules are ready.", "from_name": "J. Marque", "sequence": "c1", "day": 0, "html_file": "ghl-emails/sequence-c1/c1-1-deal-making-track.html"},
+    {"id": "c1-2", "name": "Seq C1 — Email 2: Down Markets", "subject": "Why I love down markets", "preview": "Everyone else runs. That's exactly why I show up.", "from_name": "J. Marque", "sequence": "c1", "day": 2, "html_file": "ghl-emails/sequence-c1/c1-2-down-markets.html"},
+    {"id": "c1-3", "name": "Seq C1 — Email 3: Origin Story", "subject": "My first deal lost me money", "preview": "And my second one fell apart at closing.", "from_name": "J. Marque", "sequence": "c1", "day": 4, "html_file": "ghl-emails/sequence-c1/c1-3-first-deal-lost.html"},
+    {"id": "c1-4", "name": "Seq C1 — Email 4: David", "subject": "{{contact.first_name}}, meet David — $95K engineer to $6,800/mo", "preview": "12 months. Same system. Different life.", "from_name": "J. Marque", "sequence": "c1", "day": 6, "html_file": "ghl-emails/sequence-c1/c1-4-meet-david.html"},
+    {"id": "c1-5", "name": "Seq C1 — Email 5: Keisha", "subject": "Keisha's first wholesale check was $8,500", "preview": "A teacher making $52K. Single mom. Zero experience.", "from_name": "J. Marque", "sequence": "c1", "day": 8, "html_file": "ghl-emails/sequence-c1/c1-5-keisha-wholesale.html"},
+    {"id": "c1-6", "name": "Seq C1 — Email 6: Mistakes", "subject": "3 mistakes that keep new investors broke", "preview": "Smart people make these. Don't be one of them.", "from_name": "J. Marque", "sequence": "c1", "day": 10, "html_file": "ghl-emails/sequence-c1/c1-6-three-mistakes.html"},
+    {"id": "c1-7", "name": "Seq C1 — Email 7: Coaching Pitch", "subject": "Applications are open — 15 spots", "preview": "6 months. A system. Accountability. Your first deal.", "from_name": "J. Marque", "sequence": "c1", "day": 12, "html_file": "ghl-emails/sequence-c1/c1-7-applications-open.html"},
+    {"id": "c1-8", "name": "Seq C1 — Email 8: FAQ", "subject": "7 spots left — your questions answered", "preview": "The 4 questions every active investor asks before joining.", "from_name": "J. Marque", "sequence": "c1", "day": 15, "html_file": "ghl-emails/sequence-c1/c1-8-spots-left.html"},
+    {"id": "c1-9", "name": "Seq C1 — Email 9: Close", "subject": "closing applications friday", "preview": "Last email about this.", "from_name": "J. Marque", "sequence": "c1", "day": 18, "html_file": "ghl-emails/sequence-c1/c1-9-closing-friday.html"},
+
+    {"id": "c2-1", "name": "Seq C2 — Email 1: Wealth Shift Welcome", "subject": "Your Wealth Shift materials are ready", "preview": "You just made the smartest financial decision this year.", "from_name": "J. Marque", "sequence": "c2", "day": 0, "html_file": "ghl-emails/sequence-c2/c2-1-wealth-shift-ready.html"},
+    {"id": "c2-2", "name": "Seq C2 — Email 2: Advisor Secret", "subject": "What your financial advisor won't tell you", "preview": "They lose money when you learn this.", "from_name": "J. Marque", "sequence": "c2", "day": 2, "html_file": "ghl-emails/sequence-c2/c2-2-advisor-wont-tell.html"},
+    {"id": "c2-3", "name": "Seq C2 — Email 3: $250M Lesson", "subject": "The $250M lesson most professionals miss", "preview": "I've watched smart people make this mistake for 15 years.", "from_name": "J. Marque", "sequence": "c2", "day": 4, "html_file": "ghl-emails/sequence-c2/c2-3-250m-lesson.html"},
+    {"id": "c2-4", "name": "Seq C2 — Email 4: David Story", "subject": "{{contact.first_name}}, this is David's story", "preview": "From $340K in retirement accounts earning 6% to $2,400/mo cash flow.", "from_name": "J. Marque", "sequence": "c2", "day": 7, "html_file": "ghl-emails/sequence-c2/c2-4-david-story.html"},
+    {"id": "c2-5", "name": "Seq C2 — Email 5: Fear", "subject": "The fear that keeps $500K locked in a 401(k)", "preview": "It's not the market. It's what nobody talks about.", "from_name": "J. Marque", "sequence": "c2", "day": 9, "html_file": "ghl-emails/sequence-c2/c2-5-fear-500k.html"},
+    {"id": "c2-6", "name": "Seq C2 — Email 6: Wealth Mistakes", "subject": "3 wealth mistakes smart professionals make", "preview": "Your intelligence is costing you money.", "from_name": "J. Marque", "sequence": "c2", "day": 11, "html_file": "ghl-emails/sequence-c2/c2-6-three-wealth-mistakes.html"},
+    {"id": "c2-7", "name": "Seq C2 — Email 7: Coaching Pitch", "subject": "Applications open — your personal wealth strategist", "preview": "6 months. Your money. A $250M advisor in your corner.", "from_name": "J. Marque", "sequence": "c2", "day": 13, "html_file": "ghl-emails/sequence-c2/c2-7-applications-open.html"},
+    {"id": "c2-8", "name": "Seq C2 — Email 8: FAQ", "subject": "8 spots remaining — your questions answered", "preview": "What every high earner asks before joining.", "from_name": "J. Marque", "sequence": "c2", "day": 15, "html_file": "ghl-emails/sequence-c2/c2-8-spots-remaining.html"},
+    {"id": "c2-9", "name": "Seq C2 — Email 9: Close", "subject": "final note on the program", "preview": "This is my last email about coaching.", "from_name": "J. Marque", "sequence": "c2", "day": 18, "html_file": "ghl-emails/sequence-c2/c2-9-final-note.html"},
+
+    {"id": "c3-1", "name": "Seq C3 — Email 1: Foundation Welcome", "subject": "Welcome to The Foundation — here's your plan", "preview": "You just took the hardest step. Here's what's next.", "from_name": "J. Marque", "sequence": "c3", "day": 0, "html_file": "ghl-emails/sequence-c3/c3-1-welcome-foundation.html"},
+    {"id": "c3-2", "name": "Seq C3 — Email 2: Started With Less", "subject": "I started with less than you think", "preview": "$250M in real estate started with nothing.", "from_name": "J. Marque", "sequence": "c3", "day": 2, "html_file": "ghl-emails/sequence-c3/c3-2-started-with-less.html"},
+    {"id": "c3-3", "name": "Seq C3 — Email 3: Keisha $680", "subject": "The $680/month Keisha didn't know she was wasting", "preview": "She was a teacher making $52K. Sound familiar?", "from_name": "J. Marque", "sequence": "c3", "day": 4, "html_file": "ghl-emails/sequence-c3/c3-3-keisha-680.html"},
+    {"id": "c3-4", "name": "Seq C3 — Email 4: Keisha 3 Properties", "subject": "{{contact.first_name}}, Keisha now owns 3 properties", "preview": "Teacher. $52K salary. Zero experience. 11 months later...", "from_name": "J. Marque", "sequence": "c3", "day": 7, "html_file": "ghl-emails/sequence-c3/c3-4-keisha-3-properties.html"},
+    {"id": "c3-5", "name": "Seq C3 — Email 5: Not Late", "subject": "You're not starting late — you're starting right", "preview": "The most dangerous myth in personal finance.", "from_name": "J. Marque", "sequence": "c3", "day": 9, "html_file": "ghl-emails/sequence-c3/c3-5-not-starting-late.html"},
+    {"id": "c3-6", "name": "Seq C3 — Email 6: 4 Mistakes", "subject": "4 mistakes beginners make (and how to avoid every one)", "preview": "I made all 4. You don't have to.", "from_name": "J. Marque", "sequence": "c3", "day": 11, "html_file": "ghl-emails/sequence-c3/c3-6-four-mistakes.html"},
+    {"id": "c3-7", "name": "Seq C3 — Email 7: Coaching Pitch", "subject": "Applications are open — 15 spots", "preview": "6 months. A mentor. Your first deal.", "from_name": "J. Marque", "sequence": "c3", "day": 13, "html_file": "ghl-emails/sequence-c3/c3-7-applications-open.html"},
+    {"id": "c3-8", "name": "Seq C3 — Email 8: FAQ", "subject": "8 spots left — your questions answered", "preview": "Everything beginners ask before saying yes.", "from_name": "J. Marque", "sequence": "c3", "day": 15, "html_file": "ghl-emails/sequence-c3/c3-8-spots-left.html"},
+    {"id": "c3-9", "name": "Seq C3 — Email 9: Close", "subject": "last email about this", "preview": "Then back to regular value.", "from_name": "J. Marque", "sequence": "c3", "day": 18, "html_file": "ghl-emails/sequence-c3/c3-9-last-email.html"},
+
+    {"id": "d1", "name": "Seq D — Email 1: Application Received", "subject": "Application received — here's what happens next", "preview": "You're in. Here's the process.", "from_name": "J. Marque", "sequence": "d", "day": 0, "html_file": "ghl-emails/sequence-d/d1-application-received.html"},
+    {"id": "d2", "name": "Seq D — Email 2: Call Prep", "subject": "What to expect on your strategy call", "preview": "This is not a sales pitch.", "from_name": "J. Marque", "sequence": "d", "day": 1, "html_file": "ghl-emails/sequence-d/d2-what-to-expect.html"},
+    {"id": "d3", "name": "Seq D — Email 3: Why 15", "subject": "Why I only take 15 people per cohort", "preview": "I could take 100. I choose 15.", "from_name": "J. Marque", "sequence": "d", "day": 2, "html_file": "ghl-emails/sequence-d/d3-why-15.html"},
+    {"id": "d4", "name": "Seq D — Email 4: Book Call", "subject": "Quick question about your application", "preview": "Just checking in.", "from_name": "J. Marque", "sequence": "d", "day": 3, "html_file": "ghl-emails/sequence-d/d4-quick-question.html"}
+  ]
+}
