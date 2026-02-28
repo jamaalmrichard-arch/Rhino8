@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>914 Edwin St NW — Architectural Design Concept</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --black: #0a0a0a;
+  --gold: #c9a84c;
+  --gold-light: #e6d5a0;
+  --white: #ffffff;
+  --purple: #6b3fa0;
+  --purple-light: #8a5cc5;
+  --gray-dark: #1a1a1a;
+  --gray-mid: #2a2a2a;
+  --gray-text: #b0b0b0;
+  --font-serif: 'DM Serif Display', Georgia, serif;
+  --font-sans: 'Outfit', -apple-system, sans-serif;
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+/* NAV */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+  padding: 0.75rem 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.nav-brand { font-family: var(--font-serif); color: var(--gold); font-size: 1.1rem; }
+.nav-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.nav-links a {
+  color: var(--gray-text); text-decoration: none; font-size: 0.85rem;
+  font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase;
+  transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--gold); }
+/* HERO */
+.hero {
+  min-height: 100vh; display: flex; flex-direction: column;
+  justify-content: center; align-items: center; text-align: center;
+  padding: 6rem 2rem 4rem;
+  background: linear-gradient(180deg, rgba(107,63,160,0.08) 0%, var(--black) 60%);
+  position: relative;
+}
+.hero::before {
+  content: ''; position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-prepared {
+  font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1rem; font-weight: 500;
+}
+.hero h1 {
+  font-family: var(--font-serif); font-size: clamp(2.5rem, 6vw, 4.5rem);
+  color: var(--white); line-height: 1.15; margin-bottom: 0.5rem;
+}
+.hero h1 span { color: var(--gold); }
+.hero-address {
+  font-size: 1.15rem; color: var(--gray-text); margin-bottom: 0.5rem;
+  font-weight: 300; letter-spacing: 1px;
+}
+.hero-meta {
+  font-size: 0.9rem; color: var(--gray-text); margin-bottom: 2.5rem;
+}
+.hero-stats {
+  display: flex; gap: 3rem; flex-wrap: wrap; justify-content: center;
+  margin-top: 1rem;
+}
+.hero-stat { text-align: center; }
+.hero-stat-val {
+  font-family: var(--font-serif); font-size: 2rem; color: var(--gold);
+}
+.hero-stat-label {
+  font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px;
+  color: var(--gray-text); margin-top: 0.25rem;
+}
+/* SECTIONS */
+.section {
+  max-width: 1200px; margin: 0 auto; padding: 5rem 2rem;
+}
+.section-header {
+  text-align: center; margin-bottom: 3.5rem;
+}
+.section-tag {
+  font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 0.75rem; font-weight: 600;
+}
+.section-title {
+  font-family: var(--font-serif); font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: var(--white); line-height: 1.2;
+}
+.divider {
+  width: 60px; height: 2px; background: var(--gold);
+  margin: 1.5rem auto 0;
+}
+/* FLOOR PLAN AREA */
+.floorplan-container {
+  background: #fafafa; border-radius: 12px; padding: 2.5rem;
+  margin-bottom: 3rem; position: relative; overflow: hidden;
+}
+.floorplan-label {
+  font-family: var(--font-serif); font-size: 1.4rem;
+  color: #1a1a1a; margin-bottom: 0.25rem; text-align: center;
+}
+.floorplan-sublabel {
+  font-size: 0.85rem; color: #888; text-align: center; margin-bottom: 2rem;
+  font-weight: 400;
+}
+.fp-wrap {
+  width: 100%; max-width: 750px; margin: 0 auto;
+}
+.fp-wrap svg { width: 100%; height: auto; display: block; }
+/* COMPASS */
+.compass {
+  position: absolute; top: 1.5rem; right: 1.5rem;
+  width: 50px; height: 50px;
+}
+/* MOOD BOARD */
+.palette-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.5rem; margin-bottom: 3rem;
+}
+.palette-card {
+  border-radius: 10px; overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--gray-dark);
+}
+.palette-swatch { height: 100px; }
+.palette-info { padding: 1rem; }
+.palette-name { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.25rem; }
+.palette-hex { font-size: 0.8rem; color: var(--gray-text); font-family: monospace; }
+/* MATERIAL CARDS */
+.material-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.material-card {
+  background: var(--gray-dark); border-radius: 10px; overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.material-preview {
+  height: 120px; display: flex; align-items: center; justify-content: center;
+  font-size: 2.5rem; position: relative;
+}
+.material-body { padding: 1.25rem; }
+.material-title { font-weight: 600; margin-bottom: 0.35rem; font-size: 1rem; }
+.material-desc { font-size: 0.85rem; color: var(--gray-text); line-height: 1.5; }
+/* ROOM SPECS */
+.room-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+}
+.room-card {
+  background: var(--gray-dark); border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.06);
+  overflow: hidden; transition: transform 0.3s, border-color 0.3s;
+}
+.room-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(201,168,76,0.3);
+}
+.room-card-header {
+  padding: 1.5rem 1.5rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.room-card-icon { font-size: 1.5rem; margin-bottom: 0.5rem; display: block; color: var(--gold); }
+.room-card-name {
+  font-family: var(--font-serif); font-size: 1.3rem;
+}
+.room-card-body { padding: 1.25rem 1.5rem 1.5rem; }
+.room-spec-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.04);
+  font-size: 0.9rem;
+}
+.room-spec-row:last-child { border-bottom: none; }
+.room-spec-label { color: var(--gray-text); font-weight: 400; }
+.room-spec-value { color: var(--white); font-weight: 500; text-align: right; max-width: 55%; }
+/* COST TABLE */
+.cost-table-wrap {
+  overflow-x: auto; border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: var(--gray-dark);
+}
+table {
+  width: 100%; border-collapse: collapse;
+}
+thead th {
+  background: var(--gray-mid); padding: 1rem 1.25rem;
+  text-align: left; font-size: 0.8rem; text-transform: uppercase;
+  letter-spacing: 1.5px; color: var(--gold); font-weight: 600;
+  border-bottom: 2px solid rgba(201,168,76,0.3);
+}
+tbody td {
+  padding: 0.85rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,0.04);
+  font-size: 0.95rem;
+}
+tbody tr:hover { background: rgba(201,168,76,0.04); }
+tbody tr:last-child td { border-bottom: none; }
+.cost-total td {
+  font-weight: 700; color: var(--gold);
+  border-top: 2px solid rgba(201,168,76,0.3);
+  font-size: 1.05rem; padding-top: 1rem; padding-bottom: 1rem;
+}
+/* DEAL SUMMARY */
+.deal-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem; margin-top: 2rem;
+}
+.deal-card {
+  background: var(--gray-dark); border-radius: 12px; padding: 1.75rem;
+  border: 1px solid rgba(255,255,255,0.06); text-align: center;
+}
+.deal-card-value {
+  font-family: var(--font-serif); font-size: 1.8rem; color: var(--gold);
+  margin-bottom: 0.25rem;
+}
+.deal-card-label {
+  font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px;
+  color: var(--gray-text);
+}
+.deal-highlight {
+  border-color: rgba(201,168,76,0.4);
+  background: linear-gradient(135deg, var(--gray-dark), rgba(201,168,76,0.08));
+}
+.deal-note {
+  text-align: center; margin-top: 2.5rem; padding: 1.5rem;
+  background: rgba(107,63,160,0.1); border-radius: 10px;
+  border: 1px solid rgba(107,63,160,0.25);
+  font-size: 0.95rem; color: var(--gray-text); line-height: 1.7;
+}
+.deal-note strong { color: var(--white); }
+/* FOOTER */
+.footer {
+  text-align: center; padding: 3rem 2rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  font-size: 0.8rem; color: #555;
+}
+.footer span { color: var(--gold); }
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav { padding: 0.6rem 1rem; }
+  .nav-links { gap: 0.75rem; }
+  .nav-links a { font-size: 0.7rem; }
+  .section { padding: 3rem 1.25rem; }
+  .hero { padding: 5rem 1.25rem 3rem; }
+  .hero-stats { gap: 1.5rem; }
+  .floorplan-container { padding: 1.25rem; }
+  .room-grid { grid-template-columns: 1fr; }
+  .palette-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .nav-links { display: none; }
+  .deal-grid { grid-template-columns: 1fr; }
+}
+/* PRINT */
+@media print {
+  .nav { display: none; }
+  body { background: #fff; color: #000; }
+  .section { padding: 2rem 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav">
+  <div class="nav-brand">914 Edwin St NW</div>
+  <div class="nav-links">
+    <a href="#plans">Floor Plans</a>
+    <a href="#mood">Design</a>
+    <a href="#rooms">Room Specs</a>
+    <a href="#cost">Budget</a>
+    <a href="#deal">Deal Summary</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-prepared">Prepared for Tia</div>
+  <h1>914 Edwin St <span>NW</span></h1>
+  <div class="hero-address">Atlanta, GA 30318</div>
+  <div class="hero-meta">Architectural Design Concept &mdash; February 27, 2026</div>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-val">1948</div>
+      <div class="hero-stat-label">Year Built</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-val">~1,500</div>
+      <div class="hero-stat-label">Proposed SQ FT</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-val">3 / 2</div>
+      <div class="hero-stat-label">Bed / Bath</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-val">0.34 AC</div>
+      <div class="hero-stat-label">Lot Size</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-val">$300K+</div>
+      <div class="hero-stat-label">Target ARV</div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOOR PLANS -->
+<section class="section" id="plans">
+  <div class="section-header">
+    <div class="section-tag">Floor Plans</div>
+    <div class="section-title">Two-Story Layout</div>
+    <div class="divider"></div>
+  </div>
+
+  <!-- FIRST FLOOR -->
+  <div class="floorplan-container">
+    <svg class="compass" viewBox="0 0 50 50">
+      <circle cx="25" cy="25" r="23" fill="none" stroke="#ccc" stroke-width="1"/>
+      <polygon points="25,5 22,20 28,20" fill="#c9a84c"/>
+      <polygon points="25,45 22,30 28,30" fill="#ccc"/>
+      <text x="25" y="3" text-anchor="middle" font-size="7" fill="#c9a84c" font-family="Outfit" font-weight="700">N</text>
+    </svg>
+    <div class="floorplan-label">First Floor Plan</div>
+    <div class="floorplan-sublabel">~840 sq ft living + ~280 sq ft attached garage &bull; 9 ft ceilings</div>
+    <div class="fp-wrap">
+      <svg viewBox="0 0 750 520" xmlns="http://www.w3.org/2000/svg" font-family="Outfit, sans-serif">
+        <!-- BACKGROUND GRID -->
+        <defs>
+          <pattern id="grid1" width="15" height="15" patternUnits="userSpaceOnUse">
+            <path d="M 15 0 L 0 0 0 15" fill="none" stroke="#e8e8e8" stroke-width="0.3"/>
+          </pattern>
+        </defs>
+        <rect x="0" y="0" width="750" height="520" fill="#fafafa"/>
+        <rect x="0" y="0" width="750" height="520" fill="url(#grid1)"/>
+
+        <!-- MAIN HOUSE OUTLINE -->
+        <rect x="60" y="60" width="480" height="400" fill="#fff" stroke="#222" stroke-width="2.5"/>
+
+        <!-- GARAGE -->
+        <rect x="540" y="200" width="160" height="260" fill="#f5f5f0" stroke="#222" stroke-width="2.5"/>
+        <text x="620" y="310" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a1a">1-CAR</text>
+        <text x="620" y="328" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a1a">GARAGE</text>
+        <text x="620" y="348" text-anchor="middle" font-size="10" fill="#888">12' x 22'</text>
+        <text x="620" y="362" text-anchor="middle" font-size="10" fill="#888">280 sq ft</text>
+        <!-- Garage door -->
+        <rect x="570" y="455" width="100" height="5" fill="#222"/>
+        <text x="620" y="478" text-anchor="middle" font-size="8" fill="#888">GARAGE DOOR</text>
+        <!-- Garage to house door -->
+        <line x1="540" y1="290" x2="540" y2="315" stroke="#fff" stroke-width="3"/>
+        <line x1="540" y1="290" x2="540" y2="315" stroke="#222" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <path d="M 540 290 Q 520 302 540 315" fill="none" stroke="#c9a84c" stroke-width="1"/>
+
+        <!-- LIVING ROOM -->
+        <rect x="60" y="60" width="280" height="210" fill="rgba(201,168,76,0.03)" stroke="#222" stroke-width="1"/>
+        <text x="200" y="145" text-anchor="middle" font-size="16" font-weight="600" fill="#1a1a1a">LIVING ROOM</text>
+        <text x="200" y="165" text-anchor="middle" font-size="11" fill="#888">18' x 14'</text>
+        <!-- Fireplace -->
+        <rect x="68" y="130" width="8" height="50" fill="#444"/>
+        <rect x="76" y="135" width="3" height="40" fill="#c9a84c"/>
+        <text x="95" y="160" font-size="7" fill="#c9a84c" font-weight="600">FP</text>
+
+        <!-- DINING AREA -->
+        <rect x="60" y="270" width="170" height="130" fill="rgba(107,63,160,0.03)" stroke="#222" stroke-width="1"/>
+        <text x="145" y="335" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a1a">DINING</text>
+        <text x="145" y="352" text-anchor="middle" font-size="11" fill="#888">11' x 9'</text>
+
+        <!-- KITCHEN -->
+        <rect x="230" y="270" width="220" height="190" fill="rgba(201,168,76,0.04)" stroke="#222" stroke-width="1"/>
+        <text x="340" y="340" text-anchor="middle" font-size="16" font-weight="600" fill="#1a1a1a">KITCHEN</text>
+        <text x="340" y="360" text-anchor="middle" font-size="11" fill="#888">15' x 13'</text>
+        <!-- Island -->
+        <rect x="300" y="380" width="80" height="35" rx="3" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+        <text x="340" y="402" text-anchor="middle" font-size="8" fill="#c9a84c">ISLAND</text>
+        <!-- Counters along walls -->
+        <rect x="235" y="275" width="210" height="18" rx="2" fill="#e8e0cc" stroke="#bbb" stroke-width="0.5"/>
+        <rect x="435" y="275" width="15" height="120" rx="2" fill="#e8e0cc" stroke="#bbb" stroke-width="0.5"/>
+
+        <!-- ENTRY FOYER -->
+        <rect x="340" y="60" width="100" height="100" fill="rgba(255,255,255,0.5)" stroke="#222" stroke-width="1"/>
+        <text x="390" y="110" text-anchor="middle" font-size="13" font-weight="600" fill="#1a1a1a">FOYER</text>
+        <text x="390" y="126" text-anchor="middle" font-size="10" fill="#888">7' x 7'</text>
+        <!-- Front door -->
+        <line x1="365" y1="60" x2="395" y2="60" stroke="#fff" stroke-width="3"/>
+        <line x1="365" y1="60" x2="395" y2="60" stroke="#c9a84c" stroke-width="2"/>
+        <path d="M 365 60 Q 380 40 395 60" fill="none" stroke="#c9a84c" stroke-width="1"/>
+        <text x="380" y="50" text-anchor="middle" font-size="8" fill="#c9a84c" font-weight="600">ENTRY</text>
+
+        <!-- POWDER ROOM -->
+        <rect x="440" y="60" width="100" height="100" fill="rgba(200,200,200,0.1)" stroke="#222" stroke-width="1"/>
+        <text x="490" y="105" text-anchor="middle" font-size="12" font-weight="600" fill="#1a1a1a">POWDER</text>
+        <text x="490" y="120" text-anchor="middle" font-size="12" font-weight="600" fill="#1a1a1a">ROOM</text>
+        <text x="490" y="136" text-anchor="middle" font-size="10" fill="#888">5' x 7'</text>
+        <!-- Toilet & sink symbols -->
+        <ellipse cx="470" cy="80" rx="6" ry="8" fill="none" stroke="#aaa" stroke-width="1"/>
+        <rect x="500" y="72" width="12" height="9" rx="2" fill="none" stroke="#aaa" stroke-width="1"/>
+
+        <!-- LAUNDRY CLOSET -->
+        <rect x="450" y="160" width="90" height="70" fill="rgba(200,200,200,0.08)" stroke="#222" stroke-width="1"/>
+        <text x="495" y="195" text-anchor="middle" font-size="11" font-weight="600" fill="#1a1a1a">LAUNDRY</text>
+        <text x="495" y="210" text-anchor="middle" font-size="9" fill="#888">6' x 5'</text>
+        <!-- W/D symbol -->
+        <rect x="465" y="170" width="20" height="18" rx="3" fill="none" stroke="#aaa" stroke-width="1"/>
+        <rect x="490" y="170" width="20" height="18" rx="3" fill="none" stroke="#aaa" stroke-width="1"/>
+
+        <!-- STAIRS -->
+        <rect x="450" y="230" width="90" height="40" fill="rgba(0,0,0,0.05)" stroke="#222" stroke-width="1"/>
+        <line x1="460" y1="230" x2="460" y2="270" stroke="#bbb" stroke-width="0.5"/>
+        <line x1="470" y1="230" x2="470" y2="270" stroke="#bbb" stroke-width="0.5"/>
+        <line x1="480" y1="230" x2="480" y2="270" stroke="#bbb" stroke-width="0.5"/>
+        <line x1="490" y1="230" x2="490" y2="270" stroke="#bbb" stroke-width="0.5"/>
+        <line x1="500" y1="230" x2="500" y2="270" stroke="#bbb" stroke-width="0.5"/>
+        <line x1="510" y1="230" x2="510" y2="270" stroke="#bbb" stroke-width="0.5"/>
+        <line x1="520" y1="230" x2="520" y2="270" stroke="#bbb" stroke-width="0.5"/>
+        <line x1="530" y1="230" x2="530" y2="270" stroke="#bbb" stroke-width="0.5"/>
+        <text x="495" y="255" text-anchor="middle" font-size="9" font-weight="600" fill="#555">STAIRS UP</text>
+        <polygon points="535,245 540,250 535,255" fill="#555"/>
+
+        <!-- OPEN CONCEPT MARKERS -->
+        <line x1="230" y1="270" x2="230" y2="400" stroke="#222" stroke-width="1" stroke-dasharray="6,4"/>
+        <text x="235" y="268" font-size="7" fill="#c9a84c">OPEN</text>
+
+        <!-- WINDOWS -->
+        <!-- Living room windows -->
+        <rect x="100" y="57" width="50" height="6" fill="#d4eef7" stroke="#222" stroke-width="1"/>
+        <rect x="180" y="57" width="50" height="6" fill="#d4eef7" stroke="#222" stroke-width="1"/>
+        <!-- Living room side windows -->
+        <rect x="57" y="100" width="6" height="40" fill="#d4eef7" stroke="#222" stroke-width="1"/>
+        <rect x="57" y="180" width="6" height="40" fill="#d4eef7" stroke="#222" stroke-width="1"/>
+        <!-- Dining window -->
+        <rect x="57" y="310" width="6" height="40" fill="#d4eef7" stroke="#222" stroke-width="1"/>
+        <!-- Kitchen window -->
+        <rect x="280" y="457" width="60" height="6" fill="#d4eef7" stroke="#222" stroke-width="1"/>
+        <rect x="370" y="457" width="60" height="6" fill="#d4eef7" stroke="#222" stroke-width="1"/>
+
+        <!-- DIMENSIONS -->
+        <!-- House width -->
+        <line x1="60" y1="490" x2="540" y2="490" stroke="#c9a84c" stroke-width="1"/>
+        <line x1="60" y1="485" x2="60" y2="495" stroke="#c9a84c" stroke-width="1"/>
+        <line x1="540" y1="485" x2="540" y2="495" stroke="#c9a84c" stroke-width="1"/>
+        <text x="300" y="506" text-anchor="middle" font-size="11" fill="#c9a84c" font-weight="600">32'</text>
+        <!-- House depth -->
+        <line x1="30" y1="60" x2="30" y2="460" stroke="#c9a84c" stroke-width="1"/>
+        <line x1="25" y1="60" x2="35" y2="60" stroke="#c9a84c" stroke-width="1"/>
+        <line x1="25" y1="460" x2="35" y2="460" stroke="#c9a84c" stroke-width="1"/>
+        <text x="22" y="265" text-anchor="middle" font-size="11" fill="#c9a84c" font-weight="600" transform="rotate(-90,22,265)">27'</text>
+        <!-- Garage width -->
+        <line x1="540" y1="490" x2="700" y2="490" stroke="#c9a84c" stroke-width="1"/>
+        <line x1="700" y1="485" x2="700" y2="495" stroke="#c9a84c" stroke-width="1"/>
+        <text x="620" y="506" text-anchor="middle" font-size="11" fill="#c9a84c" font-weight="600">12'</text>
+
+        <!-- SCALE BAR -->
+        <line x1="580" y1="80" x2="700" y2="80" stroke="#333" stroke-width="1.5"/>
+        <line x1="580" y1="76" x2="580" y2="84" stroke="#333" stroke-width="1.5"/>
+        <line x1="640" y1="76" x2="640" y2="84" stroke="#333" stroke-width="1"/>
+        <line x1="700" y1="76" x2="700" y2="84" stroke="#333" stroke-width="1.5"/>
+        <text x="610" y="96" text-anchor="middle" font-size="8" fill="#555">5'</text>
+        <text x="670" y="96" text-anchor="middle" font-size="8" fill="#555">5'</text>
+        <text x="640" y="72" text-anchor="middle" font-size="8" fill="#555" font-weight="600">SCALE</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- SECOND FLOOR -->
+  <div class="floorplan-container">
+    <svg class="compass" viewBox="0 0 50 50">
+      <circle cx="25" cy="25" r="23" fill="none" stroke="#ccc" stroke-width="1"/>
+      <polygon points="25,5 22,20 28,20" fill="#c9a84c"/>
+      <polygon points="25,45 22,30 28,30" fill="#ccc"/>
+      <text x="25" y="3" text-anchor="middle" font-size="7" fill="#c9a84c" font-family="Outfit" font-weight="700">N</text>
+    </svg>
+    <div class="floorplan-label">Second Floor Plan</div>
+    <div class="floorplan-sublabel">~660 sq ft &bull; 9 ft ceilings with vaulted master</div>
+    <div class="fp-wrap">
+      <svg viewBox="0 0 600 480" xmlns="http://www.w3.org/2000/svg" font-family="Outfit, sans-serif">
+        <defs>
+          <pattern id="grid2" width="15" height="15" patternUnits="userSpaceOnUse">
+            <path d="M 15 0 L 0 0 0 15" fill="none" stroke="#e8e8e8" stroke-width="0.3"/>
+          </pattern>
+        </defs>
+        <rect x="0" y="0" width="600" height="480" fill="#fafafa"/>
+        <rect x="0" y="0" width="600" height="480" fill="url(#grid2)"/>
+
+        <!-- SECOND FLOOR OUTLINE -->
+        <rect x="60" y="50" width="480" height="380" fill="#fff" stroke="#222" stroke-width="2.5"/>
+
+        <!-- MASTER BEDROOM -->
+        <rect x="60" y="50" width="260" height="220" fill="rgba(107,63,160,0.05)" stroke="#222" stroke-width="1.5"/>
+        <text x="190" y="140" text-anchor="middle" font-size="16" font-weight="600" fill="#1a1a1a">MASTER BEDROOM</text>
+        <text x="190" y="160" text-anchor="middle" font-size="11" fill="#888">17' x 14'</text>
+        <text x="190" y="178" text-anchor="middle" font-size="9" fill="#6b3fa0" font-weight="500">Purple accent wall</text>
+        <text x="190" y="192" text-anchor="middle" font-size="9" fill="#6b3fa0" font-weight="500">Vaulted ceiling 10'+</text>
+
+        <!-- WALK-IN CLOSET -->
+        <rect x="60" y="270" width="110" height="80" fill="rgba(0,0,0,0.03)" stroke="#222" stroke-width="1"/>
+        <text x="115" y="310" text-anchor="middle" font-size="12" font-weight="600" fill="#1a1a1a">WALK-IN</text>
+        <text x="115" y="325" text-anchor="middle" font-size="12" font-weight="600" fill="#1a1a1a">CLOSET</text>
+        <text x="115" y="340" text-anchor="middle" font-size="10" fill="#888">7' x 5'</text>
+        <!-- Closet door -->
+        <line x1="100" y1="270" x2="135" y2="270" stroke="#fff" stroke-width="3"/>
+        <line x1="100" y1="270" x2="135" y2="270" stroke="#222" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+        <!-- MASTER BATH -->
+        <rect x="170" y="270" width="150" height="160" fill="rgba(201,168,76,0.04)" stroke="#222" stroke-width="1.5"/>
+        <text x="245" y="330" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a1a">MASTER BATH</text>
+        <text x="245" y="348" text-anchor="middle" font-size="11" fill="#888">10' x 10'</text>
+        <!-- Double vanity -->
+        <rect x="178" y="278" width="70" height="16" rx="2" fill="#e8e0cc" stroke="#bbb" stroke-width="1"/>
+        <circle cx="198" cy="286" r="5" fill="none" stroke="#aaa" stroke-width="0.8"/>
+        <circle cx="228" cy="286" r="5" fill="none" stroke="#aaa" stroke-width="0.8"/>
+        <text x="213" y="305" text-anchor="middle" font-size="7" fill="#888">DBL VANITY</text>
+        <!-- Walk-in shower -->
+        <rect x="262" y="370" width="50" height="50" rx="3" fill="rgba(212,238,247,0.4)" stroke="#aaa" stroke-width="1"/>
+        <text x="287" y="400" text-anchor="middle" font-size="7" fill="#888">SHOWER</text>
+        <!-- Toilet -->
+        <ellipse cx="190" cy="400" rx="7" ry="10" fill="none" stroke="#aaa" stroke-width="1"/>
+        <!-- Master bath door -->
+        <line x1="250" y1="270" x2="280" y2="270" stroke="#fff" stroke-width="3"/>
+        <line x1="250" y1="270" x2="280" y2="270" stroke="#222" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <path d="M 250 270 Q 265 252 280 270" fill="none" stroke="#c9a84c" stroke-width="1"/>
+
+        <!-- HALLWAY -->
+        <rect x="320" y="200" width="50" height="230" fill="rgba(0,0,0,0.02)" stroke="#222" stroke-width="1"/>
+        <text x="345" y="320" text-anchor="middle" font-size="9" font-weight="600" fill="#555" transform="rotate(-90,345,320)">HALLWAY</text>
+
+        <!-- STAIRS -->
+        <rect x="320" y="50" width="90" height="50" fill="rgba(0,0,0,0.05)" stroke="#222" stroke-width="1"/>
+        <line x1="330" y1="50" x2="330" y2="100" stroke="#bbb" stroke-width="0.5"/>
+        <line x1="340" y1="50" x2="340" y2="100" stroke="#bbb" stroke-width="0.5"/>
+        <line x1="350" y1="50" x2="350" y2="100" stroke="#bbb" stroke-width="0.5"/>
+        <line x1="360" y1="50" x2="360" y2="100" stroke="#bbb" stroke-width="0.5"/>
+        <line x1="370" y1="50" x2="370" y2="100" stroke="#bbb" stroke-width="0.5"/>
+        <line x1="380" y1="50" x2="380" y2="100" stroke="#bbb" stroke-width="0.5"/>
+        <line x1="390" y1="50" x2="390" y2="100" stroke="#bbb" stroke-width="0.5"/>
+        <line x1="400" y1="50" x2="400" y2="100" stroke="#bbb" stroke-width="0.5"/>
+        <text x="365" y="80" text-anchor="middle" font-size="9" font-weight="600" fill="#555">STAIRS DN</text>
+
+        <!-- BEDROOM 2 -->
+        <rect x="370" y="100" width="170" height="170" fill="rgba(255,255,255,0.5)" stroke="#222" stroke-width="1.5"/>
+        <text x="455" y="180" text-anchor="middle" font-size="15" font-weight="600" fill="#1a1a1a">BEDROOM 2</text>
+        <text x="455" y="200" text-anchor="middle" font-size="11" fill="#888">11' x 11'</text>
+        <!-- Closet -->
+        <rect x="500" y="108" width="32" height="50" fill="rgba(0,0,0,0.03)" stroke="#222" stroke-width="0.8"/>
+        <text x="516" y="138" text-anchor="middle" font-size="7" fill="#888">CLO</text>
+        <!-- Door -->
+        <line x1="370" y1="190" x2="370" y2="220" stroke="#fff" stroke-width="3"/>
+        <line x1="370" y1="190" x2="370" y2="220" stroke="#222" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <path d="M 370 190 Q 352 205 370 220" fill="none" stroke="#c9a84c" stroke-width="1"/>
+
+        <!-- BEDROOM 3 / OFFICE -->
+        <rect x="370" y="270" width="170" height="160" fill="rgba(107,63,160,0.04)" stroke="#222" stroke-width="1.5"/>
+        <text x="455" y="335" text-anchor="middle" font-size="15" font-weight="600" fill="#1a1a1a">BEDROOM 3</text>
+        <text x="455" y="353" text-anchor="middle" font-size="11" fill="#888">11' x 10'</text>
+        <text x="455" y="370" text-anchor="middle" font-size="9" fill="#6b3fa0" font-weight="500">Office / Guest (convertible)</text>
+        <text x="455" y="384" text-anchor="middle" font-size="9" fill="#6b3fa0" font-weight="500">French doors + closet = BR</text>
+        <!-- Closet -->
+        <rect x="500" y="278" width="32" height="50" fill="rgba(0,0,0,0.03)" stroke="#222" stroke-width="0.8"/>
+        <text x="516" y="308" text-anchor="middle" font-size="7" fill="#888">CLO</text>
+        <!-- Door (French doors) -->
+        <line x1="370" y1="330" x2="370" y2="370" stroke="#fff" stroke-width="3"/>
+        <line x1="370" y1="330" x2="370" y2="350" stroke="#c9a84c" stroke-width="2"/>
+        <line x1="370" y1="350" x2="370" y2="370" stroke="#c9a84c" stroke-width="2"/>
+        <text x="358" y="354" text-anchor="end" font-size="7" fill="#c9a84c">FRENCH DRS</text>
+
+        <!-- HALL BATH -->
+        <rect x="410" y="100" width="10" height="0" fill="none"/>
+        <rect x="320" y="100" width="50" height="100" fill="rgba(212,238,247,0.15)" stroke="#222" stroke-width="1"/>
+        <text x="345" y="145" text-anchor="middle" font-size="11" font-weight="600" fill="#1a1a1a">FULL</text>
+        <text x="345" y="160" text-anchor="middle" font-size="11" font-weight="600" fill="#1a1a1a">BATH</text>
+        <text x="345" y="175" text-anchor="middle" font-size="10" fill="#888">5' x 8'</text>
+        <!-- Tub -->
+        <rect x="325" y="108" width="18" height="30" rx="4" fill="rgba(212,238,247,0.3)" stroke="#aaa" stroke-width="0.8"/>
+
+        <!-- WINDOWS -->
+        <rect x="100" y="47" width="50" height="6" fill="#d4eef7" stroke="#222" stroke-width="1"/>
+        <rect x="200" y="47" width="50" height="6" fill="#d4eef7" stroke="#222" stroke-width="1"/>
+        <rect x="57" y="130" width="6" height="40" fill="#d4eef7" stroke="#222" stroke-width="1"/>
+        <rect x="57" y="300" width="6" height="40" fill="#d4eef7" stroke="#222" stroke-width="1"/>
+        <rect x="430" y="47" width="50" height="6" fill="#d4eef7" stroke="#222" stroke-width="1"/>
+        <rect x="537" y="140" width="6" height="40" fill="#d4eef7" stroke="#222" stroke-width="1"/>
+        <rect x="537" y="320" width="6" height="40" fill="#d4eef7" stroke="#222" stroke-width="1"/>
+        <rect x="420" y="427" width="50" height="6" fill="#d4eef7" stroke="#222" stroke-width="1"/>
+
+        <!-- DIMENSIONS -->
+        <line x1="60" y1="455" x2="540" y2="455" stroke="#c9a84c" stroke-width="1"/>
+        <line x1="60" y1="450" x2="60" y2="460" stroke="#c9a84c" stroke-width="1"/>
+        <line x1="540" y1="450" x2="540" y2="460" stroke="#c9a84c" stroke-width="1"/>
+        <text x="300" y="472" text-anchor="middle" font-size="11" fill="#c9a84c" font-weight="600">32'</text>
+        <line x1="30" y1="50" x2="30" y2="430" stroke="#c9a84c" stroke-width="1"/>
+        <line x1="25" y1="50" x2="35" y2="50" stroke="#c9a84c" stroke-width="1"/>
+        <line x1="25" y1="430" x2="35" y2="430" stroke="#c9a84c" stroke-width="1"/>
+        <text x="22" y="245" text-anchor="middle" font-size="11" fill="#c9a84c" font-weight="600" transform="rotate(-90,22,245)">25'</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- DESIGN MOOD BOARD -->
+<section class="section" id="mood">
+  <div class="section-header">
+    <div class="section-tag">Design Direction</div>
+    <div class="section-title">Dark Modern Luxury</div>
+    <div class="divider"></div>
+  </div>
+
+  <!-- COLOR PALETTE -->
+  <h3 style="font-family:var(--font-serif);font-size:1.3rem;margin-bottom:1.25rem;color:var(--gold);">Color Palette</h3>
+  <div class="palette-grid">
+    <div class="palette-card">
+      <div class="palette-swatch" style="background:#0a0a0a;"></div>
+      <div class="palette-info">
+        <div class="palette-name">Onyx Black</div>
+        <div class="palette-hex">#0A0A0A</div>
+      </div>
+    </div>
+    <div class="palette-card">
+      <div class="palette-swatch" style="background:#c9a84c;"></div>
+      <div class="palette-info">
+        <div class="palette-name">Luxe Gold</div>
+        <div class="palette-hex">#C9A84C</div>
+      </div>
+    </div>
+    <div class="palette-card">
+      <div class="palette-swatch" style="background:#ffffff;border-bottom:1px solid #eee;"></div>
+      <div class="palette-info">
+        <div class="palette-name">Pure White</div>
+        <div class="palette-hex">#FFFFFF</div>
+      </div>
+    </div>
+    <div class="palette-card">
+      <div class="palette-swatch" style="background:#6b3fa0;"></div>
+      <div class="palette-info">
+        <div class="palette-name">Royal Purple</div>
+        <div class="palette-hex">#6B3FA0</div>
+      </div>
+    </div>
+    <div class="palette-card">
+      <div class="palette-swatch" style="background:#2a2a2a;"></div>
+      <div class="palette-info">
+        <div class="palette-name">Dark Charcoal</div>
+        <div class="palette-hex">#2A2A2A</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MATERIALS -->
+  <h3 style="font-family:var(--font-serif);font-size:1.3rem;margin-bottom:1.25rem;margin-top:2.5rem;color:var(--gold);">Materials &amp; Finishes</h3>
+  <div class="material-grid">
+    <div class="material-card">
+      <div class="material-preview" style="background:linear-gradient(135deg,#f5f0e8,#fff,#f0e8d8,#fff,#f5f0e8);position:relative;">
+        <div style="position:absolute;inset:0;background:linear-gradient(45deg,transparent 30%,rgba(201,168,76,0.15) 50%,transparent 70%);"></div>
+        <span style="font-size:1.5rem;color:#888;position:relative;z-index:1;">Quartz</span>
+      </div>
+      <div class="material-body">
+        <div class="material-title">White Quartz with Gold Veining</div>
+        <div class="material-desc">Countertops throughout kitchen and bathrooms. Calacatta-inspired pattern with warm gold veining on bright white base. 3cm thick with eased edge profile.</div>
+      </div>
+    </div>
+    <div class="material-card">
+      <div class="material-preview" style="background:repeating-linear-gradient(90deg,#c8b898 0px,#c8b898 80px,#c0af8a 80px,#c0af8a 81px);position:relative;">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(200,184,152,0.3),transparent,rgba(200,184,152,0.2));"></div>
+        <span style="font-size:1.5rem;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.4);position:relative;z-index:1;">LVP</span>
+      </div>
+      <div class="material-body">
+        <div class="material-title">Wide Plank LVP &mdash; Light Oak</div>
+        <div class="material-desc">7" wide plank luxury vinyl plank in warm light oak tone. Waterproof, scratch-resistant. Installed throughout first and second floors. Wood-grain texture with matte finish.</div>
+      </div>
+    </div>
+    <div class="material-card">
+      <div class="material-preview" style="background:#1a1a1a;">
+        <span style="font-size:1.5rem;color:#c9a84c;">Matte Black</span>
+      </div>
+      <div class="material-body">
+        <div class="material-title">Matte Black Appliances</div>
+        <div class="material-desc">Full suite: refrigerator, range, dishwasher, microwave. Black stainless or matte black finish. Fingerprint-resistant coating. Modern flat-panel design.</div>
+      </div>
+    </div>
+    <div class="material-card">
+      <div class="material-preview" style="background:linear-gradient(135deg,#d4a843,#e8c96a,#c9a84c,#b8953f);">
+        <span style="font-size:1.5rem;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,0.3);">Brushed Gold</span>
+      </div>
+      <div class="material-body">
+        <div class="material-title">Brushed Gold Fixtures</div>
+        <div class="material-desc">All faucets, cabinet pulls, towel bars, light fixtures, door handles, and shower hardware in coordinated brushed/satin gold. Warm tone, not polished brass.</div>
+      </div>
+    </div>
+    <div class="material-card">
+      <div class="material-preview" style="background:#fff;position:relative;">
+        <div style="width:70%;height:70%;display:grid;grid-template-columns:1fr 1fr;gap:2px;">
+          <div style="background:#1a1a1a;"></div>
+          <div style="background:#f5f5f5;border:1px solid #ddd;"></div>
+          <div style="background:#f5f5f5;border:1px solid #ddd;"></div>
+          <div style="background:#1a1a1a;"></div>
+        </div>
+      </div>
+      <div class="material-body">
+        <div class="material-title">Large Format Tile &mdash; B/W</div>
+        <div class="material-desc">24"x24" matte porcelain tile in bathrooms. Black and white palette with geometric patterns. Floor-to-ceiling in master shower. Gold accent trim strips.</div>
+      </div>
+    </div>
+    <div class="material-card">
+      <div class="material-preview" style="background:#f8f8f8;position:relative;">
+        <div style="width:60px;height:80px;background:#fff;border:2px solid #ddd;display:flex;flex-direction:column;">
+          <div style="flex:1;border-bottom:1px solid #eee;"></div>
+          <div style="flex:1;border-bottom:1px solid #eee;"></div>
+          <div style="flex:1;"></div>
+        </div>
+        <div style="position:absolute;top:50%;right:30%;width:5px;height:20px;background:#c9a84c;border-radius:2px;transform:translateY(-50%);"></div>
+      </div>
+      <div class="material-body">
+        <div class="material-title">Shaker Cabinets &mdash; White</div>
+        <div class="material-desc">Soft-close shaker-style cabinets in bright white. Upper and lower kitchen cabinets with brushed gold bar pulls. 42" uppers to maximize storage.</div>
+      </div>
+    </div>
+    <div class="material-card">
+      <div class="material-preview" style="background:#111;position:relative;overflow:hidden;">
+        <div style="width:120px;height:60px;background:#0a0a0a;border:3px solid #222;border-radius:6px;position:relative;">
+          <div style="position:absolute;inset:6px;background:linear-gradient(180deg,#ff6a00,#ff4500,#ff2200);border-radius:2px;opacity:0.8;"></div>
+        </div>
+        <div style="position:absolute;bottom:15px;left:50%;transform:translateX(-50%);width:80px;height:3px;background:linear-gradient(90deg,transparent,#c9a84c,transparent);"></div>
+      </div>
+      <div class="material-body">
+        <div class="material-title">Electric Fireplace Insert</div>
+        <div class="material-desc">50" recessed linear electric fireplace. Realistic flame effect with adjustable color. Black steel surround with gold trim frame. Focal wall in living room with floor-to-ceiling stone-look tile.</div>
+      </div>
+    </div>
+    <div class="material-card">
+      <div class="material-preview" style="background:linear-gradient(180deg,#8a5cc5,#6b3fa0);">
+        <span style="font-size:1.5rem;color:#fff;">Accent</span>
+      </div>
+      <div class="material-body">
+        <div class="material-title">Royal Purple Accent Walls</div>
+        <div class="material-desc">Deep matte purple paint on feature walls in master bedroom (headboard wall) and office/bedroom 3. Creates drama against white walls and gold fixtures. Benjamin Moore "Gentle Violet" or similar.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROOM BY ROOM SPECS -->
+<section class="section" id="rooms">
+  <div class="section-header">
+    <div class="section-tag">Specifications</div>
+    <div class="section-title">Room-by-Room Design</div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="room-grid">
+    <!-- LIVING ROOM -->
+    <div class="room-card">
+      <div class="room-card-header">
+        <span class="room-card-icon">&#9670;</span>
+        <div class="room-card-name">Living Room</div>
+      </div>
+      <div class="room-card-body">
+        <div class="room-spec-row"><span class="room-spec-label">Dimensions</span><span class="room-spec-value">18' x 14' (252 sq ft)</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Ceiling</span><span class="room-spec-value">9 ft flat, vaulted option over fireplace wall</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Focal Wall</span><span class="room-spec-value">50" recessed electric fireplace, floor-to-ceiling dark tile surround with gold trim</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Flooring</span><span class="room-spec-value">Wide plank LVP, light oak</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Walls</span><span class="room-spec-value">Pure white, flat finish</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Lighting</span><span class="room-spec-value">Recessed cans + gold semi-flush fixture</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Windows</span><span class="room-spec-value">2 front, 2 side &mdash; black frames</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Open To</span><span class="room-spec-value">Dining + kitchen (open concept)</span></div>
+      </div>
+    </div>
+
+    <!-- KITCHEN -->
+    <div class="room-card">
+      <div class="room-card-header">
+        <span class="room-card-icon">&#9670;</span>
+        <div class="room-card-name">Kitchen</div>
+      </div>
+      <div class="room-card-body">
+        <div class="room-spec-row"><span class="room-spec-label">Dimensions</span><span class="room-spec-value">15' x 13' (195 sq ft)</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Cabinets</span><span class="room-spec-value">White shaker, soft-close, 42" uppers, gold bar pulls</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Countertops</span><span class="room-spec-value">White quartz, gold veining, 3cm eased edge</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Backsplash</span><span class="room-spec-value">White subway tile, gold grout or herringbone pattern</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Island</span><span class="room-spec-value">4' x 2.5' with quartz top, pendant lights (gold), 2 bar stools</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Appliances</span><span class="room-spec-value">Matte black: fridge, range, DW, microwave</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Sink</span><span class="room-spec-value">Undermount single bowl, black composite, gold faucet</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Flooring</span><span class="room-spec-value">LVP continuous from living</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Lighting</span><span class="room-spec-value">Under-cabinet LED + 3 gold pendants over island</span></div>
+      </div>
+    </div>
+
+    <!-- MASTER BEDROOM -->
+    <div class="room-card">
+      <div class="room-card-header">
+        <span class="room-card-icon">&#9670;</span>
+        <div class="room-card-name">Master Bedroom</div>
+      </div>
+      <div class="room-card-body">
+        <div class="room-spec-row"><span class="room-spec-label">Dimensions</span><span class="room-spec-value">17' x 14' (238 sq ft)</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Ceiling</span><span class="room-spec-value">Vaulted 10'+ at peak</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Accent Wall</span><span class="room-spec-value">Royal purple (#6B3FA0), headboard wall</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Other Walls</span><span class="room-spec-value">Pure white</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Flooring</span><span class="room-spec-value">LVP continuous</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Walk-in Closet</span><span class="room-spec-value">7' x 5' with built-in organizer system</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Lighting</span><span class="room-spec-value">Gold ceiling fan + recessed cans</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Windows</span><span class="room-spec-value">2 front-facing, black frames</span></div>
+      </div>
+    </div>
+
+    <!-- MASTER BATH -->
+    <div class="room-card">
+      <div class="room-card-header">
+        <span class="room-card-icon">&#9670;</span>
+        <div class="room-card-name">Master Bathroom</div>
+      </div>
+      <div class="room-card-body">
+        <div class="room-spec-row"><span class="room-spec-label">Dimensions</span><span class="room-spec-value">10' x 10' (100 sq ft)</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Vanity</span><span class="room-spec-value">60" double vanity, white quartz top, gold faucets</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Shower</span><span class="room-spec-value">Walk-in, frameless glass, rain head + handheld (gold), black/white tile</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Tile</span><span class="room-spec-value">24x24 porcelain, black floor / white walls / gold trim strips</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Toilet</span><span class="room-spec-value">Elongated, comfort height, white</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Mirror</span><span class="room-spec-value">Gold-framed double mirrors with LED backlight</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Hardware</span><span class="room-spec-value">Brushed gold towel bars, robe hooks, TP holder</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Flooring</span><span class="room-spec-value">Heated option, large format tile</span></div>
+      </div>
+    </div>
+
+    <!-- BEDROOM 3 / OFFICE -->
+    <div class="room-card">
+      <div class="room-card-header">
+        <span class="room-card-icon">&#9670;</span>
+        <div class="room-card-name">Bedroom 3 / Office</div>
+      </div>
+      <div class="room-card-body">
+        <div class="room-spec-row"><span class="room-spec-label">Dimensions</span><span class="room-spec-value">11' x 10' (110 sq ft)</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Configuration</span><span class="room-spec-value">Convertible: office daily, guest bedroom as needed</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Doors</span><span class="room-spec-value">French doors (glass panels) from hallway</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Closet</span><span class="room-spec-value">Standard closet with doors (counts as bedroom for appraisal)</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Accent Wall</span><span class="room-spec-value">Royal purple behind desk/shelving</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Built-ins</span><span class="room-spec-value">Floating shelves, gold brackets, desk nook</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Flooring</span><span class="room-spec-value">LVP continuous</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Lighting</span><span class="room-spec-value">Gold pendant + recessed cans</span></div>
+      </div>
+    </div>
+
+    <!-- BEDROOM 2 -->
+    <div class="room-card">
+      <div class="room-card-header">
+        <span class="room-card-icon">&#9670;</span>
+        <div class="room-card-name">Bedroom 2</div>
+      </div>
+      <div class="room-card-body">
+        <div class="room-spec-row"><span class="room-spec-label">Dimensions</span><span class="room-spec-value">11' x 11' (121 sq ft)</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Ceiling</span><span class="room-spec-value">9 ft flat</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Walls</span><span class="room-spec-value">Pure white throughout</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Closet</span><span class="room-spec-value">Standard reach-in with organizer</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Flooring</span><span class="room-spec-value">LVP continuous</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Lighting</span><span class="room-spec-value">Ceiling fan (gold) + recessed cans</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Window</span><span class="room-spec-value">1 front-facing, black frame</span></div>
+      </div>
+    </div>
+
+    <!-- HALL BATH -->
+    <div class="room-card">
+      <div class="room-card-header">
+        <span class="room-card-icon">&#9670;</span>
+        <div class="room-card-name">Hall Bathroom (2nd Floor)</div>
+      </div>
+      <div class="room-card-body">
+        <div class="room-spec-row"><span class="room-spec-label">Dimensions</span><span class="room-spec-value">5' x 8' (40 sq ft)</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Vanity</span><span class="room-spec-value">30" single vanity, quartz top, gold faucet</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Tub/Shower</span><span class="room-spec-value">Tub/shower combo, white tub, tile surround</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Tile</span><span class="room-spec-value">White large format walls, black hex floor</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Mirror</span><span class="room-spec-value">Gold-framed rectangular</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Hardware</span><span class="room-spec-value">Brushed gold throughout</span></div>
+      </div>
+    </div>
+
+    <!-- EXTERIOR -->
+    <div class="room-card">
+      <div class="room-card-header">
+        <span class="room-card-icon">&#9670;</span>
+        <div class="room-card-name">Exterior</div>
+      </div>
+      <div class="room-card-body">
+        <div class="room-spec-row"><span class="room-spec-label">Siding</span><span class="room-spec-value">Dark charcoal (board &amp; batten or lap siding)</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Trim</span><span class="room-spec-value">White trim, black gutters</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Front Door</span><span class="room-spec-value">Matte black, modern panel with gold hardware</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Windows</span><span class="room-spec-value">Black-framed, energy efficient, double-pane</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Garage Door</span><span class="room-spec-value">Modern flush panel, dark charcoal, no windows</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Porch</span><span class="room-spec-value">Small covered entry, gold lantern sconces</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Landscaping</span><span class="room-spec-value">Clean beds, low-maintenance shrubs, new sod front yard</span></div>
+        <div class="room-spec-row"><span class="room-spec-label">Driveway</span><span class="room-spec-value">Concrete pad to garage, refreshed/sealed</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COST ESTIMATE -->
+<section class="section" id="cost">
+  <div class="section-header">
+    <div class="section-tag">Budget</div>
+    <div class="section-title">Rehab Cost Estimate</div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="cost-table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Scope</th>
+          <th style="text-align:right;">Low</th>
+          <th style="text-align:right;">High</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Structural / Framing</strong></td>
+          <td style="color:var(--gray-text);font-size:0.85rem;">2nd floor addition, garage framing, foundation work</td>
+          <td style="text-align:right;">$25,000</td>
+          <td style="text-align:right;">$30,000</td>
+        </tr>
+        <tr>
+          <td><strong>Roofing</strong></td>
+          <td style="color:var(--gray-text);font-size:0.85rem;">New roof system over expanded footprint, architectural shingles</td>
+          <td style="text-align:right;">$8,000</td>
+          <td style="text-align:right;">$10,000</td>
+        </tr>
+        <tr>
+          <td><strong>Electrical</strong></td>
+          <td style="color:var(--gray-text);font-size:0.85rem;">Full rewire, 200A panel upgrade, recessed lighting, EV-ready garage</td>
+          <td style="text-align:right;">$6,000</td>
+          <td style="text-align:right;">$8,000</td>
+        </tr>
+        <tr>
+          <td><strong>Plumbing</strong></td>
+          <td style="color:var(--gray-text);font-size:0.85rem;">2 full baths + powder room + kitchen + laundry, new supply/drain</td>
+          <td style="text-align:right;">$8,000</td>
+          <td style="text-align:right;">$10,000</td>
+        </tr>
+        <tr>
+          <td><strong>HVAC</strong></td>
+          <td style="color:var(--gray-text);font-size:0.85rem;">New 2-zone system (up/down), high-efficiency, ductwork</td>
+          <td style="text-align:right;">$6,000</td>
+          <td style="text-align:right;">$8,000</td>
+        </tr>
+        <tr>
+          <td><strong>Kitchen</strong></td>
+          <td style="color:var(--gray-text);font-size:0.85rem;">White shaker cabinets, quartz counters, island, matte black appliance suite</td>
+          <td style="text-align:right;">$8,000</td>
+          <td style="text-align:right;">$12,000</td>
+        </tr>
+        <tr>
+          <td><strong>Bathrooms (x2.5)</strong></td>
+          <td style="color:var(--gray-text);font-size:0.85rem;">Master ensuite + hall bath + powder room: tile, vanities, fixtures</td>
+          <td style="text-align:right;">$6,000</td>
+          <td style="text-align:right;">$8,000</td>
+        </tr>
+        <tr>
+          <td><strong>Flooring</strong></td>
+          <td style="color:var(--gray-text);font-size:0.85rem;">LVP wide plank throughout both floors (~1,500 sq ft)</td>
+          <td style="text-align:right;">$4,000</td>
+          <td style="text-align:right;">$5,000</td>
+        </tr>
+        <tr>
+          <td><strong>Fireplace</strong></td>
+          <td style="color:var(--gray-text);font-size:0.85rem;">50" electric insert + black surround + gold trim + focal tile wall</td>
+          <td style="text-align:right;">$1,500</td>
+          <td style="text-align:right;">$2,500</td>
+        </tr>
+        <tr>
+          <td><strong>Paint</strong></td>
+          <td style="color:var(--gray-text);font-size:0.85rem;">Interior (white + purple accents) + exterior (charcoal + white trim)</td>
+          <td style="text-align:right;">$3,000</td>
+          <td style="text-align:right;">$4,000</td>
+        </tr>
+        <tr>
+          <td><strong>Windows</strong></td>
+          <td style="color:var(--gray-text);font-size:0.85rem;">New energy-efficient double-pane, black frames (~12 windows)</td>
+          <td style="text-align:right;">$4,000</td>
+          <td style="text-align:right;">$6,000</td>
+        </tr>
+        <tr>
+          <td><strong>Garage</strong></td>
+          <td style="color:var(--gray-text);font-size:0.85rem;">Garage door, interior finishing, drywall, lighting, house entry door</td>
+          <td style="text-align:right;">$2,000</td>
+          <td style="text-align:right;">$3,000</td>
+        </tr>
+        <tr>
+          <td><strong>Fixtures / Hardware</strong></td>
+          <td style="color:var(--gray-text);font-size:0.85rem;">All gold fixtures: faucets, pulls, hinges, towel bars, light fixtures</td>
+          <td style="text-align:right;">$2,000</td>
+          <td style="text-align:right;">$3,000</td>
+        </tr>
+        <tr>
+          <td><strong>Exterior</strong></td>
+          <td style="color:var(--gray-text);font-size:0.85rem;">Siding repair/replacement, landscaping, driveway, porch, front entry</td>
+          <td style="text-align:right;">$5,000</td>
+          <td style="text-align:right;">$8,000</td>
+        </tr>
+        <tr>
+          <td><strong>Permits + Contingency</strong></td>
+          <td style="color:var(--gray-text);font-size:0.85rem;">Building permits, inspections, 10% contingency buffer</td>
+          <td style="text-align:right;">$5,000</td>
+          <td style="text-align:right;">$7,000</td>
+        </tr>
+        <tr class="cost-total">
+          <td>TOTAL REHAB BUDGET</td>
+          <td></td>
+          <td style="text-align:right;">$93,500</td>
+          <td style="text-align:right;">$124,500</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="margin-top:1.5rem;padding:1rem 1.25rem;background:var(--gray-dark);border-radius:8px;border-left:3px solid var(--gold);font-size:0.9rem;color:var(--gray-text);line-height:1.6;">
+    <strong style="color:var(--gold);">Budget Strategy:</strong> Target the midpoint of $95K-$110K. Structural and mechanical (framing, roof, electrical, plumbing, HVAC) account for ~55% of budget. Finish selections (kitchen, bath, flooring, fixtures) are where we control cost with smart sourcing. All finishes selected for maximum perceived value at minimum cost.
+  </div>
+</section>
+
+<!-- DEAL SUMMARY -->
+<section class="section" id="deal">
+  <div class="section-header">
+    <div class="section-tag">Investment</div>
+    <div class="section-title">Deal Summary</div>
+    <div class="divider"></div>
+  </div>
+
+  <div class="deal-grid">
+    <div class="deal-card">
+      <div class="deal-card-value">$135K</div>
+      <div class="deal-card-label">Acquisition Target</div>
+    </div>
+    <div class="deal-card">
+      <div class="deal-card-value">$95-110K</div>
+      <div class="deal-card-label">Rehab Budget</div>
+    </div>
+    <div class="deal-card">
+      <div class="deal-card-value">$230-245K</div>
+      <div class="deal-card-label">All-In Cost</div>
+    </div>
+    <div class="deal-card deal-highlight">
+      <div class="deal-card-value">$300-325K</div>
+      <div class="deal-card-label">After Repair Value</div>
+    </div>
+    <div class="deal-card">
+      <div class="deal-card-value">$225-244K</div>
+      <div class="deal-card-label">Cash-Out Refi (75% LTV)</div>
+    </div>
+    <div class="deal-card">
+      <div class="deal-card-value">$1,922-2,082</div>
+      <div class="deal-card-label">Monthly PITI</div>
+    </div>
+  </div>
+
+  <div class="deal-note">
+    <strong>Refi Analysis:</strong> At 75% LTV cash-out refinance on $300K ARV = $225K. All-in at $230K means near-full capital recovery. At $325K ARV = $244K refi, covering the full investment. PITI target of <strong>&lt;$2,000/mo</strong> achieved at the $300K ARV mark. The 0.34-acre lot provides significant future upside (ADU potential, lot split, etc.) that is not factored into current ARV.
+  </div>
+
+  <!-- SQUARE FOOTAGE SUMMARY -->
+  <div style="margin-top:3rem;">
+    <h3 style="font-family:var(--font-serif);font-size:1.3rem;margin-bottom:1.25rem;color:var(--gold);text-align:center;">Square Footage Summary</h3>
+    <div class="cost-table-wrap">
+      <table>
+        <thead>
+          <tr><th>Area</th><th style="text-align:right;">Sq Ft</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>First Floor Living</td><td style="text-align:right;">~840 sq ft</td></tr>
+          <tr><td>Second Floor</td><td style="text-align:right;">~660 sq ft</td></tr>
+          <tr><td><strong>Total Living Space</strong></td><td style="text-align:right;"><strong>~1,500 sq ft</strong></td></tr>
+          <tr><td>Attached 1-Car Garage</td><td style="text-align:right;">~280 sq ft</td></tr>
+          <tr><td><strong>Total Under Roof</strong></td><td style="text-align:right;"><strong>~1,780 sq ft</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ZONING COMPLIANCE -->
+  <div style="margin-top:3rem;">
+    <h3 style="font-family:var(--font-serif);font-size:1.3rem;margin-bottom:1.25rem;color:var(--gold);text-align:center;">Zoning Compliance Check</h3>
+    <div class="cost-table-wrap">
+      <table>
+        <thead>
+          <tr><th>Requirement</th><th>Allowed</th><th>Proposed</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Lot Coverage (max 55%)</td>
+            <td style="color:var(--gray-text);">8,146 sq ft</td>
+            <td style="color:var(--gray-text);">~1,780 sq ft footprint (~12%)</td>
+            <td style="color:#4ade80;font-weight:600;">PASS</td>
+          </tr>
+          <tr>
+            <td>Height (max 35 ft / 2 stories)</td>
+            <td style="color:var(--gray-text);">35 ft / 2 stories</td>
+            <td style="color:var(--gray-text);">~25 ft / 2 stories</td>
+            <td style="color:#4ade80;font-weight:600;">PASS</td>
+          </tr>
+          <tr>
+            <td>Side Setback (7 ft min)</td>
+            <td style="color:var(--gray-text);">7 ft each side</td>
+            <td style="color:var(--gray-text);">7 ft+ (verify with survey)</td>
+            <td style="color:#4ade80;font-weight:600;">PASS</td>
+          </tr>
+          <tr>
+            <td>Front Setback (35 ft)</td>
+            <td style="color:var(--gray-text);">35 ft from road</td>
+            <td style="color:var(--gray-text);">Existing setback maintained</td>
+            <td style="color:#4ade80;font-weight:600;">PASS</td>
+          </tr>
+          <tr>
+            <td>Rear Setback (15 ft)</td>
+            <td style="color:var(--gray-text);">15 ft from rear lot line</td>
+            <td style="color:var(--gray-text);">Garage side expansion, rear clear</td>
+            <td style="color:#4ade80;font-weight:600;">PASS</td>
+          </tr>
+          <tr>
+            <td>Zoning District</td>
+            <td style="color:var(--gray-text);">R-4 / R-4A Residential</td>
+            <td style="color:var(--gray-text);">Single-family residential use</td>
+            <td style="color:#4ade80;font-weight:600;">PASS</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>914 Edwin St NW, Atlanta, GA 30318 &mdash; Architectural Design Concept</p>
+  <p style="margin-top:0.5rem;">Prepared for <span>Tia</span> &mdash; February 27, 2026</p>
+  <p style="margin-top:0.5rem;">Gold Rhino Residential</p>
+</footer>
+
+</body>
+</html>
