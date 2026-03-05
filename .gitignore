@@ -7,6 +7,9 @@ personal/documents/
 # Keep these tracked in git
 !personal/.gitkeep
 
+# Node modules
+node_modules/
+
 # OS files
 desktop.ini
 Thumbs.db

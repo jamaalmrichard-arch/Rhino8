@@ -1,0 +1,3714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+@page {
+  size: Letter;
+  margin: 1in 0.85in;
+  @bottom-center {
+    content: counter(page);
+    font-family: 'Georgia', serif;
+    font-size: 10pt;
+    color: #666;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 11.5pt;
+  line-height: 1.7;
+  color: #1a1a1a;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Cover page */
+.cover-page {
+  page-break-after: always;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 85vh;
+  text-align: center;
+  padding: 2in 0.5in;
+}
+
+.cover-page .brand-line {
+  width: 60px;
+  height: 3px;
+  background: #B8860B;
+  margin: 20px auto;
+}
+
+.cover-page h1 {
+  font-size: 32pt;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin: 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.cover-page .subtitle {
+  font-size: 14pt;
+  color: #555;
+  font-style: italic;
+  margin-top: 15px;
+  line-height: 1.5;
+}
+
+.cover-page .author {
+  font-size: 16pt;
+  color: #B8860B;
+  margin-top: 40px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.cover-page .credentials {
+  font-size: 9pt;
+  color: #888;
+  margin-top: 15px;
+  max-width: 400px;
+  line-height: 1.5;
+}
+
+/* Table of Contents */
+.toc-page {
+  page-break-after: always;
+  padding-top: 30px;
+}
+
+.toc-page h2 {
+  font-size: 18pt;
+  color: #B8860B;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 2px solid #B8860B;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+}
+
+.toc-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 8px 0;
+  border-bottom: 1px dotted #ccc;
+  font-size: 11pt;
+}
+
+.toc-item .toc-title {
+  color: #1a1a1a;
+  font-weight: normal;
+}
+
+.toc-item .toc-module {
+  font-weight: bold;
+  color: #B8860B;
+}
+
+/* Content Headings */
+h1 {
+  font-size: 22pt;
+  color: #1a1a1a;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  page-break-before: always;
+  border-bottom: 3px solid #B8860B;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h1:first-of-type {
+  page-break-before: avoid;
+}
+
+h2 {
+  font-size: 16pt;
+  color: #B8860B;
+  margin-top: 35px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 13pt;
+  color: #333;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 11.5pt;
+  color: #555;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Paragraphs */
+p {
+  margin-bottom: 12px;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* Strong/emphasis */
+strong {
+  color: #1a1a1a;
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+/* Block quotes — used for key insights */
+blockquote {
+  border-left: 4px solid #B8860B;
+  margin: 25px 0;
+  padding: 15px 20px;
+  background: #faf8f2;
+  font-style: italic;
+  color: #444;
+}
+
+blockquote p {
+  margin: 0;
+  text-align: left;
+}
+
+/* Lists */
+ul, ol {
+  margin: 15px 0;
+  padding-left: 25px;
+}
+
+li {
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 10pt;
+}
+
+th {
+  background: #B8860B;
+  color: white;
+  padding: 10px 12px;
+  text-align: left;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 9pt;
+}
+
+td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+tr:nth-child(even) {
+  background: #faf8f2;
+}
+
+/* Code/formulas */
+code {
+  font-family: 'Courier New', monospace;
+  background: #f5f5f5;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 10pt;
+  color: #B8860B;
+}
+
+pre {
+  background: #1a1a1a;
+  color: #f0f0f0;
+  padding: 20px;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin: 20px 0;
+  font-size: 10pt;
+  line-height: 1.5;
+}
+
+pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+}
+
+/* Horizontal rules — section dividers */
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 40px 0;
+}
+
+/* Action steps boxes */
+.action-steps {
+  background: #f9f5eb;
+  border: 2px solid #B8860B;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 25px 0;
+}
+
+/* Audio reference callout */
+.audio-callout {
+  background: #eef;
+  border-left: 4px solid #4444aa;
+  padding: 12px 18px;
+  margin: 20px 0;
+  font-size: 10pt;
+}
+
+/* Copyright page */
+.copyright-page {
+  page-break-after: always;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 80vh;
+  font-size: 9pt;
+  color: #888;
+  line-height: 1.8;
+}
+
+/* Print optimizations */
+@media print {
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+  table, blockquote, pre {
+    page-break-inside: avoid;
+  }
+}
+</style>
+</head>
+<body>
+  
+    <div class="cover-page">
+      <div class="brand-line"></div>
+      <h1 style="border: none; page-break-before: avoid; margin-top: 0;">THE FOUNDATION</h1>
+      <div class="subtitle">The Complete Financial Blueprint for Future Investors</div>
+      <div class="brand-line"></div>
+      <div class="author">J. Marque</div>
+      <div class="credentials">
+        $250M+ in Real Estate Transactions<br>
+        USMC Combat Veteran<br>
+        Wholesaler &bull; Flipper &bull; Landlord &bull; Title Company Owner &bull; Consultant
+      </div>
+    </div>
+  
+  
+    <div class="copyright-page">
+      <p>&copy; 2026 J. Marque. All rights reserved.</p>
+      <p>No part of this publication may be reproduced, distributed, or transmitted in any form
+      without prior written permission of the author, except for brief quotations in reviews.</p>
+      <p>This book is for educational purposes only and does not constitute financial, investment,
+      or legal advice. The strategies and case studies are based on real-world scenarios but
+      individual results vary. Always consult qualified professionals before making investment decisions.</p>
+      <p>Published by J. Marque</p>
+    </div>
+  
+  
+    <div class="toc-page">
+      <h2 style="page-break-before: avoid;">Contents</h2>
+      <div class="toc-item">
+      <span class="toc-title">ABOUT THE AUTHOR</span>
+    </div>
+<div class="toc-item">
+      <span class="toc-title">A NOTE BEFORE WE START</span>
+    </div>
+<div class="toc-item">
+      <span class="toc-module">MODULE 1: YOUR FINANCIAL BLUEPRINT — BUDGET & CASH FLOW</span>
+    </div>
+<div class="toc-item">
+      <span class="toc-module">MODULE 2: RISK MANAGEMENT — PROTECTING WHAT YOU BUILD</span>
+    </div>
+<div class="toc-item">
+      <span class="toc-module">MODULE 3: YOUR NET WORTH & HIDDEN ASSETS</span>
+    </div>
+<div class="toc-item">
+      <span class="toc-module">MODULE 4: YOUR RETIREMENT ACCOUNTS & THE WEALTH LEVER</span>
+    </div>
+<div class="toc-item">
+      <span class="toc-module">MODULE 5: BUILDING YOUR INVESTMENT TEAM</span>
+    </div>
+<div class="toc-item">
+      <span class="toc-module">MODULE 6: YOUR BUY BOX & FIRST PROPERTY CRITERIA</span>
+    </div>
+<div class="toc-item">
+      <span class="toc-module">MODULE 7: YOUR 90-DAY LAUNCH PLAN</span>
+    </div>
+    </div>
+  
+  <div class="content">
+    <h1>THE FOUNDATION</h1>
+<h2>The Complete Financial Blueprint for Future Investors</h2>
+<h3>By J. Marque</h3>
+<hr>
+<h1>ABOUT THE AUTHOR</h1>
+<p>J. Marque is a USMC combat veteran who has closed over $250 million in real estate transactions. Not as a realtor. Not as a mortgage broker. As a wholesaler, flipper, landlord, title company owner, and consultant. He has seen the financial system from the inside and built wealth from the ground up. He now teaches others the rules that nobody taught him.</p>
+<hr>
+<h1>A NOTE BEFORE WE START</h1>
+<p>You picked up this workbook. That tells me something about you.</p>
+<p>It tells me you&#39;re done hoping your finances figure themselves out. Done pretending that &quot;someday&quot; is a real date on a calendar. Done watching other people build wealth and wondering what they know that you don&#39;t.</p>
+<p>Here&#39;s what they know: they started.</p>
+<p>Not with a huge investment. Not with family money. Not with some genius strategy they learned from a $50,000 mastermind. They started by understanding where they stand, financially, structurally, psychologically, and then they built from there. Brick by brick. Module by module.</p>
+<p>That is what this workbook does.</p>
+<p><strong>The Foundation</strong> is not a get-rich-quick scheme. It&#39;s not a motivational speech. It&#39;s a financial blueprint, the same one I use with my private clients before they ever look at a property, submit an offer, or write a check. If you can&#39;t pass the seven modules in this workbook, you&#39;re not ready to invest. That&#39;s not an insult. That&#39;s protection.</p>
+<p>Think of it like building a house. Module 1 is the concrete slab. Module 2 is the rebar and steel reinforcement. Module 3 is the plumbing and electrical rough-in. Without these, everything you build on top collapses under the first storm. The pretty finishes, the rental income, the &quot;financial freedom.&quot; Gone.</p>
+<p>I&#39;m not going to baby you. I&#39;m going to prepare you.</p>
+<p>Starting from scratch is brave, not behind. Most people never start at all. They read about investing, they watch videos about investing, they talk about investing. And then they die having invested in nothing but other people&#39;s dreams.</p>
+<p>You&#39;re different. You&#39;re holding the blueprint. Now let&#39;s build.</p>
+<p>How to Use This Workbook:</p>
+<ol>
+<li><strong>Go in order.</strong> Each module builds on the one before it. Skipping ahead is like framing walls before pouring the foundation.</li>
+<li><strong>Do the worksheets.</strong> Reading without doing is entertainment, not education. Every module has exercises. Complete them. In ink. With real numbers from your real life.</li>
+<li><strong>Listen to the audio companions.</strong> Each module has an audio walkthrough where I take you through the exercises with real examples. Think of the workbook as the textbook and the audio as the lecture.</li>
+<li><strong>Be honest with yourself.</strong> This workbook will ask you questions that make you uncomfortable. Your net worth might be negative. Your insurance might have gaps that could bankrupt you. Your budget might reveal $500 a month going to things you forgot you subscribed to. That&#39;s fine. You can&#39;t fix what you refuse to see.</li>
+<li><strong>Take 90 days.</strong> There&#39;s a 90-Day Launch Plan in Module 7. Follow it. Two modules the first month. Two modules the second month. The final three modules plus your first real steps in month three.</li>
+</ol>
+<p>Let&#39;s go.</p>
+<p>-- J. Marque</p>
+<hr>
+<h1>TABLE OF CONTENTS</h1>
+<ul>
+<li><strong>Module 1:</strong> Your Financial Blueprint: Budget &amp; Cash Flow</li>
+<li><strong>Module 2:</strong> Risk Management: Protecting What You Build</li>
+<li><strong>Module 3:</strong> Your Net Worth &amp; Hidden Assets</li>
+<li><strong>Module 4:</strong> Your Retirement Accounts &amp; The Wealth Lever</li>
+<li><strong>Module 5:</strong> Building Your Investment Team</li>
+<li><strong>Module 6:</strong> Your Buy Box &amp; First Property Criteria</li>
+<li><strong>Module 7:</strong> Your 90-Day Launch Plan</li>
+</ul>
+<hr>
+<h1>MODULE 1: YOUR FINANCIAL BLUEPRINT — BUDGET &amp; CASH FLOW</h1>
+<p><em>&quot;You can&#39;t build wealth if you don&#39;t know where your money goes.&quot;</em></p>
+<hr>
+<h2>Why a Budget Is the Foundation of Everything</h2>
+<p>Every building starts with a foundation. Not the walls. Not the roof. Not the granite countertops. The foundation.</p>
+<p>Your budget is the concrete slab of your financial life. Every investment decision, every loan application, every opportunity that comes your way sits on top of your ability to answer one question: <strong>Where does my money go every month?</strong></p>
+<p>Most people can&#39;t answer that question. They know their income (roughly). They know their rent or mortgage payment. They know their car note. But the other 40-60% of their spending? It&#39;s a blur of debit card swipes, auto-pay subscriptions, and &quot;I&#39;ll figure it out later.&quot;</p>
+<p>Later never comes. Until now.</p>
+<p>This module is going to teach you how to build a household Profit &amp; Loss statement. The same document that every business in the world uses to track its financial health. Because your household IS a business. It has revenue (your income). It has expenses (everything you spend). And it has a bottom line: your cash flow, the money left over after everything is paid.</p>
+<p>If your bottom line is negative, you&#39;re going bankrupt in slow motion. If your bottom line is positive but small, you&#39;re surviving but not building. If your bottom line is positive and growing, you&#39;re ready to deploy capital into assets that generate more income.</p>
+<p>The goal of Module 1 is to find out which one you are. And then fix it.</p>
+<hr>
+<h2>Your Household P&amp;L: Income vs. Expenses</h2>
+<p>A Profit &amp; Loss statement has two sections:</p>
+<p>Revenue (Income): Everything that puts money in your pocket. This includes:</p>
+<ul>
+<li>W-2 wages (your paycheck)</li>
+<li>1099 income (freelance, contract, gig work)</li>
+<li>Government benefits (VA disability, Social Security, unemployment)</li>
+<li>Child support or alimony received</li>
+<li>Side income (rental income, selling items, cash work)</li>
+<li>Any other recurring money coming in</li>
+</ul>
+<p><strong>Use your NET income</strong>, the amount that actually hits your bank account after taxes and deductions. If you use gross income, your budget will look healthier than it actually is. That&#39;s a lie you can&#39;t afford.</p>
+<p>Expenses: Everything that takes money out of your pocket. This is where it gets real.</p>
+<hr>
+<h2>The Three Types of Expenses</h2>
+<p>Every dollar you spend falls into one of three categories:</p>
+<p><strong>Fixed Expenses.</strong> These are the same amount every month. They don&#39;t fluctuate. Predictable and non-negotiable (mostly).</p>
+<ul>
+<li>Rent or mortgage payment</li>
+<li>Car payment</li>
+<li>Car insurance</li>
+<li>Phone bill (if on a flat-rate plan)</li>
+<li>Streaming subscriptions</li>
+<li>Gym membership</li>
+<li>Loan payments (student loans, personal loans)</li>
+<li>Child care (flat monthly rate)</li>
+</ul>
+<p><strong>Variable Expenses.</strong> These change every month. Hardest to predict, easiest to overspend on.</p>
+<ul>
+<li>Groceries</li>
+<li>Gas</li>
+<li>Dining out</li>
+<li>Entertainment</li>
+<li>Clothing</li>
+<li>Personal care (haircuts, beauty products)</li>
+<li>Gifts</li>
+<li>Cash withdrawals (ATM)</li>
+</ul>
+<p><strong>Hybrid Expenses.</strong> These occur every month but the amount fluctuates. They behave like fixed expenses with variable amounts.</p>
+<ul>
+<li>Electric bill</li>
+<li>Water bill</li>
+<li>Gas/heating bill</li>
+<li>Internet bill (if usage-based)</li>
+<li>Medical co-pays</li>
+</ul>
+<p>Pro tip for hybrid expenses: Pull your last 12 months of utility bills. Find the highest month. Budget that amount every month. When the bill comes in lower, the difference stays in your account as a buffer. When the bill spikes, you&#39;re already prepared.</p>
+<hr>
+<h2>The 90-Day Bank Statement Exercise</h2>
+<p>Here is where the real work begins.</p>
+<p>Pull your last 90 days of bank statements. Every account. Checking, savings, credit cards, PayPal, Venmo, Cash App. Every place money moves through.</p>
+<p>Go through every single transaction and categorize it:</p>
+<ul>
+<li>Fixed, Variable, or Hybrid</li>
+<li>Necessary or Discretionary</li>
+</ul>
+<p>&quot;Necessary&quot; means your life or livelihood depends on it: rent, food, transportation to work, utilities. &quot;Discretionary&quot; means it&#39;s a choice: dining out, entertainment, subscriptions, shopping.</p>
+<p>This exercise will take you 2-3 hours. It will be tedious. It will also be the most financially productive 3 hours of your year.</p>
+<p>What you&#39;re looking for:</p>
+<ol>
+<li><p>Subscriptions you forgot about. The $14.99 streaming service you signed up for six months ago and watched once. The $9.99 app subscription running in the background. The $49 monthly box subscription you keep meaning to cancel.</p>
+</li>
+<li><p>Lifestyle creep. Compare your spending 90 days ago to your spending last month. Are your restaurant bills increasing? Are your Amazon orders increasing? When your income goes up, your spending tends to follow. Silently. Without your permission.</p>
+</li>
+<li><p>Phantom expenses. Fees, penalties, overdraft charges, interest payments on credit cards you meant to pay off. These are dollars that produce zero value in your life and exist only because of disorganization.</p>
+</li>
+</ol>
+<blockquote>
+<p><strong>KEISHA&#39;S STORY</strong></p>
+<p>Keisha was a teacher making $52,000 a year in Atlanta. She came to me convinced she had zero money to invest. Take-home was about $3,400 a month, and she said every dollar was spoken for.</p>
+<p>I asked her to do the 90-day bank statement exercise. She didn&#39;t want to. I told her what I&#39;m telling you: the discomfort is the point.</p>
+<p>She found <strong>$680 per month</strong> she was wasting:</p>
+<ul>
+<li>$127 in subscription services she forgot about (4 streaming services, 2 apps, a meal kit she stopped using)</li>
+<li>$85 in bank fees (overdraft charges from poor timing on auto-pay)</li>
+<li>$340 in dining out she&#39;d mentally categorized as &quot;groceries&quot; (DoorDash, Uber Eats, and coffee shops)</li>
+<li>$128 in &quot;miscellaneous&quot; she couldn&#39;t even identify. Cash withdrawals and debit transactions she had no memory of.</li>
+</ul>
+<p>$680 per month is $8,160 per year. That&#39;s a down payment on a rental property. It was already there. She didn&#39;t need to earn more money. She needed to stop bleeding money she didn&#39;t know she was losing.</p>
+<p>Keisha bought her first property within 5 months. Then two more within the next 6 months. Three properties in 11 months, on a teacher&#39;s salary. It started here. With a budget.</p>
+</blockquote>
+<hr>
+<h2>WORKSHEET 1A: Monthly Budget P&amp;L</h2>
+<p>Complete this worksheet using your actual numbers. Not estimates. Not &quot;about.&quot; Actual numbers from your bank statements.</p>
+<h3>INCOME</h3>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Pay Frequency</th>
+<th>Monthly Amount</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Primary Job (W-2)</td>
+<td>___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Second Job / Gig Work</td>
+<td>___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Government Benefits</td>
+<td>___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Child Support / Alimony Received</td>
+<td>___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Other Income: _____________</td>
+<td>___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Other Income: _____________</td>
+<td>___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td><strong>TOTAL MONTHLY INCOME</strong></td>
+<td></td>
+<td><strong>$___</strong></td>
+</tr>
+</tbody></table>
+<h3>FIXED EXPENSES</h3>
+<table>
+<thead>
+<tr>
+<th>Expense</th>
+<th>Budgeted</th>
+<th>Actual</th>
+<th>Difference (+/-)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Rent / Mortgage</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Car Payment #1</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Car Payment #2</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Car Insurance</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Health Insurance (if not deducted from paycheck)</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Phone</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Internet</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Streaming Services (list each):</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>___ 1. _____________</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>___ 2. _____________</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>___ 3. _____________</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>___ 4. _____________</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Gym / Memberships</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Student Loan Payment</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Personal Loan Payment</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Credit Card Minimum Payment(s)</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Child Care</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Other Fixed: _____________</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Other Fixed: _____________</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td><strong>TOTAL FIXED EXPENSES</strong></td>
+<td><strong>$___</strong></td>
+<td><strong>$___</strong></td>
+<td><strong>$___</strong></td>
+</tr>
+</tbody></table>
+<h3>VARIABLE EXPENSES</h3>
+<table>
+<thead>
+<tr>
+<th>Expense</th>
+<th>Budgeted</th>
+<th>Actual</th>
+<th>Difference (+/-)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Groceries</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Gas / Transportation</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Dining Out / Delivery</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Entertainment</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Clothing</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Personal Care (hair, beauty, etc.)</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Gifts</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Household Items</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>ATM Cash Withdrawals</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Pet Expenses</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Other Variable: _____________</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Other Variable: _____________</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td><strong>TOTAL VARIABLE EXPENSES</strong></td>
+<td><strong>$___</strong></td>
+<td><strong>$___</strong></td>
+<td><strong>$___</strong></td>
+</tr>
+</tbody></table>
+<h3>HYBRID EXPENSES</h3>
+<table>
+<thead>
+<tr>
+<th>Expense</th>
+<th>Budgeted (highest month)</th>
+<th>Actual</th>
+<th>Difference (+/-)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Electric</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Water / Sewer</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Gas / Heating</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Medical Co-pays</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Other Hybrid: _____________</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td><strong>TOTAL HYBRID EXPENSES</strong></td>
+<td><strong>$___</strong></td>
+<td><strong>$___</strong></td>
+<td><strong>$___</strong></td>
+</tr>
+</tbody></table>
+<h3>SUMMARY</h3>
+<table>
+<thead>
+<tr>
+<th>Line Item</th>
+<th>Amount</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Total Monthly Income</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Total Fixed Expenses</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Total Variable Expenses</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Total Hybrid Expenses</td>
+<td>$___</td>
+</tr>
+<tr>
+<td><strong>TOTAL EXPENSES</strong></td>
+<td><strong>$___</strong></td>
+</tr>
+<tr>
+<td><strong>MONTHLY CASH FLOW (Income - Expenses)</strong></td>
+<td><strong>$___</strong></td>
+</tr>
+</tbody></table>
+<p>If your cash flow is positive: Good. That number is your starting capital. Protect it. Grow it. Deploy it.</p>
+<p>If your cash flow is negative: You&#39;re going backward every month. This is not a death sentence. It&#39;s a diagnosis. Now you can treat it. Move to Worksheet 1B.</p>
+<p>If your cash flow is zero: You&#39;re treading water. Every dollar comes in and every dollar goes out. One unexpected expense, a car repair, a medical bill, a job disruption, and you&#39;re underwater. You need margin. Move to Worksheet 1B.</p>
+<hr>
+<h2>WORKSHEET 1B: The Waste Finder</h2>
+<p>Go through your bank statements and identify every expense that fits one of these categories:</p>
+<h3>FORGOTTEN SUBSCRIPTIONS</h3>
+<p><em>Services you pay for monthly but rarely or never use.</em></p>
+<table>
+<thead>
+<tr>
+<th>Subscription</th>
+<th>Monthly Cost</th>
+<th>Last Time You Used It</th>
+<th>Keep / Cancel</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1.</td>
+<td>$___</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2.</td>
+<td>$___</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3.</td>
+<td>$___</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4.</td>
+<td>$___</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5.</td>
+<td>$___</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6.</td>
+<td>$___</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7.</td>
+<td>$___</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>8.</td>
+<td>$___</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Total Subscription Waste</strong></td>
+<td><strong>$___/month</strong></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3>LIFESTYLE CREEP</h3>
+<p><em>Spending categories where you&#39;re spending more than you were 6 months ago without a change in income to justify it.</em></p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>6 Months Ago (avg/mo)</th>
+<th>Current (avg/mo)</th>
+<th>Increase</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Dining Out / Delivery</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Shopping / Amazon</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Entertainment</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Personal Care</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Other: _____________</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td><strong>Total Lifestyle Creep</strong></td>
+<td></td>
+<td></td>
+<td><strong>$___/month</strong></td>
+</tr>
+</tbody></table>
+<h3>PENALTY &amp; FEE LEAKS</h3>
+<p><em>Money lost to disorganization: overdraft fees, late payments, interest charges.</em></p>
+<table>
+<thead>
+<tr>
+<th>Fee Type</th>
+<th>Monthly Average</th>
+<th>How to Eliminate</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Overdraft fees</td>
+<td>$___</td>
+<td>Set up low-balance alerts, buffer $200 in checking</td>
+</tr>
+<tr>
+<td>Late payment fees</td>
+<td>$___</td>
+<td>Set up auto-pay for minimums</td>
+</tr>
+<tr>
+<td>Credit card interest</td>
+<td>$___</td>
+<td>Pay statement balance in full or transfer balance</td>
+</tr>
+<tr>
+<td>ATM fees (out-of-network)</td>
+<td>$___</td>
+<td>Switch to a bank with no ATM fees or plan cash withdrawals</td>
+</tr>
+<tr>
+<td>Other: _____________</td>
+<td>$___</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Total Fee Leaks</strong></td>
+<td><strong>$___/month</strong></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3>YOUR TOTAL WASTE</h3>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Monthly Waste</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Forgotten Subscriptions</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Lifestyle Creep</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Penalty &amp; Fee Leaks</td>
+<td>$___</td>
+</tr>
+<tr>
+<td><strong>TOTAL MONEY RECOVERED</strong></td>
+<td><strong>$___/month</strong></td>
+</tr>
+<tr>
+<td><strong>ANNUAL IMPACT</strong></td>
+<td><strong>$___/year</strong></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>THE TRUTH</strong></p>
+<p>Most people skip this step. They say &quot;I know where my money goes.&quot; They don&#39;t. I&#39;ve sat across from people making $200,000 a year who can&#39;t tell me their monthly expenses within $1,000. I&#39;ve sat with people making $40,000 a year who know their budget down to the penny. Guess which one builds wealth faster?</p>
+<p>The budget is not about how much you make. It&#39;s about how much you keep. Do this exercise. It&#39;s the difference between people who invest and people who intend to invest.</p>
+</blockquote>
+<hr>
+<h2>Getting Lender-Ready: Your Document Checklist</h2>
+<p>Before you ever look at a property, your financial documents need to be organized and ready. Good deals move fast. You can&#39;t afford to spend 3 weeks hunting down paperwork. The person with their documents ready gets the property. The person scrambling to find last year&#39;s tax return watches the deal go to someone else.</p>
+<p>Here is what every lender will ask for. Gather these now, not later.</p>
+<h3>CHECKLIST: Lender-Ready Document File</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Two most recent pay stubs. Current employer, showing year-to-date earnings.</li>
+<li><input disabled="" type="checkbox"> Last 2 years of federal tax returns. Complete returns, all pages, all schedules. If you&#39;re self-employed, include Schedule C, Schedule E, and any K-1 forms.</li>
+<li><input disabled="" type="checkbox"> IRS Tax Transcripts. Request from irs.gov (Form 4506-T). Lenders verify your tax returns against IRS records. If they don&#39;t match, your loan is dead.</li>
+<li><input disabled="" type="checkbox"> W-2s from the last 2 years. From every employer.</li>
+<li><input disabled="" type="checkbox"> Last 2 months of bank statements. Every account (checking, savings, money market). All pages, even the blank ones. Lenders look for large deposits that aren&#39;t from your regular income. Those require written explanation.</li>
+<li><input disabled="" type="checkbox"> Credit reports from all three bureaus. Experian, Equifax, TransUnion. Pull from annualcreditreport.com (free, once per year). Review for errors, collections, and balances.</li>
+<li><input disabled="" type="checkbox"> Photo ID. Government-issued, non-expired.</li>
+<li><input disabled="" type="checkbox"> Social Security card or documentation</li>
+<li><input disabled="" type="checkbox"> Letters of explanation (if applicable). Gaps in employment, large deposits, derogatory credit items. Write these now. Each letter should explain: what happened, when it happened, and why it won&#39;t happen again. One paragraph. Direct.</li>
+<li><input disabled="" type="checkbox"> Proof of any additional income. Rental income (existing leases), child support court orders, VA disability award letters, Social Security award letters, pension statements.</li>
+</ul>
+<p>Store everything in one folder, digital (Google Drive, Dropbox) and physical (a folder you can hand to a loan officer). Label it &quot;Lender File.&quot; Update it every 90 days.</p>
+<p><em>In the audio for this module, I walk you through filling out the Budget P&amp;L with a real example. Every line item, every category. I also share the conversation I have with every new client about why this document is the single most important piece of paper in their financial life.</em></p>
+<hr>
+<h2>ACTION STEPS: Module 1</h2>
+<ol>
+<li>Pull your last 90 days of bank statements from every account. Print them or download the PDFs.</li>
+<li>Complete Worksheet 1A (Monthly Budget P&amp;L) with your real numbers.</li>
+<li>Complete Worksheet 1B (The Waste Finder). Identify every subscription, fee, and creep expense.</li>
+<li>Cancel or reduce at least 3 waste items this week.</li>
+<li>Build your Lender-Ready Document File. Gather every item on the checklist and store in one place.</li>
+<li>Set a calendar reminder to update your budget P&amp;L on the 1st of every month.</li>
+</ol>
+<p>That&#39;s it for Module 1. You just did what 90% of people never do. You looked at your money honestly. Keep going.</p>
+<hr>
+<hr>
+<h1>MODULE 2: RISK MANAGEMENT — PROTECTING WHAT YOU BUILD</h1>
+<p><em>&quot;You don&#39;t build a house and then hope a storm never comes. You build the house to survive the storm.&quot;</em></p>
+<hr>
+<h2>The Pyramid of Needs</h2>
+<p>Before you invest a single dollar, you need to understand a framework that most financial advisors will never teach you. Why? Because it doesn&#39;t make them any money.</p>
+<p>It&#39;s called the <strong>Pyramid of Needs</strong>, and it works like this:</p>
+<pre><code>         /\
+        /  \
+       / WP \       LEVEL 3: Wealth Preservation &amp; Distribution
+      /------\      (Estate planning, trusts, tax optimization)
+     /   WA   \     LEVEL 2: Wealth Accumulation
+    /----------\    (Investing, real estate, business building)
+   /    RM      \   LEVEL 1: Risk Management
+  /--------------\  (Insurance, emergency fund, asset protection)
+</code></pre>
+<p><strong>Level 1: Risk Management.</strong> The foundation. Insurance coverage, emergency reserves, liability protection. This is the base that everything else sits on.</p>
+<p><strong>Level 2: Wealth Accumulation.</strong> Investing in assets that generate income and grow in value. Real estate, businesses, retirement accounts.</p>
+<p><strong>Level 3: Wealth Preservation &amp; Distribution.</strong> Estate planning, trusts, tax strategy, generational wealth transfer. This is where you protect and pass on what you built.</p>
+<p>Here is the mistake 90% of people make: <strong>they skip Level 1 and go straight to Level 2.</strong></p>
+<p>They start investing before they have adequate insurance. They buy rental properties before they have an LLC. They put money into the stock market while carrying zero disability coverage. Then ONE event wipes out everything they built. A car accident. A lawsuit. A disability. A death in the family.</p>
+<p>The Pyramid of Needs says: secure the base before you build the tower. Risk management comes FIRST. Not because it&#39;s exciting. Not because it makes you money. Because without it, everything else is a house of cards.</p>
+<p>This module walks you through every layer of risk management you need before you invest your first dollar. This is the rebar inside the concrete. You&#39;ll never see it, but it&#39;s the reason the building stands.</p>
+<hr>
+<h2>Life Insurance: The Conversation Nobody Wants to Have</h2>
+<p>Let me ask you a question most people avoid: if you died tomorrow, what happens to the people who depend on you?</p>
+<p>Can your spouse pay the mortgage? Can your kids stay in their school? Can your parents cover their bills without the help you provide?</p>
+<p>And the flip side: if someone YOU depend on died tomorrow, a spouse, a parent, a business partner, a co-signer, what happens to your financial stability?</p>
+<p>Life insurance is not about you. It&#39;s about the people you leave behind and the people whose absence would leave you exposed.</p>
+<h3>Group vs. Individual Policies</h3>
+<p>If you have life insurance through your employer, you probably have a group policy. Here&#39;s what most people don&#39;t know about group policies:</p>
+<p><strong>The portability problem.</strong> Most employer-provided group life insurance is NOT portable. That means when you leave that job, whether you quit, get fired, or get laid off, your coverage disappears. On the same day you lose your income, you also lose your life insurance. Worst possible timing.</p>
+<p>Some group policies offer a portability rider that lets you convert your group coverage to an individual policy when you leave. But here&#39;s the catch: not all do, and even the ones that offer portability often come with higher premiums upon conversion.</p>
+<p><strong>The action:</strong> Call your HR department. Ask specifically:</p>
+<ol>
+<li>&quot;Is my group life insurance policy portable?&quot;</li>
+<li>&quot;If I leave the company, can I convert to an individual policy?&quot;</li>
+<li>&quot;What is the conversion cost?&quot;</li>
+</ol>
+<p>If the answer to question 1 is &quot;no,&quot; you need an individual life insurance policy that you own outside of your employer. A policy that follows YOU, not your job.</p>
+<h3>How Much Coverage Do You Actually Need?</h3>
+<p>The general rule: 10-12 times your annual income. If you make $50,000 per year, you need $500,000-$600,000 in life insurance coverage.</p>
+<p>But let me give you a more precise formula:</p>
+<p>Income Replacement Calculation:</p>
+<table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>Your Number</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Annual income you want to replace</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Number of years your dependents need that income</td>
+<td>___ years</td>
+</tr>
+<tr>
+<td>Subtotal (income x years)</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Outstanding debts (mortgage, car loans, student loans, credit cards)</td>
+<td>+ $___</td>
+</tr>
+<tr>
+<td>Future expenses (children&#39;s education, spouse&#39;s retirement gap)</td>
+<td>+ $___</td>
+</tr>
+<tr>
+<td>Existing life insurance coverage</td>
+<td>- $___</td>
+</tr>
+<tr>
+<td>Existing savings / investments that could be liquidated</td>
+<td>- $___</td>
+</tr>
+<tr>
+<td><strong>TOTAL COVERAGE NEEDED</strong></td>
+<td><strong>$___</strong></td>
+</tr>
+</tbody></table>
+<p><strong>Term life insurance</strong> (coverage for a set period, 10, 20, or 30 years) is almost always the right choice for wealth builders. It&#39;s dramatically cheaper than whole life or universal life, and it covers you during the years when your dependents need the income replacement most. A healthy 35-year-old can get $500,000 in 20-year term coverage for $25-$40 per month. That&#39;s the cost of one dinner out. To protect everything.</p>
+<hr>
+<h2>Short-Term Disability: The Coverage Most People Forget</h2>
+<p>Here&#39;s a statistic that should concern you: you are more likely to be disabled during your working years than you are to die. A 20-year-old worker has a 25% chance of becoming disabled before reaching age 67.</p>
+<p>If you can&#39;t work for 3 months, 6 months, a year. Can you survive? Can you pay rent? Can you eat? Can you keep your insurance?</p>
+<p>Short-term disability insurance replaces a portion of your income (typically 60%) when you can&#39;t work due to illness or injury. It&#39;s the bridge that keeps your financial life intact while you recover.</p>
+<h3>What You Need to Know</h3>
+<p><strong>Elimination Period:</strong> This is the waiting period between when you become disabled and when benefits start paying. There are two types:</p>
+<ul>
+<li>Injury: Often 0 days (coverage begins immediately after a qualifying injury)</li>
+<li>Sickness: Often 7 days (coverage begins 7 days after a qualifying illness)</li>
+<li>Some policies have 14/14 waiting periods. Read the fine print.</li>
+</ul>
+<p><strong>Benefit Amount:</strong> Typically 60% of your gross income. Some policies decrease the benefit amount over time, meaning you receive less per month the longer you&#39;re disabled. Read the schedule of benefits carefully.</p>
+<p>Benefit Period: How long the policy pays. Ranges from 3 months to 2 years.</p>
+<p><strong>The action:</strong> If your employer offers short-term disability, review the policy details. If they don&#39;t, or if the coverage is inadequate, look into individual short-term disability policies. They&#39;re relatively affordable and the one piece of coverage you pray you never need but can&#39;t afford to be without.</p>
+<blockquote>
+<p><strong>THE TRUTH</strong></p>
+<p>You need short-term disability insurance BEFORE you start investing. The moment you put money into a rental property or an investment, that money is not liquid. It&#39;s working for you, but it can&#39;t pay your rent this month if you break your leg. Disability coverage is the safety net that lets you invest aggressively without risking your basic survival.</p>
+</blockquote>
+<hr>
+<h2>Health Insurance: The Math That Matters</h2>
+<p>Everyone has health insurance (or should). But almost nobody understands what their health insurance actually covers until they get a bill that stops their heart.</p>
+<p>Let me break down the terms that matter with real math.</p>
+<h3>Deductible vs. Co-Pay: The $20,000 Broken Leg</h3>
+<p>Say you break your leg. The emergency room bill is $20,000. Here is how your insurance processes that:</p>
+<p>Your deductible: The amount you pay before insurance covers anything. Let&#39;s say yours is $5,000.</p>
+<p>Your co-insurance: After you hit your deductible, insurance covers a percentage, but not 100%. A common split is 80/20 (insurance pays 80%, you pay 20%).</p>
+<p>The math:</p>
+<table>
+<thead>
+<tr>
+<th>Line Item</th>
+<th>Amount</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Total bill</td>
+<td>$20,000</td>
+</tr>
+<tr>
+<td>You pay: Deductible</td>
+<td>-$5,000</td>
+</tr>
+<tr>
+<td>Remaining after deductible</td>
+<td>$15,000</td>
+</tr>
+<tr>
+<td>You pay: 20% co-insurance on remaining</td>
+<td>-$3,000</td>
+</tr>
+<tr>
+<td>Insurance pays: 80% co-insurance</td>
+<td>$12,000</td>
+</tr>
+<tr>
+<td><strong>Your total out-of-pocket</strong></td>
+<td><strong>$8,000</strong></td>
+</tr>
+</tbody></table>
+<p>That $20,000 broken leg costs you $8,000. If you don&#39;t have $8,000 saved, that goes on a credit card or into medical debt. That&#39;s how medical bills become financial emergencies.</p>
+<h3>Out-of-Pocket Maximum</h3>
+<p>The one number that protects you: your annual out-of-pocket maximum. This is the most you&#39;ll pay in a calendar year, after which insurance covers 100%.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Typical Range (2026)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Individual</td>
+<td>$4,000 - $9,200</td>
+</tr>
+<tr>
+<td>Family</td>
+<td>$8,000 - $18,400</td>
+</tr>
+</tbody></table>
+<p>Know your number. This is the worst-case scenario for any given year.</p>
+<h3>The Emergency Room Trap: In-Network vs. Out-of-Network</h3>
+<p>Here&#39;s the detail that catches people off guard, especially families.</p>
+<p>Your insurance has a network of approved doctors, hospitals, and specialists. When you use in-network providers, you pay the negotiated (lower) rate. When you use out-of-network providers, you pay significantly more. Sometimes the full retail price.</p>
+<p>The problem: ambulances don&#39;t check your network. They take you to the nearest hospital. If that hospital is out of network, your $20,000 bill becomes a $40,000 bill, and your insurance may cover a fraction of it.</p>
+<p>It gets worse on vacation. Your kids fall off a bike in another state. The local urgent care isn&#39;t in your network. The nearest in-network hospital is 90 minutes away. You go to the closer one. That&#39;s a rational decision that could cost you thousands.</p>
+<p><strong>The action:</strong></p>
+<ol>
+<li>Know your in-network hospitals within a 30-mile radius of your home.</li>
+<li>Know your out-of-network deductible and maximum (it&#39;s usually 2-3x higher than in-network).</li>
+<li>If you travel frequently, consider a PPO plan over an HMO. PPOs have broader networks.</li>
+<li>Ask your employer about supplemental accident insurance. It pays a flat benefit regardless of network, which helps cover the gap.</li>
+</ol>
+<hr>
+<h2>WORKSHEET 2A: Health Insurance Coverage Audit</h2>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Your Answer</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Insurance provider</td>
+<td></td>
+</tr>
+<tr>
+<td>Plan type (HMO, PPO, EPO, HDHP)</td>
+<td></td>
+</tr>
+<tr>
+<td>Monthly premium</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Annual deductible (individual)</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Annual deductible (family)</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Co-insurance split after deductible</td>
+<td>___% you / ___% insurance</td>
+</tr>
+<tr>
+<td>Annual out-of-pocket max (individual)</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Annual out-of-pocket max (family)</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>In-network ER co-pay</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Out-of-network deductible</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Out-of-network out-of-pocket max</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Is your primary care doctor in-network?</td>
+<td>Yes / No</td>
+</tr>
+<tr>
+<td>Nearest in-network hospital</td>
+<td></td>
+</tr>
+<tr>
+<td>Do you have prescription coverage?</td>
+<td>Yes / No</td>
+</tr>
+<tr>
+<td>Do you have dental/vision?</td>
+<td>Yes / No / Separate plan</td>
+</tr>
+</tbody></table>
+<p>If you can&#39;t fill in more than half of this chart from memory, you don&#39;t understand your health insurance well enough. Pull your benefits summary and complete every line.</p>
+<hr>
+<h2>Property &amp; Casualty Insurance</h2>
+<p>This category covers the physical things in your life. Your home (or apartment), your car, your belongings.</p>
+<h3>Renters Insurance</h3>
+<p>If you rent, you need renters insurance. Your landlord&#39;s insurance covers the building, not your stuff. If there&#39;s a fire, a break-in, or water damage, everything you own is unprotected unless you have renters insurance.</p>
+<p>Cost: typically $15-$30 per month for $30,000-$50,000 in personal property coverage. That is less than a streaming subscription to protect everything you own.</p>
+<h3>Homeowners Insurance</h3>
+<p>If you own your home, your mortgage lender requires homeowners insurance. But &quot;required&quot; and &quot;adequate&quot; are two different things. Review your policy for:</p>
+<ul>
+<li>Dwelling coverage: Does it cover the full replacement cost of your home, or only the market value? These are different numbers.</li>
+<li>Personal property coverage: Is it &quot;actual cash value&quot; (depreciated) or &quot;replacement cost&quot; (what it costs to buy new)? Replacement cost is worth the extra premium.</li>
+<li>Liability coverage: If someone gets hurt on your property, this protects you. Standard is $100,000, which is not enough. More on this in the landlord section.</li>
+</ul>
+<h3>Auto Insurance: The Deductible Strategy</h3>
+<p>Here&#39;s a counterintuitive piece of advice: raise your deductible.</p>
+<p>Most people carry a $500 deductible on their auto insurance because it feels safe. But according to the Property Casualty Insurers Association of America, the average driver has an accident once every 18 years. You&#39;re paying a higher monthly premium every month for 18 years to avoid a one-time $500 expense.</p>
+<p>The math:</p>
+<table>
+<thead>
+<tr>
+<th>Deductible</th>
+<th>Monthly Premium (approx.)</th>
+<th>Annual Cost</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$500</td>
+<td>$165</td>
+<td>$1,980</td>
+</tr>
+<tr>
+<td>$1,000</td>
+<td>$140</td>
+<td>$1,680</td>
+</tr>
+<tr>
+<td>$2,500</td>
+<td>$115</td>
+<td>$1,380</td>
+</tr>
+</tbody></table>
+<p>By raising your deductible from $500 to $1,000, you save approximately $300 per year. Over 18 years (average time between accidents), you save $5,400. When you DO have an accident, you pay an extra $500 out of pocket. Net savings: $4,900.</p>
+<p>By raising it to $2,500, you save approximately $600 per year, or $10,800 over 18 years. Even if you have two accidents in that span, you still save $5,800.</p>
+<p>The key: Only raise your deductible if you have the deductible amount saved in your emergency fund. This is not a gamble. It&#39;s a calculated decision backed by data.</p>
+<hr>
+<h2>WORKSHEET 2B: Property &amp; Casualty Insurance Review</h2>
+<h3>Auto Insurance</h3>
+<table>
+<thead>
+<tr>
+<th>Vehicle</th>
+<th>Provider</th>
+<th>Monthly Premium</th>
+<th>Deductible</th>
+<th>Liability Limits</th>
+<th>Uninsured Motorist?</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Vehicle 1:</td>
+<td></td>
+<td>$___</td>
+<td>$___</td>
+<td><em><strong>/</strong></em></td>
+<td>Yes / No</td>
+</tr>
+<tr>
+<td>Vehicle 2:</td>
+<td></td>
+<td>$___</td>
+<td>$___</td>
+<td><em><strong>/</strong></em></td>
+<td>Yes / No</td>
+</tr>
+</tbody></table>
+<p>Could you save money by raising your deductible? Yes / No
+If yes, how much per month? $___</p>
+<h3>Home / Renters Insurance</h3>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Your Answer</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Type (Homeowners / Renters)</td>
+<td></td>
+</tr>
+<tr>
+<td>Provider</td>
+<td></td>
+</tr>
+<tr>
+<td>Monthly premium</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Dwelling coverage amount</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Personal property coverage amount</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Liability coverage amount</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Replacement cost or actual cash value?</td>
+<td></td>
+</tr>
+<tr>
+<td>Flood coverage included?</td>
+<td>Yes / No</td>
+</tr>
+<tr>
+<td>Annual deductible</td>
+<td>$___</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Landlord-Specific Insurance: What You Need BEFORE Your First Property</h2>
+<p>This section isn&#39;t relevant to you today. But it will be. I&#39;m including it now because too many first-time investors buy a rental property with the wrong insurance and don&#39;t find out until it&#39;s too late.</p>
+<p>When you buy a property to rent out, your standard homeowners insurance does not cover it. You need a <strong>landlord policy</strong> (also called a &quot;dwelling fire&quot; or &quot;rental property&quot; policy). Here&#39;s what it covers and what standard homeowners doesn&#39;t:</p>
+<h3>Landlord Policy vs. Homeowners Policy</h3>
+<table>
+<thead>
+<tr>
+<th>Coverage</th>
+<th>Homeowners</th>
+<th>Landlord Policy</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Dwelling damage</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Your personal property inside</td>
+<td>Yes</td>
+<td>No (tenant&#39;s stuff is their problem)</td>
+</tr>
+<tr>
+<td>Liability for injuries on property</td>
+<td>Yes (limited)</td>
+<td>Yes (higher limits available)</td>
+</tr>
+<tr>
+<td>Loss of rental income</td>
+<td>No</td>
+<td>Yes, pays rent if property is uninhabitable due to covered event</td>
+</tr>
+<tr>
+<td>Tenant-caused damage</td>
+<td>No</td>
+<td>Varies, read the policy</td>
+</tr>
+<tr>
+<td>Vandalism by tenants</td>
+<td>No</td>
+<td>Optional rider</td>
+</tr>
+</tbody></table>
+<h3>Umbrella Insurance</h3>
+<p>An umbrella policy is additional liability coverage that kicks in after your underlying policies (auto, homeowners, landlord) are exhausted. If someone sues you and wins a $500,000 judgment, and your landlord policy only has $300,000 in liability coverage, the umbrella covers the remaining $200,000.</p>
+<p>Cost: approximately $150-$300 per year for $1 million in umbrella coverage. For real estate investors, this is non-negotiable. One slip-and-fall lawsuit on your rental property can wipe out years of cash flow without it.</p>
+<h3>Loss of Rent Coverage</h3>
+<p>If your rental property suffers damage that makes it uninhabitable (fire, storm, major plumbing failure), loss of rent coverage pays you the rental income you would have received while the property is being repaired. Without it, you&#39;re paying the mortgage on a property generating zero income.</p>
+<p>When you buy your first rental property, tell your insurance agent: &quot;I need a landlord policy with liability coverage of at least $300,000, loss of rent coverage, and I want to discuss an umbrella policy.&quot; That one sentence protects you from 90% of the financial risks new landlords face.</p>
+<hr>
+<h2>Asset Protection Basics: Why LLCs Matter for Investors</h2>
+<p>This is a brief overview, not legal advice. But you need to understand the concept before you need the structure.</p>
+<p>When you own rental properties in your personal name, your personal assets are exposed to lawsuits related to those properties. If a tenant slips on ice at your rental and sues for $500,000, they can go after the rental property AND your personal home, your car, your savings, your other investments.</p>
+<p>A <strong>Limited Liability Company (LLC)</strong> creates a legal barrier between your investment properties and your personal assets. The LLC owns the property. If someone sues the LLC, they can go after the LLC&#39;s assets, but not yours personally (in most cases, if the LLC is properly maintained).</p>
+<h3>When to Set Up an LLC</h3>
+<p><strong>Not yet.</strong> If you don&#39;t own investment property, you don&#39;t need an LLC today. Setting one up too early costs money (filing fees, annual fees, registered agent fees) with zero benefit.</p>
+<p>The right time: Before you close on your first investment property. Work with a real estate attorney to:</p>
+<ol>
+<li>Choose the right state for your LLC (often the state where the property is located)</li>
+<li>Draft an operating agreement</li>
+<li>Set up a separate bank account for the LLC</li>
+<li>Ensure the LLC is properly funded and maintained</li>
+</ol>
+<p>The wrong time: After you already own the property in your personal name and then try to transfer it to an LLC. This can trigger a &quot;due on sale&quot; clause in your mortgage. Do it right from the beginning.</p>
+<blockquote>
+<p><strong>THE TRUTH</strong></p>
+<p>Insurance is boring. I know. Nobody gets excited about reviewing their deductible or calling HR about portability riders. But here&#39;s what IS exciting: knowing that when something goes wrong -- and in a long enough timeline, something always goes wrong -- you&#39;re protected. Your family is protected. Your investments are protected. That peace of mind is what lets you invest with confidence instead of fear. Do the boring work now so you can do the exciting work later.</p>
+</blockquote>
+<hr>
+<h2>WORKSHEET 2C: Complete Insurance Audit</h2>
+<p>List every insurance policy you currently have. Then identify the gaps.</p>
+<h3>CURRENT POLICIES</h3>
+<table>
+<thead>
+<tr>
+<th>Policy Type</th>
+<th>Provider</th>
+<th>Monthly Premium</th>
+<th>Coverage Amount</th>
+<th>Deductible</th>
+<th>Expiration Date</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Life Insurance (Group)</td>
+<td></td>
+<td>$___</td>
+<td>$___</td>
+<td>N/A</td>
+<td></td>
+</tr>
+<tr>
+<td>Life Insurance (Individual)</td>
+<td></td>
+<td>$___</td>
+<td>$___</td>
+<td>N/A</td>
+<td></td>
+</tr>
+<tr>
+<td>Short-Term Disability</td>
+<td></td>
+<td>$___</td>
+<td>___% of income</td>
+<td>___ day elim.</td>
+<td></td>
+</tr>
+<tr>
+<td>Long-Term Disability</td>
+<td></td>
+<td>$___</td>
+<td>___% of income</td>
+<td>___ day elim.</td>
+<td></td>
+</tr>
+<tr>
+<td>Health Insurance</td>
+<td></td>
+<td>$___</td>
+<td>See Worksheet 2A</td>
+<td>$___</td>
+<td></td>
+</tr>
+<tr>
+<td>Dental</td>
+<td></td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+<td></td>
+</tr>
+<tr>
+<td>Vision</td>
+<td></td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+<td></td>
+</tr>
+<tr>
+<td>Auto Insurance</td>
+<td></td>
+<td>$___</td>
+<td><em><strong>/</strong></em>/___</td>
+<td>$___</td>
+<td></td>
+</tr>
+<tr>
+<td>Homeowners / Renters</td>
+<td></td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+<td></td>
+</tr>
+<tr>
+<td>Umbrella</td>
+<td></td>
+<td>$___</td>
+<td>$___</td>
+<td>N/A</td>
+<td></td>
+</tr>
+<tr>
+<td>Other: ____________</td>
+<td></td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3>GAP ANALYSIS</h3>
+<table>
+<thead>
+<tr>
+<th>Gap Identified</th>
+<th>Risk If Not Addressed</th>
+<th>Priority (High/Med/Low)</th>
+<th>Action Step</th>
+<th>Target Date</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3>&quot;CALL YOUR AGENT&quot; SCRIPT</h3>
+<p>Use this script when calling your insurance agent to review your coverage:</p>
+<blockquote>
+<p>&quot;Hi, this is [YOUR NAME]. I&#39;m doing a complete review of my insurance coverage and I have a few questions. First, I want to confirm my current coverage amounts and deductibles on all my policies. Second, I want to understand what is NOT covered -- specifically, what situations would leave me financially exposed. Third, I&#39;m starting to invest in real estate and I want to understand what additional coverage I&#39;ll need when I purchase my first investment property. Can we schedule 30 minutes to go through everything?&quot;</p>
+</blockquote>
+<p>This call takes 30 minutes and could save you hundreds of thousands of dollars. Make it this week.</p>
+<hr>
+<h2>ACTION STEPS: Module 2</h2>
+<ol>
+<li>Complete the Life Insurance calculation. Determine how much coverage you need.</li>
+<li>Call your HR department and ask about life insurance portability and short-term disability coverage.</li>
+<li>Complete Worksheet 2A (Health Insurance Coverage Audit).</li>
+<li>Complete Worksheet 2B (Property &amp; Casualty Review).</li>
+<li>Complete Worksheet 2C (Complete Insurance Audit). List every policy, identify every gap.</li>
+<li>Call your insurance agent using the script above. Schedule 30 minutes this week.</li>
+<li>Review the landlord insurance section. You don&#39;t need to act on it yet, but understand what you&#39;ll need when you buy your first property.</li>
+</ol>
+<p><em>In the audio for this module, I walk through a complete insurance audit with a real client, showing you exactly how we found 4 gaps in their coverage that could have cost them over $100,000.</em></p>
+<p>Most investors skip this entire module. You didn&#39;t. The rebar is in the concrete. Whatever you build on top of this will stand.</p>
+<hr>
+<hr>
+<h1>MODULE 3: YOUR NET WORTH &amp; HIDDEN ASSETS</h1>
+<p><em>&quot;Your net worth is not how much you make. It&#39;s how much you keep and what it can do for you.&quot;</em></p>
+<hr>
+<h2>Your Balance Sheet: What You Own vs. What You Owe</h2>
+<p>In Module 1, you built a P&amp;L, tracking income vs. expenses, the flow of money in and out every month. Now we build the other half of your financial picture: the <strong>balance sheet.</strong></p>
+<p>A balance sheet is a snapshot. It answers one question: <strong>Right now, today, what is the total value of everything you own minus everything you owe?</strong></p>
+<p>The answer is your <strong>net worth.</strong></p>
+<p>Your net worth can be positive (you own more than you owe), negative (you owe more than you own), or zero (break-even). No judgment here. The number is the number. What matters is that you know it, because you can&#39;t change a number you&#39;ve never calculated.</p>
+<hr>
+<h2>The Four Asset Classes</h2>
+<p>Everything you own falls into one of four categories:</p>
+<p><strong>1. Paper Assets.</strong> Financial instruments you hold but don&#39;t physically possess.</p>
+<ul>
+<li>Checking and savings accounts</li>
+<li>Retirement accounts (401(k), IRA, Roth IRA, TSP, 403(b), pension)</li>
+<li>Brokerage / investment accounts (stocks, bonds, mutual funds, ETFs)</li>
+<li>HSA (Health Savings Account) balances</li>
+<li>Certificates of deposit (CDs)</li>
+<li>Savings bonds</li>
+<li>Crypto holdings</li>
+</ul>
+<p><strong>2. Business Assets.</strong> Ownership stakes in businesses or income-producing ventures.</p>
+<ul>
+<li>LLC ownership / business equity</li>
+<li>Equipment or inventory you own for business purposes</li>
+<li>Intellectual property (patents, courses, books, licensing deals)</li>
+<li>Accounts receivable (money owed to you for work completed)</li>
+</ul>
+<p><strong>3. Real Estate Assets.</strong> Property you own, including your primary residence.</p>
+<ul>
+<li>Primary home (market value minus mortgage balance = equity)</li>
+<li>Investment properties</li>
+<li>Land</li>
+<li>Ownership interest in real estate partnerships or syndications</li>
+</ul>
+<p><strong>4. Commodity / Hard Assets.</strong> Physical items of value.</p>
+<ul>
+<li>Gold and silver (physical or paper)</li>
+<li>Vehicles (current market value, not what you paid)</li>
+<li>Jewelry and watches (appraised value)</li>
+<li>Collectibles (art, coins, rare items, only if appraised)</li>
+<li>Cash value of life insurance policies (if applicable)</li>
+</ul>
+<hr>
+<h2>Your Liabilities: Everything You Owe</h2>
+<p>On the other side of the balance sheet:</p>
+<ul>
+<li>Mortgage balance(s)</li>
+<li>Car loan balance(s)</li>
+<li>Student loan balance(s)</li>
+<li>Credit card balances (every card)</li>
+<li>Personal loan balances</li>
+<li>Medical debt</li>
+<li>Tax debt (IRS, state)</li>
+<li>Money owed to family or friends</li>
+<li>Any other debts or obligations</li>
+</ul>
+<hr>
+<h2>WORKSHEET 3A: Personal Balance Sheet</h2>
+<h3>ASSETS (What You Own)</h3>
+<p>Paper Assets</p>
+<table>
+<thead>
+<tr>
+<th>Account</th>
+<th>Institution</th>
+<th>Current Balance</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Checking Account #1</td>
+<td></td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Checking Account #2</td>
+<td></td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Savings Account</td>
+<td></td>
+<td>$___</td>
+</tr>
+<tr>
+<td>401(k)</td>
+<td></td>
+<td>$___</td>
+</tr>
+<tr>
+<td>IRA / Roth IRA</td>
+<td></td>
+<td>$___</td>
+</tr>
+<tr>
+<td>TSP (if military/government)</td>
+<td></td>
+<td>$___</td>
+</tr>
+<tr>
+<td>403(b) / 457</td>
+<td></td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Pension (if applicable)</td>
+<td></td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Brokerage / Investment Account</td>
+<td></td>
+<td>$___</td>
+</tr>
+<tr>
+<td>HSA</td>
+<td></td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Crypto</td>
+<td></td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Other: _____________</td>
+<td></td>
+<td>$___</td>
+</tr>
+<tr>
+<td><strong>Total Paper Assets</strong></td>
+<td></td>
+<td><strong>$___</strong></td>
+</tr>
+</tbody></table>
+<p>Business Assets</p>
+<table>
+<thead>
+<tr>
+<th>Asset</th>
+<th>Description</th>
+<th>Estimated Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Business equity / LLC ownership</td>
+<td></td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Equipment / inventory</td>
+<td></td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Intellectual property</td>
+<td></td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Accounts receivable</td>
+<td></td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Other: _____________</td>
+<td></td>
+<td>$___</td>
+</tr>
+<tr>
+<td><strong>Total Business Assets</strong></td>
+<td></td>
+<td><strong>$___</strong></td>
+</tr>
+</tbody></table>
+<p>Real Estate Assets</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Market Value</th>
+<th>Mortgage Balance</th>
+<th>Equity (Value - Balance)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Primary home</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Investment property #1</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Investment property #2</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Land</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td><strong>Total Real Estate Equity</strong></td>
+<td></td>
+<td></td>
+<td><strong>$___</strong></td>
+</tr>
+</tbody></table>
+<p>Commodity / Hard Assets</p>
+<table>
+<thead>
+<tr>
+<th>Asset</th>
+<th>Estimated Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Vehicle #1 (current market)</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Vehicle #2 (current market)</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Gold / Silver</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Jewelry / Watches</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Other: _____________</td>
+<td>$___</td>
+</tr>
+<tr>
+<td><strong>Total Hard Assets</strong></td>
+<td><strong>$___</strong></td>
+</tr>
+</tbody></table>
+<h3>TOTAL ASSETS</h3>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Paper Assets</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Business Assets</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Real Estate Equity</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Hard Assets</td>
+<td>$___</td>
+</tr>
+<tr>
+<td><strong>TOTAL ASSETS</strong></td>
+<td><strong>$___</strong></td>
+</tr>
+</tbody></table>
+<h3>LIABILITIES (What You Owe)</h3>
+<table>
+<thead>
+<tr>
+<th>Debt</th>
+<th>Creditor</th>
+<th>Balance</th>
+<th>Monthly Payment</th>
+<th>Interest Rate</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Mortgage</td>
+<td></td>
+<td>$___</td>
+<td>$___</td>
+<td>___%</td>
+</tr>
+<tr>
+<td>Car Loan #1</td>
+<td></td>
+<td>$___</td>
+<td>$___</td>
+<td>___%</td>
+</tr>
+<tr>
+<td>Car Loan #2</td>
+<td></td>
+<td>$___</td>
+<td>$___</td>
+<td>___%</td>
+</tr>
+<tr>
+<td>Student Loan #1</td>
+<td></td>
+<td>$___</td>
+<td>$___</td>
+<td>___%</td>
+</tr>
+<tr>
+<td>Student Loan #2</td>
+<td></td>
+<td>$___</td>
+<td>$___</td>
+<td>___%</td>
+</tr>
+<tr>
+<td>Credit Card #1</td>
+<td></td>
+<td>$___</td>
+<td>$___</td>
+<td>___%</td>
+</tr>
+<tr>
+<td>Credit Card #2</td>
+<td></td>
+<td>$___</td>
+<td>$___</td>
+<td>___%</td>
+</tr>
+<tr>
+<td>Credit Card #3</td>
+<td></td>
+<td>$___</td>
+<td>$___</td>
+<td>___%</td>
+</tr>
+<tr>
+<td>Personal Loan</td>
+<td></td>
+<td>$___</td>
+<td>$___</td>
+<td>___%</td>
+</tr>
+<tr>
+<td>Medical Debt</td>
+<td></td>
+<td>$___</td>
+<td>$___</td>
+<td>___%</td>
+</tr>
+<tr>
+<td>Tax Debt (IRS/State)</td>
+<td></td>
+<td>$___</td>
+<td>$___</td>
+<td>___%</td>
+</tr>
+<tr>
+<td>Family / Personal Loan</td>
+<td></td>
+<td>$___</td>
+<td>$___</td>
+<td>___%</td>
+</tr>
+<tr>
+<td>Other: _____________</td>
+<td></td>
+<td>$___</td>
+<td>$___</td>
+<td>___%</td>
+</tr>
+<tr>
+<td><strong>TOTAL LIABILITIES</strong></td>
+<td></td>
+<td><strong>$___</strong></td>
+<td><strong>$___/mo</strong></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3>YOUR NET WORTH</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Amount</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Total Assets</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Total Liabilities</td>
+<td>- $___</td>
+</tr>
+<tr>
+<td><strong>NET WORTH</strong></td>
+<td><strong>$___</strong></td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Finding Hidden Money</h2>
+<p>Here&#39;s what I&#39;ve learned from working with hundreds of people on their balance sheets: almost everyone has money they forgot about.</p>
+<p>Old employer 401(k) accounts from jobs you left 5 or 10 years ago. A savings account your parents opened when you were a kid. An HSA from a previous employer. A pension you vested in but never checked on. A life insurance policy with cash value that you have been paying premiums on for 15 years.</p>
+<p>These are not small numbers.</p>
+<blockquote>
+<p><strong>KEISHA&#39;S STORY (continued)</strong></p>
+<p>Remember Keisha from Module 1? The teacher who found $680 a month in wasted spending? When we did her balance sheet, she found something even bigger.</p>
+<p>She had a <strong>$127,000 retirement account from a previous employer.</strong> A 403(b) from a teaching position she left 8 years ago. She knew the account existed somewhere, but she&#39;d changed addresses, changed emails, and lost the login credentials. She assumed it was &quot;like $20,000 or something.&quot;</p>
+<p>It was $127,000. Sitting in a target-date fund earning modest returns, charging fees she never reviewed, completely disconnected from her financial plan.</p>
+<p>That $127,000 became the starting capital for her real estate portfolio. Not by cashing it out and paying penalties, but by strategically repositioning it (which we cover in Module 4).</p>
+<p>The money was already there. She found it by doing what you&#39;re about to do: writing down every asset, every account, every dollar.</p>
+</blockquote>
+<h3>Where to Look for Hidden Money</h3>
+<ul>
+<li>National Registry of Unclaimed Retirement Benefits: unclaimedretirementbenefits.com. Search for 401(k) or pension accounts from previous employers.</li>
+<li>Your state&#39;s unclaimed property database: Every state holds unclaimed funds (old bank accounts, utility deposits, uncashed checks). Search missingmoney.com.</li>
+<li>Previous employer HR departments: Call and ask if you have any outstanding retirement accounts, HSAs, or deferred compensation balances.</li>
+<li>Your parents or family members: Were accounts opened in your name as a child? Savings bonds purchased? Trust accounts established?</li>
+<li>Old insurance policies: Do you have a whole life or universal life policy with cash value? Call the carrier and ask for the current cash surrender value.</li>
+</ul>
+<hr>
+<h2>Investable Net Worth: The Number That Matters</h2>
+<p>Your total net worth includes everything. Your home, your car, your furniture. But most of that is not money you can deploy into investments.</p>
+<p>Investable net worth is the portion of your net worth that is liquid or can be repositioned into income-producing assets. It excludes:</p>
+<ul>
+<li>Your primary home equity (you live there, so it&#39;s not deployable unless you do a cash-out refinance or HELOC)</li>
+<li>Your vehicles (you need them)</li>
+<li>Your personal property (your couch is not capital)</li>
+</ul>
+<p>Investable net worth includes:</p>
+<ul>
+<li>Cash in savings and checking accounts (above your emergency fund)</li>
+<li>Retirement account balances (can be repositioned via SDIRA, covered in Module 4)</li>
+<li>Brokerage account balances</li>
+<li>Business equity that can be converted to cash</li>
+<li>Any liquid assets you could deploy into an investment within 90 days</li>
+</ul>
+<hr>
+<h2>WORKSHEET 3B: Asset Inventory</h2>
+<table>
+<thead>
+<tr>
+<th>Account / Asset</th>
+<th>Institution</th>
+<th>Account Number (last 4)</th>
+<th>Current Balance</th>
+<th>Liquid? (Y/N)</th>
+<th>Part of Investable Net Worth?</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+<td></td>
+<td>$___</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>$___</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>$___</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>$___</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>$___</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>$___</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>$___</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>$___</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>$___</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>$___</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>TOTAL INVESTABLE NET WORTH</strong></td>
+<td></td>
+<td></td>
+<td><strong>$___</strong></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>This number, your investable net worth, is your starting ammunition. It might be $500. It might be $500,000. Either way, now you know what you&#39;re working with.</p>
+<hr>
+<h2>ACTION STEPS: Module 3</h2>
+<ol>
+<li>Complete Worksheet 3A (Personal Balance Sheet). Every asset, every liability, every dollar.</li>
+<li>Search for hidden money. Check unclaimedretirementbenefits.com, missingmoney.com, and contact former employers.</li>
+<li>Complete Worksheet 3B (Asset Inventory). Calculate your investable net worth.</li>
+<li>Write down your net worth. Put the date next to it. You&#39;re going to recalculate this every 90 days and watch it change.</li>
+</ol>
+<p><em>In the audio for this module, I share the stories of three clients who found between $15,000 and $200,000 in forgotten retirement accounts, and what they did with that money once they found it.</em></p>
+<p>Two down, five to go. You now have your P&amp;L (Module 1) and your Balance Sheet (this module). The third piece, your retirement account strategy, is next.</p>
+<hr>
+<hr>
+<h1>MODULE 4: YOUR RETIREMENT ACCOUNTS &amp; THE WEALTH LEVER</h1>
+<p><em>&quot;Most people have money. They have it in accounts that earn 6% while they could be earning 15-25%. They don&#39;t have an income problem. They have a deployment problem.&quot;</em></p>
+<hr>
+<h2>Your Retirement Money Is Already Working. The Question Is: For Whom?</h2>
+<p>If you&#39;ve ever held a full-time job, there&#39;s a strong chance you have money sitting in a retirement account somewhere. Maybe a 401(k). Maybe an IRA. Maybe a TSP if you&#39;re military or government. Maybe a pension from a company you left 10 years ago.</p>
+<p>That money is invested. Right now. Today. It&#39;s earning returns and paying fees. The question is whether those returns and fees are working in YOUR best interest or in the interest of the financial institutions managing the account.</p>
+<p>Here is the typical structure:</p>
+<ul>
+<li>Your money sits in a target-date fund or a mix of mutual funds selected from a limited menu your employer provides.</li>
+<li>Those funds charge management fees (called an expense ratio) of 0.5% to 1.5% per year. On a $200,000 account, that&#39;s $1,000 to $3,000 per year in fees. Whether the fund makes money or not.</li>
+<li>The average annual return for a diversified stock portfolio over the last 30 years is approximately 7-10% before fees. After fees, you&#39;re looking at 5.5-9%.</li>
+<li>Those returns are subject to market volatility. In 2008, the average 401(k) lost 25-30% of its value. In 2022, the S&amp;P 500 dropped 19%.</li>
+</ul>
+<p>Meanwhile, a well-purchased rental property in a solid market can produce <strong>15-25% cash-on-cash return</strong>, and you have direct control over the asset. You can improve it, raise rents, refinance, or sell.</p>
+<p>I&#39;m not telling you to drain your retirement accounts. I&#39;m telling you to understand the math. Because the math is the lever that changes everything.</p>
+<hr>
+<h2>Types of Retirement Accounts</h2>
+<p>Before you can make strategic decisions about your retirement money, you need to know what you have.</p>
+<table>
+<thead>
+<tr>
+<th>Account Type</th>
+<th>Who Has It</th>
+<th>Tax Treatment</th>
+<th>Contribution Limit (2026)</th>
+<th>Withdrawal Rules</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>401(k)</strong></td>
+<td>Private sector employees</td>
+<td>Pre-tax contributions, taxed on withdrawal</td>
+<td>$23,500 ($31,000 if 50+)</td>
+<td>Penalty before 59 1/2 (with exceptions)</td>
+</tr>
+<tr>
+<td><strong>Roth 401(k)</strong></td>
+<td>Private sector employees (if offered)</td>
+<td>After-tax contributions, tax-free withdrawal</td>
+<td>Same as 401(k)</td>
+<td>Same age rules, but no tax on qualified withdrawals</td>
+</tr>
+<tr>
+<td><strong>Traditional IRA</strong></td>
+<td>Anyone with earned income</td>
+<td>Pre-tax (if eligible), taxed on withdrawal</td>
+<td>$7,000 ($8,000 if 50+)</td>
+<td>Penalty before 59 1/2 (with exceptions)</td>
+</tr>
+<tr>
+<td><strong>Roth IRA</strong></td>
+<td>Income limits apply</td>
+<td>After-tax contributions, tax-free growth and withdrawal</td>
+<td>$7,000 ($8,000 if 50+)</td>
+<td>Contributions can be withdrawn anytime; earnings after 59 1/2</td>
+</tr>
+<tr>
+<td><strong>TSP</strong></td>
+<td>Military and federal government</td>
+<td>Pre-tax (Traditional) or after-tax (Roth)</td>
+<td>$23,500 ($31,000 if 50+)</td>
+<td>Same as 401(k) rules</td>
+</tr>
+<tr>
+<td><strong>403(b)</strong></td>
+<td>Teachers, nonprofits, hospitals</td>
+<td>Same as 401(k)</td>
+<td>Same as 401(k)</td>
+<td>Same as 401(k)</td>
+</tr>
+<tr>
+<td><strong>457(b)</strong></td>
+<td>State/local government employees</td>
+<td>Pre-tax, no early withdrawal penalty</td>
+<td>$23,500 ($31,000 if 50+)</td>
+<td>No 10% penalty at any age (unique advantage)</td>
+</tr>
+<tr>
+<td><strong>Pension</strong></td>
+<td>Government, union, some corporate</td>
+<td>Employer-funded, fixed benefit at retirement</td>
+<td>N/A (employer contributes)</td>
+<td>Varies by plan (vesting, age, years of service)</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>The Retirement Formula: How Many Units Do You Need?</h2>
+<p>This is the most important formula in this workbook. It turns &quot;someday I want to retire&quot; into a specific, concrete, actionable number.</p>
+<p><strong>TMI / PCF = UNR</strong></p>
+<ul>
+<li>TMI = Total Monthly Income needed to retire (what you need per month to cover all your expenses and live the life you want)</li>
+<li>PCF = Positive Cash Flow per unit (the net monthly income from one rental property after all expenses are paid)</li>
+<li>UNR = Units Needed for Retirement (how many rental properties you need to replace your income)</li>
+</ul>
+<p><strong>Example:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Amount</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TMI: Monthly income needed to retire comfortably</td>
+<td>$7,000</td>
+</tr>
+<tr>
+<td>PCF: Average positive cash flow per rental unit</td>
+<td>$750</td>
+</tr>
+<tr>
+<td>UNR = $7,000 / $750</td>
+<td><strong>9.33, round up to 10 units</strong></td>
+</tr>
+</tbody></table>
+<p>You need <strong>10 rental properties</strong> each producing $750/month in positive cash flow to replace a $7,000/month income.</p>
+<p>That&#39;s not a dream. That&#39;s a math problem. And math problems have solutions.</p>
+<hr>
+<h2>WORKSHEET 4A: Calculate YOUR Retirement Number</h2>
+<h3>Step 1: Determine Your TMI (Total Monthly Income Needed)</h3>
+<table>
+<thead>
+<tr>
+<th>Monthly Expense in Retirement</th>
+<th>Amount</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Housing (mortgage/rent or owned free and clear; still need taxes, insurance, maintenance)</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Utilities</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Food</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Transportation</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Health insurance (if pre-Medicare)</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Insurance premiums (life, umbrella, etc.)</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Entertainment / Travel</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Miscellaneous / Buffer</td>
+<td>$___</td>
+</tr>
+<tr>
+<td><strong>YOUR TMI (Total Monthly Income Needed)</strong></td>
+<td><strong>$___</strong></td>
+</tr>
+</tbody></table>
+<h3>Step 2: Sensitivity Analysis</h3>
+<p>What if your average cash flow per unit is different? How does that change the number of units you need?</p>
+<table>
+<thead>
+<tr>
+<th>TMI (Your Number: $___)</th>
+<th>PCF = $500/unit</th>
+<th>PCF = $750/unit</th>
+<th>PCF = $1,000/unit</th>
+<th>PCF = $1,500/unit</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Units Needed</td>
+<td>___</td>
+<td>___</td>
+<td>___</td>
+<td>___</td>
+</tr>
+</tbody></table>
+<p>Fill this in with your own TMI number. The exercise shows you that the number of units is a moving target based on two variables: how much you need and how well you buy. Buy better properties with higher cash flow, and you need fewer units.</p>
+<h3>Step 3: Your Retirement Target</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Your Number</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Total Monthly Income Needed (TMI)</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Target Cash Flow Per Unit (PCF)</td>
+<td>$___</td>
+</tr>
+<tr>
+<td><strong>Units Needed for Retirement (UNR)</strong></td>
+<td><strong>___</strong></td>
+</tr>
+<tr>
+<td>Target timeline (years)</td>
+<td>___ years</td>
+</tr>
+<tr>
+<td>Units to acquire per year</td>
+<td>___</td>
+</tr>
+</tbody></table>
+<p>Write this number down. Put it on your bathroom mirror, your phone wallpaper, your desk. This is your destination. Everything from here forward is the route.</p>
+<hr>
+<h2>Self-Directed IRA: Your Retirement Money, Your Rules</h2>
+<p>Here&#39;s the part that most financial advisors will never tell you. Because it takes your money out of their control.</p>
+<p>A <strong>Self-Directed IRA (SDIRA)</strong> is a retirement account that allows you to invest in assets beyond stocks, bonds, and mutual funds. With an SDIRA, you can invest your retirement funds in:</p>
+<ul>
+<li>Residential real estate</li>
+<li>Commercial real estate</li>
+<li>Private lending (be the bank)</li>
+<li>Tax liens and deeds</li>
+<li>Precious metals (physical gold and silver)</li>
+<li>Private companies and startups</li>
+<li>And more</li>
+</ul>
+<p>The money grows tax-deferred (Traditional SDIRA) or tax-free (Roth SDIRA), same as any IRA. The difference is that YOU choose the investments, not a fund manager picking from a pre-approved menu.</p>
+<h3>How It Works</h3>
+<ol>
+<li><strong>Open an account</strong> with an SDIRA custodian (a company that specializes in self-directed retirement accounts). Major custodians include Equity Trust, Entrust Group, Advanta IRA, and uDirect IRA.</li>
+<li><strong>Roll over</strong> funds from your existing 401(k), IRA, TSP, or other retirement account into the SDIRA. This can be done as a direct rollover (no taxes, no penalties) if handled correctly.</li>
+<li><strong>Direct the custodian</strong> to make investments on behalf of your IRA. The IRA purchases the asset, not you personally. This is a critical distinction.</li>
+<li><strong>All income flows back to the IRA.</strong> Rent from a property, interest from a loan, profits from a sale. It all goes back into the SDIRA, where it grows tax-deferred or tax-free.</li>
+</ol>
+<h3>The Math: 6% vs. 22%</h3>
+<blockquote>
+<p><strong>DAVID&#39;S STORY</strong></p>
+<p>David was a corporate project manager making $120,000 a year. He had $80,000 in a 401(k) from a previous employer, sitting in a target-date fund earning roughly 6% per year. About $4,800 annually.</p>
+<p>He rolled that $80,000 into a Self-Directed IRA and purchased a rental property using the BRRRR strategy (Buy, Rehab, Rent, Refinance, Repeat). After the rehab and refinance, the property was producing $730 per month in net cash flow.</p>
+<p>That&#39;s $8,760 per year on an $80,000 deployment. A <strong>22% cash-on-cash return.</strong> All inside his SDIRA. Tax-deferred.</p>
+<p>Compare:</p>
+<ul>
+<li>Old 401(k) at 6%: $4,800/year (with zero control and 1.2% in fees)</li>
+<li>SDIRA in real estate at 22%: $8,760/year (with full control and no management fees)</li>
+</ul>
+<p>David didn&#39;t make more money. He repositioned the money he already had into a higher-performing asset. That&#39;s the wealth lever.</p>
+</blockquote>
+<h3>Important Guardrails: When NOT to Touch Retirement Money</h3>
+<p>SDIRAs are powerful. But they are not for everyone, and there are situations where you should leave your retirement money alone:</p>
+<ol>
+<li><p><strong>If your current employer offers a 401(k) match and you&#39;re not maxing it out.</strong> An employer match is free money, a guaranteed 50-100% return on your contribution. Max the match first.</p>
+</li>
+<li><p><strong>If you don&#39;t have an emergency fund.</strong> Moving retirement money into an illiquid investment (like real estate) while having no emergency reserves is reckless. Build your emergency fund first (3-6 months of expenses).</p>
+</li>
+<li><p>If you don&#39;t understand real estate investing yet. The SDIRA is a vehicle. If you don&#39;t know how to drive, the vehicle doesn&#39;t matter. Complete this workbook first. Build your team (Module 5). Learn how to analyze deals (Module 6). Then consider the SDIRA.</p>
+</li>
+<li><p>If the amount is too small to purchase property. With less than $30,000-$50,000 in retirement savings, the SDIRA may not give you enough capital to acquire and rehab a property. In that case, keep contributing, let it grow, and revisit when the balance is sufficient.</p>
+</li>
+<li><p>If you&#39;re close to retirement age and need the stability. If you&#39;re 55+ and planning to retire within 5-7 years, shifting retirement funds into real estate (which is illiquid and requires a longer time horizon) may not be appropriate for your situation.</p>
+</li>
+</ol>
+<p>The SDIRA is a lever. But you need a solid base to pull it from. That base is everything you&#39;ve built in Modules 1-3.</p>
+<hr>
+<h2>WORKSHEET 4B: Retirement Account Inventory</h2>
+<p>List every retirement account you have. Current employer, former employers, personal accounts. Leave no account behind.</p>
+<table>
+<thead>
+<tr>
+<th>Account Type</th>
+<th>Institution / Custodian</th>
+<th>Balance</th>
+<th>Annual Fees (%)</th>
+<th>Annual Return (approx.)</th>
+<th>Currently Contributing?</th>
+<th>Employer Match?</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+<td>$___</td>
+<td>___%</td>
+<td>___%</td>
+<td>Yes / No</td>
+<td>Yes / No (___%)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>$___</td>
+<td>___%</td>
+<td>___%</td>
+<td>Yes / No</td>
+<td>Yes / No (___%)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>$___</td>
+<td>___%</td>
+<td>___%</td>
+<td>Yes / No</td>
+<td>Yes / No (___%)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>$___</td>
+<td>___%</td>
+<td>___%</td>
+<td>Yes / No</td>
+<td>Yes / No (___%)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>$___</td>
+<td>___%</td>
+<td>___%</td>
+<td>Yes / No</td>
+<td>Yes / No (___%)</td>
+</tr>
+<tr>
+<td><strong>TOTAL RETIREMENT ASSETS</strong></td>
+<td></td>
+<td><strong>$___</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3>Key Questions to Answer</h3>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Your Answer</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Total retirement account balance across all accounts</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Total annual fees paid across all accounts (balance x fee %)</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Are any accounts from former employers still sitting untouched?</td>
+<td>Yes / No</td>
+</tr>
+<tr>
+<td>Have you compared your current returns to what real estate could produce?</td>
+<td>Yes / No</td>
+</tr>
+<tr>
+<td>Would rolling over orphaned accounts into an SDIRA be worth exploring?</td>
+<td>Yes / No</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>ACTION STEPS: Module 4</h2>
+<ol>
+<li>Complete Worksheet 4A. Calculate your TMI, PCF, and UNR. Know your retirement number.</li>
+<li>Run the sensitivity analysis. See how the number of units changes at different cash flow levels.</li>
+<li>Complete Worksheet 4B. Inventory every retirement account. Include balances, fees, and returns.</li>
+<li>Research SDIRA custodians. Visit the websites of Equity Trust, Entrust Group, and Advanta IRA. Understand the process and fees.</li>
+<li><strong>Do NOT move any money yet.</strong> Understand what&#39;s out there first. You&#39;re gathering intelligence before you deploy capital.</li>
+</ol>
+<p><em>In the audio for this module, I walk through David&#39;s SDIRA conversion step by step, including the rollover paperwork, the custodian selection, and the first property he purchased inside the account.</em></p>
+<p>You now understand the wealth lever. Your retirement money isn&#39;t locked away. It&#39;s waiting for you to redeploy it strategically. But strategy without a team is a plan without execution. Module 5 fixes that.</p>
+<hr>
+<hr>
+<h1>MODULE 5: BUILDING YOUR INVESTMENT TEAM</h1>
+<p><em>&quot;You are the average of the 5 people you spend the most time with. In real estate, you are the average of the 5 professionals on your team. Choose wisely.&quot;</em></p>
+<hr>
+<h2>Why Your Team Matters More Than Your Deal</h2>
+<p>I&#39;ve seen people find the perfect deal and lose it because their lender was slow. I&#39;ve seen people buy a good property and destroy the profit because their contractor was dishonest. I&#39;ve seen people get sued because their attorney missed something in the contract.</p>
+<p>Your team is the difference between a good deal and a disaster. You don&#39;t need dozens of people. You need the right eight.</p>
+<hr>
+<h2>The 8 People You Need on Your Team</h2>
+<h3>1. Real Estate Agent (Investor-Friendly)</h3>
+<p>This is NOT the same person who helps your cousin buy their first home. You need an agent who understands investment properties, can run comps for rental income (not retail resale), knows distressed properties, and is comfortable submitting offers well below asking price.</p>
+<p>How to find one:</p>
+<ul>
+<li>Attend your local Real Estate Investors Association (REIA) meeting. Ask other investors who they use.</li>
+<li>Search BiggerPockets forums for agent recommendations in your market.</li>
+<li>Call a property management company and ask which agents send them the most investor clients.</li>
+</ul>
+<p><strong>3 questions before you hire one:</strong></p>
+<ol>
+<li>&quot;How many investment property transactions did you close in the last 12 months?&quot; (If the answer is fewer than 10, keep looking.)</li>
+<li>&quot;What is the average cash flow on the rental properties you&#39;ve helped investors buy?&quot; (If they don&#39;t know what cash flow means, keep looking.)</li>
+<li>&quot;Are you comfortable submitting offers significantly below asking price?&quot; (If they hesitate, keep looking.)</li>
+</ol>
+<p>Red flags:</p>
+<ul>
+<li>They primarily work with retail home buyers, not investors</li>
+<li>They discourage you from offering below asking</li>
+<li>They push you toward newer, turnkey properties instead of value-add opportunities</li>
+<li>They can&#39;t explain cap rate, cash-on-cash return, or ARV</li>
+</ul>
+<hr>
+<h3>2. Mortgage Broker / Lender</h3>
+<p>A good mortgage broker has access to multiple lenders and can shop your loan across different programs to find the best terms. This is different from a bank loan officer, who can only offer products from their specific bank.</p>
+<p>How to find one:</p>
+<ul>
+<li>Ask your investor-friendly agent for referrals.</li>
+<li>Ask at REIA meetings.</li>
+<li>Look for brokers who advertise investor loans (DSCR loans, portfolio loans, hard money).</li>
+</ul>
+<p><strong>Ask these 3 questions:</strong></p>
+<ol>
+<li>&quot;What types of investment property loans do you offer?&quot; (You want to hear: conventional, FHA, DSCR, portfolio, hard money. Options matter.)</li>
+<li>&quot;What is your average close time for investment property loans?&quot; (Under 30 days is good. Over 45 is a problem.)</li>
+<li>&quot;Can you pre-approve me today so I&#39;m ready when I find a deal?&quot; (If they cannot move quickly, your deal will go to someone else.)</li>
+</ol>
+<p>Red flags:</p>
+<ul>
+<li>They only offer conventional loans and are unfamiliar with investor-specific products</li>
+<li>They take 45+ days to close</li>
+<li>They can&#39;t explain the difference between a primary residence loan and an investment property loan</li>
+</ul>
+<hr>
+<h3>3. General Contractor / Handyman</h3>
+<p>You need someone who can scope repairs, provide accurate bids, complete work on time, and not disappear mid-project. This is the hardest team member to find and the most important to vet.</p>
+<p>How to find one:</p>
+<ul>
+<li>Drive through neighborhoods where renovations are happening. Stop and ask the crew who they work for.</li>
+<li>Ask other investors at REIA meetings.</li>
+<li>Check local contractor licensing boards for verified, insured contractors.</li>
+<li>Do NOT rely on Angi (formerly Angie&#39;s List) or HomeAdvisor. Those leads are sold to multiple contractors, and the quality control is weak.</li>
+</ul>
+<p><strong>Vet them with these 3 questions:</strong></p>
+<ol>
+<li>&quot;Can you provide references from 3 investment property renovations you&#39;ve completed in the last 6 months?&quot; (Not home remodels for homeowners. Investment properties. Different scope, different budget discipline.)</li>
+<li>&quot;Are you licensed and insured? Can I see your certificate of insurance?&quot; (If they hesitate, walk away.)</li>
+<li>&quot;How do you handle change orders and cost overruns?&quot; (The best contractors communicate overruns immediately, not after the money is spent.)</li>
+</ol>
+<p>Red flags:</p>
+<ul>
+<li>They want a large deposit upfront (more than 10-15% of total job cost)</li>
+<li>They can&#39;t provide a detailed, line-item scope of work</li>
+<li>They don&#39;t have insurance</li>
+<li>They have no references from investment property work</li>
+<li>They push back when you ask for a fixed bid instead of time-and-materials</li>
+</ul>
+<hr>
+<h3>4. Property Manager</h3>
+<p>If you plan to manage your own properties, you still need a property manager in your contacts. Life changes. Deals in other markets come up. You get to 5+ units and self-management becomes a full-time job. Have the relationship ready before you need it.</p>
+<p>How to find one:</p>
+<ul>
+<li>Search for property management companies in your target market that specialize in single-family rental homes or small multifamily.</li>
+<li>Ask other investors who they use and what their experience has been.</li>
+</ul>
+<p><strong>3 questions to ask:</strong></p>
+<ol>
+<li>&quot;What is your management fee and what does it include?&quot; (Typical: 8-12% of collected rent. Clarify: does this include tenant placement, or is that a separate fee?)</li>
+<li>&quot;What is your average vacancy rate across your managed properties?&quot; (Under 5% is excellent. Over 10% is a concern.)</li>
+<li>&quot;How do you handle maintenance requests, and what is your threshold for spending without owner approval?&quot; (You want clear communication and a defined spending cap, typically $200-$500 per incident before calling you.)</li>
+</ol>
+<p>Red flags:</p>
+<ul>
+<li>Fees are unclear or have hidden charges (setup fees, lease renewal fees, inspection fees)</li>
+<li>They can&#39;t tell you their vacancy rate</li>
+<li>They manage too many units per employee (over 150:1 is a warning sign)</li>
+<li>They don&#39;t have a tenant screening process with defined criteria</li>
+</ul>
+<hr>
+<h3>5. Real Estate Attorney</h3>
+<p>Not a corporate attorney. Not a divorce attorney. A real estate attorney, specifically one who handles investment transactions, not residential home purchases.</p>
+<p>How to find one:</p>
+<ul>
+<li>Ask your real estate agent or mortgage broker for a referral.</li>
+<li>Search your state bar association directory for real estate specialists.</li>
+<li>Attend REIA meetings and ask who other investors use.</li>
+</ul>
+<p><strong>Test them with these 3 questions:</strong></p>
+<ol>
+<li>&quot;Do you represent real estate investors, and how many closings have you handled in the last year?&quot; (You want someone who closes investor deals regularly.)</li>
+<li>&quot;Can you help me set up an LLC for holding investment properties?&quot; (This ties directly to Module 2&#39;s asset protection section.)</li>
+<li>&quot;What is your flat fee for a standard real estate closing?&quot; (Flat fees protect you from hourly billing surprises.)</li>
+</ol>
+<hr>
+<h3>6. CPA / Tax Strategist</h3>
+<p>A CPA who understands real estate taxation will save you more money than any other team member. Depreciation, 1031 exchanges, cost segregation, bonus depreciation, SDIRA tax treatment. These are worth thousands to tens of thousands of dollars per year when handled correctly.</p>
+<p>How to find one:</p>
+<ul>
+<li>Ask other real estate investors. A CPA who &quot;does taxes&quot; is not the same as one who understands real estate investor tax strategy.</li>
+<li>Search for CPAs who specialize in real estate or have the &quot;Tax Strategist&quot; designation.</li>
+</ul>
+<p><strong>Ask these before you hire:</strong></p>
+<ol>
+<li>&quot;How many real estate investors do you work with?&quot; (Minimum: 20. Ideally 50+.)</li>
+<li>&quot;Can you explain cost segregation and when it makes sense?&quot; (If they can&#39;t, they&#39;re a bookkeeper, not a tax strategist.)</li>
+<li>&quot;Do you provide year-round tax planning or only year-end preparation?&quot; (You want planning, not data entry.)</li>
+</ol>
+<hr>
+<h3>7. Insurance Agent</h3>
+<p>Covered in depth in Module 2, but to recap: you need an insurance agent who understands investment property coverage. Landlord policies, umbrella insurance, loss of rent coverage, and liability structuring.</p>
+<p><strong>How to vet:</strong> Use the &quot;Call Your Agent&quot; script from Module 2 to assess their knowledge. If they can&#39;t explain the difference between a homeowners policy and a landlord policy, find someone who can.</p>
+<hr>
+<h3>8. Mentor / Accountability Partner</h3>
+<p>This is the person who has done what you want to do. Not a YouTube personality. Someone you can call. Someone who will look at your deal and tell you &quot;go&quot; or &quot;stop.&quot; Someone who has made the mistakes you haven&#39;t made yet and can help you avoid them.</p>
+<p>How to find one:</p>
+<ul>
+<li>REIA meetings. Find the experienced investors and offer value (your time, your research, your energy).</li>
+<li>BiggerPockets networking</li>
+<li>Paid coaching or mentorship programs (this is where The Foundation bridges to the next level)</li>
+</ul>
+<p>What to look for:</p>
+<ul>
+<li>They&#39;ve actually done what they&#39;re teaching (not theorists)</li>
+<li>They&#39;re willing to review your deals and give honest feedback</li>
+<li>They hold you accountable to your 90-day plan (Module 7)</li>
+</ul>
+<hr>
+<h2>WORKSHEET 5A: Team Roster</h2>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Name</th>
+<th>Contact (Phone/Email)</th>
+<th>Status (Found / Searching / Vetting)</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1. Real Estate Agent</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2. Mortgage Broker / Lender</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3. General Contractor / Handyman</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4. Property Manager</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5. Real Estate Attorney</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6. CPA / Tax Strategist</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7. Insurance Agent</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>8. Mentor / Accountability Partner</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3>Interview Tracking</h3>
+<table>
+<thead>
+<tr>
+<th>Role Being Filled</th>
+<th>Person Interviewed</th>
+<th>Date</th>
+<th>3 Questions Asked?</th>
+<th>Passed?</th>
+<th>Red Flags?</th>
+<th>Follow-up Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+<td></td>
+<td>Yes / No</td>
+<td>Yes / No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>Yes / No</td>
+<td>Yes / No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>Yes / No</td>
+<td>Yes / No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>Yes / No</td>
+<td>Yes / No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>Yes / No</td>
+<td>Yes / No</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<hr>
+<h2>ACTION STEPS: Module 5</h2>
+<ol>
+<li>Identify which team roles you already have filled (even partially). Check them off on the roster.</li>
+<li>Identify the 2-3 roles you need to fill first. Priority order: Lender, Agent, Contractor. These are the three you need before your first deal.</li>
+<li>Attend one REIA meeting this month. Go to meetup.com and search &quot;real estate investors&quot; in your market. Or search Facebook for real estate investing groups in your city. Show up. Introduce yourself. Ask questions.</li>
+<li>Interview at least one candidate for each priority role. Use the 3 questions provided above.</li>
+<li>Fill in Worksheet 5A as you go. This is a living document, so update it as you vet and select team members.</li>
+</ol>
+<p><em>In the audio for this module, I share the story of a deal I lost because my lender dropped the ball, and the system I built afterward to make sure it never happened again.</em></p>
+<p>No one builds wealth alone. Your team is the infrastructure. Without it, you&#39;re a solo operator trying to do everything yourself. With it, you&#39;re a general commanding an operation.</p>
+<hr>
+<hr>
+<h1>MODULE 6: YOUR BUY BOX &amp; FIRST PROPERTY CRITERIA</h1>
+<p><em>&quot;A buy box is your set of non-negotiable rules for what you will and will not buy. Without one, you chase every deal. With one, deals chase you.&quot;</em></p>
+<hr>
+<h2>What Is a Buy Box and Why Does It Matter?</h2>
+<p>A buy box is a set of criteria that defines exactly what type of property you&#39;re looking for, and more importantly, what you&#39;re NOT looking for. It&#39;s a filter. It eliminates 90% of properties from your consideration so you can focus your time, energy, and money on the 10% that match your strategy.</p>
+<p>Without a buy box, you waste months looking at properties that don&#39;t fit your goals. You get emotionally attached to a &quot;good deal&quot; that&#39;s actually terrible for your strategy. You submit offers on everything and close on nothing.</p>
+<p>With a buy box, every property that comes across your desk gets a simple yes or no. Does it match the criteria? Analyze it. Doesn&#39;t match? Next.</p>
+<p>Here&#39;s the difference between this workbook and what most people teach: I&#39;m not going to give you MY buy box and tell you to use it. My buy box is built for my markets, my capital, my experience level, and my strategy. Your buy box will be different. And it SHOULD be different.</p>
+<p>I&#39;m going to teach you how to BUILD your own.</p>
+<hr>
+<h2>How to Build Your Buy Box: The Framework</h2>
+<h3>Step 1: Choose Your Market</h3>
+<p>Your market dictates everything. Price ranges, rent levels, appreciation potential, tenant demand, competition. Here&#39;s what to evaluate:</p>
+<p>Population growth: Is the area gaining or losing people? Growth means demand for housing. Decline means vacancies.</p>
+<p>Job market: Are major employers expanding or contracting? What industries drive the local economy? Diverse economies (multiple industries) are safer than single-employer towns.</p>
+<p>Rent-to-price ratio: Take the average rent for a property type and divide by the average purchase price. A ratio of 0.8% or higher is generally favorable for cash flow. Example: $1,200 rent / $150,000 price = 0.8%.</p>
+<p>Landlord-friendly laws: Some states and cities make eviction nearly impossible, taking 6-12 months. Others have clear, efficient processes (30-60 days). This matters enormously for your risk.</p>
+<p>Insurance and tax costs: High property tax or high insurance states (Florida, Texas, New Jersey) eat into your cash flow. Factor these in before you compare price tags.</p>
+<h3>Step 2: Choose Your Property Type</h3>
+<table>
+<thead>
+<tr>
+<th>Property Type</th>
+<th>Pros</th>
+<th>Cons</th>
+<th>Best For</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Single-family home (SFR)</td>
+<td>Easiest to finance, easiest to sell, tenants treat it like their own</td>
+<td>One vacancy = 100% income loss</td>
+<td>Beginners, low capital</td>
+</tr>
+<tr>
+<td>Duplex (2 units)</td>
+<td>House hack potential, 2 income streams</td>
+<td>More management, harder to finance as beginner</td>
+<td>Beginners with FHA loan strategy</td>
+</tr>
+<tr>
+<td>Triplex / Fourplex</td>
+<td>3-4 income streams, still qualifies for residential financing</td>
+<td>More management, higher price point</td>
+<td>Intermediate investors</td>
+</tr>
+<tr>
+<td>Small multifamily (5-20 units)</td>
+<td>Economies of scale, one roof / one location</td>
+<td>Commercial financing required, higher capital</td>
+<td>Experienced investors</td>
+</tr>
+</tbody></table>
+<p>For most people reading this workbook, single-family homes or duplexes are the starting point. Don&#39;t overcomplicate it. Your first deal should be simple enough that you can learn from it without losing your shirt.</p>
+<h3>Step 3: Define Your Property Criteria</h3>
+<p>This is where you get specific. For each factor below, define YOUR range based on YOUR market research.</p>
+<p>Bedrooms / Bathrooms: In most markets, 3-bed / 2-bath is the sweet spot for rental demand. Avoid 1-bed / 1-bath (limited tenant pool) and 5+ bedrooms (higher maintenance, lower demand for the cost).</p>
+<p><strong>Condition:</strong> How much work are you willing to take on?</p>
+<ul>
+<li>Turnkey / Rent-ready: Little to no work needed. Higher purchase price, but immediate cash flow.</li>
+<li>Light rehab: Cosmetic updates. Paint, flooring, fixtures, appliances. Lower price, fast turnaround.</li>
+<li>Moderate rehab: Cosmetic + some mechanical (plumbing, electrical, HVAC). Bigger discount, more risk, more reward.</li>
+<li>Heavy rehab: Gut renovation. Lowest price, highest risk, highest potential return. NOT for first-time investors.</li>
+</ul>
+<p><strong>Location factors:</strong></p>
+<ul>
+<li>Proximity to public transportation (expands tenant pool)</li>
+<li>Proximity to major employers, hospitals, universities</li>
+<li>School district quality (affects both tenant quality and resale value)</li>
+<li>Crime statistics (check local police department data, not &quot;feeling&quot;)</li>
+<li>Flood zone status (check FEMA flood maps at fema.gov/flood-maps)</li>
+</ul>
+<h3>Step 4: Define Your Deal Killers</h3>
+<p>These are the properties you will NOT buy under any circumstances, regardless of price:</p>
+<p><strong>Common deal killers (and why):</strong></p>
+<ul>
+<li><strong>Foundation issues:</strong> The most expensive repair. Can cost $10,000-$50,000+ and often has no permanent fix. Unless you&#39;re very experienced, walk away.</li>
+<li><strong>Flood zone properties:</strong> Flood insurance can cost $2,000-$5,000+ per year. It destroys cash flow and creates ongoing risk. Check every property against FEMA flood maps.</li>
+<li><strong>Environmental contamination:</strong> Asbestos, lead paint (pre-1978 homes, required disclosure), mold, underground storage tanks. Remediation is expensive and can create legal liability.</li>
+<li><strong>HOA restrictions on rentals:</strong> Some homeowners associations prohibit or restrict rental activity. Read the CC&amp;Rs before you buy. If the HOA doesn&#39;t allow rentals, the deal is dead.</li>
+<li><strong>Deed restrictions or easements</strong> that limit property use.</li>
+<li><strong>Title issues</strong> that cannot be resolved before closing.</li>
+</ul>
+<h3>Step 5: Evaluate Repair Costs Relative to the Deal</h3>
+<p>The old approach was to set a flat cap on repairs. &quot;$5,000 maximum.&quot; That approach eliminates 90% of the deals where real money is made. A smarter approach is to evaluate repair costs relative to the property&#39;s <strong>After Repair Value (ARV).</strong></p>
+<p><strong>The 70% Rule (for wholesalers and flippers):</strong></p>
+<p>Maximum Offer = ARV x 70% - Repair Costs</p>
+<p>Example: A property with an ARV of $200,000 and $40,000 in needed repairs:
+$200,000 x 70% = $140,000 - $40,000 = <strong>$100,000 maximum offer</strong></p>
+<p>This ensures you have enough margin for profit and unexpected costs.</p>
+<p><strong>For rental buyers (cash flow analysis):</strong></p>
+<p>What matters is not the absolute repair cost. It&#39;s whether the total investment (purchase + repairs) produces acceptable cash flow.</p>
+<table>
+<thead>
+<tr>
+<th>Factor</th>
+<th>Amount</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Purchase price</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Repair costs</td>
+<td>+ $___</td>
+</tr>
+<tr>
+<td>Closing costs</td>
+<td>+ $___</td>
+</tr>
+<tr>
+<td><strong>Total investment</strong></td>
+<td><strong>$___</strong></td>
+</tr>
+<tr>
+<td>Monthly rent</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Monthly expenses (PITI, management, maintenance reserve, vacancy reserve)</td>
+<td>- $___</td>
+</tr>
+<tr>
+<td><strong>Monthly cash flow</strong></td>
+<td><strong>$___</strong></td>
+</tr>
+<tr>
+<td><strong>Annual cash flow</strong></td>
+<td><strong>$___</strong></td>
+</tr>
+<tr>
+<td><strong>Cash-on-cash return</strong> (annual cash flow / total cash invested)</td>
+<td><strong>___%</strong></td>
+</tr>
+</tbody></table>
+<p>If the cash-on-cash return meets your target (10%+ for most investors), the deal works. Whether repairs are $5,000 or $50,000.</p>
+<hr>
+<h2>WORKSHEET 6A: My Buy Box Builder</h2>
+<p>Complete this worksheet to define YOUR buy box. This is your investing filter.</p>
+<h3>MARKET</h3>
+<table>
+<thead>
+<tr>
+<th>Criteria</th>
+<th>My Buy Box</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Primary market (city/metro)</td>
+<td></td>
+</tr>
+<tr>
+<td>Neighborhoods / zip codes I&#39;m targeting</td>
+<td></td>
+</tr>
+<tr>
+<td>Population trend (growing / stable / declining)</td>
+<td></td>
+</tr>
+<tr>
+<td>Primary industries / employers</td>
+<td></td>
+</tr>
+<tr>
+<td>Avg. rent-to-price ratio</td>
+<td>___%</td>
+</tr>
+<tr>
+<td>Landlord-friendly state?</td>
+<td>Yes / No</td>
+</tr>
+<tr>
+<td>Property tax rate</td>
+<td>___%</td>
+</tr>
+</tbody></table>
+<h3>PROPERTY CRITERIA</h3>
+<table>
+<thead>
+<tr>
+<th>Criteria</th>
+<th>My Minimum</th>
+<th>My Maximum</th>
+<th>My Ideal</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Purchase price</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Bedrooms</td>
+<td>___</td>
+<td>___</td>
+<td>___</td>
+</tr>
+<tr>
+<td>Bathrooms</td>
+<td>___</td>
+<td>___</td>
+<td>___</td>
+</tr>
+<tr>
+<td>Square footage</td>
+<td>___</td>
+<td>___</td>
+<td>___</td>
+</tr>
+<tr>
+<td>Year built</td>
+<td>___</td>
+<td>___</td>
+<td>___</td>
+</tr>
+<tr>
+<td>Lot size</td>
+<td>___</td>
+<td>___</td>
+<td>___</td>
+</tr>
+<tr>
+<td>Property type (SFR, duplex, etc.)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Condition level (turnkey / light / moderate / heavy)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Target monthly rent</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Target cash flow per unit</td>
+<td>$___</td>
+<td>$___</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Target cash-on-cash return</td>
+<td>___%</td>
+<td>___%</td>
+<td>___%</td>
+</tr>
+</tbody></table>
+<h3>MY DEAL KILLERS (Check all that apply)</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Foundation issues</li>
+<li><input disabled="" type="checkbox"> Flood zone</li>
+<li><input disabled="" type="checkbox"> Environmental contamination</li>
+<li><input disabled="" type="checkbox"> HOA that restricts rentals</li>
+<li><input disabled="" type="checkbox"> More than ___ stories</li>
+<li><input disabled="" type="checkbox"> Septic system (vs. city sewer)</li>
+<li><input disabled="" type="checkbox"> Well water (vs. city water)</li>
+<li><input disabled="" type="checkbox"> Unpermitted additions</li>
+<li><input disabled="" type="checkbox"> Landlocked (no road access)</li>
+<li><input disabled="" type="checkbox"> Other: _____________</li>
+<li><input disabled="" type="checkbox"> Other: _____________</li>
+</ul>
+<hr>
+<h2>WORKSHEET 6B: Quick Deal Analysis Sheet</h2>
+<p>Use this for rapid screening of properties before deep analysis.</p>
+<p><strong>Property address:</strong> ___________________________________</p>
+<table>
+<thead>
+<tr>
+<th>Line Item</th>
+<th>Amount</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Asking price</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Estimated ARV (after repair value)</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Estimated repair costs</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Your maximum offer (ARV x 70% - repairs)</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Estimated monthly rent</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Estimated monthly expenses (PITI + reserves)</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Estimated monthly cash flow</td>
+<td>$___</td>
+</tr>
+<tr>
+<td>Estimated cash-on-cash return</td>
+<td>___%</td>
+</tr>
+<tr>
+<td><strong>Does it match your buy box?</strong></td>
+<td><strong>Yes / No</strong></td>
+</tr>
+<tr>
+<td><strong>Does it meet your cash flow target?</strong></td>
+<td><strong>Yes / No</strong></td>
+</tr>
+<tr>
+<td><strong>Are there deal killers?</strong></td>
+<td><strong>Yes / No: ___</strong></td>
+</tr>
+</tbody></table>
+<p><strong>Decision:</strong> Pursue / Pass / Need More Info</p>
+<hr>
+<h2>ACTION STEPS: Module 6</h2>
+<ol>
+<li>Research your target market. Pull population data, job growth, rent-to-price ratios, and landlord-tenant laws for your market.</li>
+<li>Complete Worksheet 6A (My Buy Box Builder). Define every criterion.</li>
+<li>Practice deal analysis. Go to Zillow, Realtor.com, or Redfin. Pull 5 properties that roughly match your buy box. Run each one through Worksheet 6B. This is training. You&#39;re not buying yet. You&#39;re building the muscle.</li>
+<li>Share your buy box with your agent (from Module 5). Tell them exactly what you&#39;re looking for. A good agent will set up automated searches that match your criteria.</li>
+</ol>
+<p><em>In the audio for this module, I walk through building a buy box from scratch for a market I&#39;ve never invested in. The exact research process, the data sources, and how I narrow down from an entire metro to 3 target zip codes.</em></p>
+<p>You now have the filter. Every property passes through your buy box before it earns another minute of your time. That&#39;s how professionals invest. With criteria, not emotion.</p>
+<hr>
+<hr>
+<h1>MODULE 7: YOUR 90-DAY LAUNCH PLAN</h1>
+<p><em>&quot;Plans are worthless. Planning is everything.&quot;</em> -- Dwight D. Eisenhower</p>
+<hr>
+<h2>Putting It All Together</h2>
+<p>You have spent six modules building the foundation:</p>
+<ul>
+<li>Module 1: You know where your money goes. Your budget is built. Your lender file is organized.</li>
+<li>Module 2: Your risk management is mapped. Your insurance gaps are identified. You know what you need before you invest.</li>
+<li>Module 3: Your net worth is calculated. Your hidden assets are found. You know your starting capital.</li>
+<li>Module 4: Your retirement accounts are inventoried. Your retirement number is calculated. You understand the wealth lever.</li>
+<li>Module 5: Your team is identified or in progress. You know who you need and how to find them.</li>
+<li>Module 6: Your buy box is defined. You know what you&#39;re looking for and what you won&#39;t touch.</li>
+</ul>
+<p>Now we execute.</p>
+<p>The 90-Day Launch Plan takes everything you&#39;ve built and turns it into a timeline with specific milestones, deadlines, and checkpoints. Three months from today, you&#39;ll either be looking at your first real deal or making excuses about why you didn&#39;t start.</p>
+<p>I&#39;m betting on the first option. You didn&#39;t make it to Module 7 by accident.</p>
+<hr>
+<h2>Month 1: KNOW YOUR NUMBERS (Weeks 1-4)</h2>
+<p><strong>The goal:</strong> Complete Modules 1-3. Know your budget, your risk exposure, and your net worth. Be lender-ready.</p>
+<h3>Week 1</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Pull 90 days of bank statements from all accounts</li>
+<li><input disabled="" type="checkbox"> Complete Worksheet 1A (Monthly Budget P&amp;L)</li>
+<li><input disabled="" type="checkbox"> Complete Worksheet 1B (The Waste Finder)</li>
+<li><input disabled="" type="checkbox"> Cancel or reduce at least 3 waste items</li>
+<li><input disabled="" type="checkbox"> Listen to Module 1 audio companion</li>
+</ul>
+<h3>Week 2</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Complete the Life Insurance coverage calculation</li>
+<li><input disabled="" type="checkbox"> Call HR about life insurance portability and disability coverage</li>
+<li><input disabled="" type="checkbox"> Complete Worksheet 2A (Health Insurance Coverage Audit)</li>
+<li><input disabled="" type="checkbox"> Complete Worksheet 2B (Property &amp; Casualty Insurance Review)</li>
+<li><input disabled="" type="checkbox"> Listen to Module 2 audio companion</li>
+</ul>
+<h3>Week 3</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Complete Worksheet 2C (Complete Insurance Audit)</li>
+<li><input disabled="" type="checkbox"> Call your insurance agent using the &quot;Call Your Agent&quot; script</li>
+<li><input disabled="" type="checkbox"> Complete Worksheet 3A (Personal Balance Sheet)</li>
+<li><input disabled="" type="checkbox"> Search for hidden money (unclaimedretirementbenefits.com, missingmoney.com, former employers)</li>
+<li><input disabled="" type="checkbox"> Listen to Module 3 audio companion</li>
+</ul>
+<h3>Week 4</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Complete Worksheet 3B (Asset Inventory)</li>
+<li><input disabled="" type="checkbox"> Calculate your investable net worth</li>
+<li><input disabled="" type="checkbox"> Begin gathering lender-ready documents (Lender File Checklist from Module 1)</li>
+<li><input disabled="" type="checkbox"> Review all Month 1 worksheets. Is anything incomplete?</li>
+<li><input disabled="" type="checkbox"> <strong>MONTH 1 CHECKPOINT:</strong> Can you answer these three questions?<ul>
+<li>What is your monthly cash flow? $___</li>
+<li>What is your investable net worth? $___</li>
+<li>Are your lender documents organized and ready? Yes / No</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2>Month 2: GET READY (Weeks 5-8)</h2>
+<p><strong>The goal:</strong> Complete Modules 4-6. Inventory your retirement accounts, build your team, and define your buy box. You&#39;re moving from &quot;knowing your numbers&quot; to &quot;preparing for action.&quot;</p>
+<h3>Week 5</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Complete Worksheet 4A (Retirement Formula: TMI / PCF = UNR)</li>
+<li><input disabled="" type="checkbox"> Run the sensitivity analysis</li>
+<li><input disabled="" type="checkbox"> Complete Worksheet 4B (Retirement Account Inventory)</li>
+<li><input disabled="" type="checkbox"> Research 2 SDIRA custodians (Equity Trust, Entrust Group)</li>
+<li><input disabled="" type="checkbox"> Listen to Module 4 audio companion</li>
+</ul>
+<h3>Week 6</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Identify which team roles are already filled</li>
+<li><input disabled="" type="checkbox"> Attend one REIA meeting or real estate networking event</li>
+<li><input disabled="" type="checkbox"> Begin filling in Worksheet 5A (Team Roster)</li>
+<li><input disabled="" type="checkbox"> Interview at least 1 candidate for: Real Estate Agent</li>
+<li><input disabled="" type="checkbox"> Listen to Module 5 audio companion</li>
+</ul>
+<h3>Week 7</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Interview at least 1 candidate for: Mortgage Broker / Lender</li>
+<li><input disabled="" type="checkbox"> Interview at least 1 candidate for: Contractor</li>
+<li><input disabled="" type="checkbox"> Get pre-approved for financing (if your lender file is complete)</li>
+<li><input disabled="" type="checkbox"> Research your target market: population, jobs, rent-to-price ratio, landlord laws</li>
+</ul>
+<h3>Week 8</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Complete Worksheet 6A (My Buy Box Builder)</li>
+<li><input disabled="" type="checkbox"> Practice deal analysis: Run 5 properties through Worksheet 6B</li>
+<li><input disabled="" type="checkbox"> Share your buy box with your real estate agent</li>
+<li><input disabled="" type="checkbox"> Set up automated property alerts matching your buy box criteria</li>
+<li><input disabled="" type="checkbox"> Listen to Module 6 audio companion</li>
+<li><input disabled="" type="checkbox"> <strong>MONTH 2 CHECKPOINT:</strong> Can you answer these three questions?<ul>
+<li>What is your retirement number (UNR)? ___ units</li>
+<li>Do you have at least 3 team members identified? Yes / No</li>
+<li>Is your buy box defined and shared with your agent? Yes / No</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2>Month 3: TAKE ACTION (Weeks 9-12)</h2>
+<p><strong>The goal:</strong> Start looking at real properties. Analyze real deals. Submit your first offer. This is where preparation meets action.</p>
+<h3>Week 9</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Review every property alert from your agent this week</li>
+<li><input disabled="" type="checkbox"> Run at least 3 properties through your Quick Deal Analysis (Worksheet 6B)</li>
+<li><input disabled="" type="checkbox"> Schedule property viewings for any that pass initial screening</li>
+<li><input disabled="" type="checkbox"> Confirm your financing is in place (pre-approval letter current)</li>
+</ul>
+<h3>Week 10</h3>
+<ul>
+<li><input disabled="" type="checkbox"> View at least 2 properties in person (or via video walkthrough if investing remotely)</li>
+<li><input disabled="" type="checkbox"> Get contractor estimates for any properties that need work</li>
+<li><input disabled="" type="checkbox"> Discuss deals with your mentor / accountability partner</li>
+<li><input disabled="" type="checkbox"> Refine your buy box if initial searches reveal adjustments needed</li>
+</ul>
+<h3>Week 11</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Identify your strongest candidate property</li>
+<li><input disabled="" type="checkbox"> Run a full deal analysis: purchase price, repair estimate, rent projection, cash flow, cash-on-cash return</li>
+<li><input disabled="" type="checkbox"> Review the deal with your real estate agent, lender, and mentor</li>
+<li><input disabled="" type="checkbox"> Decide: submit an offer or keep looking</li>
+</ul>
+<h3>Week 12</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Submit your first offer (or continue refining your pipeline)</li>
+<li><input disabled="" type="checkbox"> If offer accepted: begin due diligence (inspection, title search, appraisal)</li>
+<li><input disabled="" type="checkbox"> If offer rejected or no suitable deals yet: maintain your search cadence and know that the right deal is coming</li>
+<li><input disabled="" type="checkbox"> <strong>MONTH 3 CHECKPOINT:</strong> Can you answer these three questions?<ul>
+<li>Have you analyzed at least 10 properties against your buy box? Yes / No</li>
+<li>Have you submitted at least 1 offer? Yes / No</li>
+<li>Are you on track with your team, financing, and market knowledge? Yes / No</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2>CHECKLIST: 90-Day Milestone Tracker</h2>
+<p>Print this page and pin it to your wall.</p>
+<table>
+<thead>
+<tr>
+<th>Week</th>
+<th>Milestone</th>
+<th>Complete?</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>Budget P&amp;L + Waste Finder complete</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Insurance audit complete</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Balance sheet + asset search complete</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Lender file organized</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Retirement number calculated</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>6</td>
+<td>First REIA meeting attended</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Pre-approval obtained</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Buy box defined + shared with agent</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>9</td>
+<td>First 3 deals analyzed</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>10</td>
+<td>First 2 properties viewed</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Full deal analysis on best candidate</td>
+<td>[ ]</td>
+</tr>
+<tr>
+<td>12</td>
+<td>First offer submitted</td>
+<td>[ ]</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>What to Do When You Feel Stuck</h2>
+<p>You will hit a wall. Everyone does. Maybe you&#39;ll feel overwhelmed by the amount of information. Maybe you&#39;ll look at your net worth and feel discouraged. Maybe you&#39;ll attend a REIA meeting and feel like everyone knows more than you. Maybe you&#39;ll analyze a deal and freeze because the numbers are real and the money is yours.</p>
+<p>Here&#39;s what I learned in the Marines: <strong>the mission does not care about your feelings.</strong></p>
+<p>That sounds harsh. It&#39;s also the most liberating thing anyone ever told me. Because when you separate your emotions from the execution, something shifts. You stop asking &quot;Am I ready?&quot; and start asking &quot;What&#39;s the next step?&quot; You stop waiting to feel confident and start building confidence through action.</p>
+<p>Confidence is not a prerequisite. It&#39;s a byproduct. You get confident by doing the thing, not by waiting until you feel ready to do the thing.</p>
+<p>So when you feel stuck:</p>
+<ol>
+<li>Go back to your worksheets. Reread what you wrote. You&#39;ve done more work than 90% of people who &quot;want to invest in real estate.&quot; Your worksheets are proof.</li>
+<li>Call your mentor or accountability partner. Tell them where you&#39;re stuck. Let them talk you through it.</li>
+<li>Take one small action. Analyze one more deal. Make one more phone call. Read one more chapter. Small actions compound.</li>
+<li>Remember your retirement number. You calculated it in Module 4. That number doesn&#39;t change because you feel uncertain. The destination is fixed. The only question is whether you keep walking toward it.</li>
+</ol>
+<blockquote>
+<p><strong>THE TRUTH</strong></p>
+<p>Every person who has ever built wealth in real estate felt exactly what you&#39;re feeling right now. The uncertainty. The imposter syndrome. The &quot;who am I to do this?&quot; voice in the back of their head. Every single one of them. The difference between the people who built wealth and the people who stayed stuck is not talent. It&#39;s not money. It&#39;s not timing. It&#39;s that they kept going when their brain told them to stop.</p>
+<p>You&#39;re going to keep going. I already know this about you. You made it to Module 7.</p>
+</blockquote>
+<hr>
+<h2>The Bridge: What Comes After The Foundation</h2>
+<p>The Foundation gives you the blueprint. The coaching program gives you the architect.</p>
+<p>Here&#39;s the reality: this workbook prepared you. You now know your numbers, your risk profile, your net worth, your retirement target, your team, and your buy box. You have a 90-day plan. That&#39;s more preparation than 95% of first-time investors ever do.</p>
+<p>But there&#39;s a gap between preparation and execution that a workbook can&#39;t close. The gap is made of questions like:</p>
+<ul>
+<li>&quot;Is this deal actually good or does it look good on paper?&quot;</li>
+<li>&quot;Should I offer $120K or $135K, and what happens if I go too low?&quot;</li>
+<li>&quot;My contractor&#39;s bid is $15K higher than expected. Do I renegotiate or walk away?&quot;</li>
+<li>&quot;The inspection found issues. What is a deal-breaker and what is a negotiation tool?&quot;</li>
+<li>&quot;The numbers work but something feels off. Am I being smart or scared?&quot;</li>
+</ul>
+<p>Those questions require someone who has been there. Not a YouTube video that was filmed 3 years ago for a different market. Not a Facebook group where everyone has an opinion and nobody has done a deal. Someone who has closed $250 million in real estate transactions and can look at YOUR specific deal, YOUR specific numbers, YOUR specific situation and say: &quot;Here&#39;s exactly what I would do.&quot;</p>
+<p>That&#39;s what the coaching program is.</p>
+<h3>How Coaching Works</h3>
+<ul>
+<li>Duration: 6 months of direct access</li>
+<li>Format: One-on-one calls, deal reviews, and ongoing support</li>
+<li>What you get: Someone in your ear who has done this at scale, reviewing your deals in real time, telling you when to pull the trigger and when to walk away</li>
+<li>Who it&#39;s for: People who have completed The Foundation (or equivalent preparation) and are serious about executing, not just learning</li>
+</ul>
+<h3>How to Apply</h3>
+<p>If you want to explore coaching, here is the next step:</p>
+<ol>
+<li>Complete The Foundation. All 7 modules, all worksheets.</li>
+<li>Submit a coaching application. The link will be sent to your email.</li>
+<li>If selected, we&#39;ll schedule a strategy call to review your situation, your numbers, and your goals. No pressure. No hard sell. If it&#39;s a fit, we move forward. If it&#39;s not, you still have the best financial blueprint I know how to build.</li>
+</ol>
+<p>The application is not automatic acceptance. I work with a limited number of people at a time, and I only take people who have done the work. The worksheets in this book are your application. They show me, and they show YOU, that you&#39;re ready for the next level.</p>
+<hr>
+<h2>A Final Word from J. Marque</h2>
+<p>You now hold something most people never build: a complete financial blueprint.</p>
+<p>You know where your money goes. You know where the gaps in your protection are. You know what you own, what you owe, and what your investable net worth is. You know your retirement number, the exact number of units that replace your income. You know who you need on your team and how to find them. You know what to buy, what to avoid, and how to analyze a deal.</p>
+<p>You did this in 7 modules. From scratch.</p>
+<p>Listen. Starting from zero is not a weakness. It&#39;s an advantage. You have no bad habits to unlearn. No overleveraged portfolio to unwind. No failed deals haunting your confidence. You&#39;re starting with a clean foundation, and now that foundation is solid.</p>
+<p>The 90-day plan is your roadmap. Follow it with discipline. Not motivation. Motivation fades. Discipline. The Marine Corps taught me that the difference between people who accomplish their mission and people who quit is not bravery, or intelligence, or resources. It&#39;s the willingness to do the next thing when the last thing was hard.</p>
+<p>Your next thing is Week 1, Day 1 of the 90-Day Plan. Pull those bank statements. Fill out the P&amp;L. Start.</p>
+<p>The system was not designed for you. But the rules are learnable. The math is doable. The path is walkable.</p>
+<p>I will see you on the other side.</p>
+<p>-- J. Marque</p>
+<hr>
+<h1>APPENDIX: QUICK REFERENCE SHEETS</h1>
+<h2>Key Formulas</h2>
+<table>
+<thead>
+<tr>
+<th>Formula</th>
+<th>Variables</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Monthly Cash Flow</strong> = Rent - (PITI + Management + Reserves)</td>
+<td>PITI = Principal, Interest, Tax, Insurance</td>
+<td>Evaluate any rental deal</td>
+</tr>
+<tr>
+<td><strong>Cash-on-Cash Return</strong> = Annual Cash Flow / Total Cash Invested</td>
+<td>Include down payment + closing costs + repairs</td>
+<td>Compare deals against each other</td>
+</tr>
+<tr>
+<td><strong>The 70% Rule</strong> = ARV x 70% - Repair Costs = Max Offer</td>
+<td>ARV = After Repair Value</td>
+<td>Quick offer calculation for wholesaling/flipping</td>
+</tr>
+<tr>
+<td><strong>Retirement Formula</strong> = TMI / PCF = UNR</td>
+<td>TMI = monthly income, PCF = cash flow per unit</td>
+<td>Calculate how many units you need to retire</td>
+</tr>
+<tr>
+<td><strong>Rent-to-Price Ratio</strong> = Monthly Rent / Purchase Price</td>
+<td>Express as percentage</td>
+<td>Evaluate market-level cash flow potential</td>
+</tr>
+<tr>
+<td><strong>Income Replacement</strong> = Annual Income x 10-12</td>
+<td>Adjust for debts and future needs</td>
+<td>Calculate life insurance coverage needed</td>
+</tr>
+</tbody></table>
+<h2>Key Terms Glossary</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>ARV</strong></td>
+<td>After Repair Value -- what a property is worth after renovations are complete</td>
+</tr>
+<tr>
+<td><strong>BRRRR</strong></td>
+<td>Buy, Rehab, Rent, Refinance, Repeat -- a strategy for recycling capital across multiple properties</td>
+</tr>
+<tr>
+<td><strong>Cap Rate</strong></td>
+<td>Net Operating Income / Property Price -- measures return independent of financing</td>
+</tr>
+<tr>
+<td><strong>Cash-on-Cash Return</strong></td>
+<td>Annual cash flow divided by total cash invested -- your actual return on YOUR money</td>
+</tr>
+<tr>
+<td><strong>DSCR Loan</strong></td>
+<td>Debt Service Coverage Ratio loan -- qualifies based on property income, not personal income</td>
+</tr>
+<tr>
+<td><strong>Equity</strong></td>
+<td>The difference between what a property is worth and what you owe on it</td>
+</tr>
+<tr>
+<td><strong>FHA Loan</strong></td>
+<td>Federal Housing Administration loan -- 3.5% down, primary residence only, but can be used to house hack</td>
+</tr>
+<tr>
+<td><strong>House Hacking</strong></td>
+<td>Buying a 2-4 unit property, living in one unit, renting the others to cover your mortgage</td>
+</tr>
+<tr>
+<td><strong>LLC</strong></td>
+<td>Limited Liability Company -- separates your personal assets from your investment assets</td>
+</tr>
+<tr>
+<td><strong>PITI</strong></td>
+<td>Principal, Interest, Taxes, Insurance -- the four components of a mortgage payment</td>
+</tr>
+<tr>
+<td><strong>REIA</strong></td>
+<td>Real Estate Investors Association -- local networking group for investors</td>
+</tr>
+<tr>
+<td><strong>SDIRA</strong></td>
+<td>Self-Directed Individual Retirement Account -- allows investment in real estate and other alternative assets</td>
+</tr>
+<tr>
+<td><strong>Sub-to</strong></td>
+<td>Subject-to -- acquiring a property &quot;subject to&quot; the existing mortgage remaining in the seller&#39;s name</td>
+</tr>
+<tr>
+<td><strong>TMI / PCF / UNR</strong></td>
+<td>Total Monthly Income / Positive Cash Flow per unit / Units Needed for Retirement</td>
+</tr>
+<tr>
+<td><strong>Vacancy Reserve</strong></td>
+<td>Money set aside to cover months when the property is not rented (typically 5-8% of annual rent)</td>
+</tr>
+<tr>
+<td><strong>Maintenance Reserve</strong></td>
+<td>Money set aside for repairs and upkeep (typically 5-10% of annual rent)</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>All Worksheets Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Worksheet</th>
+<th>Module</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1A: Monthly Budget P&amp;L</td>
+<td>Module 1</td>
+<td>Track income vs. expenses, calculate cash flow</td>
+</tr>
+<tr>
+<td>1B: The Waste Finder</td>
+<td>Module 1</td>
+<td>Identify subscriptions, lifestyle creep, fee leaks</td>
+</tr>
+<tr>
+<td>Lender-Ready Document Checklist</td>
+<td>Module 1</td>
+<td>Organize all documents needed for financing</td>
+</tr>
+<tr>
+<td>2A: Health Insurance Coverage Audit</td>
+<td>Module 2</td>
+<td>Understand your health insurance details and gaps</td>
+</tr>
+<tr>
+<td>2B: Property &amp; Casualty Insurance Review</td>
+<td>Module 2</td>
+<td>Review auto, home, and renters insurance</td>
+</tr>
+<tr>
+<td>2C: Complete Insurance Audit</td>
+<td>Module 2</td>
+<td>Full inventory of all policies + gap analysis</td>
+</tr>
+<tr>
+<td>&quot;Call Your Agent&quot; Script</td>
+<td>Module 2</td>
+<td>Script for reviewing coverage with your insurance agent</td>
+</tr>
+<tr>
+<td>3A: Personal Balance Sheet</td>
+<td>Module 3</td>
+<td>Calculate total assets, liabilities, and net worth</td>
+</tr>
+<tr>
+<td>3B: Asset Inventory</td>
+<td>Module 3</td>
+<td>Detailed inventory of every account + investable net worth</td>
+</tr>
+<tr>
+<td>4A: Retirement Formula Calculator</td>
+<td>Module 4</td>
+<td>Calculate TMI, PCF, UNR + sensitivity analysis</td>
+</tr>
+<tr>
+<td>4B: Retirement Account Inventory</td>
+<td>Module 4</td>
+<td>List all retirement accounts with balances, fees, returns</td>
+</tr>
+<tr>
+<td>5A: Team Roster</td>
+<td>Module 5</td>
+<td>Track all 8 team members + interview notes</td>
+</tr>
+<tr>
+<td>6A: My Buy Box Builder</td>
+<td>Module 6</td>
+<td>Define market, property criteria, and deal killers</td>
+</tr>
+<tr>
+<td>6B: Quick Deal Analysis Sheet</td>
+<td>Module 6</td>
+<td>Rapid property screening tool</td>
+</tr>
+<tr>
+<td>90-Day Milestone Tracker</td>
+<td>Module 7</td>
+<td>Week-by-week execution checklist</td>
+</tr>
+</tbody></table>
+<hr>
+<p><em>The Foundation: The Complete Financial Blueprint for Future Investors</em>
+<em>By J. Marque</em>
+<em>Copyright 2026. All rights reserved.</em>
+<em>No part of this publication may be reproduced, distributed, or transmitted in any form without prior written permission.</em></p>
+<p><em>This workbook is for educational purposes only and does not constitute financial, legal, tax, or investment advice. Consult qualified professionals for advice specific to your situation. Real estate investing involves risk, including the potential loss of capital. Past performance, including the case studies referenced in this workbook, does not guarantee future results.</em></p>
+
+  </div>
+</body>
+</html>
